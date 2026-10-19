@@ -109,10 +109,21 @@ pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError
     let mut failures = vec![];
     for cite in input.iter().take(30) {
         let id = cite["source_id"].as_str().unwrap_or_default();
-        let quote = cite["quote"].as_str().unwrap_or_default();
         if let Some(source) = request.sources.iter().find(|s| s.id == id) {
+            let passage = super::passages::resolve(source, cite)?;
+            let quote = passage
+                .as_ref()
+                .map(|p| p.text.as_str())
+                .unwrap_or_else(|| cite["quote"].as_str().unwrap_or_default());
             if domain::cited_quote_exists(&source.text, quote) {
-                citations.push(json!({"source_id":id,"quote":quote,"page":source.page,"url":source.url,"title":source.title,"sha256":source.sha256,"record_hash_scope":source.record_hash_scope.as_deref().unwrap_or("unspecified_input_provenance"),"text_sha256":source_text_hash(source),"licence":source.licence,"locator_kind":if source.page.is_some(){"page"}else{"record"}}));
+                let mut citation = json!({"source_id":id,"quote":quote,"page":source.page,"url":source.url,"title":source.title,"sha256":source.sha256,"record_hash_scope":source.record_hash_scope.as_deref().unwrap_or("unspecified_input_provenance"),"text_sha256":source_text_hash(source),"licence":source.licence,"locator_kind":if source.page.is_some(){"page"}else{"record"}});
+                if let Some(passage) = passage {
+                    citation["passage_id"] = json!(passage.passage_id);
+                    citation["char_start"] = json!(passage.char_start);
+                    citation["char_end"] = json!(passage.char_end);
+                    citation["offset_unit"] = json!("unicode_scalar_value");
+                }
+                citations.push(citation);
                 continue;
             }
         }

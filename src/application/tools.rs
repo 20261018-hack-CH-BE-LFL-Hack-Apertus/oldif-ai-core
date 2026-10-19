@@ -24,7 +24,7 @@ pub fn execute(name: &str, args: &Value, sources: &[Source]) -> Result<Value, Co
             let s = sources.iter().find(|s| s.id == id).ok_or_else(|| {
                 CoreError::Invalid("Tool source is outside this run's scope".into())
             })?;
-            Ok(json!(s))
+            Ok(super::passages::source_view(s))
         }
         "search_sources" => search(args, sources),
         _ => Err(CoreError::Invalid(

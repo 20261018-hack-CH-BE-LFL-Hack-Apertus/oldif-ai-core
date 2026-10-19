@@ -2,7 +2,7 @@ use crate::api::dto::Source;
 use serde_json::{Value, json};
 use std::collections::HashSet;
 
-pub const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"quote":string}],"entities":[{"name":string,"type":string,"source_id":string}],"timeline":[{"date":string,"description":string,"source_id":string}],"uncertainty":[string],"abstained":boolean}"#;
+pub const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"entities":[{"name":string,"type":string,"source_id":string}],"timeline":[{"date":string,"description":string,"source_id":string}],"uncertainty":[string],"abstained":boolean}"#;
 
 pub fn catalog(mut context: Value, sources: &[Source]) -> Value {
     context["sources"] = json!(sources.iter().map(|source|json!({"id":source.id,"title":source.title,"url":source.url,"page":source.page,"licence":source.licence,"sha256":source.sha256})).collect::<Vec<_>>());

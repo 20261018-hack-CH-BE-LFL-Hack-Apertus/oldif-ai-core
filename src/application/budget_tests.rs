@@ -9,10 +9,17 @@ use serde_json::{Value, json};
 use std::sync::Arc;
 use tokio::sync::{Mutex, Semaphore};
 
-// The provider intentionally requests three tools with only two available slots.
-// Its final response is accepted only if the next request removes tools.
 #[tokio::test]
 async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revision() {
+    finalization_scenario(2).await;
+}
+#[tokio::test]
+async fn all_sources_read_finalizes_even_with_tool_budget_remaining() {
+    finalization_scenario(4).await;
+}
+// A model requests three reads; finalization must remove tools after the evidence
+// scope is complete, including when the configured call budget is not exhausted.
+async fn finalization_scenario(budget: usize) {
     async fn provider(
         State(requests): State<Arc<Mutex<Vec<Value>>>>,
         Json(body): Json<Value>,
@@ -52,7 +59,7 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
         output_tokens: 128,
         max_sources: 30,
         max_input_bytes: 120000,
-        max_tool_calls: 2,
+        max_tool_calls: budget,
         max_concurrency: 1,
         max_runs: 10,
         voice_enabled: false,
@@ -112,7 +119,7 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
             .iter()
             .filter(|e| e.kind == "tool.started")
             .count(),
-        2
+        budget.min(3)
     );
     assert_eq!(
         snapshot
@@ -120,7 +127,7 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
             .iter()
             .filter(|e| e.kind == "tool.denied")
             .count(),
-        1
+        3_usize.saturating_sub(budget)
     );
     let received = requests.lock().await;
     assert_eq!(received.len(), 5);

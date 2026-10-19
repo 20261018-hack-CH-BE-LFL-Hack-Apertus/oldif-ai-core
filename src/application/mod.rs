@@ -1,4 +1,5 @@
 pub mod context;
+pub mod passages;
 pub mod stages;
 pub mod tools;
 pub mod validation;
