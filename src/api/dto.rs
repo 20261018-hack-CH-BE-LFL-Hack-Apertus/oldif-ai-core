@@ -12,6 +12,10 @@ pub struct Source {
     pub text_sha256: Option<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub record_hash_scope: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub transcription_method: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub transcription_review_status: Option<String>,
     pub licence: String,
 }
 #[derive(Clone, Serialize, Deserialize)]

@@ -123,6 +123,15 @@ pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError
                     citation["char_end"] = json!(passage.char_end);
                     citation["offset_unit"] = json!("unicode_scalar_value");
                 }
+                if let Some(method) = &source.transcription_method {
+                    citation["transcription_method"] = json!(method);
+                    citation["transcription_review_status"] = json!(
+                        source
+                            .transcription_review_status
+                            .as_deref()
+                            .unwrap_or("unreviewed")
+                    );
+                }
                 citations.push(citation);
                 continue;
             }
@@ -177,6 +186,8 @@ mod tests {
                 sha256: "a".repeat(64),
                 text_sha256: None,
                 record_hash_scope: None,
+                transcription_method: None,
+                transcription_review_status: None,
                 licence: "CC0".into(),
             }],
             session_id: "s".into(),
@@ -232,6 +243,21 @@ mod tests {
         assert_eq!(value["timeline"], json!([]));
         assert!(!value.to_string().contains("Latin"));
         assert_eq!(value["system_validation"]["repair_exhausted"], false);
+    }
+    #[test]
+    fn ocr_provenance_cannot_be_promoted_by_a_model_citation() {
+        let mut request = req();
+        request.sources[0].transcription_method = Some("tesseract-5".into());
+        request.sources[0].transcription_review_status = Some("unreviewed".into());
+        let result = ground(json!({"answer":"1799","citations":[{"source_id":"s1","quote":"1799","transcription_method":"human","transcription_review_status":"accepted"}]}), &request).unwrap();
+        assert_eq!(
+            result["citations"][0]["transcription_method"],
+            "tesseract-5"
+        );
+        assert_eq!(
+            result["citations"][0]["transcription_review_status"],
+            "unreviewed"
+        );
     }
     #[test]
     fn unsupported_answer_requires_abstention() {
