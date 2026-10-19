@@ -1,0 +1,45 @@
+{
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-b57f567f-3afe-4654-a82b-54a35ea628e4",
+    "object": "chat.completion",
+    "created": 1792404300,
+    "model": "apertus-v1-5-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"steps\": [\"Identify the location and context of the school in Alpthal, including its size and distance from other locations.\", \"Analyze the conditions of schooling in Alpthal, including the lack of schoolhouse, teacher, and funding, and the poor attendance and quality of education.\", \"Examine the author's personal experience teaching in Alpthal, including the number of students, their behavior, and the challenges faced due to poverty and lack of support.\"], \"evidence_needed\": [\"Details about the size and distance of Alpthal from other locations.\", \"Information about the lack of schoolhouse, teacher, and funding in Alpthal.\", \"The author's personal experience teaching in Alpthal, including the number of students, their behavior, and the challenges faced due to poverty and lack of support.\"], \"risks\": [\"Inaccurate interpretation of the text due to archaic language and spelling.\", \"Overemphasis on the author's personal experience at the expense of broader context.\", \"Misunderstanding the socio-economic conditions of the time that influenced schooling.\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-2d880180",
+    "usage": {
+      "prompt_tokens": 3098,
+      "total_tokens": 3315,
+      "completion_tokens": 217,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "multimodal_tokens": null
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "metrics": null
+  },
+  "seconds": 1.7610153749992605
+}

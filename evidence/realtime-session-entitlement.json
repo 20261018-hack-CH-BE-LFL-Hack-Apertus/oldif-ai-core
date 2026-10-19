@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-19T10:14:00.613167+00:00",
+  "requested_model": "gpt-realtime-2.1",
+  "requested_transcription_model": "gpt-live-transcribe",
+  "operation": "POST realtime/client_secrets",
+  "audio_capture": "NOT_RUN",
+  "sdp_webrtc_negotiation": "NOT_RUN",
+  "http_status": 200,
+  "ephemeral_secret_returned": true,
+  "model": "gpt-realtime-2.1",
+  "expires_at": 1792412047
+}

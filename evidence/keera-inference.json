@@ -1,0 +1,108 @@
+{
+  "observed_at": "2026-10-19T10:01:42.288801+00:00",
+  "base_url": "https://gateway.keera.ch/api/v1",
+  "authorization": "Bearer",
+  "previous_cscs_403_receipts_preserved": true,
+  "probes": [
+    {
+      "selected_model": "apertus-v1-5-8b",
+      "http_status": 200,
+      "served_model": "apertus-v1-5-8b",
+      "message": {
+        "role": "assistant",
+        "content": "READY",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 70,
+        "total_tokens": 73,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "multimodal_tokens": null
+        }
+      },
+      "elapsed_ms": 111
+    },
+    {
+      "selected_model": "apertus-v1-5-8b-thinking",
+      "http_status": 200,
+      "served_model": "apertus-v1-5-8b-thinking",
+      "message": {
+        "role": "assistant",
+        "content": "READY",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": "\nThe user wants me to reply with the single word \"READY\".\n\n1.  **Analyze the request:** The user explicitly asks: \"Reply with the single word READY.\"\n2.  **Identify constraints:** The user wants *only* the word \"READY\". No extra text, no explanation.\n3.  **Formulate response:** The correct response is simply the word \"READY\".\n\nLet's double-check. The prompt says \"Reply with the single word READY.\" So I should output exactly that.\n\nFinal Answer: READY"
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 70,
+        "total_tokens": 188,
+        "completion_tokens": 118,
+        "prompt_tokens_details": {
+          "cached_tokens": 32,
+          "multimodal_tokens": null
+        }
+      },
+      "elapsed_ms": 10156
+    },
+    {
+      "selected_model": "apertus-v1-5-70b",
+      "http_status": 200,
+      "served_model": "apertus-v1-5-70b",
+      "message": {
+        "role": "assistant",
+        "content": "READY",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 70,
+        "total_tokens": 73,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 32,
+          "multimodal_tokens": null
+        }
+      },
+      "elapsed_ms": 143
+    },
+    {
+      "selected_model": "apertus-v1-5-70b-thinking",
+      "http_status": 200,
+      "served_model": "apertus-v1-5-70b-thinking",
+      "message": {
+        "role": "assistant",
+        "content": "READY",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 70,
+        "total_tokens": 73,
+        "completion_tokens": 3,
+        "prompt_tokens_details": {
+          "cached_tokens": 32,
+          "multimodal_tokens": null
+        }
+      },
+      "elapsed_ms": 213
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-19T09:39:31.883527+00:00",
+  "provider": "cscs",
+  "operation": "models",
+  "status": 403,
+  "error": "invalid API key",
+  "credential_source": "user-designated root .env comment section",
+  "automatic_fallback": false
+}

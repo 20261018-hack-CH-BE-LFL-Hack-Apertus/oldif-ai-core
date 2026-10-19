@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-19T09:34:31.268843+00:00",
+  "provider": "azure-openai",
+  "endpoint_host": "jo-5393-resource.openai.azure.com",
+  "status": 200,
+  "models": [
+    "gpt-realtime-2.1",
+    "gpt-live-transcribe",
+    "gpt-6-astra"
+  ],
+  "observed_model_count": 483,
+  "retained_scope": "Requested reference, realtime and transcription models only; catalog listing alone does not prove inference entitlement"
+}

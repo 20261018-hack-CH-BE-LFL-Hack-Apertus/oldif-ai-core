@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-55d8597e-beb9-4750-8fe6-0b11165bede8",
+    "object": "chat.completion",
+    "created": 1792404338,
+    "model": "apertus-v1-5-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"answer\": \"I need to call the read_source function with the source_id 'stapfer-2027' to get the content of the archive.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-2d880180",
+    "usage": {
+      "prompt_tokens": 71,
+      "total_tokens": 107,
+      "completion_tokens": 36,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "multimodal_tokens": null
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "metrics": null
+  }
+}

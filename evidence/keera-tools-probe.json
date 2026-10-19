@@ -1,0 +1,54 @@
+{
+  "status": 200,
+  "response": {
+    "id": "chatcmpl-c5052418-cfc4-456a-8a60-4cd28d7fcc0a",
+    "object": "chat.completion",
+    "created": 1792404352,
+    "model": "apertus-v1-5-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [
+            {
+              "id": "chatcmpl-tool-aab19a798811c94e",
+              "type": "function",
+              "function": {
+                "name": "read_source",
+                "arguments": "{\"source_id\": \"stapfer-2027\"}"
+              }
+            }
+          ],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "tool_calls",
+        "stop_reason": 72,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-2d880180",
+    "usage": {
+      "prompt_tokens": 63,
+      "total_tokens": 85,
+      "completion_tokens": 22,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "multimodal_tokens": null
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "metrics": null
+  }
+}

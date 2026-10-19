@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-19T09:41:02.402618+00:00",
+  "provider": "cscs",
+  "requested_model": "apertus-v1-5-8b",
+  "operation": "chat/completions",
+  "automatic_fallback": false,
+  "status": 403,
+  "error": "provider authentication rejected"
+}

@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-19T09:37:13.557816+00:00",
+  "provider": "azure-openai",
+  "requested_model": "gpt-6-astra",
+  "operation": "chat/completions",
+  "automatic_fallback": false,
+  "status": 200,
+  "served_model": "gpt-6-astra-2026-09-03",
+  "response_id": "chatcmpl-Eae5pjO1ljn9IA37CIHCqJu3fRPaA",
+  "usage": {
+    "completion_tokens": 8,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 8,
+      "engine_ttft_ms": 628,
+      "engine_ttlt_ms": 701,
+      "pre_inference_ms": 86,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 803,
+      "service_ttlt_ms": 872,
+      "user_visible_ttft_ms": 716
+    },
+    "prompt_tokens": 14,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 22
+  },
+  "response": "{\"ready\":true}",
+  "latency_seconds": 1.7
+}

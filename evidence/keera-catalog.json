@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-19T10:01:11.721100+00:00",
+  "base_url": "https://gateway.keera.ch/api/v1",
+  "credential_location": "ai-core/.env",
+  "credential_printed": false,
+  "status": 200,
+  "data": {
+    "data": [
+      {
+        "id": "apertus-v1-5-70b",
+        "object": "model",
+        "created": 1784851200,
+        "owned_by": "keera",
+        "max_context": 262144,
+        "display_name": "Apertus v1.5 70B",
+        "description": "middling power and very cheap, with open weights and open training data - auditable work",
+        "location": "ch"
+      },
+      {
+        "id": "apertus-v1-5-70b-thinking",
+        "object": "model",
+        "created": 1784851200,
+        "owned_by": "keera",
+        "max_context": 262144,
+        "display_name": "Apertus v1.5 70B Thinking",
+        "description": "Apertus-v1.5-70B reasoning before it answers, with no tool calls - hard questions, not agents",
+        "location": "ch"
+      },
+      {
+        "id": "apertus-v1-5-8b",
+        "object": "model",
+        "created": 1784851200,
+        "owned_by": "keera",
+        "max_context": 262144,
+        "display_name": "Apertus v1.5 8B",
+        "description": "the smallest and cheapest here, with open weights and open training data - simple work",
+        "location": "ch"
+      },
+      {
+        "id": "apertus-v1-5-8b-thinking",
+        "object": "model",
+        "created": 1784851200,
+        "owned_by": "keera",
+        "max_context": 262144,
+        "display_name": "Apertus v1.5 8B Thinking",
+        "description": "Apertus-v1.5-8B reasoning before it answers, with no tool calls - simple questions, not agents",
+        "location": "ch"
+      }
+    ],
+    "object": "list"
+  }
+}
