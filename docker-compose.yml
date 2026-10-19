@@ -1,0 +1,23 @@
+services:
+  oldif-ai-core:
+    build: .
+    image: oldif-ai-core:${AI_IMAGE_TAG:-dev}
+    env_file: .env
+    ports:
+      - "${AI_HTTP_PORT:-8082}:8082"
+      - "${AI_GRPC_PORT:-50052}:50052"
+    volumes:
+      - core-runs:/app/data/runs
+    environment:
+      AI_RUN_DIR: /app/data/runs
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://127.0.0.1:8082/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    mem_limit: 1g
+    cpus: 2
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+volumes:
+  core-runs:

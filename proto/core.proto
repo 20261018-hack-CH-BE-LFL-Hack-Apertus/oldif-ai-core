@@ -1,0 +1,10 @@
+syntax = "proto3";
+package oldif.ai.v1;
+service Core {
+  rpc GetModels(Empty) returns (JsonPayload);
+  rpc StartRun(JsonPayload) returns (RunRef);
+  rpc StreamEvents(RunRef) returns (stream JsonPayload);
+}
+message Empty {}
+message JsonPayload { string json = 1; }
+message RunRef { string run_id = 1; uint64 after_sequence = 2; string status = 3; }
