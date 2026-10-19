@@ -176,3 +176,50 @@ mod tests {
         );
     }
 }
+
+/// Exhausted output validation yields an explicit refusal to assert historical facts.
+/// It never turns a rejected quote into a normalized or silently substituted quote.
+pub fn abstention(request: &RunRequest, reason: &str) -> Value {
+    let answer = match request.locale.as_str() {
+        "es" => {
+            "No puedo ofrecer una respuesta verificada a partir de estas fuentes. Revise los documentos originales."
+        }
+        "de" | "de-CH" => {
+            "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+        }
+        "fr" => {
+            "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+        }
+        "it" => {
+            "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+        }
+        "rm" => {
+            "Jau na poss betg dar ina resposta verifitgada a basa da questas funtaunas. Consultai ils documents originals."
+        }
+        _ => {
+            "I cannot provide a verified answer from these sources. Please review the original records."
+        }
+    };
+    json!({"answer":answer,"citations":[],"entities":[],"timeline":[],"uncertainty":[answer],"abstained":true,"human_review_required":true,"system_validation":{"accepted":false,"reason":reason,"repair_exhausted":true}})
+}
+
+#[cfg(test)]
+mod abstention_tests {
+    use super::*;
+    #[test]
+    fn exhausted_grounding_abstains_without_publishing_rejected_claims() {
+        let request:RunRequest=serde_json::from_value(json!({"question":"Q","locale":"es","model":"apertus-v1-5-8b","sources":[],"session_id":"fixture","user_id":"fixture"})).unwrap();
+        let result = abstention(&request, "quote absent from source");
+        assert_eq!(result["abstained"], true);
+        assert_eq!(result["system_validation"]["accepted"], false);
+        assert_eq!(result["citations"], json!([]));
+        assert!(result["answer"].as_str().unwrap().starts_with("No puedo"));
+        assert!(
+            result["answer"]
+                .as_str()
+                .unwrap()
+                .find("quote absent")
+                .is_none()
+        );
+    }
+}

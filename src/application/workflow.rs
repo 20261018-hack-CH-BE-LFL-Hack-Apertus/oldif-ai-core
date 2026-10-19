@@ -121,8 +121,16 @@ impl Engine {
                     )
                     .await?;
                 let repaired =
-                    stages::repair(self, run, request, candidate, &error.to_string()).await?;
-                validation::ground(repaired, request)
+                    stages::repair(self, run, request, candidate, &error.to_string()).await;
+                let checked = repaired.and_then(|value| validation::ground(value, request));
+                match checked {
+                    Ok(value) => Ok(value),
+                    Err(CoreError::Invalid(reason)) => {
+                        self.store.emit(run, "validation.abstained", "outcome-owner", json!({"reason":reason,"repair_exhausted":true,"citations_published":0})).await?;
+                        Ok(validation::abstention(request, &reason))
+                    }
+                    Err(error) => Err(error),
+                }
             }
         }
     }
