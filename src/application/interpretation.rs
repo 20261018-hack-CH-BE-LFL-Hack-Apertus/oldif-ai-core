@@ -1,10 +1,10 @@
 use crate::api::dto::RunRequest;
 use serde_json::{Value, json};
 
-/// A non-supporting verification pass may not introduce more historical claims.
+/// Model verification is advisory and never substitutes for a human decision.
 pub fn review(raw: Value) -> Value {
     if raw["verdict"] == "supported" {
-        return raw;
+        return json!({"verdict":"supported","authority":"advisory_model","output_policy":"extractive_pending_human_review","human_review_required":true,"independent_pass":false,"same_model":true});
     }
     let verdict = if raw["verdict"] == "abstain" {
         "abstain"
@@ -16,12 +16,15 @@ pub fn review(raw: Value) -> Value {
     } else {
         "invalid_verification_verdict"
     };
-    json!({"verdict":verdict,"reason":reason,"output_policy":"evidence_only","human_review_required":true,"independent_pass":true,"same_model":true})
+    json!({"verdict":verdict,"reason":reason,"authority":"advisory_model","output_policy":"evidence_only","human_review_required":true,"independent_pass":false,"same_model":true})
 }
 
 pub fn bound(mut result: Value, request: &RunRequest) -> Value {
-    if result["abstained"] == true || result["verification"]["verdict"] == "supported" {
+    if result["abstained"] == true {
         return result;
+    }
+    if result["verification"]["verdict"] == "supported" {
+        result["interpretation_draft"] = json!({"answer":result["answer"],"entities":result["entities"],"timeline":result["timeline"],"state":"unreviewed","human_reviewed":false});
     }
     let notice = match request.locale.as_str() {
         "es" => {
@@ -43,7 +46,14 @@ pub fn bound(mut result: Value, request: &RunRequest) -> Value {
             "The selected source passages are shown for human review; the model interpretation could not be verified."
         }
     };
-    result["answer"] = json!(notice);
+    let passages = result["citations"]
+        .as_array()
+        .into_iter()
+        .flatten()
+        .filter_map(|citation| citation["quote"].as_str().map(|quote| format!("“{quote}”")))
+        .collect::<Vec<_>>()
+        .join("\n\n");
+    result["answer"] = json!(format!("{notice}\n\n{passages}"));
     result["uncertainty"] = json!([notice]);
     result["entities"] = json!([]);
     result["timeline"] = json!([]);
@@ -101,5 +111,20 @@ mod tests {
                 .unwrap()
                 .starts_with("Los pasajes")
         );
+    }
+    #[test]
+    fn same_model_support_cannot_release_unsupported_historical_interpretation() {
+        let quote = "diese sollen im schreiben läsen und rechnen unterrichtet werden";
+        let result = bound(
+            json!({"answer":"Latin was successfully taught by an invented author","citations":[{"source_id":"stapfer-2027","quote":quote}],"entities":[{"name":"invented author"}],"timeline":[{"description":"Latin success"}],"abstained":false,"verification":{"verdict":"supported"}}),
+            &request("en"),
+        );
+        assert_eq!(result["human_review_required"], true);
+        assert_eq!(result["evidence_only"], true);
+        assert!(result["answer"].as_str().unwrap().contains(quote));
+        assert!(!result["answer"].as_str().unwrap().contains("Latin"));
+        assert_eq!(result["entities"], json!([]));
+        assert_eq!(result["timeline"], json!([]));
+        assert_eq!(result["interpretation_status"], "needs_review");
     }
 }

@@ -219,7 +219,8 @@ pub async fn verify(
             .unwrap_or(json!({"verdict":null}));
         interpretation::review(raw)
     };
-    review["independent_pass"] = json!(true);
+    review["independent_pass"] = json!(false);
+    review["separate_pass"] = json!(true);
     review["same_model"] = json!(true);
     review["human_review_required"] = json!(true);
     e.store
@@ -234,6 +235,14 @@ pub async fn reflect(
     result: &Value,
 ) -> Result<Value, CoreError> {
     let msg=e.call(run,"dreamer",&r.model,messages(r#"Propose at most two improvements to future evidence collection or tests based on observed uncertainty. Return JSON {"proposals":[{"kind":"evaluation"|"source_review","description":string,"rationale":string}]}. Proposals are unapproved data. Do not change prompts, files, memory, sources or permissions. Never invent historic content or claim training occurred. If the result abstained or is evidence_only, propose only validation or source-review procedures; do not assert historical facts or supply new quotations."#,{ let mut context=context::reviewed(e.context(run,r).await?, &r.sources, result);context["result"]=result.clone();context }),None).await?;
+    let v = match content(&msg).and_then(validation::parse_json) {
+        Ok(value) => value,
+        Err(CoreError::Invalid(_)) => {
+            e.store.emit(run,"proposals.unavailable","dreamer",json!({"reason":"invalid_or_truncated_json","proposals_published":0,"retry":false})).await?;
+            return Ok(json!([]));
+        }
+        Err(error) => return Err(error),
+    };
     if result["abstained"] == true || result["evidence_only"] == true {
         let reason = if result["abstained"] == true {
             "candidate_abstained"
@@ -243,14 +252,6 @@ pub async fn reflect(
         e.store.emit(run,"proposals.withheld","outcome-owner",json!({"reason":reason,"free_form_output_published":false,"model_pass_executed":true})).await?;
         return Ok(json!([]));
     }
-    let v = match content(&msg).and_then(validation::parse_json) {
-        Ok(value) => value,
-        Err(CoreError::Invalid(_)) => {
-            e.store.emit(run,"proposals.unavailable","dreamer",json!({"reason":"invalid_or_truncated_json","proposals_published":0,"retry":false})).await?;
-            return Ok(json!([]));
-        }
-        Err(error) => return Err(error),
-    };
     let proposals:Vec<Value>=v["proposals"].as_array().into_iter().flatten().take(2).map(|p|json!({"id":uuid::Uuid::new_v4().to_string(),"kind":p["kind"],"description":p["description"],"rationale":p["rationale"],"status":"pending_human_review","applied":false})).collect();
     e.store
         .emit(run, "proposals.created", "dreamer", json!(proposals))

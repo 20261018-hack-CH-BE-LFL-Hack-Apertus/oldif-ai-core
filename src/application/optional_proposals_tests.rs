@@ -118,9 +118,16 @@ async fn invalid_optional_output_preserves_validated_result_and_explicit_trace()
     ] {
         let snapshot = scenario(response).await;
         assert_eq!(snapshot["status"], "needs_review", "{snapshot}");
+        assert!(
+            snapshot["result"]["answer"]
+                .as_str()
+                .unwrap()
+                .contains("School in 1799")
+        );
+        assert_eq!(snapshot["result"]["evidence_only"], true);
         assert_eq!(
-            snapshot["result"]["answer"],
-            "The record mentions a school in 1799."
+            snapshot["result"]["interpretation_draft"]["human_reviewed"],
+            false
         );
         assert_eq!(
             snapshot["result"]["citations"][0]["quote"],
