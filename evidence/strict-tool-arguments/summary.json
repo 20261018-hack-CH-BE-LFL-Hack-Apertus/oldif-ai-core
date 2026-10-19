@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-19T17:15:36.020761+00:00",
+  "baseline_revision": "8c65e01ac6a3f088acce53affe773e443eb28270",
+  "validation_class": "Native Rust direct tool-boundary regressions and complete service suite; no external provider calls",
+  "problem": "Published additionalProperties:false did not prevent runtime Value dispatch from ignoring extra keys for read_source and search_sources.",
+  "change": "Require an object containing exactly the single documented argument before existing type/value/scope checks. Tool names, source scope, lexical search, exact output and query byte limits are unchanged.",
+  "red": {
+    "command": "cargo test application::tools::tests -- --nocapture",
+    "passed": 6,
+    "failed": 2,
+    "failed_cases": [
+      "read_source_rejects_additional_arguments",
+      "search_sources_rejects_additional_arguments"
+    ]
+  },
+  "green": {
+    "command": "cargo test --locked",
+    "passed": 62,
+    "failed": 0,
+    "new_regression_tests": 6,
+    "tool_tests_total": 8,
+    "build_command": "cargo build --locked",
+    "build_exit_code": 0
+  },
+  "coverage": [
+    "Unknown extra keys are rejected for both supported tools, including nested unexpected data.",
+    "Null,array,boolean,number and string top-level arguments are rejected.",
+    "Missing required values and non-string field values are rejected.",
+    "Supported read_source output equals the exact source passage view; lexical search retains the original Source payload.",
+    "Empty and501-byte queries are rejected;500bytes accepted; multibyteUTF-8 query bound remains measured in bytes.",
+    "Existing tests still deny arbitrary tools and source IDs outside this run."
+  ],
+  "external_provider_calls": 0,
+  "source_files": [
+    {
+      "path": "src/application/tools.rs",
+      "sha256": "3ad4d9035e41214c6928aead9989ac2514a130faded334d470b994e97668a5c3"
+    }
+  ],
+  "logs": [
+    {
+      "path": "before.log",
+      "sha256": "78d5860f49752605adaec770c8924ccf22f69d756f6783923e03d7b6e9ef76bd",
+      "raw_sha256": "78d5860f49752605adaec770c8924ccf22f69d756f6783923e03d7b6e9ef76bd"
+    },
+    {
+      "path": "after.log",
+      "sha256": "ab6c3d316fb512399a28484f8449c427233e9103eba807ba1740364b91f10e2d",
+      "raw_sha256": "a48940e0087922f6e77240694a80ea0da0563650ddb9adc0b5741d41f444e34e"
+    },
+    {
+      "path": "build.log",
+      "sha256": "ebbc5c8deb8a1f4f1defcc8ccbbd1cf30890e7a88f6dd145192d584277e220d4",
+      "raw_sha256": "ebbc5c8deb8a1f4f1defcc8ccbbd1cf30890e7a88f6dd145192d584277e220d4"
+    }
+  ],
+  "limits": [
+    "This validates the core runtime argument boundary; it does not claim that Rust core executes inside OpenShell.",
+    "Cloud deployment and the existing Covenant OpenShell worker boundary are verified separately.",
+    "No new historical QA or provider-quality inference was performed."
+  ],
+  "log_normalization": "Only surplus final blank lines were removed for git whitespace checks; original captured logs remain in /tmp/oldif-strict-tool-arguments. Raw hashes below preserve the original output identity."
+}

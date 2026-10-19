@@ -1,0 +1,32 @@
+   Compiling oldif-ai-core v0.1.0 (/Users/eydrent/Documents/hackathons/20261018-hack-CH-BE-LFL-Hack-Apertus/project/project-deciphering-archives/oldif-ai/oldif-ai-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.53s
+     Running unittests src/main.rs (target/debug/deps/oldif_ai_core-1f7024a0014ad063)
+
+running 8 tests
+test application::tools::tests::cross_scope_source_denied ... ok
+test application::tools::tests::arbitrary_tools_are_denied ... ok
+test application::tools::tests::non_object_arguments_are_rejected ... ok
+test application::tools::tests::missing_or_wrongly_typed_arguments_are_rejected ... ok
+test application::tools::tests::search_query_byte_limit_is_preserved ... ok
+
+thread 'application::tools::tests::search_sources_rejects_additional_arguments' (6257227) panicked at src/application/tools.rs:82:9:
+assertion failed: matches!(execute("search_sources", &args, &sources()),
+    Err(CoreError::Invalid(_)))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'application::tools::tests::read_source_rejects_additional_arguments' (6257225) panicked at src/application/tools.rs:77:9:
+assertion failed: matches!(execute("read_source", &args, &sources()),
+    Err(CoreError::Invalid(_)))
+test application::tools::tests::supported_arguments_preserve_exact_source_output ... ok
+test application::tools::tests::search_sources_rejects_additional_arguments ... FAILED
+test application::tools::tests::read_source_rejects_additional_arguments ... FAILED
+
+failures:
+
+failures:
+    application::tools::tests::read_source_rejects_additional_arguments
+    application::tools::tests::search_sources_rejects_additional_arguments
+
+test result: FAILED. 6 passed; 2 failed; 0 ignored; 0 measured; 54 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin oldif-ai-core`
