@@ -1,4 +1,4 @@
-use super::{context, passages, tools, validation, workflow::Engine};
+use super::{context, interpretation, passages, tools, validation, workflow::Engine};
 use crate::{api::dto::RunRequest, domain, error::CoreError, infrastructure::store::Run};
 use serde_json::{Value, json};
 use std::collections::HashSet;
@@ -214,7 +214,10 @@ pub async fn verify(
             .await?;
         json!({"verdict":"abstain","findings":[result["answer"]],"contradictions":[],"historical_bias":[],"output_policy":"deterministic_abstention"})
     } else {
-        validation::parse_json(content(&msg)?)?
+        let raw = content(&msg)
+            .and_then(validation::parse_json)
+            .unwrap_or(json!({"verdict":null}));
+        interpretation::review(raw)
     };
     review["independent_pass"] = json!(true);
     review["same_model"] = json!(true);
@@ -230,9 +233,14 @@ pub async fn reflect(
     r: &RunRequest,
     result: &Value,
 ) -> Result<Value, CoreError> {
-    let msg=e.call(run,"dreamer",&r.model,messages(r#"Propose at most two improvements to future evidence collection or tests based on observed uncertainty. Return JSON {"proposals":[{"kind":"evaluation"|"source_review","description":string,"rationale":string}]}. Proposals are unapproved data. Do not change prompts, files, memory, sources or permissions. Never invent historic content or claim training occurred. If the result abstained, propose only validation or source-review procedures; do not assert historical facts or supply new quotations."#,{ let mut context=context::reviewed(e.context(run,r).await?, &r.sources, result);context["result"]=result.clone();context }),None).await?;
-    if result["abstained"].as_bool() == Some(true) {
-        e.store.emit(run,"proposals.withheld","outcome-owner",json!({"reason":"candidate_abstained","free_form_output_published":false,"model_pass_executed":true})).await?;
+    let msg=e.call(run,"dreamer",&r.model,messages(r#"Propose at most two improvements to future evidence collection or tests based on observed uncertainty. Return JSON {"proposals":[{"kind":"evaluation"|"source_review","description":string,"rationale":string}]}. Proposals are unapproved data. Do not change prompts, files, memory, sources or permissions. Never invent historic content or claim training occurred. If the result abstained or is evidence_only, propose only validation or source-review procedures; do not assert historical facts or supply new quotations."#,{ let mut context=context::reviewed(e.context(run,r).await?, &r.sources, result);context["result"]=result.clone();context }),None).await?;
+    if result["abstained"] == true || result["evidence_only"] == true {
+        let reason = if result["abstained"] == true {
+            "candidate_abstained"
+        } else {
+            "interpretation_unverified"
+        };
+        e.store.emit(run,"proposals.withheld","outcome-owner",json!({"reason":reason,"free_form_output_published":false,"model_pass_executed":true})).await?;
         return Ok(json!([]));
     }
     let v = validation::parse_json(content(&msg)?)?;

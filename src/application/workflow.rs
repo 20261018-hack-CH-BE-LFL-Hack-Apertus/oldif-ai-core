@@ -1,4 +1,4 @@
-use super::{stages, validation};
+use super::{interpretation, stages, validation};
 use crate::{
     api::dto::RunRequest,
     config::Config,
@@ -99,6 +99,10 @@ impl Engine {
         self.store.emit(run,"validation.completed","outcome-owner",json!({"exact_quotes":true,"citations":grounded["citations"].as_array().map(Vec::len)})).await?;
         let review = stages::verify(self, run, &request, &grounded).await?;
         grounded["verification"] = review;
+        grounded = interpretation::bound(grounded, &request);
+        if grounded["evidence_only"] == true {
+            self.store.emit(run,"interpretation.withheld","outcome-owner",json!({"reason":"interpretation_unverified","citations_retained":grounded["citations"].as_array().map(Vec::len)})).await?;
+        }
         grounded["proposals"] = stages::reflect(self, run, &request, &grounded).await?;
         Self::check_cancel(run)?;
         self.store.finish(run, "needs_review", grounded).await

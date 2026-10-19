@@ -1,16 +1,16 @@
 {
-  "observed_at": "2026-10-19T11:07:09.733258+00:00",
-  "runtime_base": "cf274eb6a54957c1bc59be2cd12e8e440b8046f5",
-  "pending_change": "exact passage selection and citations",
+  "observed_at": "2026-10-19T11:10:10.303466+00:00",
+  "runtime_base": "07ce454a071f8027fed271903f91cbf05f13e395",
+  "pending_change": "evidence-only gate for unverified interpretation",
   "command": [
     "cargo",
     "test",
     "--locked"
   ],
   "exit_code": 0,
-  "passed": 24,
+  "passed": 28,
   "failed": 0,
-  "output": "\nrunning 24 tests\ntest application::tools::tests::cross_scope_source_denied ... ok\ntest application::tools::tests::arbitrary_tools_are_denied ... ok\ntest application::validation::tests::declared_abstention_cannot_publish_unsupported_claims ... ok\ntest application::passages::tests::offsets_recover_exact_unicode_text_and_preserve_spelling ... ok\ntest application::passages::tests::bounded_passage_count_preserves_unsplit_tail ... ok\ntest application::validation::abstention_tests::exhausted_grounding_abstains_without_publishing_rejected_claims ... ok\ntest domain::tests::rejects_fabricated_and_empty_quotes ... ok\ntest domain::tests::supported_languages ... ok\ntest domain::tests::thinking_disables_tools ... ok\ntest application::context::tests::abstention_has_no_historical_source_context ... ok\ntest application::context::tests::catalog_never_preloads_other_records_text ... ok\ntest application::context::tests::review_uses_only_cited_sources_and_no_prior_answers ... ok\ntest application::validation::tests::text_hash_is_separate_from_record_hash_and_rejects_tampering ... ok\ntest application::validation::tests::retains_original_provenance ... ok\ntest application::passages::tests::unknown_and_conflicting_citations_are_rejected ... ok\ntest application::validation::tests::unsupported_answer_requires_abstention ... ok\ntest infrastructure::responses::tests::preserves_reasoning_and_tool_continuation ... ok\ntest application::passages::tests::alpthal_passage_resolves_without_model_copying ... ok\ntest application::validation::tests::rejects_invented_quote ... ok\ntest infrastructure::store_tests::idempotency_prevents_duplicate_spend_and_rejects_changed_input ... ok\ntest infrastructure::store_tests::restart_marks_interrupted_work_failed_without_retry ... ok\ntest infrastructure::store_tests::terminal_status_and_event_persist_atomically ... ok\ntest application::budget_tests::all_sources_read_finalizes_even_with_tool_budget_remaining ... ok\ntest application::budget_tests::tool_budget_finalizes_without_executing_excess_calls_and_survives_revision ... ok\n\ntest result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n   Compiling oldif-ai-core v0.1.0 (/Users/eydrent/Documents/hackathons/20261018-hack-CH-BE-LFL-Hack-Apertus/project/project-deciphering-archives/oldif-ai/oldif-ai-core)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.12s\n     Running unittests src/main.rs (target/debug/deps/oldif_ai_core-1f7024a0014ad063)\n",
+  "output": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.82s\n     Running unittests src/main.rs (target/debug/deps/oldif_ai_core-1f7024a0014ad063)\n\nrunning 28 tests\ntest application::tools::tests::cross_scope_source_denied ... ok\ntest application::tools::tests::arbitrary_tools_are_denied ... ok\ntest application::context::tests::catalog_never_preloads_other_records_text ... ok\ntest application::interpretation::tests::evidence_notice_uses_requested_locale ... ok\ntest application::context::tests::abstention_has_no_historical_source_context ... ok\ntest application::interpretation::tests::canonical_abstention_remains_distinct_from_evidence_only ... ok\ntest application::validation::tests::declared_abstention_cannot_publish_unsupported_claims ... ok\ntest application::context::tests::review_uses_only_cited_sources_and_no_prior_answers ... ok\ntest application::interpretation::tests::abstaining_and_invalid_verdicts_cannot_publish_free_text ... ok\ntest application::validation::abstention_tests::exhausted_grounding_abstains_without_publishing_rejected_claims ... ok\ntest application::passages::tests::offsets_recover_exact_unicode_text_and_preserve_spelling ... ok\ntest application::interpretation::tests::unverified_summary_is_removed_while_exact_evidence_survives ... ok\ntest application::passages::tests::bounded_passage_count_preserves_unsplit_tail ... ok\ntest application::validation::tests::rejects_invented_quote ... ok\ntest application::passages::tests::unknown_and_conflicting_citations_are_rejected ... ok\ntest application::passages::tests::alpthal_passage_resolves_without_model_copying ... ok\ntest application::validation::tests::retains_original_provenance ... ok\ntest application::validation::tests::text_hash_is_separate_from_record_hash_and_rejects_tampering ... ok\ntest application::validation::tests::unsupported_answer_requires_abstention ... ok\ntest domain::tests::rejects_fabricated_and_empty_quotes ... ok\ntest domain::tests::supported_languages ... ok\ntest domain::tests::thinking_disables_tools ... ok\ntest infrastructure::responses::tests::preserves_reasoning_and_tool_continuation ... ok\ntest infrastructure::store_tests::idempotency_prevents_duplicate_spend_and_rejects_changed_input ... ok\ntest infrastructure::store_tests::restart_marks_interrupted_work_failed_without_retry ... ok\ntest infrastructure::store_tests::terminal_status_and_event_persist_atomically ... ok\ntest application::budget_tests::tool_budget_finalizes_without_executing_excess_calls_and_survives_revision ... ok\ntest application::budget_tests::all_sources_read_finalizes_even_with_tool_budget_remaining ... ok\n\ntest result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s\n\n   Compiling oldif-ai-core v0.1.0 (/Users/eydrent/Documents/hackathons/20261018-hack-CH-BE-LFL-Hack-Apertus/project/project-deciphering-archives/oldif-ai/oldif-ai-core)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.68s\n",
   "validation_class": "native offline regression suite; no provider calls or browser/audio claims",
   "runtime_source_sha256": {
     "src/api/compatibility.rs": "46d17f7299e1a3ff5e926304b5baf3f0423fa773ecd565dfcbdb9e873e3f8d3b",
@@ -21,12 +21,13 @@
     "src/api/voice.rs": "f710a5bfb75be46a7949fe3f51bd7ef1f0456d8c8a219edce8dd100ac41cff75",
     "src/application/budget_tests.rs": "0e18e2db90b1c7232c78008a8fc83c3ebedf2ba5aaa14c353b772d88b3c3ec39",
     "src/application/context.rs": "eedd44418c64c9d5140a429df19b4e7bb39bd42bd2cb31b9a2ec98aa6f5d557b",
-    "src/application/mod.rs": "4b73b3f7c10ed583af34993dee2c8debedf3c1e0a60f6fdacaff0f8de44468dd",
+    "src/application/interpretation.rs": "737716212fcb725f0187c173397bd5475effb50b3f720a3c098183e4e6a37145",
+    "src/application/mod.rs": "755d6352cd50d08ff8172c0b25e64ae8ef57c07698190d318e2e69170ee60038",
     "src/application/passages.rs": "c6691775d1d643d24171b82fdae4889833cdae6d196db6373223a69c57f8c2f5",
-    "src/application/stages.rs": "1944e78fb8277869a340c877f2982beb58e47f826f1db11668f32190f6023704",
+    "src/application/stages.rs": "4b4f44a8cd6e2a0195c158cddeac642a262d1030a980904e11f1beff59453c6b",
     "src/application/tools.rs": "fe1ec5b864b29895585c4e2fb91e9abffc19fd53b68f192ab27ae80d5a3a53b8",
     "src/application/validation.rs": "cf1d7108fa52a3196beffc530d80b23f875f97ac6c26588c8728f86b7cfa7c8d",
-    "src/application/workflow.rs": "c7cc6cbfa03ea413d4e3c51605639d1cf8ce30ddbd3318b0bad3309b549683b9",
+    "src/application/workflow.rs": "1372ebe57df08c0fd8fa3c75fe4906ca4b50611e5ded5bc37c3cc5fe9d9fad0d",
     "src/config.rs": "8591a74e942dec36beac02d0410d7e02cd1a2946270093c99bfa325570b2bd4f",
     "src/domain/mod.rs": "66bc2043e20f224d3a9b6e06bf83d94fbbddcb136945486f04053a044de9f8fc",
     "src/error.rs": "0681b7ea0d0623df343a7b7ff2b4bcc04c109cea81272a97b379ad3c22823561",
@@ -37,5 +38,24 @@
     "src/infrastructure/store.rs": "a485cf3e1bfd2ac5ed5202f6c218858121ce8f56d22703a89851bf1067bac240",
     "src/infrastructure/store_tests.rs": "de1c497dee22d1e4ae13118d325a9129430fde067a8a92f24728fbf5dabcf83d",
     "src/main.rs": "0eb5586f71f0a8e8bb3d2cf2eba86accf17e8a9ab73cabc6bee08020b3a8e839"
-  }
+  },
+  "previous_passage_suite": {
+    "runtime_base": "cf274eb6a54957c1bc59be2cd12e8e440b8046f5",
+    "pending_change": "exact passage selection and citations",
+    "passed": 24,
+    "failed": 0,
+    "observed_at": "2026-10-19T11:07:09.733258+00:00"
+  },
+  "commands": [
+    [
+      "cargo",
+      "test",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "build",
+      "--locked"
+    ]
+  ]
 }
