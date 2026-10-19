@@ -8,6 +8,10 @@ pub struct Source {
     pub url: String,
     pub page: Option<u32>,
     pub sha256: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub text_sha256: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub record_hash_scope: Option<String>,
     pub licence: String,
 }
 #[derive(Clone, Serialize, Deserialize)]

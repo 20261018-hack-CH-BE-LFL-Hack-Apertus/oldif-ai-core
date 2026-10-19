@@ -1,5 +1,6 @@
 use crate::{api::dto::RunRequest, config::Config, domain, error::CoreError};
 use serde_json::{Value, json};
+use sha2::{Digest, Sha256};
 use std::collections::HashSet;
 pub fn request(r: &RunRequest, c: &Config) -> Result<(), CoreError> {
     if r.question.trim().is_empty() || r.question.len() > 8000 {
@@ -37,11 +38,27 @@ pub fn request(r: &RunRequest, c: &Config) -> Result<(), CoreError> {
                 "Every source requires an original SHA-256 hash".into(),
             ));
         }
+        validate_text_hash(s)?;
         if !s.url.starts_with("https://") && !s.url.starts_with("http://") {
             return Err(CoreError::Invalid(
                 "Every source requires an HTTP(S) provenance URL".into(),
             ));
         }
+    }
+    Ok(())
+}
+pub fn source_text_hash(source: &crate::api::dto::Source) -> String {
+    format!("{:x}", Sha256::digest(source.text.as_bytes()))
+}
+fn validate_text_hash(source: &crate::api::dto::Source) -> Result<(), CoreError> {
+    if source
+        .text_sha256
+        .as_ref()
+        .is_some_and(|hash| !hash.eq_ignore_ascii_case(&source_text_hash(source)))
+    {
+        return Err(CoreError::Invalid(
+            "Source text_sha256 does not match its exact text".into(),
+        ));
     }
     Ok(())
 }
@@ -72,6 +89,13 @@ pub fn parse_json(content: &str) -> Result<Value, CoreError> {
     Ok(value)
 }
 pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError> {
+    if candidate["abstained"].as_bool() == Some(true) {
+        let mut result = abstention(request, "model_declared_insufficient_evidence");
+        result["system_validation"]["repair_exhausted"] = json!(false);
+        result["model"] = json!(request.model);
+        result["locale"] = json!(request.locale);
+        return Ok(result);
+    }
     let answer = candidate
         .get("answer")
         .and_then(Value::as_str)
@@ -88,7 +112,7 @@ pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError
         let quote = cite["quote"].as_str().unwrap_or_default();
         if let Some(source) = request.sources.iter().find(|s| s.id == id) {
             if domain::cited_quote_exists(&source.text, quote) {
-                citations.push(json!({"source_id":id,"quote":quote,"page":source.page,"url":source.url,"title":source.title,"sha256":source.sha256,"licence":source.licence,"locator_kind":if source.page.is_some(){"page"}else{"record"}}));
+                citations.push(json!({"source_id":id,"quote":quote,"page":source.page,"url":source.url,"title":source.title,"sha256":source.sha256,"record_hash_scope":source.record_hash_scope.as_deref().unwrap_or("unspecified_input_provenance"),"text_sha256":source_text_hash(source),"licence":source.licence,"locator_kind":if source.page.is_some(){"page"}else{"record"}}));
                 continue;
             }
         }
@@ -140,6 +164,8 @@ mod tests {
                 url: "https://example.org".into(),
                 page: Some(1),
                 sha256: "a".repeat(64),
+                text_sha256: None,
+                record_hash_scope: None,
                 licence: "CC0".into(),
             }],
             session_id: "s".into(),
@@ -163,6 +189,38 @@ mod tests {
         let v=ground(json!({"answer":"1799","citations":[{"source_id":"s1","quote":"1799","url":"https://evil.example"}]}),&req()).unwrap();
         assert_eq!(v["citations"][0]["url"], "https://example.org");
         assert_eq!(v["citations"][0]["page"], 1);
+        assert_eq!(v["citations"][0]["sha256"], "a".repeat(64));
+        assert_eq!(
+            v["citations"][0]["text_sha256"],
+            source_text_hash(&req().sources[0])
+        );
+    }
+    #[test]
+    fn text_hash_is_separate_from_record_hash_and_rejects_tampering() {
+        let mut request = req();
+        request.sources[0].record_hash_scope = Some("canonical_row_json".into());
+        request.sources[0].text_sha256 = Some(source_text_hash(&request.sources[0]));
+        assert!(validate_text_hash(&request.sources[0]).is_ok());
+        let value=ground(json!({"answer":"1799","citations":[{"source_id":"s1","quote":"1799","text_sha256":"forged"}]}),&request).unwrap();
+        assert_eq!(
+            value["citations"][0]["record_hash_scope"],
+            "canonical_row_json"
+        );
+        assert_eq!(
+            value["citations"][0]["text_sha256"],
+            request.sources[0].text_sha256.clone().unwrap()
+        );
+        request.sources[0].text.push_str(" changed");
+        assert!(validate_text_hash(&request.sources[0]).is_err());
+    }
+    #[test]
+    fn declared_abstention_cannot_publish_unsupported_claims() {
+        let value=ground(json!({"answer":"Latin was taught","citations":[{"source_id":"s1","quote":"1799"}],"entities":[{"name":"Latin","source_id":"s1"}],"timeline":[{"date":"1799","description":"Latin taught","source_id":"s1"}],"abstained":true}),&req()).unwrap();
+        assert_eq!(value["citations"], json!([]));
+        assert_eq!(value["entities"], json!([]));
+        assert_eq!(value["timeline"], json!([]));
+        assert!(!value.to_string().contains("Latin"));
+        assert_eq!(value["system_validation"]["repair_exhausted"], false);
     }
     #[test]
     fn unsupported_answer_requires_abstention() {

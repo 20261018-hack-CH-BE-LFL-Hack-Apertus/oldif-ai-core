@@ -1,4 +1,4 @@
-use super::{stages, workflow::Engine};
+use super::{stages, validation, workflow::Engine};
 use crate::{
     api::dto::RunRequest,
     config::Config,
@@ -19,10 +19,10 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
     ) -> Json<Value> {
         requests.lock().await.push(body.clone());
         let message = if body.get("tools").is_some() {
-            json!({"role":"assistant","content":null,"tool_calls":(0..3).map(|i|json!({"id":format!("call-{i}"),"function":{"name":"search_sources","arguments":"{\"query\":\"school\"}"}})).collect::<Vec<_>>()})
+            json!({"role":"assistant","content":null,"tool_calls":(0..3).map(|i|json!({"id":format!("call-{i}"),"function":{"name":"read_source","arguments":"{\"source_id\":\"s1\"}"}})).collect::<Vec<_>>()})
         } else {
             assert_eq!(body["response_format"]["type"], "json_object");
-            json!({"role":"assistant","content":"{\"answer\":\"Insufficient evidence\",\"citations\":[],\"abstained\":true}"})
+            json!({"role":"assistant","content":json!({"answer":"Latin was taught","citations":[],"abstained":true,"verdict":"supported","findings":["Latin was taught"],"proposals":[{"kind":"source_review","description":"Latin was taught","rationale":"Latin was taught"}]}).to_string()})
         };
         Json(json!({"model":"apertus-v1-5-8b","choices":[{"message":message}]}))
     }
@@ -68,7 +68,7 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
         question: "Find school evidence".into(),
         locale: "en".into(),
         model: "apertus-v1-5-8b".into(),
-        sources: vec![],
+        sources: vec![serde_json::from_value(json!({"id":"s1","title":"Source","text":"school source","url":"https://example.org","page":null,"sha256":"a".repeat(64),"licence":"CC0"})).unwrap()],
         session_id: "fixture".into(),
         user_id: "fixture".into(),
         history: vec![],
@@ -82,7 +82,30 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
     stages::research(&engine, &run, &request, &json!({}))
         .await
         .unwrap();
+    let grounded = validation::ground(answer, &request).unwrap();
+    let review = stages::verify(&engine, &run, &request, &grounded)
+        .await
+        .unwrap();
+    let proposals = stages::reflect(&engine, &run, &request, &grounded)
+        .await
+        .unwrap();
+    assert_eq!(review["verdict"], "abstain");
+    assert_eq!(review["output_policy"], "deterministic_abstention");
+    assert!(!review.to_string().contains("Latin"));
+    assert_eq!(proposals, json!([]));
     let snapshot = run.snapshot.lock().await;
+    assert!(
+        snapshot
+            .events
+            .iter()
+            .any(|event| event.kind == "review.output_bounded")
+    );
+    assert!(
+        snapshot
+            .events
+            .iter()
+            .any(|event| event.kind == "proposals.withheld")
+    );
     assert_eq!(
         snapshot
             .events
@@ -100,7 +123,13 @@ async fn tool_budget_finalizes_without_executing_excess_calls_and_survives_revis
         1
     );
     let received = requests.lock().await;
-    assert_eq!(received.len(), 3);
+    assert_eq!(received.len(), 5);
+    assert_eq!(received[0]["tool_choice"], "required");
+    assert_eq!(received[0]["tools"][0]["function"]["name"], "read_source");
+    assert_eq!(
+        received[0]["tools"][0]["function"]["parameters"]["properties"]["source_id"]["enum"],
+        json!(["s1"])
+    );
     assert!(received[1].get("tools").is_none());
     assert!(received[2].get("tools").is_none());
     drop(snapshot);

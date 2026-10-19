@@ -102,6 +102,8 @@ impl Provider {
                 "Thinking routes do not permit provider tools".into(),
             ));
         }
+        let first_tool_round =
+            tools.is_some() && !messages.iter().any(|message| message["role"] == "tool");
         let mut body = json!({"model":model,"messages":messages,"stream":false});
         if model.starts_with("apertus-") {
             body["max_tokens"] = json!(self.config.output_tokens);
@@ -113,7 +115,7 @@ impl Provider {
         }
         if let Some(tools) = tools {
             body["tools"] = tools;
-            body["tool_choice"] = json!("auto");
+            body["tool_choice"] = json!(if first_tool_round { "required" } else { "auto" });
         }
         let response = self
             .client

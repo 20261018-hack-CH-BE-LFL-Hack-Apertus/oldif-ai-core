@@ -8,8 +8,16 @@ pub async fn complete(
     json_mode: bool,
 ) -> Result<Value, CoreError> {
     let (base, key) = p.route(model)?;
+    let first_tool_round =
+        tools.is_some() && !messages.iter().any(|message| message["role"] == "tool");
     let mut body = json!({"model":model,"input":input_items(messages),"max_output_tokens":p.config.output_tokens,"store":false,"reasoning":{"effort":"low"},"include":["reasoning.encrypted_content"]});
-    body["tool_choice"] = json!(if tools.is_some() { "auto" } else { "none" });
+    body["tool_choice"] = json!(if first_tool_round {
+        "required"
+    } else if tools.is_some() {
+        "auto"
+    } else {
+        "none"
+    });
     if json_mode {
         body["text"] = json!({"format":{"type":"json_object"}});
     }

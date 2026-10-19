@@ -6,6 +6,15 @@ pub fn definitions() -> Value {
      {"type":"function","function":{"name":"read_source","description":"Read one approved archival source by its supplied ID.","parameters":{"type":"object","properties":{"source_id":{"type":"string"}},"required":["source_id"],"additionalProperties":false}}}
     ])
 }
+pub fn for_sources(sources: &[Source], read_only: bool) -> Value {
+    let mut functions = definitions().as_array().unwrap().clone();
+    functions[1]["function"]["parameters"]["properties"]["source_id"]["enum"] =
+        json!(sources.iter().map(|source| &source.id).collect::<Vec<_>>());
+    if read_only {
+        functions.remove(0);
+    }
+    json!(functions)
+}
 pub fn execute(name: &str, args: &Value, sources: &[Source]) -> Result<Value, CoreError> {
     match name {
         "read_source" => {
