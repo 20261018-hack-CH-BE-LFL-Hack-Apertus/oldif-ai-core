@@ -5,9 +5,14 @@ pub async fn complete(
     model: &str,
     messages: Vec<Value>,
     tools: Option<Value>,
+    json_mode: bool,
 ) -> Result<Value, CoreError> {
     let (base, key) = p.route(model)?;
     let mut body = json!({"model":model,"input":input_items(messages),"max_output_tokens":p.config.output_tokens,"store":false,"reasoning":{"effort":"low"},"include":["reasoning.encrypted_content"]});
+    body["tool_choice"] = json!(if tools.is_some() { "auto" } else { "none" });
+    if json_mode {
+        body["text"] = json!({"format":{"type":"json_object"}});
+    }
     if let Some(tools) = tools {
         body["tools"]=json!(tools.as_array().into_iter().flatten().map(|t|json!({"type":"function","name":t["function"]["name"],"description":t["function"]["description"],"parameters":t["function"]["parameters"],"strict":true})).collect::<Vec<_>>());
     }
@@ -36,7 +41,7 @@ pub async fn complete(
     let message =
         json!({"role":"assistant","content":text,"tool_calls":calls,"_responses_output":output});
     Ok(
-        json!({"id":value["id"],"model":value["model"],"usage":value["usage"],"api":"responses","choices":[{"message":message}]}),
+        json!({"id":value["id"],"model":value["model"],"usage":value["usage"],"api":"responses","choices":[{"message":message,"finish_reason":value["status"]}]}),
     )
 }
 fn input_items(messages: Vec<Value>) -> Vec<Value> {

@@ -86,6 +86,7 @@ impl Provider {
         model: &str,
         messages: Vec<Value>,
         tools: Option<Value>,
+        json_mode: bool,
     ) -> Result<Value, CoreError> {
         if model == self.config.reference_model
             && (tools.is_some()
@@ -93,7 +94,7 @@ impl Provider {
                     .iter()
                     .any(|m| m.get("_responses_output").is_some()))
         {
-            return super::responses::complete(self, model, messages, tools).await;
+            return super::responses::complete(self, model, messages, tools, json_mode).await;
         }
         let (base, key) = self.route(model)?;
         if tools.is_some() && !domain::supports_tools(model) {
@@ -106,6 +107,9 @@ impl Provider {
             body["max_tokens"] = json!(self.config.output_tokens);
         } else {
             body["max_completion_tokens"] = json!(self.config.output_tokens);
+        }
+        if json_mode && tools.is_none() {
+            body["response_format"] = json!({"type":"json_object"});
         }
         if let Some(tools) = tools {
             body["tools"] = tools;

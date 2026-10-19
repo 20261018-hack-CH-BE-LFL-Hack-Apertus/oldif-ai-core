@@ -46,7 +46,7 @@ pub async fn chat(
         messages
             .push(json!({"role":if role=="assistant"{"assistant"}else{"user"},"content":content}));
     }
-    let response = e.provider.chat(&r.model, messages, None).await?;
+    let response = e.provider.chat(&r.model, messages, None, false).await?;
     if !r.stream {
         return Ok(Json(response).into_response());
     }

@@ -152,7 +152,7 @@ impl Engine {
         let started = std::time::Instant::now();
         let call_id = uuid::Uuid::new_v4().to_string();
         self.store.emit(run,"model.started",agent,json!({"call_id":call_id,"model":model,"tools_enabled":tools.is_some(),"max_output_tokens":self.config.output_tokens})).await?;
-        let result = tokio::select! {result=self.provider.chat(model,messages,tools)=>result,_=cancelled(run)=>Err(CoreError::Cancelled)};
+        let result = tokio::select! {result=self.provider.chat(model,messages,tools,true)=>result,_=cancelled(run)=>Err(CoreError::Cancelled)};
         let response = match result {
             Ok(value) => value,
             Err(error) => {
@@ -161,7 +161,7 @@ impl Engine {
             }
         };
         Self::check_cancel(run)?;
-        self.store.emit(run,"model.completed",agent,json!({"call_id":call_id,"requested_model":model,"served_model":response["model"],"provider_response_id":response["id"],"api":response.get("api").cloned().unwrap_or(json!("chat/completions")),"usage":response["usage"],"duration_ms":started.elapsed().as_millis()})).await?;
+        self.store.emit(run,"model.completed",agent,json!({"call_id":call_id,"requested_model":model,"served_model":response["model"],"provider_response_id":response["id"],"api":response.get("api").cloned().unwrap_or(json!("chat/completions")),"usage":response["usage"],"finish_reason":response["choices"][0]["finish_reason"],"duration_ms":started.elapsed().as_millis()})).await?;
         Ok(response["choices"][0]["message"].clone())
     }
 }
