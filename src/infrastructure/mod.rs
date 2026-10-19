@@ -1,3 +1,8 @@
+pub mod diarization;
+pub mod diarization_config;
+pub mod diarization_process;
+pub mod diarization_result;
+pub mod diarization_wav;
 pub mod observations;
 pub mod provider;
 pub mod responses;

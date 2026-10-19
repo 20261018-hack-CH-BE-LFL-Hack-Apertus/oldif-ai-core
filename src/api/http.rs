@@ -23,6 +23,12 @@ pub fn router(engine: Engine) -> Router {
         .route("/v1/runs/{id}/steer", post(steer))
         .route("/v1/runs/{id}/cancel", post(cancel))
         .route("/v1/realtime/session", post(super::voice::session))
+        .route(
+            "/v1/diarization",
+            get(super::diarization::capability)
+                .post(super::diarization::process)
+                .layer(axum::extract::DefaultBodyLimit::max(2_900_000)),
+        )
         .route("/v1/chat/completions", post(super::compatibility::chat))
         .route_layer(middleware::from_fn_with_state(engine.clone(), authenticate));
     Router::new()
