@@ -1,0 +1,163 @@
+{
+  "observed_at": "2026-10-19T10:03:17.807632+00:00",
+  "discovery": "Official NVIDIA model repository API and immutable model cards, metadata only; weights never downloaded",
+  "matching_configuration_names": [],
+  "models": [
+    {
+      "model_id": "nvidia/Nemotron-3.5-Parse",
+      "metadata_http_status": 200,
+      "revision": "e7ea79242a87ea0ad3919b672bfedb429a683206",
+      "last_modified": "2026-10-19T02:02:21.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/raw/e7ea79242a87ea0ad3919b672bfedb429a683206/README.md",
+      "model_card_sha256": "10929e823b91e440c973843f61335950fc2eee2c45e807e2da7850db64d4392b",
+      "pipeline_tag": "image-text-to-text",
+      "licence": "openmdw-1.1",
+      "release_date_claims": [
+        "### Release Date:  <br>"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Page segmentation and transcription candidate",
+      "architecture_and_boundary": "C-RADIOv4 vision plus 10-layer mBART visual-prefix decoder; returns text, classes, coordinates and reading order; retain page image hash and bounding boxes, review handwriting accuracy on gold first",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "metadata_http_status": 200,
+      "revision": "59b8721646c38111a242da18218859fb2b454322",
+      "last_modified": "2026-10-16T23:39:43.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4/raw/59b8721646c38111a242da18218859fb2b454322/README.md",
+      "model_card_sha256": "c9fc198e4414632c9dc8441ba02b3817b1a9968b5127a2de5073aae61fa1ff13",
+      "pipeline_tag": "image-text-to-text",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional visual verification and difficult page reasoning",
+      "architecture_and_boundary": "120B total,12B active hybrid Mamba-Transformer MoE with visual encoder; NVFP4/BF16 separately pinned, model benchmarks are not Oldif performance",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "metadata_http_status": 200,
+      "revision": "1f8953f7f0935358e3605150d22bc15df062061c",
+      "last_modified": "2026-10-16T23:39:54.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16/raw/1f8953f7f0935358e3605150d22bc15df062061c/README.md",
+      "model_card_sha256": "5314d0e464ebb95a4e84a29736b0297a32a0c9eea814a65d8f1791e4cb3f91fb",
+      "pipeline_tag": "image-text-to-text",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional visual verification and difficult page reasoning",
+      "architecture_and_boundary": "120B total,12B active hybrid Mamba-Transformer MoE with visual encoder; NVFP4/BF16 separately pinned, model benchmarks are not Oldif performance",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "metadata_http_status": 200,
+      "revision": "c6cc2e8ffa353403213d6b9b18aaf8eb684d705a",
+      "last_modified": "2026-10-15T18:09:19.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB/raw/c6cc2e8ffa353403213d6b9b18aaf8eb684d705a/README.md",
+      "model_card_sha256": "340e3303d0a98ef9471fc949ea723a36080a7f14121f1dfa5753ef9ab64d0590",
+      "pipeline_tag": "image-text-to-text",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional compact multimodal worker",
+      "architecture_and_boundary": "74B total,9B active compressed LatentMoE with C-RADIOv4-H; 24GB label is model variant, not evidence of Apple GPU compatibility",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/Nemotron-3-Diarization",
+      "metadata_http_status": 200,
+      "revision": "f667ed73aee57d40cc39428eb768b4fd87a0a29e",
+      "last_modified": "2026-09-24T05:52:51.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/Nemotron-3-Diarization/raw/f667ed73aee57d40cc39428eb768b4fd87a0a29e/README.md",
+      "model_card_sha256": "5fe88ca4020d2ee134f806a0a02c52c19855b73047bc2e6f25b9171e1abeebfd",
+      "pipeline_tag": "voice-activity-detection",
+      "licence": "openmdw-1.1",
+      "release_date_claims": [
+        "## Release Date"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional oral-history speaker turns",
+      "architecture_and_boundary": "100M 31-layer Transformer with streaming state; 16kHz mono input; eight generic speaker-activity channels. Labels do not identify people or prove transcript accuracy",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/Nemotron-3.5-Embed-8B-BF16",
+      "metadata_http_status": 200,
+      "revision": "ae7240ed24a9111d6be25bf3e4308951a797393c",
+      "last_modified": "2026-10-16T10:09:03.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16/raw/ae7240ed24a9111d6be25bf3e4308951a797393c/README.md",
+      "model_card_sha256": "fb3e09421f5816635b4c3bcf84a33482ddacf60b3104f86d706ea84497a26f49",
+      "pipeline_tag": "visual-document-retrieval",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date:",
+        "Hugging Face 10/20/2026 via https://huggingface.co/nvidia/Nemotron-3.5-Embed-8B-BF16"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional visual document retrieval",
+      "architecture_and_boundary": "Multimodal encoder supporting text queries and text/image documents; 8B variant shares text space with Nemotron-3-Embed, produces normalized4096D vectors; source pages must retain provenance",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/Nemotron-3.5-Embed-1B-BF16",
+      "metadata_http_status": 200,
+      "revision": "2a4f9cb55266a4a1453cabba86992623630d93ac",
+      "last_modified": "2026-10-16T09:50:43.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16/raw/2a4f9cb55266a4a1453cabba86992623630d93ac/README.md",
+      "model_card_sha256": "79f76ca5bd39dfb44d87249bab3a2126802757bb672c9f268cbd217e981724f9",
+      "pipeline_tag": "visual-document-retrieval",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date:",
+        "Hugging Face 10/20/2026 via https://huggingface.co/nvidia/Nemotron-3.5-Embed-1B-BF16"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional visual document retrieval",
+      "architecture_and_boundary": "Multimodal encoder supporting text queries and text/image documents; 8B variant shares text space with Nemotron-3-Embed, produces normalized4096D vectors; source pages must retain provenance",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    },
+    {
+      "model_id": "nvidia/Nemotron-3.5-Rerank-8B-BF16",
+      "metadata_http_status": 200,
+      "revision": "c0dc331ef5bfe7ba7ae36f92b41fec8356690b89",
+      "last_modified": "2026-10-16T10:36:06.000Z",
+      "model_card_url": "https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16/raw/c0dc331ef5bfe7ba7ae36f92b41fec8356690b89/README.md",
+      "model_card_sha256": "71c5bc7f112503b8bfc5ebf4a79793693658ed6bb2d52f16bd05dddcbc2c7559",
+      "pipeline_tag": "text-ranking",
+      "licence": "other",
+      "release_date_claims": [
+        "### Release Date:",
+        "Hugging Face 10/20/2026 via https://huggingface.co/nvidia/Nemotron-3.5-Rerank-8B-BF16"
+      ],
+      "inference_test": "NOT_RUN",
+      "reason": "No configured NVIDIA inference endpoint/credential or GPU runtime for these exact models",
+      "proposed_role": "Optional retrieved-page reranking",
+      "architecture_and_boundary": "Pixtral vision and bidirectional Ministral3 text tower; query-document pair produces relevance logit, not factual confidence",
+      "adapter_status": "NOT_CONFIGURED",
+      "quality_metrics": "NOT_RUN"
+    }
+  ],
+  "release_date_caution": "Some publicly readable model cards claim 2026-10-20, later than observation 2026-10-19. Public metadata availability is recorded; no claim that their announced release date has passed."
+}

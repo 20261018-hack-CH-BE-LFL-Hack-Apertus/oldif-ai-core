@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-10-19T10:03:32.997332+00:00",
+  "sources": [
+    {
+      "name": "MDASH",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/12/autonomous-security-research-with-microsofts-mdash-for-defenders/",
+      "error": "HTTPError"
+    },
+    {
+      "name": "AutoData",
+      "url": "https://facebookresearch.github.io/RAM/blogs/autodata/",
+      "http_status": 200,
+      "sha256": "1d602788458f9560f6c5f5eb97a18c94905906b7b48406571394562f5cbe6bf2",
+      "title": [
+        "RAM @ Meta AI | A framework to study AI models in Reasoning, Alignment, and use of Memory (RAM)."
+      ]
+    },
+    {
+      "name": "AutoData-paper",
+      "url": "https://arxiv.org/abs/2606.25996",
+      "http_status": 200,
+      "sha256": "3432f5edc50fef04804e37934913fc6723f8210dfc2de02ad5ed687c6a9fddff",
+      "title": [
+        "[2606.25996] Autodata: An agentic data scientist to create high quality synthetic data"
+      ]
+    },
+    {
+      "name": "MDASH-Learn",
+      "url": "https://learn.microsoft.com/en-us/security-exposure-management/ai-code-security-overview",
+      "http_status": 200,
+      "sha256": "7301da646b818c92376e490f83b83a73f64646bcca87e85ddeaabd354ed245f3",
+      "title": [
+        "Codename MDASH Overview - Microsoft Security Exposure Management | Microsoft Learn"
+      ]
+    },
+    {
+      "name": "MDASH-Microsoft",
+      "url": "https://news.microsoft.com/source/emea/features/mdash-el-sistema-multimodelo-de-microsoft-lidera-el-ranking-de-cybergym-en-seguridad-de-ia/",
+      "error": "HTTPError"
+    }
+  ],
+  "assessment": [
+    {
+      "system": "MDASH",
+      "status": "REFERENCE_ONLY_NOT_INSTALLED",
+      "official_scope": "Multi-model code vulnerability discovery, semantic validation and proof inside Microsoft Defender; access through tenant connectors and CLI",
+      "adopted_pattern": "Separate planner, bounded evidence research, verification and outcome ownership with persisted events",
+      "difference": "Oldif same-selected-model verifier is not MDASH multi-model debate; exact source quotes are not taint analysis or proof of exploit; no MDASH scans executed",
+      "blocker": "No configured Defender MDASH tenant/connector/CLI authorization"
+    },
+    {
+      "system": "Meta Autodata",
+      "status": "REFERENCE_PATTERN_ONLY_NOT_TRAINING",
+      "official_scope": "An agentic data scientist iterates generation, qualitative inspection, quantitative evaluation and data recipe improvement, with optional outer-loop meta-optimization",
+      "adopted_pattern": "Dreamer creates at most two unapplied proposals with lineage, and a separate reproducible evaluation client records real cases and failures",
+      "difference": "Oldif does not modify its model weights, prompts or historical sources. Proposals are never held-out human gold. Neither RAM code nor paper benchmark training was executed",
+      "blocker": "No authorized training corpus, frozen human gold, training environment or GPU budget; model-specific quality scores remain NOT_RUN"
+    }
+  ]
+}
