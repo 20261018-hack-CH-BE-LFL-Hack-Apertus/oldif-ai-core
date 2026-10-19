@@ -2,7 +2,7 @@ use crate::api::dto::Source;
 use serde_json::{Value, json};
 use std::collections::HashSet;
 
-pub const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"entities":[{"name":string,"type":string,"source_id":string}],"timeline":[{"date":string,"description":string,"source_id":string}],"uncertainty":[string],"abstained":boolean}"#;
+pub const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"entities":[],"timeline":[],"assertions":[{"kind":"title"|"date"|"entity"|"relation","subject":string,"predicate":string,"value":string,"source_id":string,"passage_id":string}],"uncertainty":[string],"abstained":boolean}. Assertions are optional, at most 30, and only when requested. Copy value and subject exactly from the same passage (subject may instead be its source_id). Allowed kind/predicate pairs: title/document_title; date/date_mentioned or event_date (value must be YYYY or YYYY-MM-DD); entity/person, place, organization or concept; relation/related_to, located_in, part_of or reported_by. Preserve differing attributed values from separate sources; never merge them into a consensus. Keep assertions empty for unsupported readings. Do not add human approval or evidence fields; the application validates and supplies them"#;
 
 pub fn catalog(mut context: Value, sources: &[Source]) -> Value {
     context["sources"] = json!(sources.iter().map(|source|json!({"id":source.id,"title":source.title,"url":source.url,"page":source.page,"licence":source.licence,"sha256":source.sha256})).collect::<Vec<_>>());

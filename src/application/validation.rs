@@ -153,23 +153,10 @@ pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError
                 .into(),
         ));
     }
+    let (assertions, assertion_validation) = super::assertions::ground(&candidate, request);
     Ok(
-        json!({"answer":answer,"citations":citations,"entities":grounded_items(&candidate["entities"],request),"timeline":grounded_items(&candidate["timeline"],request),"uncertainty":candidate.get("uncertainty").cloned().unwrap_or(json!([])),"abstained":abstained,"source_fidelity":"exact_quotes_checked_human_review_required","model":request.model,"locale":request.locale}),
+        json!({"answer":answer,"citations":citations,"entities":[],"timeline":[],"assertions":assertions,"assertion_validation":assertion_validation,"uncertainty":candidate.get("uncertainty").cloned().unwrap_or(json!([])),"abstained":abstained,"source_fidelity":"exact_quotes_checked_human_review_required","model":request.model,"locale":request.locale}),
     )
-}
-fn grounded_items(items: &Value, request: &RunRequest) -> Vec<Value> {
-    items
-        .as_array()
-        .into_iter()
-        .flatten()
-        .take(30)
-        .filter(|item| {
-            item["source_id"]
-                .as_str()
-                .is_some_and(|id| request.sources.iter().any(|s| s.id == id))
-        })
-        .cloned()
-        .collect()
 }
 #[cfg(test)]
 mod tests {
