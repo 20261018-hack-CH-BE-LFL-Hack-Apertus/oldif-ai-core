@@ -1,0 +1,36 @@
+{
+  "type": "synthetic text-to-speech; no recorded human microphone",
+  "voices": [
+    "macOS Samantha",
+    "macOS Daniel"
+  ],
+  "segments": [
+    {
+      "speaker": "synthetic-a",
+      "start": 0,
+      "end": 8.2085625,
+      "source": "voice-a.wav"
+    },
+    {
+      "speaker": "synthetic-b",
+      "start": 9.2085625,
+      "end": 17.989312499999997,
+      "source": "voice-b.wav"
+    },
+    {
+      "speaker": "synthetic-a",
+      "start": 18.989312499999997,
+      "end": 27.197874999999996,
+      "source": "voice-a.wav"
+    },
+    {
+      "speaker": "synthetic-b",
+      "start": 28.197874999999996,
+      "end": 36.978624999999994,
+      "source": "voice-b.wav"
+    }
+  ],
+  "seconds": 37.978624999999994,
+  "sha256": "4933043444985247959dd357ceb76133c6d08ccc48abd9b504957e3fe8a92f0e",
+  "audio_listening_review": false
+}

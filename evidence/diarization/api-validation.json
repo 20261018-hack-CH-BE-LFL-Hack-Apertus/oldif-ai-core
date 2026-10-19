@@ -1,0 +1,147 @@
+{
+  "observed_at": "2026-10-19T12:54:55.961186+00:00",
+  "class": "real authenticated core HTTP through pinned Apple Container CPU runtime; synthetic fixture",
+  "capability": {
+    "available": true,
+    "format": "PCM16 mono16kHz WAV",
+    "identity_inference": false,
+    "local_processing_confirmation_required": true,
+    "max_audio_bytes": 2900000,
+    "max_audio_seconds": 90.0,
+    "model": "nvidia/Nemotron-3-Diarization",
+    "runtime": "NVIDIA/NeMo-Speech.cpp"
+  },
+  "checks": [
+    {
+      "name": "capability",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "elapsed_ms": 12
+    },
+    {
+      "name": "unauthorized",
+      "status": 401,
+      "expected": 401,
+      "passed": true,
+      "elapsed_ms": 1
+    },
+    {
+      "name": "missing_explicit_processing_confirmation",
+      "status": 400,
+      "expected": 400,
+      "passed": true,
+      "elapsed_ms": 2
+    },
+    {
+      "name": "wrong_content_type",
+      "status": 400,
+      "expected": 400,
+      "passed": true,
+      "elapsed_ms": 2
+    },
+    {
+      "name": "malformed_audio",
+      "status": 400,
+      "expected": 400,
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "body_limit",
+      "status": 413,
+      "expected": 413,
+      "passed": true,
+      "elapsed_ms": 2
+    },
+    {
+      "name": "real_cpu_fixture",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "elapsed_ms": 35090
+    },
+    {
+      "name": "two_speakers",
+      "passed": true
+    },
+    {
+      "name": "four_alternating_turns",
+      "passed": true
+    },
+    {
+      "name": "input_hash",
+      "passed": true
+    },
+    {
+      "name": "model_hash",
+      "passed": true
+    },
+    {
+      "name": "no_identity_inference",
+      "passed": true
+    },
+    {
+      "name": "no_transcription_claim",
+      "passed": true
+    },
+    {
+      "name": "audio_not_retained",
+      "passed": true
+    },
+    {
+      "name": "temporary_audio_cleanup",
+      "passed": true
+    }
+  ],
+  "result": {
+    "audio_retained": false,
+    "audio_seconds": 37.978625,
+    "execution_id": "a19a378b-480f-4267-9e93-a7c7681c5ee3",
+    "identity_inference": false,
+    "input_sha256": "4933043444985247959dd357ceb76133c6d08ccc48abd9b504957e3fe8a92f0e",
+    "license": "OpenMDW-1.1",
+    "model": "nvidia/Nemotron-3-Diarization",
+    "model_revision": "f667ed73aee57d40cc39428eb768b4fd87a0a29e",
+    "model_sha256": "08456d9e22cd9a323c0364d98375f3746d6e68507ebb705cd46438c534c7a3a1",
+    "runtime": "NVIDIA/NeMo-Speech.cpp",
+    "runtime_version": "0.2.0",
+    "segments": [
+      {
+        "end": 8.089,
+        "speaker": "speaker_1",
+        "start": 0.0
+      },
+      {
+        "end": 17.859,
+        "speaker": "speaker_2",
+        "start": 8.961
+      },
+      {
+        "end": 27.089,
+        "speaker": "speaker_1",
+        "start": 18.721
+      },
+      {
+        "end": 36.859,
+        "speaker": "speaker_2",
+        "start": 27.931
+      }
+    ],
+    "speaker_count": 2,
+    "status": "completed",
+    "transcription_performed": false
+  },
+  "provider_calls": 0,
+  "limits": [
+    "No human microphone",
+    "No listening review",
+    "No transcript",
+    "No real-world diarization error-rate benchmark"
+  ],
+  "temporary_audio_cleanup": {
+    "directory_count_after_request": 0,
+    "passed": true,
+    "scope": "server-created oldif-diarization-* scratch directories in process temp directory"
+  }
+}

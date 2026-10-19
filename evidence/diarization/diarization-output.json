@@ -1,0 +1,9 @@
+{
+  "file": "/input/two-speaker.wav",
+  "segments": [
+    {"start": 0.000, "end": 8.089, "speaker": 1},
+    {"start": 8.961, "end": 17.859, "speaker": 2},
+    {"start": 18.721, "end": 27.089, "speaker": 1},
+    {"start": 27.931, "end": 36.859, "speaker": 2}
+  ]
+}
