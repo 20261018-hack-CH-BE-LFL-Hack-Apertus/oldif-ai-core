@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "reference_status": "published_transcription_reference_not_human_reviewed_qa",
+  "source": {
+    "id": "stapfer-2027",
+    "title": "Alpthal — Fliesstextantwort (Gesamt)",
+    "text": "Alpthale eine eigene gemeinde ein kleines dörfchen von 10 häüsern im durchmesser eine grosse Stunde lang,  eine kleine Stunde von dem ort gegen Schweiz 11 häüser: in brunni: gegen schweiz Einsidlen ein grosse 1/4 stund: 9 haüser: im ganzen 30 haüser im kirchgang schweiz nun aber eigene begräbnis und taufzugehörr, eigene Municipalitat und agent: im kanton Waldstätten districkt Einsidlen: in diese bezirckes schuhle könten bej 40 kinder in die schule kommen, aber wegen schlechter ordnung seind 3 winter etwan 20 erschienen und das schlecht und selten.die nachste schuhle auf schweiz 3 stunde: die andern auf die Trachlauben ein Stunde oder 1/2 stunde.über die nächststehenden Fragen antworte ich im ganzen mit einem allgemeinen Bericht: ||[Seite 2] die suhle Schule mus in diesem ort sehr schlecht gewesen sejn weil ich alda keine einzige persohn antrafe, welche recht lesen keine Schrift weder zu machen noch zu läsen im stande ware: N B. ich müste also fast alles sein, wen das volk in der wirklichen Lage bestehen wolte: geistlich und weltliches zu besorgen lage mir ob, ich mache diese anmerkung, weil sie erlaubt und mir ohne grund Zur last gelegt wurde, ich frage mich aber vor jeder behörde gewissenhaft zu verantworten, der sich nicht verantworten kan, mag leicht angeklagt und beschuldigt werden, wer aber Man ist der darf wie ein Man reden.Hier in diesem ort ist kein schuhlhause und keine schuhl Stube und kein schuhlehrer: keine Stiftung: und keine gemeinds steür:Es wurde zwar jedem geistlichen aufgetragen, die schule zu halten da wurde von jedem kind für die wochen 1 baz versprochen, aber diese machte nicht lust schule zu halten in demme wenige kinder erscheinen und was erschienen, noch schlecht. und die bezahlung eben so schlecht, und mit zwang Einzutreiben, wurde nicht thunlich weil die Leüte arm und die kinder alle zusamen genommen zum allgemeinen besten ||[Seite 3] nicht für einen Bazen erlehret,ich hielte 2 winter schule, hatte 20 kinder, aber wie schon gemerket sehr unfleisig, ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet: und dieses benimbt den Lust diese bemühung zu unternehmen: in deme die Pfarrverrrichtungen mit darzu obliegen, besonders die gewöhnliche fasten kinderlehr:dieses merke ich an, nicht das ich diese bemühung aufgeben wolle, aber weil ich ohnentgeltlich dieses thue, so nehme ich mir die fleisigen, und gelährigen und gehorsamen an, diese sollen im schreiben läsen und rechnen unterrichtet werden, gibt es noch dazwischen zeit, so werde ich trachten ihre vernunft mit wichtigen gegenstanden zu beschäftigen suchen.",
+    "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+    "page": null,
+    "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+    "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+    "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+    "record_hash_scope": "canonical-source-row-json",
+    "transcription_method": "published-Bern-datafication",
+    "transcription_review_status": "published_transcription_not_new_QA_gold"
+  },
+  "human_qa_gold_approved": false,
+  "expected_quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+  "questions": {
+    "en": [
+      "In source stapfer-2027, which original words list what children were intended to learn? Select only the directly relevant passage. Do not infer measured learning outcomes.",
+      "What percentage of these children became literate after this instruction? If the source provides no measured percentage, abstain."
+    ],
+    "es": [
+      "En stapfer-2027, ¿qué palabras originales enumeran lo que se pretendía enseñar a los niños? Selecciona solo el pasaje pertinente y no infieras resultados medidos.",
+      "¿Qué porcentaje de estos niños aprendió a leer después de esa enseñanza? Abstente si la fuente no ofrece un porcentaje medido."
+    ],
+    "de": [
+      "Welche Originalwörter in stapfer-2027 nennen, was die Kinder lernen sollten? Wähle nur die unmittelbar passende Passage und leite keine gemessenen Lernergebnisse ab.",
+      "Wie viel Prozent dieser Kinder konnten nach dem Unterricht lesen? Wenn die Quelle keinen gemessenen Prozentsatz enthält, enthalte dich einer Antwort."
+    ],
+    "de-CH": [
+      "Weli Originalwörter in stapfer-2027 nenned, was d Chind sötted lerne? Wähl nur die passend Passage und leit kei gmessen Lernergebnis ab.",
+      "Wie vill Prozent vo dene Chind hend nach em Unterricht chönne läse? Wenn d Quell kei gmessene Prozentsatz enthält, gib kei Antwort."
+    ],
+    "fr": [
+      "Dans stapfer-2027, quels mots originaux énumèrent ce que les enfants devaient apprendre ? Choisis uniquement le passage pertinent sans inférer des résultats mesurés.",
+      "Quel pourcentage de ces enfants savait lire après cet enseignement ? Abstiens-toi si la source ne fournit aucun pourcentage mesuré."
+    ],
+    "it": [
+      "In stapfer-2027, quali parole originali elencano ciò che i bambini dovevano imparare? Seleziona solo il passaggio pertinente senza inferire risultati misurati.",
+      "Quale percentuale di questi bambini sapeva leggere dopo tale insegnamento? Astieniti se la fonte non offre una percentuale misurata."
+    ],
+    "rm": [
+      "Tge pleds originals en stapfer-2027 enumereschan tge che ils uffants duevan emprender? Tscherna mo la passascha relevanta senza deducir resultats mesirads.",
+      "Tge procent da quests uffants saveva leger suenter quest instrucziun? Abstenai sche la funtauna na dat nagina procentuala mesirada."
+    ]
+  },
+  "criteria": [
+    "positive selects expected original passage",
+    "negative abstains from inventing a measured percentage",
+    "published answer contains only notice and source quotes",
+    "human approval remains false",
+    "original and text hashes are conserved"
+  ]
+}
