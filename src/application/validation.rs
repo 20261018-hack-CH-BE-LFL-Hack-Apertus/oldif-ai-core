@@ -39,6 +39,7 @@ pub fn request(r: &RunRequest, c: &Config) -> Result<(), CoreError> {
             ));
         }
         validate_text_hash(s)?;
+        super::page_locator::validate(s)?;
         if !s.url.starts_with("https://") && !s.url.starts_with("http://") {
             return Err(CoreError::Invalid(
                 "Every source requires an HTTP(S) provenance URL".into(),
@@ -132,6 +133,7 @@ pub fn ground(candidate: Value, request: &RunRequest) -> Result<Value, CoreError
                             .unwrap_or("unreviewed")
                     );
                 }
+                super::page_locator::apply(&mut citation, source);
                 citations.push(citation);
                 continue;
             }
@@ -188,6 +190,9 @@ mod tests {
                 record_hash_scope: None,
                 transcription_method: None,
                 transcription_review_status: None,
+                file_page_index: None,
+                printed_page_label: None,
+                printed_page_label_missing_reason: None,
                 licence: "CC0".into(),
             }],
             session_id: "s".into(),

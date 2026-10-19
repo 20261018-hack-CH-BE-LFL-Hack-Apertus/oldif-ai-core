@@ -7,6 +7,12 @@ pub struct Source {
     pub text: String,
     pub url: String,
     pub page: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub file_page_index: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub printed_page_label: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub printed_page_label_missing_reason: Option<String>,
     pub sha256: String,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub text_sha256: Option<String>,

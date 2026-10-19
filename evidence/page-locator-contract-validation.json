@@ -1,0 +1,38 @@
+{
+  "validation_class": "native Rust regression tests and build",
+  "native_tests": {
+    "passed": 39,
+    "failed": 0,
+    "build": "PASS"
+  },
+  "provider_calls": 0,
+  "checks": [
+    "one-based source page1 maps to separate zero-based file_page_index0",
+    "model-proposed printed label discarded in favor of canonical source null",
+    "record-only source retains null physical index and explicit missing reason",
+    "inconsistent provided index and page0 rejected",
+    "printed labels remain source-attested rather than inferred"
+  ],
+  "files": [
+    {
+      "path": "src/api/dto.rs",
+      "sha256": "38d7cf82afaafc7d49736304148142ad4375b800b10a635a3e485701a9f747e9"
+    },
+    {
+      "path": "src/application/mod.rs",
+      "sha256": "5ce64e75876df9f7acb35a6448cc3c84d5ce3fd3f6f8b01a377a370ba8da3cf7"
+    },
+    {
+      "path": "src/application/validation.rs",
+      "sha256": "e4a2e085c0d02422641cec888581be7eb77343088f23355df1304c1f5e81e724"
+    },
+    {
+      "path": "src/application/page_locator.rs",
+      "sha256": "9657c1474afcddb2ebd205360e5f010e09bd7b5e6067e5604fc445e8c6520959"
+    }
+  ],
+  "limits": [
+    "No new provider run; existing exact quotation and OCR provenance regressions passed.",
+    "No printed page labels or handwriting readings inferred."
+  ]
+}

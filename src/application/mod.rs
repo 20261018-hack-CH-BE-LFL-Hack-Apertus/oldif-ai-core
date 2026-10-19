@@ -4,6 +4,7 @@ pub mod passages;
 pub mod stages;
 pub mod tools;
 pub mod validation;
+pub mod page_locator;
 pub mod workflow;
 
 #[cfg(test)]
