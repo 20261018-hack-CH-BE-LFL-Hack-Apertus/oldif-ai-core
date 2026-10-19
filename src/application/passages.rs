@@ -79,6 +79,11 @@ pub fn resolve(source: &Source, citation: &Value) -> Result<Option<Passage>, Cor
 #[cfg(test)]
 mod tests {
     use super::*;
+    fn fixture_source() -> Source {
+        let original: Value =
+            serde_json::from_str(include_str!("../../evals/fixtures/stapfer-2027.json")).unwrap();
+        serde_json::from_value(json!({"id":original["id"],"title":original["title"],"text":original["text"],"url":original["url"],"page":original["page"],"sha256":original["sha256"],"licence":original["licence"]})).unwrap()
+    }
     #[test]
     fn offsets_recover_exact_unicode_text_and_preserve_spelling() {
         let text = "  Äpfel, läsen und rechnen. école!";
@@ -103,8 +108,7 @@ mod tests {
     }
     #[test]
     fn alpthal_passage_resolves_without_model_copying() {
-        let source: Source =
-            serde_json::from_str(include_str!("../../evals/fixtures/stapfer-2027.json")).unwrap();
+        let source = fixture_source();
         let passage = resolve(&source, &json!({"passage_id":"p048"}))
             .unwrap()
             .unwrap();
@@ -121,8 +125,7 @@ mod tests {
     }
     #[test]
     fn unknown_and_conflicting_citations_are_rejected() {
-        let source: Source =
-            serde_json::from_str(include_str!("../../evals/fixtures/stapfer-2027.json")).unwrap();
+        let source = fixture_source();
         assert!(resolve(&source, &json!({"passage_id":"p999"})).is_err());
         assert!(resolve(&source, &json!({"passage_id":null})).is_err());
         assert!(resolve(&source, &json!({"passage_id":"p048","quote":"lesen"})).is_err());

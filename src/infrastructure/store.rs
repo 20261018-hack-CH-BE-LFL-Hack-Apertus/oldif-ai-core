@@ -38,6 +38,19 @@ impl Store {
                 .map_err(|_| CoreError::Storage)?;
             let mut snapshot: RunSnapshot =
                 serde_json::from_slice(&bytes).map_err(|_| CoreError::Storage)?;
+            let mut migrated = false;
+            for (index, event) in snapshot.events.iter_mut().enumerate() {
+                if event.run_id != snapshot.run_id || event.sequence != index as u64 + 1 {
+                    return Err(CoreError::Storage);
+                }
+                let expected = format!("{}:{}", event.run_id, event.sequence);
+                if event.event_id.is_empty() {
+                    event.event_id = expected;
+                    migrated = true;
+                } else if event.event_id != expected {
+                    return Err(CoreError::Storage);
+                }
+            }
             if !domain::terminal(&snapshot.status) {
                 snapshot.status = "failed".into();
                 snapshot.result = Some(
@@ -51,6 +64,7 @@ impl Store {
                 && domain::terminal(&snapshot.status)
             {
                 snapshot.events.push(Event {
+                    event_id: format!("{}:{}", snapshot.run_id, snapshot.events.len() + 1),
                     run_id: snapshot.run_id.clone(),
                     sequence: snapshot.events.len() as u64 + 1,
                     kind: "run.completed".into(),
@@ -58,6 +72,8 @@ impl Store {
                     data: json!({"status":snapshot.status,"result":snapshot.result}),
                     created_at: chrono::Utc::now().to_rfc3339(),
                 });
+                store.persist(&snapshot).await?;
+            } else if migrated {
                 store.persist(&snapshot).await?;
             }
             store
@@ -115,6 +131,7 @@ impl Store {
     ) -> Result<(), CoreError> {
         let mut s = run.snapshot.lock().await;
         let event = Event {
+            event_id: format!("{}:{}", s.run_id, s.events.len() + 1),
             run_id: s.run_id.clone(),
             sequence: s.events.len() as u64 + 1,
             kind: kind.into(),
@@ -132,6 +149,7 @@ impl Store {
         snapshot.status = status.into();
         snapshot.result = Some(result.clone());
         let event = Event {
+            event_id: format!("{}:{}", snapshot.run_id, snapshot.events.len() + 1),
             run_id: snapshot.run_id.clone(),
             sequence: snapshot.events.len() as u64 + 1,
             kind: "run.completed".into(),

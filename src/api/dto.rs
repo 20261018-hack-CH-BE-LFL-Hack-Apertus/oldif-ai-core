@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 #[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Source {
     pub id: String,
     pub title: String,
@@ -25,6 +26,7 @@ pub struct Source {
     pub licence: String,
 }
 #[derive(Clone, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct RunRequest {
     pub question: String,
     pub locale: String,
@@ -41,6 +43,8 @@ pub struct RunRequest {
 }
 #[derive(Clone, Serialize, Deserialize)]
 pub struct Event {
+    #[serde(default)]
+    pub event_id: String,
     pub run_id: String,
     pub sequence: u64,
     pub kind: String,
@@ -57,10 +61,12 @@ pub struct RunSnapshot {
     pub result: Option<Value>,
 }
 #[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Steering {
     pub message: String,
 }
 #[derive(Deserialize, Default)]
+#[serde(deny_unknown_fields)]
 pub struct EventQuery {
     #[serde(default)]
     pub after: u64,
