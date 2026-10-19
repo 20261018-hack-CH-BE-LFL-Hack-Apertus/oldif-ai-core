@@ -1,0 +1,214 @@
+{
+  "batch_id": "eval-20261019T101723",
+  "source_sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+  "fixture_sha256": "9a9f33bf0a7d0b6b3359250bcd4ad16de3a01e9848bde6aaff93368f26456d43",
+  "question": "Summarize what the source says about schooling. Use one short exact quotation from source.text and note source bias. Read the supplied source once; do not search other records.",
+  "test_class": "live_workflow_smoke_not_held_out_quality_benchmark",
+  "expected_cases": 2,
+  "completed_cases": 2,
+  "not_run_cases": 0,
+  "failed_cases": 0,
+  "human_gold_documents": 0,
+  "challenge_1000_page_throughput": "NOT_RUN",
+  "challenge_80_percent_usability": "NOT_RUN",
+  "challenge_under_5_percent_structural_errors": "NOT_RUN",
+  "reason": "One public transcribed source record; no frozen human gold, manuscript page ground truth, or declared standard-machine 1000-page corpus",
+  "cases": [
+    {
+      "model": "apertus-v1-5-70b",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "feaf96f7-6956-4bd8-ac5c-30c908251682",
+      "duration_seconds": 17.117,
+      "answer": "The source describes the local school as very poor, lacking any school house, dedicated room, teacher or endowment, with attendance averaging only around 20 pupils from a potential 40 despite having funds promised at one batzen per week. \n\nExact quotation: \"ich hielte 2 winter schule, hatte 20 kinder, aber wie schon gemerket sehr unfleisig, ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet: und dieses benimbt den Lust diese bemühung zu unternehmen\".\n\nUncertainty: Report is a single author's account; no external verification is provided. \n\nBias: The author excuses his own limited efforts while blaming poor attendance and lack of resources on the community's poverty and the prior promise of minimal payment, positioning himself as unjustly criticized despite his acknowledged shortcomings.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 14,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-70b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 16603,
+      "usage": [
+        {
+          "completion_tokens": 174,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 96,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1246
+        },
+        {
+          "completion_tokens": 367,
+          "prompt_tokens": 1378,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1745
+        },
+        {
+          "completion_tokens": 142,
+          "prompt_tokens": 1663,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1805
+        },
+        {
+          "completion_tokens": 189,
+          "prompt_tokens": 1815,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2004
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "The school had no dedicated building, teacher, endowment, or municipal tax for education",
+          "Attendance averaged only about 20 pupils out of a possible 40 due to poor organization and low motivation",
+          "Teacher complains that only 20 pupils attended across two winters, describing them as 'very unfriendly'",
+          "Teacher cites poverty and the insufficiency of the promised payment of one Batzen per week as reasons for low and irregular attendance"
+        ],
+        "historical_bias": "The author denies personal responsibility while blaming community poverty, inadequate funding, and student behavior for his limited efforts, framing negative feedback as unjustified criticism.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "ddcec16b-f1cb-4e3b-811c-b3cf176f46d4",
+      "duration_seconds": 5.035,
+      "answer": "The source reports that only about 20 children actually attended school over three winters, due to poor organization and an unfavourable payment system for teachers, leaving schooling attendance very low.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 14,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 4285,
+      "usage": [
+        {
+          "completion_tokens": 81,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 1056,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1153
+        },
+        {
+          "completion_tokens": 297,
+          "prompt_tokens": 1305,
+          "prompt_tokens_details": {
+            "cached_tokens": 320,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1602
+        },
+        {
+          "completion_tokens": 129,
+          "prompt_tokens": 1575,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1704
+        },
+        {
+          "completion_tokens": 172,
+          "prompt_tokens": 1713,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1885
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "The source states that over three winters only about 20 children attended school due to poor organization and an unfavourable payment system for teachers, leaving schooling attendance very low.",
+          "The text indicates no school building or teacher in Alpthal, and no community or church funding for schooling.",
+          "The account is subjective, describing the author's own sampled locality rather than representing a broad regional picture."
+        ],
+        "historical_bias": "The testimony reflects a single firsthand observation, limited to a small canton locality, rather than typical Swiss conditions of the period.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    }
+  ],
+  "analytics": [
+    {
+      "model": "apertus-v1-5-8b",
+      "role": "default_and_primary",
+      "cases": 1,
+      "completed": 1,
+      "answered": 1,
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "provider_calls": 4,
+      "tool_calls": 0,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 4285,
+      "total_reported_tokens": 6344,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 5.035,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    },
+    {
+      "model": "apertus-v1-5-70b",
+      "role": "apertus_variant",
+      "cases": 1,
+      "completed": 1,
+      "answered": 1,
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "provider_calls": 4,
+      "tool_calls": 0,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 16603,
+      "total_reported_tokens": 6800,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 17.117,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    }
+  ],
+  "implementation_commit": "08bf2ae9899fb403ae8cac87d32adf8a4dcc1c92"
+}

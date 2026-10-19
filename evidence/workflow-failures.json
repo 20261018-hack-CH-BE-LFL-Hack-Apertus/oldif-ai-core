@@ -1,0 +1,749 @@
+[
+  {
+    "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+    "model": "gpt-6-astra",
+    "question": "Summarize the information supported by this record. Cite exact text and explain whether this is metadata or manuscript evidence.",
+    "status": "failed",
+    "result": {
+      "error": "Provider returned HTTP 400; inspect service access or quota"
+    },
+    "events": [
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 1,
+        "kind": "run.started",
+        "agent": "manager",
+        "data": {
+          "agents": [
+            "planner",
+            "researcher",
+            "verifier",
+            "dreamer"
+          ],
+          "tools": [
+            "search_sources",
+            "read_source"
+          ],
+          "workflow": "archival-evidence-v1"
+        },
+        "created_at": "2026-10-19T09:44:21.063493+00:00"
+      },
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 2,
+        "kind": "model.started",
+        "agent": "planner",
+        "data": {
+          "call_id": "4ad57b07-3711-4172-a51d-36bbb567634a",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": false
+        },
+        "created_at": "2026-10-19T09:44:21.063981+00:00"
+      },
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 3,
+        "kind": "model.completed",
+        "agent": "planner",
+        "data": {
+          "call_id": "4ad57b07-3711-4172-a51d-36bbb567634a",
+          "duration_ms": 8742,
+          "provider_response_id": "chatcmpl-EaeCjUmxlJbAM0jfor2QZ5jWpXCSo",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra-2026-09-03",
+          "usage": {
+            "completion_tokens": 355,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "latency_checkpoint": {
+              "engine_tbt_ms": 20,
+              "engine_ttft_ms": 601,
+              "engine_ttlt_ms": 7697,
+              "pre_inference_ms": 192,
+              "service_tbt_ms": 20,
+              "service_ttft_ms": 924,
+              "service_ttlt_ms": 7991,
+              "user_visible_ttft_ms": 733
+            },
+            "prompt_tokens": 926,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1281
+          }
+        },
+        "created_at": "2026-10-19T09:44:29.806528+00:00"
+      },
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 4,
+        "kind": "plan.created",
+        "agent": "planner",
+        "data": {
+          "evidence_needed": [
+            "The supplied transcription and metadata are sufficient for a bounded summary of what this record reports.",
+            "Manuscript images would be needed to verify transcription accuracy, ambiguous readings and original page layout; none are supplied.",
+            "Explicit author and date information would be needed for secure attribution and dating; these should not be inferred solely from the dataset URL."
+          ],
+          "risks": [
+            "The writer’s self-defensive perspective and judgments about local residents may bias the account; reported shortcomings should not be presented as independently established facts.",
+            "Historical spelling, punctuation and uncertain readings may complicate translation. Exact quotations should preserve the supplied wording.",
+            "Approximate counts, travel times and references to different winters may describe different scopes or periods and should not be silently reconciled.",
+            "Catalogue metadata and internal transcription page markers are not equivalent to verified manuscript evidence; the checksum alone does not establish transcription fidelity."
+          ],
+          "steps": [
+            "Separate the supplied catalogue metadata (title, URL, licence, source ID, checksum and null page field) from the transcribed manuscript text. Treat the transcription as manuscript-derived evidence, not as direct inspection of the original.",
+            "Extract statements about settlement, administrative and ecclesiastical affiliations, school access, attendance, facilities, funding and instruction, pairing each proposed summary point with an exact quotation from the supplied transcription.",
+            "Distinguish the writer’s reported experiences from estimates, judgments and intentions, particularly claims about literacy, poverty, attendance and children’s abilities.",
+            "Prepare an English summary with evidence-type labels and exact German quotations, citing source ID stapfer-2027 and internal page markers where available without inventing missing pagination."
+          ]
+        },
+        "created_at": "2026-10-19T09:44:29.807861+00:00"
+      },
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 5,
+        "kind": "model.started",
+        "agent": "researcher",
+        "data": {
+          "call_id": "0eeaae73-0d53-4817-b4e3-eb01ad076aca",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": true
+        },
+        "created_at": "2026-10-19T09:44:29.808880+00:00"
+      },
+      {
+        "run_id": "65b3b841-83be-4916-a45f-cac22529cab2",
+        "sequence": 6,
+        "kind": "run.completed",
+        "agent": "outcome-owner",
+        "data": {
+          "result": {
+            "error": "Provider returned HTTP 400; inspect service access or quota"
+          },
+          "status": "failed"
+        },
+        "created_at": "2026-10-19T09:44:29.924666+00:00"
+      }
+    ]
+  },
+  {
+    "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+    "model": "gpt-6-astra",
+    "question": "What do the original records say about school attendance? Cite the source record and clearly state uncertainty.",
+    "status": "failed",
+    "result": {
+      "error": "Model exceeded tool call budget"
+    },
+    "events": [
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 1,
+        "kind": "run.started",
+        "agent": "manager",
+        "data": {
+          "agents": [
+            "planner",
+            "researcher",
+            "verifier",
+            "dreamer"
+          ],
+          "tools": [
+            "search_sources",
+            "read_source"
+          ],
+          "workflow": "archival-evidence-v1"
+        },
+        "created_at": "2026-10-19T09:53:08.800255+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 2,
+        "kind": "model.started",
+        "agent": "planner",
+        "data": {
+          "call_id": "8de6b1b1-9974-443a-a8b4-9aa33d79878f",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": false
+        },
+        "created_at": "2026-10-19T09:53:08.801609+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 3,
+        "kind": "model.completed",
+        "agent": "planner",
+        "data": {
+          "api": "chat/completions",
+          "call_id": "8de6b1b1-9974-443a-a8b4-9aa33d79878f",
+          "duration_ms": 10711,
+          "provider_response_id": "chatcmpl-EaeLFcbSYlg4voPFZm0Km7buRpCWI",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra-2026-09-03",
+          "usage": {
+            "completion_tokens": 470,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 33,
+              "rejected_prediction_tokens": 0
+            },
+            "latency_checkpoint": {
+              "engine_tbt_ms": 19,
+              "engine_ttft_ms": 661,
+              "engine_ttlt_ms": 9554,
+              "pre_inference_ms": 120,
+              "service_tbt_ms": 19,
+              "service_ttft_ms": 885,
+              "service_ttlt_ms": 9773,
+              "user_visible_ttft_ms": 765
+            },
+            "prompt_tokens": 5547,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 5544,
+              "cached_tokens": 0
+            },
+            "total_tokens": 6017
+          }
+        },
+        "created_at": "2026-10-19T09:53:19.512661+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 4,
+        "kind": "plan.created",
+        "agent": "planner",
+        "data": {
+          "evidence_needed": [
+            "Pasajes de las transcripciones suministradas que indiquen cantidades de alumnos, frecuencia de asistencia, calendario escolar y motivos declarados de ausencia o abandono.",
+            "Contexto inmediato de cada cifra para evaluar qué población cuenta y a qué periodo corresponde.",
+            "Para cotejar las transcripciones con los documentos originales harían falta imágenes o facsímiles, no incluidos entre las fuentes; no se afirmará haber realizado ese cotejo."
+          ],
+          "risks": [
+            "Confundir el número de niños de una localidad o de alumnos declarados con un recuento de asistencia diaria, o calcular tasas sin un denominador comparable.",
+            "Presentar los juicios de los docentes sobre trabajo, pobreza, familias o aprendizaje como explicaciones verificadas e independientes de sus perspectivas históricas, religiosas e institucionales.",
+            "Generalizar estos testimonios locales al conjunto de las escuelas o dar precisión injustificada a expresiones aproximadas y referencias estacionales.",
+            "Las transcripciones pueden contener ambigüedades o errores; el campo de página es nulo y la URL compartida corresponde al conjunto de datos, no a una imagen individual del registro."
+          ],
+          "steps": [
+            "Localizar en stapfer-1933, stapfer-1935, stapfer-1053 y stapfer-1142 los pasajes sobre alumnado, asistencia y variaciones estacionales, distinguiendo población escolar, alumnos declarados y asistencia efectiva.",
+            "Revisar stapfer-1025 y stapfer-1027 para determinar si aportan evidencia directa sobre asistencia o únicamente contexto sobre enseñanza y admisión.",
+            "Preparar citas breves del alemán con traducción al español, identificando cada registro por su ID, título y URL suministrada; utilizar los marcadores internos de página solo cuando permitan localizar inequívocamente el pasaje.",
+            "Organizar una respuesta limitada a estos registros, separando declaraciones explícitas, interpretaciones e información desconocida, y atribuyendo las explicaciones sobre la asistencia a sus autores."
+          ]
+        },
+        "created_at": "2026-10-19T09:53:19.515010+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 5,
+        "kind": "model.started",
+        "agent": "researcher",
+        "data": {
+          "call_id": "892b3eb6-ed69-465e-969a-bc174b0cf709",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": true
+        },
+        "created_at": "2026-10-19T09:53:19.517747+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 6,
+        "kind": "steering.received",
+        "agent": "manager",
+        "data": {
+          "applies_at": "next_stage",
+          "message": "Prioriza los datos sobre asistencia escolar y explica las limitaciones en español."
+        },
+        "created_at": "2026-10-19T09:53:21.802856+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 7,
+        "kind": "model.completed",
+        "agent": "researcher",
+        "data": {
+          "api": "responses",
+          "call_id": "892b3eb6-ed69-465e-969a-bc174b0cf709",
+          "duration_ms": 4145,
+          "provider_response_id": "resp_0d4ea5e32d5e73e0016ad5e88fa5f48196a824fde26048d7fa",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra",
+          "usage": {
+            "input_tokens": 6104,
+            "input_tokens_details": {
+              "cache_write_tokens": 6101,
+              "cached_tokens": 0
+            },
+            "output_tokens": 140,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 6244
+          }
+        },
+        "created_at": "2026-10-19T09:53:23.663607+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 8,
+        "kind": "tool.started",
+        "agent": "researcher",
+        "data": {
+          "arguments": {
+            "source_id": "stapfer-1933"
+          },
+          "call_id": "call_WESICuaPEQKfnezj6KSr5R54",
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.667683+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 9,
+        "kind": "tool.completed",
+        "agent": "researcher",
+        "data": {
+          "call_id": "call_WESICuaPEQKfnezj6KSr5R54",
+          "result": {
+            "id": "stapfer-1933",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+            "page": null,
+            "sha256": "a834dbb604dfb31e348d1c29c9920ae776b763edac461e88482bd05dcd4eea30",
+            "text": "An der Matt Distrikts Vrsern Kantons waldstätten die deütsche schul wird gehalten im winter vor, und Nachmittag 2. stunden, von 2. schullehrern, der Eine Ein Kapuziner, der andere Ein weltlicher: der Erster wurde bis dahin von Einem jeweiligen Provinzial Erwählet, der weltliche aber von der Thalgemeind, der aber nur im winter darzu verpflichtet ist. die Kapuziner aber haben bis dahin niemahls Ein lehrgelt bezogen, und auch im sommer schul gehalten.der b: Justinian Kapuziner von altorff ist nun schullehrer, 54 Jahr alt, vor 2 Jahren darzu Erwählet. die anzahl der schulkinder ist in disem Jahr. 22. Knaben, 12. Madchen, oft mahls ware sie merklich grösser, im sommer aber ist sie Kleiner. bei disen umständen mus die schul im Pfarrhaus gehalten werden. die bücher sind solche, die man solchen im lesen, und schreiben noch unerfahrnen zu geben pflegte: den so bald sie nur Etwas weniges Erlehrnt haben, so werden sie Entweder ||[Seite 2] zur arbeit angehalten, oder in fremde länder geschikt, folgsam wären andere bücher unnuzlich.",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+          },
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.670494+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 10,
+        "kind": "tool.started",
+        "agent": "researcher",
+        "data": {
+          "arguments": {
+            "source_id": "stapfer-1935"
+          },
+          "call_id": "call_BCtBSOOmRntdsvOP5VaG3q6u",
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.672451+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 11,
+        "kind": "tool.completed",
+        "agent": "researcher",
+        "data": {
+          "call_id": "call_BCtBSOOmRntdsvOP5VaG3q6u",
+          "result": {
+            "id": "stapfer-1935",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+            "page": null,
+            "sha256": "59f7226cfefb31b959f41ae92810a24df67e0e41b519d7a659fc64472fb5bbc4",
+            "text": "An der Matt, districkts Ursern, Kantons Waldstätten Lateinische schul Wird Winter und sommer, Vor und Nachmittag 2. stunden gehalten: schulbücher sind die gewöhnlichen und Bekannten. Lehr Junge hab ich gegenwärtig 6. in 4. Klassen. 1 anfänger der principien, 1. der Rudiment. 3. in der Gramatick. 1. anfänger der Rethorick. man siehet also aus dem schon deütlich, dass ich unmöglich für jeden thun Kann, Was sonst üblich ist. Weil diese studenten in zu Viele Klassen getheilet sind, und ich auch nebst dem zum Kirche und pfarrdienste Verhülflich seyn muss.Bisher bestellte der Bürger provincial der Kapuziner hier den Professor: und ich Joseph antonius schmid Kapuziner Von schweitz, des Kantons Waldstätten, des alters 44. Vorhin zur abwartung der Krancken in Luzern bestimmt, bin letzten Herbstmonath 1798 zum schullehrer hierher verordnet worden. das schuhlhause scheinet sehr übel zu gerichtet, Weil die Haubtwache in diesem ist, ||[Seite 2] Jch halte also die schule in meinem sehr engen Zimmer mit grosser unbequemlichkeit. schuhlgelde bezahlet jeder Discipul dem pfarrer gl. 10. für ein Jahre, deren aber Wircklich 2 Wegen ihrer Bedürniss unentgeltlich unterwiesen werden. übrigens ist mir in dieser sache nichts Bekannt.",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+          },
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.674219+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 12,
+        "kind": "tool.started",
+        "agent": "researcher",
+        "data": {
+          "arguments": {
+            "source_id": "stapfer-1053"
+          },
+          "call_id": "call_ZOScO2LJt9tcyFw49qtK2mhE",
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.676127+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 13,
+        "kind": "tool.completed",
+        "agent": "researcher",
+        "data": {
+          "call_id": "call_ZOScO2LJt9tcyFw49qtK2mhE",
+          "result": {
+            "id": "stapfer-1053",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+            "page": null,
+            "sha256": "6db13fb578a40b2414867f9c28de7dd3497a57881acd37a6af4ad12c33e1cdf0",
+            "text": " JACOB WEISMANN.  22. Jahr Schulmeister auf dem Bramberg in der Kirchgemeind Neüenegg Agenschafft alda. Distriks Laupen. Kanton Bern, Gebürtig von Neüenegg 54. Jahr alt, Hab vier Sohn, Der Eltest ist Schulmeister in der anderen Schul auf der Flüh bei Neüenegg, Vom Pfahrer und der Gemeind Erwelt. und von dem damaligen Landgrichts Vender in Bern Bestätiget Der erste umkreis biß auf eine viertelstund bestehet in zerstreüten Häüßer und dörffer. Namlich. Bramberg. 12. Neßleren. 4. Holiebe. 1 Buchli. 2. Dälenweid. 1. Scheürweid. 2. Mußeren. 1. Ursprung. 1. Hubel. 6. Brüggelbach. 6. Häüßer, aus einem gehen die Kinder in die Schul auf dem Bramberg; die anderen in die Fluh Schul, also in dem Ersten umkreis, 29. Häüßer 27. Knaben. 27. Mägdli. Jn dem zweiten umkreis etwas mehr als eine viertelstund. Riedli. 2. Weiden 11. Süri. 20. Häüßer. 3. gehören in die Müliberg Gemeind also im zweiten umkreis. 30. Häüßer. 15. Knaben. 21. Mägl Jm Dritten umkreis biß auf eine halbstund. Freiburghaus. 4. Häüßer. auß zweien gehen die Kinder in die Flüh Schul, auß zweien f uf den Bramberg. Luchli. 2. Thal. 2. Bärfischenhaus. 6. {Heiteren. 1.} Häüßer. 6. K. 2. Mö Suma zu der Brambergschul. 71. Häüßer. 48. Knaben. 50. Mä Zusamen. 98. Schulkinder.Die Schulen werden im Winter, Fünf monat gehalten Wintermonat, Christmonat, Jenner, Hornung, Merz, morgends von. 9. Uhr. biß halb. 12. Uhr. nachmitags von. 1. biß halb. 4. Uhr. Jm Sommer alle Samstag. aber da werden die Schulen wenig besucht. daß mehr vergeßen als gelehrnet wird. Benachbarte Schulen. eine zu Laupen bei dreiviertelstund. in der Müliberg Gemeind, eine in dem Egenberg, die andere auf der Ledi beid bei einer StundSchulbücher ||[Seite 2] Schulbücher die Bibel daß alte und neüe Testament. Fragen, Psalmen, Vestgesang Bücher. Hibners Histori Buch, Sonst Kinder Bibel genant. Für anfänger Namenbücher Ein ganzes Fragenbuch besteht aus drei Stuk und Gebätter und ist neben der Bibel daß Fürnehmste Buch, weil alle Haubtstück darin enthalten Sind die einem Vernunfftigen Geschöpfe für daß zeitliche und Ewige wohl. zu wißen, zu Glauben und zu Halten, notwendig ist.Die Heidelberger Fragen, und Versen auß der Bibel werden außwendig gelehrnet. auch Psalmen, und Vestgesänge und Geistreiche Lieder, Je nach den gaben der Kinder, und getreüen Fleißanwendung der Elteren.Daß Schulhauß ist anno. 1753. von der Gemeind Neüenegg Erbauet, Und biß dahin von derselben im Baulichen Stand erhalten, Bestehet in einer Schulstuben Kuchi, und für den Schulmeister ein Wohnstübli, Käller, Estrich, und bei einer Jucharten Ackerland. An den Exsamen wird den Kindern etwas von dem Kirchmeier Mitgetheilt. denen im Namenbuch und buchstabierer. 1. bz: den Läßer. 1. und ein halb. bz: denen die Fragen außwendig gelehrnet. 2. bz. die noch Psalmen und Vestgesänge gelehrnet. 2. und ein halb bz. die Schreiben, Rechnen und vorsingen. 3. bz. daß Sind die klaßen Der Schullohn ist drei Klaffter Holz. 20. kr. an Gelt. und wird von dem Kirchmeier bezalt. Ein geringen Lohn Es gehet nichts desto beßer wan ein Schulmeister Sein Außkommen anderwerds verdienen muß. anstat die Übrige zeit, neben den Schulstunden, mit Vorschreiben, Rechnen und anderen zu der Schuldienlichen Sachen Anzuwenden Man muß gedult haben, weil wenig Gemeinds Guth ist und die Schulgelter durch Steür oder Täll von den Hauß Väter zusamen gelegt werden muß. Jnsonderheit in gegenwärtiger zeit, da die Gemeind Neüenegg durch beraubung beraubung beschädiget, und noch immer mit fast unerträglichen außgaben beladen ist. ||[Seite 3] Jch wünsche einem Jeden, und allen ins gesant, den Wahren Glauben, Lebendige Hoffnung, und ein Herzliches Vertrauen. aber wünsche sind lähre dünste. Vergebens Saiet ein Ackersman guten Samen, wan der acker ungebauet, mit Gebüschen, Dornen, Dischtlen, und allerlei unkraut überwachßen ist.Die Obrigkeit und amtleüte als Richter, Müßen den Acker des Herzens bauen. Durch züchtigung und Straffen daß unkraut, nach Gottes befehl außreüten.Die Lehrer, nach Christi und Seiner Aposteln lehre, den guten Samen Säien. Alsdan wird Fried und Gerechtigkeit blühen, und Früchte der Heiligung hervor wachsen, Daß wohlgefallen, und den Sägen Gottes über uns waltenEmoloment und Spruchgelt, erzeügen lange Prozeße Opfer oder geschenk verblenden daß Herz.Gefährliche klipen weichen ist eine vorsicht für die Weißen. Das Gesatz deß Herren ist Vollkommen. XIX. Psalm. Daß angesicht deß Herren Stehet über die So bößes thun daß ihr gedächtnuß ausgerottet werden von der  Erden. XXXIV. {Psa} Alles was ich eüch gebiete daß Sollet ihr halten, daß ihr darnach thut ihr Sollet nicht darzu thun noch darvon thun. Spricht der unveränderliche Gott, Schöpfer, Erhalter und König Himmels und der Erden. im 5. B. Moses. IIII.Jch verbleibe nebst Bürgerlichem Gruß und Hochachtung under dem Schutz und Segen Gottes, Eüer getreüer, und Bereitwilligster Bürger, Schuldiener. namens vorstat.den 6.ten Merz, 1799.",
+            "title": "Bramberg — Fliesstextantwort (Gesamt)",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+          },
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.677882+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 14,
+        "kind": "tool.started",
+        "agent": "researcher",
+        "data": {
+          "arguments": {
+            "source_id": "stapfer-1142"
+          },
+          "call_id": "call_QxwBOjGl0lFF6FSpMHIzYjLK",
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.679604+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 15,
+        "kind": "tool.completed",
+        "agent": "researcher",
+        "data": {
+          "call_id": "call_QxwBOjGl0lFF6FSpMHIzYjLK",
+          "result": {
+            "id": "stapfer-1142",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+            "page": null,
+            "sha256": "5e74321f5f483fcc21973aa7693583075bb5b98408d2cca148e3f0690d05815f",
+            "text": "Jch finde mich auß dem zu geschickten erhaltene zu schrift verpflichtet die Fragen zu beantworten über die schul der gemeind Degerschen der Katholischen Religion. Die schulle ist alZeit im Dorf geweßen, deren 24 Heüßer im Dorf Kinder sind 18: der um Kreiß der Heüßer die entfernteste 5 Heüßer der Egg haben eine Stund; deren Kinders 8: Drey Heüßer die eine halbe Stund Loo: und Kalberstadell deren Kinder sind: 8: Die unterschidliche Ort der Heüßer 14: die eine 1/4 Stund haben deren Kinder sind: 21:Jn der schulle wird gelernet, Lesen, Schreiben, und die art und weiß der ehe dem ein gefürten Tabelle schul Bücher sind Kathecismus der unterricht der Religion Die schulle dauret des Tags 6: Stund,Die bestellung des schulm. wahre vor hin von officiall von St: Gallen, &mdash; das Alter des schullmeister 32 Jahr, Ehlichen Stands 2: Kinder, 11 Jahr das ammt; Die Kinder so die schulle besuchen mer oder minnder 22: an der Zahl ||[Seite 2] Das fließende schulgelt ist auß der VerwaltungsKammer von St: Gallen 15 fl. das der Fürstl: Sälig an die schul gegeben hat, 4 fl. fliesen von dem Brauch der Gemeind Oberglatt; 24 fl. hat man vor hin von Liechtensteig wegen einer vermächt nuß empfangenSchulhauß Keines, auch keine schulstube, die mehrste zeit wo schul gehalten worden im winter die besoldung des Schullehrers ist die woche 2 fl. für behausung und etwas Kirchen DienstJn dessen hofe eine baldige, und gute einrichtung der schulle; das die Jugend gut unterrichtet, die Tugenden eingepflanzet die Religion gebeseeret und zu guten Bürgeren gebildet werden",
+            "title": "Degersheim — Fliesstextantwort (Gesamt)",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+          },
+          "tool": "read_source"
+        },
+        "created_at": "2026-10-19T09:53:23.680843+00:00"
+      },
+      {
+        "run_id": "19d91c6e-6abb-4250-87f5-7498cf00bfcb",
+        "sequence": 16,
+        "kind": "run.completed",
+        "agent": "outcome-owner",
+        "data": {
+          "result": {
+            "error": "Model exceeded tool call budget"
+          },
+          "status": "failed"
+        },
+        "created_at": "2026-10-19T09:53:23.682316+00:00"
+      }
+    ]
+  },
+  {
+    "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+    "model": "gpt-6-astra",
+    "question": "Summarize the information supported by this record. Cite exact text and explain whether this is metadata or manuscript evidence.",
+    "status": "failed",
+    "result": {
+      "error": "Citation 1 has an unknown source or a quote absent from the source"
+    },
+    "events": [
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 1,
+        "kind": "run.started",
+        "agent": "manager",
+        "data": {
+          "agents": [
+            "planner",
+            "researcher",
+            "verifier",
+            "dreamer"
+          ],
+          "tools": [
+            "search_sources",
+            "read_source"
+          ],
+          "workflow": "archival-evidence-v1"
+        },
+        "created_at": "2026-10-19T09:46:00.912440+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 2,
+        "kind": "model.started",
+        "agent": "planner",
+        "data": {
+          "call_id": "e229be58-8639-4f3b-afe0-71cf4c70ac63",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": false
+        },
+        "created_at": "2026-10-19T09:46:00.913+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 3,
+        "kind": "model.completed",
+        "agent": "planner",
+        "data": {
+          "api": "chat/completions",
+          "call_id": "e229be58-8639-4f3b-afe0-71cf4c70ac63",
+          "duration_ms": 8146,
+          "provider_response_id": "chatcmpl-EaeELL1qEiqO0XCOeZEvRQTk2zO5M",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra-2026-09-03",
+          "usage": {
+            "completion_tokens": 342,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "latency_checkpoint": {
+              "engine_tbt_ms": 20,
+              "engine_ttft_ms": 488,
+              "engine_ttlt_ms": 7446,
+              "pre_inference_ms": 74,
+              "service_tbt_ms": 20,
+              "service_ttft_ms": 659,
+              "service_ttlt_ms": 7613,
+              "user_visible_ttft_ms": 585
+            },
+            "prompt_tokens": 926,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1268
+          }
+        },
+        "created_at": "2026-10-19T09:46:09.059335+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 4,
+        "kind": "plan.created",
+        "agent": "planner",
+        "data": {
+          "evidence_needed": [
+            "The supplied record is sufficient for a provisional, quotation-based summary of its metadata and transcription.",
+            "Manuscript images would be needed to verify spelling, ambiguous readings, page boundaries and transcription fidelity.",
+            "Explicit provenance, authorship and dating evidence would be needed to establish who wrote the account and when; catalogue labels and the dataset URL alone should not establish these details."
+          ],
+          "risks": [
+            "Treating a transcription as direct inspection of the manuscript would overstate the evidence.",
+            "The writer’s judgments about literacy, attendance, poverty and learning are situated testimony, not independently verified descriptions.",
+            "Historical spelling, unusual phrasing and apparent transcription irregularities may make some passages ambiguous; quotations must not silently correct them.",
+            "The null page field and embedded page markers provide limited citation precision. Missing context or prior history must not be reconstructed."
+          ],
+          "steps": [
+            "Separate the supplied catalogue metadata (record ID, title, URL, licence, checksum and null page field) from the historical text, treating the latter as a supplied transcription rather than a verified manuscript image.",
+            "Extract claims about the locality, households, school attendance, facilities, funding and instruction. Pair each proposed summary point with an exact quotation from the supplied text.",
+            "Distinguish the writer’s reported experiences from estimates, judgments and accusations; explain how the writer’s self-defence and negative assessments of residents may shape the account.",
+            "Prepare a source-bounded summary identifying each supporting quotation as metadata or transcribed manuscript text, using the embedded page markers only where available and flagging uncertain readings."
+          ]
+        },
+        "created_at": "2026-10-19T09:46:09.060692+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 5,
+        "kind": "model.started",
+        "agent": "researcher",
+        "data": {
+          "call_id": "a8ad2c48-8d6c-4cb2-b414-010f6238b7b4",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": true
+        },
+        "created_at": "2026-10-19T09:46:09.061667+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 6,
+        "kind": "model.completed",
+        "agent": "researcher",
+        "data": {
+          "api": "responses",
+          "call_id": "a8ad2c48-8d6c-4cb2-b414-010f6238b7b4",
+          "duration_ms": 25420,
+          "provider_response_id": "resp_08d9602b7f9e017e016ad5e6e12c648197bd4cdac05407c9e8",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra",
+          "usage": {
+            "input_tokens": 1384,
+            "input_tokens_details": {
+              "cache_write_tokens": 1381,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1518,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 2902
+          }
+        },
+        "created_at": "2026-10-19T09:46:34.482099+00:00"
+      },
+      {
+        "run_id": "d6cbda46-8315-4df9-96d9-004226e96181",
+        "sequence": 7,
+        "kind": "run.completed",
+        "agent": "outcome-owner",
+        "data": {
+          "result": {
+            "error": "Citation 1 has an unknown source or a quote absent from the source"
+          },
+          "status": "failed"
+        },
+        "created_at": "2026-10-19T09:46:34.483170+00:00"
+      }
+    ]
+  },
+  {
+    "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+    "model": "gpt-6-astra",
+    "question": "Summarize the historical information supported by this record. Cite exact text and explain whether this is metadata or manuscript evidence.",
+    "status": "failed",
+    "result": {
+      "error": "Provider returned HTTP 400; inspect service access or quota"
+    },
+    "events": [
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 1,
+        "kind": "run.started",
+        "agent": "manager",
+        "data": {
+          "agents": [
+            "planner",
+            "researcher",
+            "verifier",
+            "dreamer"
+          ],
+          "tools": [
+            "search_sources",
+            "read_source"
+          ],
+          "workflow": "archival-evidence-v1"
+        },
+        "created_at": "2026-10-19T09:41:57.846418+00:00"
+      },
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 2,
+        "kind": "model.started",
+        "agent": "planner",
+        "data": {
+          "call_id": "e42becd1-40bf-4496-9a0b-a20e352ce8b7",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": false
+        },
+        "created_at": "2026-10-19T09:41:57.847551+00:00"
+      },
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 3,
+        "kind": "model.completed",
+        "agent": "planner",
+        "data": {
+          "call_id": "e42becd1-40bf-4496-9a0b-a20e352ce8b7",
+          "duration_ms": 9252,
+          "provider_response_id": "chatcmpl-EaeAQhP5mzc5LoeWpvawoD9vgRy2D",
+          "requested_model": "gpt-6-astra",
+          "served_model": "gpt-6-astra-2026-09-03",
+          "usage": {
+            "completion_tokens": 344,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "latency_checkpoint": {
+              "engine_tbt_ms": 21,
+              "engine_ttft_ms": 627,
+              "engine_ttlt_ms": 8009,
+              "pre_inference_ms": 199,
+              "service_tbt_ms": 22,
+              "service_ttft_ms": 980,
+              "service_ttlt_ms": 8389,
+              "user_visible_ttft_ms": 781
+            },
+            "prompt_tokens": 927,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1271
+          }
+        },
+        "created_at": "2026-10-19T09:42:07.100043+00:00"
+      },
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 4,
+        "kind": "plan.created",
+        "agent": "planner",
+        "data": {
+          "evidence_needed": [
+            "Use the supplied text as the sole evidence for historical claims, preserving original spelling in quotations.",
+            "Use only the supplied metadata for catalogue attribution; a date suggested by the dataset URL must not be treated as an independently established date of this individual record.",
+            "Direct verification of manuscript wording, handwriting, authorship or dating would require manuscript images or explicit provenance information, neither of which is supplied."
+          ],
+          "risks": [
+            "The transcription is not a manuscript image; transcription errors, editorial interventions and page-marker accuracy cannot be independently checked.",
+            "The narrator’s assessments of poverty, literacy, attendance and children’s ability reflect a historically situated, partly self-defensive perspective rather than neutral measurements.",
+            "House counts, attendance figures and travel times may refer to different areas or periods; they must not be harmonized without supporting evidence.",
+            "Absent prior conversation, author identification and record-level dating must not be reconstructed from assumptions."
+          ],
+          "steps": [
+            "Separate the supplied catalogue metadata (record ID, title, URL, licence, checksum and null page field) from the transcribed historical text; do not treat metadata as manuscript testimony.",
+            "Extract bounded claims about settlement, administration, schooling, attendance, funding and instruction, pairing each with an exact quotation from the supplied transcription.",
+            "Distinguish the narrator’s reported observations and personal teaching experience from estimates, judgments and intentions; flag ambiguous wording and apparent inconsistencies without silently resolving them.",
+            "Prepare a summary identifying each claim as metadata-supported or transcription-supported, using embedded page markers where available and explicitly noting that no manuscript image has been supplied."
+          ]
+        },
+        "created_at": "2026-10-19T09:42:07.105894+00:00"
+      },
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 5,
+        "kind": "model.started",
+        "agent": "researcher",
+        "data": {
+          "call_id": "cb20dacd-c7bc-4908-9c01-a913a475dd9e",
+          "max_output_tokens": 2048,
+          "model": "gpt-6-astra",
+          "tools_enabled": true
+        },
+        "created_at": "2026-10-19T09:42:07.110404+00:00"
+      },
+      {
+        "run_id": "f1024e65-cef3-469f-8d94-5f463b2a8ffe",
+        "sequence": 6,
+        "kind": "run.completed",
+        "agent": "outcome-owner",
+        "data": {
+          "result": {
+            "error": "Provider returned HTTP 400; inspect service access or quota"
+          },
+          "status": "failed"
+        },
+        "created_at": "2026-10-19T09:42:07.308838+00:00"
+      }
+    ]
+  }
+]

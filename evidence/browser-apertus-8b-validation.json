@@ -1,0 +1,1081 @@
+{
+  "observed_at": "2026-10-19T10:23:01.620156+00:00",
+  "implementation_commit": "08bf2ae9899fb403ae8cac87d32adf8a4dcc1c92",
+  "browser_backend_run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+  "test_class": "frontend_executed_query_core_snapshot",
+  "runs": [
+    {
+      "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+      "status": "needs_review",
+      "request": {
+        "question": "Report one teaching subject from the Alpthal record with one exact original quotation and uncertainty.",
+        "locale": "en",
+        "model": "apertus-v1-5-70b",
+        "sources": [
+          {
+            "id": "stapfer-2270",
+            "title": "Jonen — Fliesstextantwort (Gesamt)",
+            "text": "So ist in diser gemeint Jonen da ich dises Schribe eine eigne gemeint yn dem Kirch gang Lunck Offen Sie befindt sich in 44 Haüsern 86 Haus Haltungen. Werden Kinder gerechnet {90} So in die Schull gehörend Schullmeister Hat mit {denen} Christen Lehr und Lehrt sie lesen gedruckts und geschribnes auch schriben ||[Seite 2] {3 monat} Die Schull wird nur im winder gehalten Schull Bücher Sind nach den fünff Haubtstücken Sa Petters Canisy ein geführt die Eltern müsen die Schrifften den d kinden Selbst An Schaffen, die Schull Währt täglich 6 stund die kinder Sizen Bey Samen Schull Meister ist mit mehr heit d Stimen er Wählt von der gemeint Jonen an 28.t: b{ris} 1798 Jahr ist Wolffgang widler Zu Jo{nen} zum Schull Meister erwählt Zum Ersten Jn der Gemeint Bürger und gebürdig L st Alt 38 Jor 1 Monat. Nebet dem Lehrambt Hat er keins Schull Kinder Besuchen überhaubt das mall wegen Armuths umständen Knaben 14 Mägdlein 9 stifftung ist kei{ne} Schullgeld ist nicht Ein geführt Schullhus ist noch nicht gebauen der Schull Meister hat in seinem eignen Haus und stuben Schull Wie von Altem Här Schull lohn an geld 10 fl. 1 Mütt Kernen 1 fuoder Holtz ad geneu{net} der Gemeint Seckel Meister zalt der Schull Meister, der k kernen v boden Zinß so der Gemeint {in} gegangen für das 1798 verfallen",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "e9f0ea404d6f46ebcb445937b37463cef141e102725d1717f74f1864a9854932",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-2027",
+            "title": "Alpthal — Fliesstextantwort (Gesamt)",
+            "text": "Alpthale eine eigene gemeinde ein kleines dörfchen von 10 häüsern im durchmesser eine grosse Stunde lang,  eine kleine Stunde von dem ort gegen Schweiz 11 häüser: in brunni: gegen schweiz Einsidlen ein grosse 1/4 stund: 9 haüser: im ganzen 30 haüser im kirchgang schweiz nun aber eigene begräbnis und taufzugehörr, eigene Municipalitat und agent: im kanton Waldstätten districkt Einsidlen: in diese bezirckes schuhle könten bej 40 kinder in die schule kommen, aber wegen schlechter ordnung seind 3 winter etwan 20 erschienen und das schlecht und selten.die nachste schuhle auf schweiz 3 stunde: die andern auf die Trachlauben ein Stunde oder 1/2 stunde.über die nächststehenden Fragen antworte ich im ganzen mit einem allgemeinen Bericht: ||[Seite 2] die suhle Schule mus in diesem ort sehr schlecht gewesen sejn weil ich alda keine einzige persohn antrafe, welche recht lesen keine Schrift weder zu machen noch zu läsen im stande ware: N B. ich müste also fast alles sein, wen das volk in der wirklichen Lage bestehen wolte: geistlich und weltliches zu besorgen lage mir ob, ich mache diese anmerkung, weil sie erlaubt und mir ohne grund Zur last gelegt wurde, ich frage mich aber vor jeder behörde gewissenhaft zu verantworten, der sich nicht verantworten kan, mag leicht angeklagt und beschuldigt werden, wer aber Man ist der darf wie ein Man reden.Hier in diesem ort ist kein schuhlhause und keine schuhl Stube und kein schuhlehrer: keine Stiftung: und keine gemeinds steür:Es wurde zwar jedem geistlichen aufgetragen, die schule zu halten da wurde von jedem kind für die wochen 1 baz versprochen, aber diese machte nicht lust schule zu halten in demme wenige kinder erscheinen und was erschienen, noch schlecht. und die bezahlung eben so schlecht, und mit zwang Einzutreiben, wurde nicht thunlich weil die Leüte arm und die kinder alle zusamen genommen zum allgemeinen besten ||[Seite 3] nicht für einen Bazen erlehret,ich hielte 2 winter schule, hatte 20 kinder, aber wie schon gemerket sehr unfleisig, ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet: und dieses benimbt den Lust diese bemühung zu unternehmen: in deme die Pfarrverrrichtungen mit darzu obliegen, besonders die gewöhnliche fasten kinderlehr:dieses merke ich an, nicht das ich diese bemühung aufgeben wolle, aber weil ich ohnentgeltlich dieses thue, so nehme ich mir die fleisigen, und gelährigen und gehorsamen an, diese sollen im schreiben läsen und rechnen unterrichtet werden, gibt es noch dazwischen zeit, so werde ich trachten ihre vernunft mit wichtigen gegenstanden zu beschäftigen suchen.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1188",
+            "title": "Dicken — Fliesstextantwort (Gesamt)",
+            "text": "Beantwortung der Fragen des Ministers der Künste u. Wißenschaften über den Zustand der Schulen.die reformirte Pfarrgemeine Mogelsberg im Kanton Sentis hat folgende Schulen: 1. auf Mogelsberg, im distrikt Lichtensteig. dieses dorf, der Hauptort in der Gemeine, besteht 19. reform. u. 5. Catholische Haüsern, u. schikt dermahlen 13. Knaben u. 11. Mädchen in die Schule.* Rennen hat 9. Haüser u. schikt 1. Knaben u. 3. Mädchen.Schoren 1. HaüserWyden 4. Haüser u. schikt 1. Knaben 2. MädchenHalden 2. Haüser **Alle diese zum mogelsbergischen Schulbezirk gehörigen Haüser sind nur 1/4. höchstens 1/2 Stunde vom Schulort entfernt, u. haben auf eine Stunde im Umkreis keine andere. dieser zunächst sind die Schulen Ebersoll, Naßen u. Hub od. Ruhr, die ersten 1/2. die letzte 3/4. Stunden davon entfernt. Wegen diesen wird sie nur im Winter u. auch dann nur 12 wochen, täglich 6. Stunden lang, gehalten. Sie heißt die Gemeindsschule, unterscheidet sich aber v. den andern nur darin, daß nicht, wie bey diesen, nur der Bezirk, sondern die ganze reform. Gemeine den Schulmeister u. den Verwalter des ihr gehörigen fl. 600 starken Schulguts, wovon jener besoldet wird, jährlich durch das öffentliche Stimmenmehr wählt.die Besoldung des Schulmeisters war, bis vor einem Jahr, wöchentlich nur fl. 1. xr. 36. der neügewählte Schulmstr. Rudolph Tobler, ein junger verheyratheter {mann von} ungefehr 26. Jahren alter mann, der zuvor Krämer war, u. sich nun gantz dem Schuldienst gewidmet hat, klagte, wie billig, vor der Gmeine über diese geringe Besoldung. Hieraus entstand zwischen dieser u. dem dorf ein ziemlich heftiger, noch nicht ganz beigelgter, zwist. Die Gemeine wollte, das dorf sollte, wie alle andern Bezirke, auf eigne Kosten jährlich 12. Wochen lang eine für alle Gemeindskinder offne Schule halten, die Schulstube für die Gemeindsschule unentgeltlich anschaffen, u. gemeinschaftlich mit ihr nach Maaßgabe des Vermögens den Gehalt des Schulmeisters erhöhen, dann soll diese Schule dem dorf nie entzogen u. in dieselbe jedes mahl ein Schulmeister gewählt werden, der: das damahls v. den Vorgesetzten projectirte Examen aushalten könnte. das dorf willigte, unter gewißen Bedingungen, worüber man noch nicht gantz einig werden konnte, in diesen Vorschlag. was mich jedoch zuversichtlich hoffen läßt, daß dieser schöne Anfang auch ein schönes Ende gewinnen werde, das ist die Geneigtheit aller, den von dem allgemein verehrten Minister der Künste u. Wißenschaften entworffnen Schuleinrichtungen die Hand zu bieten.  2. Auf Eber soll, im distrikt Lichtensteig. diese wird jährlich im Herbst 10. wochen gehalten. das Schulgut dieses Bezirks ist ungefehr fl. 500. der Verwalter deßelben wird, wie der Schulmeister, von dem Bezirk durch das öffentliche Stimmenmehr gewählt. dieser letztere erhält wöchentlich fl. 2. Besoldung. die Schulstube geben die Einwohner von Ebersoll, wofür ihnen wöchentlich 30 xr. bezahlt werden.||[Seite 2] * der Schulort Ebersoll hat 7. Haüser, u. schikt 5. Knaben u. 4. Töchteren in die Schule.Löffelsberg hat 1. Haüser, u. schikt 3. Knaben u. 1. Töchteren in die Schule.Vorbüel hat 2. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Moos hat 2. Haüser, u. schikt 1. Knaben in die Schule.Bild hat 1. Häuser, u. schikt 1. Knaben in die Schule.Ronenbach hat 1. HaüserSteinenbach hat 3. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die Schule.Wydenschopf hat 2. HaüserSchönegarten hat 2. Haüser, u. schikt 1. Töchteren in die Schule.Linden hat 1. Haüser, u. schikt 1. Knaben in die Schule.Hals hat 2. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Kolholtz hat 1. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Wießfleken. hat 3. Haüser, u. schikt 4. Knaben in die Schule.Faltlig hat 1. Haüser, u. schikt 2. Knaben in die Schule.Vorderkoblen hat 3. Haüser, u. schikt 1. Knaben u. 2. Töchteren in die Schule.Kühboden hat 1. HaüserGeren hat 1. HaüserWimpfel hat 1. HaüserSalen hat 4. Haüser, u. schikt 7. Knaben u. 3. Töchteren in die Schule.Rothenfloh hat 3. HaüserLöchli hat 2. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die SchuleBerg. hat 1. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die Schule.Brand hat 2. HaüserNord hat 5. Haüser, u. schikt 2. Töchteren in die Schule.Niederweil hat 2. Haüser, u. schikt 1. Töchteren in die Schule. **diese in einer Berggegend zerstreüten Haüser sind, die mehresten 1/4. einige 1/2. u. nur 3/4. Stunden vom Schulort entfernt, u. haben alle keine nähere Schule. die nächstgelegne ist berg, für die mehresten in einer Entfernung von einer Stunde.  3. im dyken, auch im distrikt Lichtensteig.* dyken hat 17 Haüser u. schikt 12. Knaben u. 9. Mädchen in die Schule.Moos hat 1. Haüserdykenboden hat 3. Haüser, u. schikt 3. Knaben u. 2. Mädchen in die Schule.Hasenbühl hat 1. HaüserWilket hat 1. HaüserBergli hat 1. HaüserSchlößli hat 1. Haüser, u. schikt 1. Knaben u. 1. Mädchen in die Schule.Teüftobel. hat 1. Haüser, u. schikt 1. Knaben u. 2. Mädchen in die Schule.Blattenhalden hat 1. HaüserAlbis Boden hat 1. Haüser, u. schikt 2. Knaben u. 1. Mädchen in die Schule. **||[Seite 3] Alle diese Haüser sind nur 1/4. Stunde vom Schulort entfernt. die Schule wird nur 7 wochen im Sommer gehalten. die Kinder in diesen Bezirk besuchen aber noch eine andere 1/4. Stunde davon entfernte, in der Gemeine Peterzell, welche 10. wochen gehalten wird. das Schulgut ist fl. 350. der Verwalter deßelben u. der Schulmeister werden jährlich vom Schulbezirk durch das öffentliche Stimmenmehr gewählt; der letztere erhält wöchentlich fl. 2 Besoldung.  4. Am Furth, im distrikt Lichtensteig. * Furth hat 11. Haüser u. schikt 5. Knaben u. 4. Mädchen in die Schule.Entzenberg hat 6. Haüser u. schikt 1. Mädchen in die Schule.Brand. hat 1. Haüser u. schikt 1. Mädchen in die Schule.Schwendi. hat 2. HaüserHaüsli. hat 1. HaüserSonnenberg. hat 1. HaüserWindelsteig. hat 2. Haüser u. schikt 1. Knaben u. 1. MädchenGaß. hat 2. HaüserFahrnboden. hat 2. HaüserAuboden. hat 2. HaüserStrik. hat 1. Haüser u. schikt 3. Knaben u. 3. Mädchen in die Schule.Steig. hat 1. HaüserHintersteig. hat 1. Haüser u. schikt 1. Knaben in die Schule.Hofstetten. hat 7. Haüser u. schikt 5. Knaben u. 3. Mädchen in die Schule.Siggenschweil. hat 2. Haüser u. schikt 1. Knaben in die Schule. **Töß, Au, Adelbach u. Ebnat, 9 Haüser, schiken, wegen beßerer Gelegenheit, 5. Knaben u. 2. Mädchen nach Brunadern, müßen jedoch auch zum Further Schulbezirk gezählt werden. diese Schule wird 8. Wochen im Frühling u. 8. Wochen lang im Herbst gehalten. Sie hat ein fl. 700. starkes Kapital, deßen Verwalter, wie der Schulmstr. jährlich von denjenigen durch Stimmenmehrheit gewählt wird, die wenigstens fl. 30. in den Schulfond geben. die nächstglegnen Schulen Brunadern u. Peterzell sind 3/4. Stunden davon entfernt. der Schulmstr. erhält wöchentlich 1. Nthlr. Besoldung.  5. Naßen, im distrikt Flahweil.* der Schulort Naßen hat 15. Haüser. u. schikt 7 Knaben u. 3. Mädchen in die Schule.Stalden hat 1. Haüser.Tamoß. hat 2. Haüser. u. schikt 1. Knaben u. 1. Mädchen in die Schule.Gonzenweil hat 3. Haüser. u. schikt 3. Knaben u. 3. Mädchen in die Schule.Hof. hat 2. Haüser. u. schikt 2. Knaben u. 2. Mädchen in die Schule.Nekersteig hat 1. Haüser.Mettlen hat 1. Haüser. u. schikt 2. Knaben in die Schule. **Auch diese Haüser sind alle nicht mehr als 1/4. Stunde vom Schulort entfernt. diese Schule wird ||[Seite 4] späth im Herbst 9. Wochen lang gehalten. das Schulgut ist ungefehr fl. 250. Mit der Wahl des Schulpflgrs u. Schulmstrs verhält es sich hier wie bey den andern Schulen. Besoldung erhält dieser wöchentlich nur fl. 1. xr. 15. die Schulstube geben die Einwohner auf Naßen abwechselnd. die Schulen auf Mogelsberg, an der Hub u. im dießelbach sind jede nicht mehr als 1/2 od. 3/4. Stunden entfernt.  6. im Thal, im distrikt Flahweil, zum Theil auch im distrikt Lichtensteig.* Aach hat 4. Haüser u. schikt 1. Knaben u. 4. Mädchen in die Schule.Schönenwies hat 1. Haüser u. schikt 3. Knaben u. 1. Mädchen in die Schule.Keßeln hat 1. Haüser u. schikt 1. Mädchen in die Schule.Baaholtz. hat 3. Haüser u. schikt 2. Knaben u. 1. Mädchen in die Schule.Mülli hat 2. Haüser u. schikt 1. Knaben in die Schule.Bach hat 2. Haüser u. schikt 1. Knaben u. 3. Mädchen in die Schule.Ardaker hat 2. HaüserWaldbach. hat 4. Haüser u. schikt 3. Knaben u. 3. Mädchen in die Schule.Ebnet 1. hat HaüserHinter Koblen. hat 5. Haüser u. schikt 2. Mädchen in die Schule.Hiltisau. hat 3. Haüser u. schikt 1. Knaben u. 2. Mädchen in die Schule.Hof. hat 3. Haüser u. schikt 1. Mädchen in die SchuleHorn hat 3. Haüser u. schikt 1. Knaben u. 3. Mädchen in die Schule.Wolfhag hat 2. Haüser u. schikt 1. Mädchen in die Schule.Pistrach hat 6. Haüser u. schikt 3. Knaben u. 7. Mädchen in die Schule. **diese Haüser sind in einer Berggegend sehr zerstreüt, u. weil die Schule im Winter, 12. Wochen gehalten wird, so können sie sehr viele Kinder, wegen den schlechten u. gefährlichen Weegen, fast nie besuchen. der Schulort ist das eine Jahr in Hiltisau, das andere im Hof, das dritte im Bach. die gröste Entfernung davon für die obigen Haüser ist 3/4. Stunden, die mehresten haben nur 1/2 Stunde dahin. Einige besuchen die 3/4. Stunden entfernte Schule in degerschen. Sie hat fl. 600 Capital. der Schulmstr erhält fl. 2 wöchentlich Besoldung. Er u. der Schulpflgr werden wie in den andern Schulbezirken gewählt. für die Schulstube zahlt man aus dem Schulgut jährlich fl. 5. xr. 30.  7. dießelbach u. Städeli, im distrikt Flahweil, haben zusammen 12 Haüser u. schiken 7 Knaben u. 6. Mädchen in die Schule. dieser gantz isolirte Schulbezirk hat das Eigne, daß, weil er nicht, wie alle andern Schulen in der Gemeine einen jährlichen zuschuß aus dem Gemeindsschulgut erhält die Kinder aus andern Bezirken den Schullohn hier bezahlen müßen. das dortige Schulgut ist circ. fl. 400 Schulmeister erhält wöchentlich fl. 1. xr. 30. Besoldung, u. wird, nebst dem Schulpflgr, wie in den andern Schulbezirken gewählt. diese Schule wird im Winter 12. Wochen gehalten. ||[Seite 5] 8. An der Hub, abwechselnd in der Ruhr, beede im distrikt Flahweil. da der dortige Schulmstr dem Minister der Künste u. Wißenschaften v. dieser Schule gründliche Nachricht gegeben hat, so schweige ich davon. Es läßt sich nicht genug sagen, wie mangelhaft der Schulunterricht in dieser Gemeine gewesen u. zum Theil noch ist. Jeder Versuch einer Verbeßerung scheiterte an dem Mißtrauen des Volkes, weil es jeden für einen frevelhaften Eingriff in seine theüren Gerechtsame hielt. Wollte man seine Schulmstr einem ensten Examen unterwerffen, so hieß es, wir laßen uns unsere Wahlfryheit nicht also schmälern. Wollte man auf Vermehrung des Gehalts der Schulmeister dringen, um dadurch beßere aus andern Gemeinen anzuloken oder fähige Köpfe in der unsrigen aufzumuntern, so hieß es, so lange wir Schulmeister um den vorigen Sold bekommen, wollen wir keine, die uns mehr kosten. die Schulmstr. selber waren sehr wohl mit sich selbst zufriden, wenn die Leüte mit ihnen zufriden waren, u. das konnten sie durch Leütseligkeit eben so leicht als durch größere Geschiklichkeit erhalten. deswegen bekümmerten sie sich eben nicht sehr, noch mehr zu lernen, obschon man es ihnen auf alle Weise erleichtern wollte. Konnten sie mittelmäßig buchstabiren, schlecht lesen, einen Buchstaben mahlen u. einen Psalm &mdash; fast hätte ich gesagt heülen; so waren sie sich selber u. andern schon geschikt u. gut genug. Seit ein Paar Jahren hat es sich jedoch merklich geändert. u. nun ist alles nach der neüen Schuleinrichtung begierig, für die man sich große Opfer gefallen laßen wird. Wenn man nur in dieser bergigten u. zerstreüten Gemeine nicht gar zu viel Schulen eingehen laßen u. in eine einzige zusammenschmeltzen will.der ganze Schulunterricht besteht jtzt noch im Lesen, Schreiben u. Psalmsingen. Schulbücher sind keine eingeführt. Jn der Religion erhielten die Kinder keinen Unterricht, wenn man nicht etwa das so beschwerliche auswendigleren des zürcherschen Catechismi dahin zählen will. daß also hierin noch viel zu wünschen übrig bleibt.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "d399faf277f24c76f94aeef9ff8572cb27dddd861d712703c48841382f715a33",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1673",
+            "title": "Nessental — Fliesstextantwort (Gesamt)",
+            "text": "Das Ohrte wo die Schuhle ist Heißt Neßenthall. Es bestehet in fünff dörfflein, und noch sunst etwas umligende Häüßer. Es ist eine Eigene Gemeinde. Jn die Kirchen Gemeind Boden im Grund gehörig Districte Oberhaßli. Canton Oberland. Nahmen der zum Schuhlbezircke gehörigen dörfflein. Hopflauwenen eine halbe Stunde von den Schuhlohrt kinder 5. Neßenthall eine halbe Viertel Stunde Kinder 15. Mülestalden daselbst ist das Schuhl-Hauß. kinder 10. Twirge eine starcke Viertel Stunde kinder 6. Schafftelen eine Stunde vom Schuhlohrt kinder 15. umligende Häüser Haberen Ebnet Stalde und Sattel eine Stunde vom Schuhl ohrte etlegen kinder 9. Der Schuhlmeister wir bis dahin von dem Pfahrer und denen vorsteheren der Gemeind bestelt. Der Schuhl-Lehrer heißt Abrahamm Jaggi alt 50. Jahr. Er ist aus dießer Gemeinde Schuhlmeister 6. Jahr. und hat vier Kinder Über haubt besuchen die Schuhle jezund 60. Kinder. Ohne geferthe 30. Knaben und 30. Mädchen. Jm Winter wird die Schuhle drey oder vier Monnat gehalten und des Tags Sechs oder Sieben Stunden und im Sommer alle Wuchen ein Tag. Der Schuhlmeister hat für seinen Lohn zubeziehen vierzehen Cronen solchen Lohn hat bisher die Landschafft und allhießige Gemeind bezaht. ||[Seite 2] Schuhl-Hauß und den zustand. das Schuhl Hauß ist jezund nicht Baufällig Es ist ein Stube und ein kleines Nebenkämmerle ein Kuche und ein käller dar under. die Gemeind mus für die Schuhl wohnung sorgen und selbige im baulichen stande erhalten Schuhl-Bücher sind dieße, erstlich die Biblia oder ganze Heylige Schrifft altes und Neües Testament welches Neüe Testament uns und allen wahren Christen die solches mit Gläübigem Herzen an den Gekritzigten Gott und Heyland Jesum Christum annehmen, schon vor 1799. Jahren Am Staammen des Heyigen Critzes auf Gollgata mit seinem Theür vergoßenen Gottes-Bludt Ver Siglet bezeüget und bestehiget worden.Weiter wird das so genate Stuckbuch oder der Heydelbergische Catechismus auch gelehret. Und auch die Psalter des Königlichen Propheten Davids alls Er in seinem Hundert und ersten Psalmen sagte, Jch hab mir fürgesötz vor allen dingen von Gnad Baremherzigkeit und recht zu Sinngen. ein Lied ich hab gedicht zu Lob und ehr dir Gott mein Herr.Weiter wird das so genante Nahmen büchlein auch gelehret zum under richt der Jungen Kinder. ||[Seite 3] Weiter bitten wir so hoch alls wir bitten können. das wir alls Undergebeneste Bürger und früende, weiter für uns und unßre noch kömmlinge bey dießem Efangelium und Kröfftigen und Reinnen Worthe Gottes welches uns durch die Chirchen-Lehrer und dienner Gottes so zierlich vorgeleget und gebrädtiget wird. wie auch bey dem zwey Heyligen Sackramenten Nahmlich der Heylige Tauff und das Heylige Abendtmahl jederzeit geschitzet und bewahret im unßrem Vatter-Land verbleiben könten. damit die Schuhlen und das Bredigamt weiter und zu allen zeiten erhalten werden Möchte. damit es nicht in abgang sondren jemehr und mehr in auf gang komme zum Lob und Preiß Gottes in Zeit und Ewigkeit, und auch zu unßrer Unsterblichen Seelen Heyl und Seligkeit gereichen und vortgepflanzet werden könnte. den 2.ten Merz 1799.Und das wir bey unserer Lehre und Religion verbleiben könten möchten wir Hächstens gebetten haben.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "bdb5b4c97a44471ad466d3548cd91e6da40c1ad81ad130158efae1037e0713bb",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1933",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "text": "An der Matt Distrikts Vrsern Kantons waldstätten die deütsche schul wird gehalten im winter vor, und Nachmittag 2. stunden, von 2. schullehrern, der Eine Ein Kapuziner, der andere Ein weltlicher: der Erster wurde bis dahin von Einem jeweiligen Provinzial Erwählet, der weltliche aber von der Thalgemeind, der aber nur im winter darzu verpflichtet ist. die Kapuziner aber haben bis dahin niemahls Ein lehrgelt bezogen, und auch im sommer schul gehalten.der b: Justinian Kapuziner von altorff ist nun schullehrer, 54 Jahr alt, vor 2 Jahren darzu Erwählet. die anzahl der schulkinder ist in disem Jahr. 22. Knaben, 12. Madchen, oft mahls ware sie merklich grösser, im sommer aber ist sie Kleiner. bei disen umständen mus die schul im Pfarrhaus gehalten werden. die bücher sind solche, die man solchen im lesen, und schreiben noch unerfahrnen zu geben pflegte: den so bald sie nur Etwas weniges Erlehrnt haben, so werden sie Entweder ||[Seite 2] zur arbeit angehalten, oder in fremde länder geschikt, folgsam wären andere bücher unnuzlich.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "a834dbb604dfb31e348d1c29c9920ae776b763edac461e88482bd05dcd4eea30",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1935",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "text": "An der Matt, districkts Ursern, Kantons Waldstätten Lateinische schul Wird Winter und sommer, Vor und Nachmittag 2. stunden gehalten: schulbücher sind die gewöhnlichen und Bekannten. Lehr Junge hab ich gegenwärtig 6. in 4. Klassen. 1 anfänger der principien, 1. der Rudiment. 3. in der Gramatick. 1. anfänger der Rethorick. man siehet also aus dem schon deütlich, dass ich unmöglich für jeden thun Kann, Was sonst üblich ist. Weil diese studenten in zu Viele Klassen getheilet sind, und ich auch nebst dem zum Kirche und pfarrdienste Verhülflich seyn muss.Bisher bestellte der Bürger provincial der Kapuziner hier den Professor: und ich Joseph antonius schmid Kapuziner Von schweitz, des Kantons Waldstätten, des alters 44. Vorhin zur abwartung der Krancken in Luzern bestimmt, bin letzten Herbstmonath 1798 zum schullehrer hierher verordnet worden. das schuhlhause scheinet sehr übel zu gerichtet, Weil die Haubtwache in diesem ist, ||[Seite 2] Jch halte also die schule in meinem sehr engen Zimmer mit grosser unbequemlichkeit. schuhlgelde bezahlet jeder Discipul dem pfarrer gl. 10. für ein Jahre, deren aber Wircklich 2 Wegen ihrer Bedürniss unentgeltlich unterwiesen werden. übrigens ist mir in dieser sache nichts Bekannt.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "59f7226cfefb31b959f41ae92810a24df67e0e41b519d7a659fc64472fb5bbc4",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          }
+        ],
+        "session_id": "76cc66da-9484-4698-909b-345ac09ea058",
+        "user_id": "d19383a7-4c77-42bd-9f21-a1fa1c10d929",
+        "history": [
+          {
+            "content": "Report one teaching subject from the Alpthal record with one exact original quotation and uncertainty.",
+            "role": "user"
+          },
+          {
+            "content": "I cannot provide a verified answer from these sources. Please review the original records.",
+            "role": "assistant"
+          }
+        ],
+        "idempotency_key": null
+      },
+      "events": [
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 1,
+          "kind": "run.started",
+          "agent": "manager",
+          "data": {
+            "agents": [
+              "planner",
+              "researcher",
+              "verifier",
+              "dreamer"
+            ],
+            "tools": [
+              "search_sources",
+              "read_source"
+            ],
+            "workflow": "archival-evidence-v1"
+          },
+          "created_at": "2026-10-19T10:22:05.790052+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 2,
+          "kind": "model.started",
+          "agent": "planner",
+          "data": {
+            "call_id": "e2809b59-1115-4ee3-9038-19bf54e4870a",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:22:05.791709+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 3,
+          "kind": "model.completed",
+          "agent": "planner",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "e2809b59-1115-4ee3-9038-19bf54e4870a",
+            "duration_ms": 3417,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-447bcdcf-198e-4df6-8f54-23b24e48f391",
+            "requested_model": "apertus-v1-5-70b",
+            "served_model": "apertus-v1-5-70b",
+            "usage": {
+              "completion_tokens": 173,
+              "prompt_tokens": 7742,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 7915
+            }
+          },
+          "created_at": "2026-10-19T10:22:09.208842+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 4,
+          "kind": "plan.created",
+          "agent": "planner",
+          "data": {
+            "evidence_needed": [
+              "Clear text statement specifying the exact subjects taught in the Alpthal school",
+              "Exact verbatim quotation describing the curriculum used in Alpthal",
+              "Any description of what was actually taught to children rather than expectations"
+            ],
+            "risks": [
+              "No explicit teaching subject is mentioned in the Alpthal record",
+              "The text describes school conditions, teacher appointment, and payment rather than curriculum",
+              "Cannot fabricate or assume a taught subject without direct source evidence"
+            ],
+            "steps": [
+              "Step 1: Identify Alpthal text within sources to locate any teaching subject specification",
+              "Step 2: Scan Alpthal source text for explicit statements about taught subjects",
+              "Step 3: Verify if any direct or indirect explicit quotation exists about the subject matter",
+              "Step 4: Note uncertainty regarding subject definition or if no clear subject is listed"
+            ]
+          },
+          "created_at": "2026-10-19T10:22:09.211448+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 5,
+          "kind": "model.started",
+          "agent": "researcher",
+          "data": {
+            "call_id": "8b8e0f4a-81f8-4ed9-a2ad-1bd680bc4560",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "tools_enabled": true
+          },
+          "created_at": "2026-10-19T10:22:09.214044+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 6,
+          "kind": "model.completed",
+          "agent": "researcher",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "8b8e0f4a-81f8-4ed9-a2ad-1bd680bc4560",
+            "duration_ms": 4755,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-97d327e2-a6bc-4410-9d6f-a33be6daf01c",
+            "requested_model": "apertus-v1-5-70b",
+            "served_model": "apertus-v1-5-70b",
+            "usage": {
+              "completion_tokens": 244,
+              "prompt_tokens": 8061,
+              "prompt_tokens_details": {
+                "cached_tokens": 64,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8305
+            }
+          },
+          "created_at": "2026-10-19T10:22:13.969662+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 7,
+          "kind": "validation.failed",
+          "agent": "outcome-owner",
+          "data": {
+            "candidate": {
+              "abstained": false,
+              "answer": "No single source states an explicit teaching subject taught in Alpthal school; the text describes the school’s conditions and schedule only.",
+              "citations": [
+                {
+                  "quote": "werden Kinder gerechnet {90} So in die Schull gehörend Schullmeister Hat mit {denen} Christen Lehr und Lehrt sie lesen gedruckts und geschribnes auch schriben ||[Seite 2]",
+                  "source_id": "stapfer-2270"
+                }
+              ],
+              "entities": [
+                {
+                  "name": "Schullmeister Wolffgang Widler",
+                  "source_id": "stapfer-2270",
+                  "type": "role"
+                },
+                {
+                  "name": "Alpthal school",
+                  "source_id": "stapfer-2270",
+                  "type": "entity"
+                }
+              ],
+              "timeline": [
+                {
+                  "date": "b{ris} 1798",
+                  "description": "Wolffgang Widler elected as schoolmaster for Alpthal",
+                  "source_id": "stapfer-2270"
+                }
+              ],
+              "uncertainty": "Curriculum subject is never itemized; only reading of printed and handwritten texts and writing is mentioned, but no specific subject or class material is named"
+            },
+            "error": "Citation 1 has an unknown source or a quote absent from the source",
+            "repair_budget": 1
+          },
+          "created_at": "2026-10-19T10:22:13.971265+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 8,
+          "kind": "model.started",
+          "agent": "researcher-repair",
+          "data": {
+            "call_id": "165cf462-cb9b-469d-9ff5-04a3ccaf80ab",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:22:13.974173+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 9,
+          "kind": "model.completed",
+          "agent": "researcher-repair",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "165cf462-cb9b-469d-9ff5-04a3ccaf80ab",
+            "duration_ms": 13988,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-870c6b5a-a8f0-4434-9bbb-724307782604",
+            "requested_model": "apertus-v1-5-70b",
+            "served_model": "apertus-v1-5-70b",
+            "usage": {
+              "completion_tokens": 667,
+              "prompt_tokens": 8070,
+              "prompt_tokens_details": {
+                "cached_tokens": 64,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8737
+            }
+          },
+          "created_at": "2026-10-19T10:22:27.963150+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 10,
+          "kind": "validation.abstained",
+          "agent": "outcome-owner",
+          "data": {
+            "citations_published": 0,
+            "reason": "Citation 1 has an unknown source or a quote absent from the source",
+            "repair_exhausted": true
+          },
+          "created_at": "2026-10-19T10:22:27.964751+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 11,
+          "kind": "validation.completed",
+          "agent": "outcome-owner",
+          "data": {
+            "citations": 0,
+            "exact_quotes": true
+          },
+          "created_at": "2026-10-19T10:22:27.966185+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 12,
+          "kind": "model.started",
+          "agent": "verifier",
+          "data": {
+            "call_id": "b92499cb-6165-4856-a418-0b082cb4e53e",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:22:27.968850+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 13,
+          "kind": "model.completed",
+          "agent": "verifier",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "b92499cb-6165-4856-a418-0b082cb4e53e",
+            "duration_ms": 4601,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-44558c75-57fb-4b4d-9ce5-9ecc65dd1451",
+            "requested_model": "apertus-v1-5-70b",
+            "served_model": "apertus-v1-5-70b",
+            "usage": {
+              "completion_tokens": 239,
+              "prompt_tokens": 7899,
+              "prompt_tokens_details": {
+                "cached_tokens": 64,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8138
+            }
+          },
+          "created_at": "2026-10-19T10:22:32.570184+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 14,
+          "kind": "verification.completed",
+          "agent": "verifier",
+          "data": {
+            "contradictions": [],
+            "findings": [
+              "Teaching of reading, writing and Psalms is explicitly stated in the Nessental record",
+              "Exact quotation: \"Schuhl-Bücher sind dieße, erstlich die Biblia oder ganze Heylige Schrifft altes und Neües Testament …\"",
+              "Uncertainty: The text reflects the teacher\u0002Jaggi\u0002\u0002\u0002s claimed practice and materials but provides no independent verification of actual student learning or attendance",
+              "Historical bias: Depends on self-reports by local authorities (Pfarrer, Schullehrer) with potential incentive to present conditions favorably under the Stapfer Enquête"
+            ],
+            "historical_bias": [
+              "Self-reporting by parish and schoolmasters introduces positive bias (e.g., praising compliance and religious instruction),",
+              "Absence of explicit student achievement criteria or external inspection",
+              "Reliance on the schoolmaster Abrahamm Jaggi\u0002\u0002\u0002 as sole informant, risking overstatement of curriculum coverage"
+            ],
+            "human_review_required": true,
+            "independent_pass": true,
+            "same_model": true,
+            "verdict": "needs_revision"
+          },
+          "created_at": "2026-10-19T10:22:32.571595+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 15,
+          "kind": "model.started",
+          "agent": "dreamer",
+          "data": {
+            "call_id": "3a8d2595-b341-480b-a41e-f0d82c0b627e",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:22:32.573436+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 16,
+          "kind": "model.completed",
+          "agent": "dreamer",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "3a8d2595-b341-480b-a41e-f0d82c0b627e",
+            "duration_ms": 3487,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-e7d17b46-d5ed-40be-adae-729c809859e3",
+            "requested_model": "apertus-v1-5-70b",
+            "served_model": "apertus-v1-5-70b",
+            "usage": {
+              "completion_tokens": 167,
+              "prompt_tokens": 8149,
+              "prompt_tokens_details": {
+                "cached_tokens": 64,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8316
+            }
+          },
+          "created_at": "2026-10-19T10:22:36.061091+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 17,
+          "kind": "proposals.created",
+          "agent": "dreamer",
+          "data": [
+            {
+              "applied": false,
+              "description": "Filter Alpthal documents to isolate explicit teaching subjects and verify cited materials",
+              "id": "403cbceb-16cc-4fd2-bcec-ca1ab823a0a8",
+              "kind": "source_review",
+              "rationale": "Prior assistant aborted due to insufficient verification; Alpthal record (stapfer-2027) plainly names only a laymaster but gives no direct instruction list or italicised textbook quotation—wrong citation attached to Nessental record",
+              "status": "pending_human_review"
+            },
+            {
+              "applied": false,
+              "description": "Add contemporary student attendance and local taxation data for Alpthal to quantify uncertainty",
+              "id": "c7a04ece-f989-41e1-93f3-c14f4ffe0915",
+              "kind": "evaluation",
+              "rationale": "The only Alpthal source (stapfer-2027) states no schoolhouse or teachers, yet catches teach-downside perception bias; independent attendance numbers and tax records would calibrate the hostile self-report against observed practice",
+              "status": "pending_human_review"
+            }
+          ],
+          "created_at": "2026-10-19T10:22:36.062654+00:00"
+        },
+        {
+          "run_id": "a1b0331c-8227-41fc-8087-df7afa20b251",
+          "sequence": 18,
+          "kind": "run.completed",
+          "agent": "outcome-owner",
+          "data": {
+            "result": {
+              "abstained": true,
+              "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+              "citations": [],
+              "entities": [],
+              "human_review_required": true,
+              "proposals": [
+                {
+                  "applied": false,
+                  "description": "Filter Alpthal documents to isolate explicit teaching subjects and verify cited materials",
+                  "id": "403cbceb-16cc-4fd2-bcec-ca1ab823a0a8",
+                  "kind": "source_review",
+                  "rationale": "Prior assistant aborted due to insufficient verification; Alpthal record (stapfer-2027) plainly names only a laymaster but gives no direct instruction list or italicised textbook quotation—wrong citation attached to Nessental record",
+                  "status": "pending_human_review"
+                },
+                {
+                  "applied": false,
+                  "description": "Add contemporary student attendance and local taxation data for Alpthal to quantify uncertainty",
+                  "id": "c7a04ece-f989-41e1-93f3-c14f4ffe0915",
+                  "kind": "evaluation",
+                  "rationale": "The only Alpthal source (stapfer-2027) states no schoolhouse or teachers, yet catches teach-downside perception bias; independent attendance numbers and tax records would calibrate the hostile self-report against observed practice",
+                  "status": "pending_human_review"
+                }
+              ],
+              "system_validation": {
+                "accepted": false,
+                "reason": "Citation 1 has an unknown source or a quote absent from the source",
+                "repair_exhausted": true
+              },
+              "timeline": [],
+              "uncertainty": [
+                "I cannot provide a verified answer from these sources. Please review the original records."
+              ],
+              "verification": {
+                "contradictions": [],
+                "findings": [
+                  "Teaching of reading, writing and Psalms is explicitly stated in the Nessental record",
+                  "Exact quotation: \"Schuhl-Bücher sind dieße, erstlich die Biblia oder ganze Heylige Schrifft altes und Neües Testament …\"",
+                  "Uncertainty: The text reflects the teacher\u0002Jaggi\u0002\u0002\u0002s claimed practice and materials but provides no independent verification of actual student learning or attendance",
+                  "Historical bias: Depends on self-reports by local authorities (Pfarrer, Schullehrer) with potential incentive to present conditions favorably under the Stapfer Enquête"
+                ],
+                "historical_bias": [
+                  "Self-reporting by parish and schoolmasters introduces positive bias (e.g., praising compliance and religious instruction),",
+                  "Absence of explicit student achievement criteria or external inspection",
+                  "Reliance on the schoolmaster Abrahamm Jaggi\u0002\u0002\u0002 as sole informant, risking overstatement of curriculum coverage"
+                ],
+                "human_review_required": true,
+                "independent_pass": true,
+                "same_model": true,
+                "verdict": "needs_revision"
+              }
+            },
+            "status": "needs_review"
+          },
+          "created_at": "2026-10-19T10:22:36.063859+00:00"
+        }
+      ],
+      "result": {
+        "abstained": true,
+        "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+        "citations": [],
+        "entities": [],
+        "human_review_required": true,
+        "proposals": [
+          {
+            "applied": false,
+            "description": "Filter Alpthal documents to isolate explicit teaching subjects and verify cited materials",
+            "id": "403cbceb-16cc-4fd2-bcec-ca1ab823a0a8",
+            "kind": "source_review",
+            "rationale": "Prior assistant aborted due to insufficient verification; Alpthal record (stapfer-2027) plainly names only a laymaster but gives no direct instruction list or italicised textbook quotation—wrong citation attached to Nessental record",
+            "status": "pending_human_review"
+          },
+          {
+            "applied": false,
+            "description": "Add contemporary student attendance and local taxation data for Alpthal to quantify uncertainty",
+            "id": "c7a04ece-f989-41e1-93f3-c14f4ffe0915",
+            "kind": "evaluation",
+            "rationale": "The only Alpthal source (stapfer-2027) states no schoolhouse or teachers, yet catches teach-downside perception bias; independent attendance numbers and tax records would calibrate the hostile self-report against observed practice",
+            "status": "pending_human_review"
+          }
+        ],
+        "system_validation": {
+          "accepted": false,
+          "reason": "Citation 1 has an unknown source or a quote absent from the source",
+          "repair_exhausted": true
+        },
+        "timeline": [],
+        "uncertainty": [
+          "I cannot provide a verified answer from these sources. Please review the original records."
+        ],
+        "verification": {
+          "contradictions": [],
+          "findings": [
+            "Teaching of reading, writing and Psalms is explicitly stated in the Nessental record",
+            "Exact quotation: \"Schuhl-Bücher sind dieße, erstlich die Biblia oder ganze Heylige Schrifft altes und Neües Testament …\"",
+            "Uncertainty: The text reflects the teacher\u0002Jaggi\u0002\u0002\u0002s claimed practice and materials but provides no independent verification of actual student learning or attendance",
+            "Historical bias: Depends on self-reports by local authorities (Pfarrer, Schullehrer) with potential incentive to present conditions favorably under the Stapfer Enquête"
+          ],
+          "historical_bias": [
+            "Self-reporting by parish and schoolmasters introduces positive bias (e.g., praising compliance and religious instruction),",
+            "Absence of explicit student achievement criteria or external inspection",
+            "Reliance on the schoolmaster Abrahamm Jaggi\u0002\u0002\u0002 as sole informant, risking overstatement of curriculum coverage"
+          ],
+          "human_review_required": true,
+          "independent_pass": true,
+          "same_model": true,
+          "verdict": "needs_revision"
+        }
+      }
+    },
+    {
+      "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+      "status": "needs_review",
+      "request": {
+        "question": "Report one teaching subject from the Alpthal record with one exact original quotation and uncertainty.",
+        "locale": "en",
+        "model": "apertus-v1-5-8b",
+        "sources": [
+          {
+            "id": "stapfer-2270",
+            "title": "Jonen — Fliesstextantwort (Gesamt)",
+            "text": "So ist in diser gemeint Jonen da ich dises Schribe eine eigne gemeint yn dem Kirch gang Lunck Offen Sie befindt sich in 44 Haüsern 86 Haus Haltungen. Werden Kinder gerechnet {90} So in die Schull gehörend Schullmeister Hat mit {denen} Christen Lehr und Lehrt sie lesen gedruckts und geschribnes auch schriben ||[Seite 2] {3 monat} Die Schull wird nur im winder gehalten Schull Bücher Sind nach den fünff Haubtstücken Sa Petters Canisy ein geführt die Eltern müsen die Schrifften den d kinden Selbst An Schaffen, die Schull Währt täglich 6 stund die kinder Sizen Bey Samen Schull Meister ist mit mehr heit d Stimen er Wählt von der gemeint Jonen an 28.t: b{ris} 1798 Jahr ist Wolffgang widler Zu Jo{nen} zum Schull Meister erwählt Zum Ersten Jn der Gemeint Bürger und gebürdig L st Alt 38 Jor 1 Monat. Nebet dem Lehrambt Hat er keins Schull Kinder Besuchen überhaubt das mall wegen Armuths umständen Knaben 14 Mägdlein 9 stifftung ist kei{ne} Schullgeld ist nicht Ein geführt Schullhus ist noch nicht gebauen der Schull Meister hat in seinem eignen Haus und stuben Schull Wie von Altem Här Schull lohn an geld 10 fl. 1 Mütt Kernen 1 fuoder Holtz ad geneu{net} der Gemeint Seckel Meister zalt der Schull Meister, der k kernen v boden Zinß so der Gemeint {in} gegangen für das 1798 verfallen",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "e9f0ea404d6f46ebcb445937b37463cef141e102725d1717f74f1864a9854932",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-2027",
+            "title": "Alpthal — Fliesstextantwort (Gesamt)",
+            "text": "Alpthale eine eigene gemeinde ein kleines dörfchen von 10 häüsern im durchmesser eine grosse Stunde lang,  eine kleine Stunde von dem ort gegen Schweiz 11 häüser: in brunni: gegen schweiz Einsidlen ein grosse 1/4 stund: 9 haüser: im ganzen 30 haüser im kirchgang schweiz nun aber eigene begräbnis und taufzugehörr, eigene Municipalitat und agent: im kanton Waldstätten districkt Einsidlen: in diese bezirckes schuhle könten bej 40 kinder in die schule kommen, aber wegen schlechter ordnung seind 3 winter etwan 20 erschienen und das schlecht und selten.die nachste schuhle auf schweiz 3 stunde: die andern auf die Trachlauben ein Stunde oder 1/2 stunde.über die nächststehenden Fragen antworte ich im ganzen mit einem allgemeinen Bericht: ||[Seite 2] die suhle Schule mus in diesem ort sehr schlecht gewesen sejn weil ich alda keine einzige persohn antrafe, welche recht lesen keine Schrift weder zu machen noch zu läsen im stande ware: N B. ich müste also fast alles sein, wen das volk in der wirklichen Lage bestehen wolte: geistlich und weltliches zu besorgen lage mir ob, ich mache diese anmerkung, weil sie erlaubt und mir ohne grund Zur last gelegt wurde, ich frage mich aber vor jeder behörde gewissenhaft zu verantworten, der sich nicht verantworten kan, mag leicht angeklagt und beschuldigt werden, wer aber Man ist der darf wie ein Man reden.Hier in diesem ort ist kein schuhlhause und keine schuhl Stube und kein schuhlehrer: keine Stiftung: und keine gemeinds steür:Es wurde zwar jedem geistlichen aufgetragen, die schule zu halten da wurde von jedem kind für die wochen 1 baz versprochen, aber diese machte nicht lust schule zu halten in demme wenige kinder erscheinen und was erschienen, noch schlecht. und die bezahlung eben so schlecht, und mit zwang Einzutreiben, wurde nicht thunlich weil die Leüte arm und die kinder alle zusamen genommen zum allgemeinen besten ||[Seite 3] nicht für einen Bazen erlehret,ich hielte 2 winter schule, hatte 20 kinder, aber wie schon gemerket sehr unfleisig, ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet: und dieses benimbt den Lust diese bemühung zu unternehmen: in deme die Pfarrverrrichtungen mit darzu obliegen, besonders die gewöhnliche fasten kinderlehr:dieses merke ich an, nicht das ich diese bemühung aufgeben wolle, aber weil ich ohnentgeltlich dieses thue, so nehme ich mir die fleisigen, und gelährigen und gehorsamen an, diese sollen im schreiben läsen und rechnen unterrichtet werden, gibt es noch dazwischen zeit, so werde ich trachten ihre vernunft mit wichtigen gegenstanden zu beschäftigen suchen.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1188",
+            "title": "Dicken — Fliesstextantwort (Gesamt)",
+            "text": "Beantwortung der Fragen des Ministers der Künste u. Wißenschaften über den Zustand der Schulen.die reformirte Pfarrgemeine Mogelsberg im Kanton Sentis hat folgende Schulen: 1. auf Mogelsberg, im distrikt Lichtensteig. dieses dorf, der Hauptort in der Gemeine, besteht 19. reform. u. 5. Catholische Haüsern, u. schikt dermahlen 13. Knaben u. 11. Mädchen in die Schule.* Rennen hat 9. Haüser u. schikt 1. Knaben u. 3. Mädchen.Schoren 1. HaüserWyden 4. Haüser u. schikt 1. Knaben 2. MädchenHalden 2. Haüser **Alle diese zum mogelsbergischen Schulbezirk gehörigen Haüser sind nur 1/4. höchstens 1/2 Stunde vom Schulort entfernt, u. haben auf eine Stunde im Umkreis keine andere. dieser zunächst sind die Schulen Ebersoll, Naßen u. Hub od. Ruhr, die ersten 1/2. die letzte 3/4. Stunden davon entfernt. Wegen diesen wird sie nur im Winter u. auch dann nur 12 wochen, täglich 6. Stunden lang, gehalten. Sie heißt die Gemeindsschule, unterscheidet sich aber v. den andern nur darin, daß nicht, wie bey diesen, nur der Bezirk, sondern die ganze reform. Gemeine den Schulmeister u. den Verwalter des ihr gehörigen fl. 600 starken Schulguts, wovon jener besoldet wird, jährlich durch das öffentliche Stimmenmehr wählt.die Besoldung des Schulmeisters war, bis vor einem Jahr, wöchentlich nur fl. 1. xr. 36. der neügewählte Schulmstr. Rudolph Tobler, ein junger verheyratheter {mann von} ungefehr 26. Jahren alter mann, der zuvor Krämer war, u. sich nun gantz dem Schuldienst gewidmet hat, klagte, wie billig, vor der Gmeine über diese geringe Besoldung. Hieraus entstand zwischen dieser u. dem dorf ein ziemlich heftiger, noch nicht ganz beigelgter, zwist. Die Gemeine wollte, das dorf sollte, wie alle andern Bezirke, auf eigne Kosten jährlich 12. Wochen lang eine für alle Gemeindskinder offne Schule halten, die Schulstube für die Gemeindsschule unentgeltlich anschaffen, u. gemeinschaftlich mit ihr nach Maaßgabe des Vermögens den Gehalt des Schulmeisters erhöhen, dann soll diese Schule dem dorf nie entzogen u. in dieselbe jedes mahl ein Schulmeister gewählt werden, der: das damahls v. den Vorgesetzten projectirte Examen aushalten könnte. das dorf willigte, unter gewißen Bedingungen, worüber man noch nicht gantz einig werden konnte, in diesen Vorschlag. was mich jedoch zuversichtlich hoffen läßt, daß dieser schöne Anfang auch ein schönes Ende gewinnen werde, das ist die Geneigtheit aller, den von dem allgemein verehrten Minister der Künste u. Wißenschaften entworffnen Schuleinrichtungen die Hand zu bieten.  2. Auf Eber soll, im distrikt Lichtensteig. diese wird jährlich im Herbst 10. wochen gehalten. das Schulgut dieses Bezirks ist ungefehr fl. 500. der Verwalter deßelben wird, wie der Schulmeister, von dem Bezirk durch das öffentliche Stimmenmehr gewählt. dieser letztere erhält wöchentlich fl. 2. Besoldung. die Schulstube geben die Einwohner von Ebersoll, wofür ihnen wöchentlich 30 xr. bezahlt werden.||[Seite 2] * der Schulort Ebersoll hat 7. Haüser, u. schikt 5. Knaben u. 4. Töchteren in die Schule.Löffelsberg hat 1. Haüser, u. schikt 3. Knaben u. 1. Töchteren in die Schule.Vorbüel hat 2. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Moos hat 2. Haüser, u. schikt 1. Knaben in die Schule.Bild hat 1. Häuser, u. schikt 1. Knaben in die Schule.Ronenbach hat 1. HaüserSteinenbach hat 3. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die Schule.Wydenschopf hat 2. HaüserSchönegarten hat 2. Haüser, u. schikt 1. Töchteren in die Schule.Linden hat 1. Haüser, u. schikt 1. Knaben in die Schule.Hals hat 2. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Kolholtz hat 1. Haüser, u. schikt 2. Knaben u. 1. Töchteren in die Schule.Wießfleken. hat 3. Haüser, u. schikt 4. Knaben in die Schule.Faltlig hat 1. Haüser, u. schikt 2. Knaben in die Schule.Vorderkoblen hat 3. Haüser, u. schikt 1. Knaben u. 2. Töchteren in die Schule.Kühboden hat 1. HaüserGeren hat 1. HaüserWimpfel hat 1. HaüserSalen hat 4. Haüser, u. schikt 7. Knaben u. 3. Töchteren in die Schule.Rothenfloh hat 3. HaüserLöchli hat 2. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die SchuleBerg. hat 1. Haüser, u. schikt 1. Knaben u. 1. Töchteren in die Schule.Brand hat 2. HaüserNord hat 5. Haüser, u. schikt 2. Töchteren in die Schule.Niederweil hat 2. Haüser, u. schikt 1. Töchteren in die Schule. **diese in einer Berggegend zerstreüten Haüser sind, die mehresten 1/4. einige 1/2. u. nur 3/4. Stunden vom Schulort entfernt, u. haben alle keine nähere Schule. die nächstgelegne ist berg, für die mehresten in einer Entfernung von einer Stunde.  3. im dyken, auch im distrikt Lichtensteig.* dyken hat 17 Haüser u. schikt 12. Knaben u. 9. Mädchen in die Schule.Moos hat 1. Haüserdykenboden hat 3. Haüser, u. schikt 3. Knaben u. 2. Mädchen in die Schule.Hasenbühl hat 1. HaüserWilket hat 1. HaüserBergli hat 1. HaüserSchlößli hat 1. Haüser, u. schikt 1. Knaben u. 1. Mädchen in die Schule.Teüftobel. hat 1. Haüser, u. schikt 1. Knaben u. 2. Mädchen in die Schule.Blattenhalden hat 1. HaüserAlbis Boden hat 1. Haüser, u. schikt 2. Knaben u. 1. Mädchen in die Schule. **||[Seite 3] Alle diese Haüser sind nur 1/4. Stunde vom Schulort entfernt. die Schule wird nur 7 wochen im Sommer gehalten. die Kinder in diesen Bezirk besuchen aber noch eine andere 1/4. Stunde davon entfernte, in der Gemeine Peterzell, welche 10. wochen gehalten wird. das Schulgut ist fl. 350. der Verwalter deßelben u. der Schulmeister werden jährlich vom Schulbezirk durch das öffentliche Stimmenmehr gewählt; der letztere erhält wöchentlich fl. 2 Besoldung.  4. Am Furth, im distrikt Lichtensteig. * Furth hat 11. Haüser u. schikt 5. Knaben u. 4. Mädchen in die Schule.Entzenberg hat 6. Haüser u. schikt 1. Mädchen in die Schule.Brand. hat 1. Haüser u. schikt 1. Mädchen in die Schule.Schwendi. hat 2. HaüserHaüsli. hat 1. HaüserSonnenberg. hat 1. HaüserWindelsteig. hat 2. Haüser u. schikt 1. Knaben u. 1. MädchenGaß. hat 2. HaüserFahrnboden. hat 2. HaüserAuboden. hat 2. HaüserStrik. hat 1. Haüser u. schikt 3. Knaben u. 3. Mädchen in die Schule.Steig. hat 1. HaüserHintersteig. hat 1. Haüser u. schikt 1. Knaben in die Schule.Hofstetten. hat 7. Haüser u. schikt 5. Knaben u. 3. Mädchen in die Schule.Siggenschweil. hat 2. Haüser u. schikt 1. Knaben in die Schule. **Töß, Au, Adelbach u. Ebnat, 9 Haüser, schiken, wegen beßerer Gelegenheit, 5. Knaben u. 2. Mädchen nach Brunadern, müßen jedoch auch zum Further Schulbezirk gezählt werden. diese Schule wird 8. Wochen im Frühling u. 8. Wochen lang im Herbst gehalten. Sie hat ein fl. 700. starkes Kapital, deßen Verwalter, wie der Schulmstr. jährlich von denjenigen durch Stimmenmehrheit gewählt wird, die wenigstens fl. 30. in den Schulfond geben. die nächstglegnen Schulen Brunadern u. Peterzell sind 3/4. Stunden davon entfernt. der Schulmstr. erhält wöchentlich 1. Nthlr. Besoldung.  5. Naßen, im distrikt Flahweil.* der Schulort Naßen hat 15. Haüser. u. schikt 7 Knaben u. 3. Mädchen in die Schule.Stalden hat 1. Haüser.Tamoß. hat 2. Haüser. u. schikt 1. Knaben u. 1. Mädchen in die Schule.Gonzenweil hat 3. Haüser. u. schikt 3. Knaben u. 3. Mädchen in die Schule.Hof. hat 2. Haüser. u. schikt 2. Knaben u. 2. Mädchen in die Schule.Nekersteig hat 1. Haüser.Mettlen hat 1. Haüser. u. schikt 2. Knaben in die Schule. **Auch diese Haüser sind alle nicht mehr als 1/4. Stunde vom Schulort entfernt. diese Schule wird ||[Seite 4] späth im Herbst 9. Wochen lang gehalten. das Schulgut ist ungefehr fl. 250. Mit der Wahl des Schulpflgrs u. Schulmstrs verhält es sich hier wie bey den andern Schulen. Besoldung erhält dieser wöchentlich nur fl. 1. xr. 15. die Schulstube geben die Einwohner auf Naßen abwechselnd. die Schulen auf Mogelsberg, an der Hub u. im dießelbach sind jede nicht mehr als 1/2 od. 3/4. Stunden entfernt.  6. im Thal, im distrikt Flahweil, zum Theil auch im distrikt Lichtensteig.* Aach hat 4. Haüser u. schikt 1. Knaben u. 4. Mädchen in die Schule.Schönenwies hat 1. Haüser u. schikt 3. Knaben u. 1. Mädchen in die Schule.Keßeln hat 1. Haüser u. schikt 1. Mädchen in die Schule.Baaholtz. hat 3. Haüser u. schikt 2. Knaben u. 1. Mädchen in die Schule.Mülli hat 2. Haüser u. schikt 1. Knaben in die Schule.Bach hat 2. Haüser u. schikt 1. Knaben u. 3. Mädchen in die Schule.Ardaker hat 2. HaüserWaldbach. hat 4. Haüser u. schikt 3. Knaben u. 3. Mädchen in die Schule.Ebnet 1. hat HaüserHinter Koblen. hat 5. Haüser u. schikt 2. Mädchen in die Schule.Hiltisau. hat 3. Haüser u. schikt 1. Knaben u. 2. Mädchen in die Schule.Hof. hat 3. Haüser u. schikt 1. Mädchen in die SchuleHorn hat 3. Haüser u. schikt 1. Knaben u. 3. Mädchen in die Schule.Wolfhag hat 2. Haüser u. schikt 1. Mädchen in die Schule.Pistrach hat 6. Haüser u. schikt 3. Knaben u. 7. Mädchen in die Schule. **diese Haüser sind in einer Berggegend sehr zerstreüt, u. weil die Schule im Winter, 12. Wochen gehalten wird, so können sie sehr viele Kinder, wegen den schlechten u. gefährlichen Weegen, fast nie besuchen. der Schulort ist das eine Jahr in Hiltisau, das andere im Hof, das dritte im Bach. die gröste Entfernung davon für die obigen Haüser ist 3/4. Stunden, die mehresten haben nur 1/2 Stunde dahin. Einige besuchen die 3/4. Stunden entfernte Schule in degerschen. Sie hat fl. 600 Capital. der Schulmstr erhält fl. 2 wöchentlich Besoldung. Er u. der Schulpflgr werden wie in den andern Schulbezirken gewählt. für die Schulstube zahlt man aus dem Schulgut jährlich fl. 5. xr. 30.  7. dießelbach u. Städeli, im distrikt Flahweil, haben zusammen 12 Haüser u. schiken 7 Knaben u. 6. Mädchen in die Schule. dieser gantz isolirte Schulbezirk hat das Eigne, daß, weil er nicht, wie alle andern Schulen in der Gemeine einen jährlichen zuschuß aus dem Gemeindsschulgut erhält die Kinder aus andern Bezirken den Schullohn hier bezahlen müßen. das dortige Schulgut ist circ. fl. 400 Schulmeister erhält wöchentlich fl. 1. xr. 30. Besoldung, u. wird, nebst dem Schulpflgr, wie in den andern Schulbezirken gewählt. diese Schule wird im Winter 12. Wochen gehalten. ||[Seite 5] 8. An der Hub, abwechselnd in der Ruhr, beede im distrikt Flahweil. da der dortige Schulmstr dem Minister der Künste u. Wißenschaften v. dieser Schule gründliche Nachricht gegeben hat, so schweige ich davon. Es läßt sich nicht genug sagen, wie mangelhaft der Schulunterricht in dieser Gemeine gewesen u. zum Theil noch ist. Jeder Versuch einer Verbeßerung scheiterte an dem Mißtrauen des Volkes, weil es jeden für einen frevelhaften Eingriff in seine theüren Gerechtsame hielt. Wollte man seine Schulmstr einem ensten Examen unterwerffen, so hieß es, wir laßen uns unsere Wahlfryheit nicht also schmälern. Wollte man auf Vermehrung des Gehalts der Schulmeister dringen, um dadurch beßere aus andern Gemeinen anzuloken oder fähige Köpfe in der unsrigen aufzumuntern, so hieß es, so lange wir Schulmeister um den vorigen Sold bekommen, wollen wir keine, die uns mehr kosten. die Schulmstr. selber waren sehr wohl mit sich selbst zufriden, wenn die Leüte mit ihnen zufriden waren, u. das konnten sie durch Leütseligkeit eben so leicht als durch größere Geschiklichkeit erhalten. deswegen bekümmerten sie sich eben nicht sehr, noch mehr zu lernen, obschon man es ihnen auf alle Weise erleichtern wollte. Konnten sie mittelmäßig buchstabiren, schlecht lesen, einen Buchstaben mahlen u. einen Psalm &mdash; fast hätte ich gesagt heülen; so waren sie sich selber u. andern schon geschikt u. gut genug. Seit ein Paar Jahren hat es sich jedoch merklich geändert. u. nun ist alles nach der neüen Schuleinrichtung begierig, für die man sich große Opfer gefallen laßen wird. Wenn man nur in dieser bergigten u. zerstreüten Gemeine nicht gar zu viel Schulen eingehen laßen u. in eine einzige zusammenschmeltzen will.der ganze Schulunterricht besteht jtzt noch im Lesen, Schreiben u. Psalmsingen. Schulbücher sind keine eingeführt. Jn der Religion erhielten die Kinder keinen Unterricht, wenn man nicht etwa das so beschwerliche auswendigleren des zürcherschen Catechismi dahin zählen will. daß also hierin noch viel zu wünschen übrig bleibt.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "d399faf277f24c76f94aeef9ff8572cb27dddd861d712703c48841382f715a33",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1673",
+            "title": "Nessental — Fliesstextantwort (Gesamt)",
+            "text": "Das Ohrte wo die Schuhle ist Heißt Neßenthall. Es bestehet in fünff dörfflein, und noch sunst etwas umligende Häüßer. Es ist eine Eigene Gemeinde. Jn die Kirchen Gemeind Boden im Grund gehörig Districte Oberhaßli. Canton Oberland. Nahmen der zum Schuhlbezircke gehörigen dörfflein. Hopflauwenen eine halbe Stunde von den Schuhlohrt kinder 5. Neßenthall eine halbe Viertel Stunde Kinder 15. Mülestalden daselbst ist das Schuhl-Hauß. kinder 10. Twirge eine starcke Viertel Stunde kinder 6. Schafftelen eine Stunde vom Schuhlohrt kinder 15. umligende Häüser Haberen Ebnet Stalde und Sattel eine Stunde vom Schuhl ohrte etlegen kinder 9. Der Schuhlmeister wir bis dahin von dem Pfahrer und denen vorsteheren der Gemeind bestelt. Der Schuhl-Lehrer heißt Abrahamm Jaggi alt 50. Jahr. Er ist aus dießer Gemeinde Schuhlmeister 6. Jahr. und hat vier Kinder Über haubt besuchen die Schuhle jezund 60. Kinder. Ohne geferthe 30. Knaben und 30. Mädchen. Jm Winter wird die Schuhle drey oder vier Monnat gehalten und des Tags Sechs oder Sieben Stunden und im Sommer alle Wuchen ein Tag. Der Schuhlmeister hat für seinen Lohn zubeziehen vierzehen Cronen solchen Lohn hat bisher die Landschafft und allhießige Gemeind bezaht. ||[Seite 2] Schuhl-Hauß und den zustand. das Schuhl Hauß ist jezund nicht Baufällig Es ist ein Stube und ein kleines Nebenkämmerle ein Kuche und ein käller dar under. die Gemeind mus für die Schuhl wohnung sorgen und selbige im baulichen stande erhalten Schuhl-Bücher sind dieße, erstlich die Biblia oder ganze Heylige Schrifft altes und Neües Testament welches Neüe Testament uns und allen wahren Christen die solches mit Gläübigem Herzen an den Gekritzigten Gott und Heyland Jesum Christum annehmen, schon vor 1799. Jahren Am Staammen des Heyigen Critzes auf Gollgata mit seinem Theür vergoßenen Gottes-Bludt Ver Siglet bezeüget und bestehiget worden.Weiter wird das so genate Stuckbuch oder der Heydelbergische Catechismus auch gelehret. Und auch die Psalter des Königlichen Propheten Davids alls Er in seinem Hundert und ersten Psalmen sagte, Jch hab mir fürgesötz vor allen dingen von Gnad Baremherzigkeit und recht zu Sinngen. ein Lied ich hab gedicht zu Lob und ehr dir Gott mein Herr.Weiter wird das so genante Nahmen büchlein auch gelehret zum under richt der Jungen Kinder. ||[Seite 3] Weiter bitten wir so hoch alls wir bitten können. das wir alls Undergebeneste Bürger und früende, weiter für uns und unßre noch kömmlinge bey dießem Efangelium und Kröfftigen und Reinnen Worthe Gottes welches uns durch die Chirchen-Lehrer und dienner Gottes so zierlich vorgeleget und gebrädtiget wird. wie auch bey dem zwey Heyligen Sackramenten Nahmlich der Heylige Tauff und das Heylige Abendtmahl jederzeit geschitzet und bewahret im unßrem Vatter-Land verbleiben könten. damit die Schuhlen und das Bredigamt weiter und zu allen zeiten erhalten werden Möchte. damit es nicht in abgang sondren jemehr und mehr in auf gang komme zum Lob und Preiß Gottes in Zeit und Ewigkeit, und auch zu unßrer Unsterblichen Seelen Heyl und Seligkeit gereichen und vortgepflanzet werden könnte. den 2.ten Merz 1799.Und das wir bey unserer Lehre und Religion verbleiben könten möchten wir Hächstens gebetten haben.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "bdb5b4c97a44471ad466d3548cd91e6da40c1ad81ad130158efae1037e0713bb",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1933",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "text": "An der Matt Distrikts Vrsern Kantons waldstätten die deütsche schul wird gehalten im winter vor, und Nachmittag 2. stunden, von 2. schullehrern, der Eine Ein Kapuziner, der andere Ein weltlicher: der Erster wurde bis dahin von Einem jeweiligen Provinzial Erwählet, der weltliche aber von der Thalgemeind, der aber nur im winter darzu verpflichtet ist. die Kapuziner aber haben bis dahin niemahls Ein lehrgelt bezogen, und auch im sommer schul gehalten.der b: Justinian Kapuziner von altorff ist nun schullehrer, 54 Jahr alt, vor 2 Jahren darzu Erwählet. die anzahl der schulkinder ist in disem Jahr. 22. Knaben, 12. Madchen, oft mahls ware sie merklich grösser, im sommer aber ist sie Kleiner. bei disen umständen mus die schul im Pfarrhaus gehalten werden. die bücher sind solche, die man solchen im lesen, und schreiben noch unerfahrnen zu geben pflegte: den so bald sie nur Etwas weniges Erlehrnt haben, so werden sie Entweder ||[Seite 2] zur arbeit angehalten, oder in fremde länder geschikt, folgsam wären andere bücher unnuzlich.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "a834dbb604dfb31e348d1c29c9920ae776b763edac461e88482bd05dcd4eea30",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          },
+          {
+            "id": "stapfer-1935",
+            "title": "Andermatt — Fliesstextantwort (Gesamt)",
+            "text": "An der Matt, districkts Ursern, Kantons Waldstätten Lateinische schul Wird Winter und sommer, Vor und Nachmittag 2. stunden gehalten: schulbücher sind die gewöhnlichen und Bekannten. Lehr Junge hab ich gegenwärtig 6. in 4. Klassen. 1 anfänger der principien, 1. der Rudiment. 3. in der Gramatick. 1. anfänger der Rethorick. man siehet also aus dem schon deütlich, dass ich unmöglich für jeden thun Kann, Was sonst üblich ist. Weil diese studenten in zu Viele Klassen getheilet sind, und ich auch nebst dem zum Kirche und pfarrdienste Verhülflich seyn muss.Bisher bestellte der Bürger provincial der Kapuziner hier den Professor: und ich Joseph antonius schmid Kapuziner Von schweitz, des Kantons Waldstätten, des alters 44. Vorhin zur abwartung der Krancken in Luzern bestimmt, bin letzten Herbstmonath 1798 zum schullehrer hierher verordnet worden. das schuhlhause scheinet sehr übel zu gerichtet, Weil die Haubtwache in diesem ist, ||[Seite 2] Jch halte also die schule in meinem sehr engen Zimmer mit grosser unbequemlichkeit. schuhlgelde bezahlet jeder Discipul dem pfarrer gl. 10. für ein Jahre, deren aber Wircklich 2 Wegen ihrer Bedürniss unentgeltlich unterwiesen werden. übrigens ist mir in dieser sache nichts Bekannt.",
+            "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991",
+            "page": null,
+            "sha256": "59f7226cfefb31b959f41ae92810a24df67e0e41b519d7a659fc64472fb5bbc4",
+            "licence": "https://opendata.swiss/de/terms-of-use#terms_open"
+          }
+        ],
+        "session_id": "76cc66da-9484-4698-909b-345ac09ea058",
+        "user_id": "d19383a7-4c77-42bd-9f21-a1fa1c10d929",
+        "history": [],
+        "idempotency_key": null
+      },
+      "events": [
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 1,
+          "kind": "run.started",
+          "agent": "manager",
+          "data": {
+            "agents": [
+              "planner",
+              "researcher",
+              "verifier",
+              "dreamer"
+            ],
+            "tools": [
+              "search_sources",
+              "read_source"
+            ],
+            "workflow": "archival-evidence-v1"
+          },
+          "created_at": "2026-10-19T10:21:30.710539+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 2,
+          "kind": "model.started",
+          "agent": "planner",
+          "data": {
+            "call_id": "33f8e824-db30-492f-9fbe-d44d3ea97475",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-8b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:21:30.712031+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 3,
+          "kind": "model.completed",
+          "agent": "planner",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "33f8e824-db30-492f-9fbe-d44d3ea97475",
+            "duration_ms": 1100,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-cf9e17e5-6603-437e-8f69-912b6dc3bc15",
+            "requested_model": "apertus-v1-5-8b",
+            "served_model": "apertus-v1-5-8b",
+            "usage": {
+              "completion_tokens": 92,
+              "prompt_tokens": 7692,
+              "prompt_tokens_details": {
+                "cached_tokens": 192,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 7784
+            }
+          },
+          "created_at": "2026-10-19T10:21:31.812569+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 4,
+          "kind": "plan.created",
+          "agent": "planner",
+          "data": {
+            "evidence_needed": [
+              "stapfer-2270",
+              "stapfer-2027"
+            ],
+            "risks": [
+              "Historical bias in records",
+              "Unclear primary authority for source"
+            ],
+            "steps": [
+              "Identify relevant source containing teaching subject information.",
+              "Locate specific exact quotation about subject taught.",
+              "Note uncertainty regarding reliability of source data.",
+              "Prepare report with subject, quotation, and uncertainty statement."
+            ]
+          },
+          "created_at": "2026-10-19T10:21:31.813914+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 5,
+          "kind": "model.started",
+          "agent": "researcher",
+          "data": {
+            "call_id": "ba893717-5737-4d68-8ac7-a0c726184f27",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-8b",
+            "tools_enabled": true
+          },
+          "created_at": "2026-10-19T10:21:31.815744+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 6,
+          "kind": "model.completed",
+          "agent": "researcher",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "ba893717-5737-4d68-8ac7-a0c726184f27",
+            "duration_ms": 1502,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-0ced1c42-58bf-4b53-b7a6-06acda5044ab",
+            "requested_model": "apertus-v1-5-8b",
+            "served_model": "apertus-v1-5-8b",
+            "usage": {
+              "completion_tokens": 178,
+              "prompt_tokens": 7934,
+              "prompt_tokens_details": {
+                "cached_tokens": 320,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8112
+            }
+          },
+          "created_at": "2026-10-19T10:21:33.318714+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 7,
+          "kind": "validation.failed",
+          "agent": "outcome-owner",
+          "data": {
+            "candidate": {
+              "abstained": false,
+              "answer": "Reading, writing, and singing psalms (Psalter des Königs David).",
+              "citations": [
+                {
+                  "quote": "Weiter wird das so genante Psalter des Königs Propheten Davids alls Er in seinen Hundert und ersten Psalmen sagte... gelehrt.",
+                  "source_id": "Nessental"
+                }
+              ],
+              "entities": [
+                {
+                  "name": "teaching subjects",
+                  "source_id": "Nessental",
+                  "type": "subject"
+                }
+              ],
+              "timeline": [
+                {
+                  "date": "2nd March 1799",
+                  "description": "School curriculum note",
+                  "source_id": "Nessental"
+                }
+              ],
+              "uncertainty": [
+                "Exact numbers of subjects not fixed; recorded order suggests reading first.",
+                "Reliability of provincial record as authoritative evidence uncertain."
+              ]
+            },
+            "error": "Citation 1 has an unknown source or a quote absent from the source",
+            "repair_budget": 1
+          },
+          "created_at": "2026-10-19T10:21:33.322035+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 8,
+          "kind": "model.started",
+          "agent": "researcher-repair",
+          "data": {
+            "call_id": "745a54eb-d655-4a76-8dc6-289053ad8a97",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-8b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:21:33.326398+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 9,
+          "kind": "model.completed",
+          "agent": "researcher-repair",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "745a54eb-d655-4a76-8dc6-289053ad8a97",
+            "duration_ms": 4708,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-f202671c-bf07-41aa-9ec0-eb44f6cc7ddd",
+            "requested_model": "apertus-v1-5-8b",
+            "served_model": "apertus-v1-5-8b",
+            "usage": {
+              "completion_tokens": 689,
+              "prompt_tokens": 7935,
+              "prompt_tokens_details": {
+                "cached_tokens": 256,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8624
+            }
+          },
+          "created_at": "2026-10-19T10:21:38.034638+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 10,
+          "kind": "validation.abstained",
+          "agent": "outcome-owner",
+          "data": {
+            "citations_published": 0,
+            "reason": "Model response requires answer text",
+            "repair_exhausted": true
+          },
+          "created_at": "2026-10-19T10:21:38.039996+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 11,
+          "kind": "validation.completed",
+          "agent": "outcome-owner",
+          "data": {
+            "citations": 0,
+            "exact_quotes": true
+          },
+          "created_at": "2026-10-19T10:21:38.042918+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 12,
+          "kind": "model.started",
+          "agent": "verifier",
+          "data": {
+            "call_id": "67ecd2eb-327d-40e0-acb4-e2ad032e0a3d",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-8b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:21:38.047089+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 13,
+          "kind": "model.completed",
+          "agent": "verifier",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "67ecd2eb-327d-40e0-acb4-e2ad032e0a3d",
+            "duration_ms": 1561,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-238587ca-9d06-4ffa-acff-a5ff337ecee9",
+            "requested_model": "apertus-v1-5-8b",
+            "served_model": "apertus-v1-5-8b",
+            "usage": {
+              "completion_tokens": 174,
+              "prompt_tokens": 7839,
+              "prompt_tokens_details": {
+                "cached_tokens": 320,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8013
+            }
+          },
+          "created_at": "2026-10-19T10:21:39.608151+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 14,
+          "kind": "verification.completed",
+          "agent": "verifier",
+          "data": {
+            "contradictions": [
+              "The request asks for one exact original quotation from an Alpthal record teaching subject, but the record does not single out a discrete teaching subject (e.g., arithmetic, religion) with a verbatim citation."
+            ],
+            "findings": [
+              "The Alpthal record indicates no teaching subject explicitly named with a precise quotation. It mentions reading (lesen gedruckts und geschribnes auch schriben) and writing (schriben) as part of instruction."
+            ],
+            "historical_bias": [
+              "Sources describe schooling unevenly (poverty, poor attendance), implying bias toward rural locales."
+            ],
+            "human_review_required": true,
+            "independent_pass": true,
+            "same_model": true,
+            "uncertainty": [
+              "The record does not provide an isolated teaching subject excerpt; reading/writing are mentioned generally among catechism and daily instruction, insufficient for a single exact quotation."
+            ],
+            "verdict": "needs_revision"
+          },
+          "created_at": "2026-10-19T10:21:39.609977+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 15,
+          "kind": "model.started",
+          "agent": "dreamer",
+          "data": {
+            "call_id": "85da8d02-3294-4bc0-bbf3-1fbfa38d6e3a",
+            "max_output_tokens": 2048,
+            "model": "apertus-v1-5-8b",
+            "tools_enabled": false
+          },
+          "created_at": "2026-10-19T10:21:39.612839+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 16,
+          "kind": "model.completed",
+          "agent": "dreamer",
+          "data": {
+            "api": "chat/completions",
+            "call_id": "85da8d02-3294-4bc0-bbf3-1fbfa38d6e3a",
+            "duration_ms": 776,
+            "finish_reason": "stop",
+            "provider_response_id": "chatcmpl-b6587881-7450-42c0-aa45-f39c6558000c",
+            "requested_model": "apertus-v1-5-8b",
+            "served_model": "apertus-v1-5-8b",
+            "usage": {
+              "completion_tokens": 73,
+              "prompt_tokens": 8025,
+              "prompt_tokens_details": {
+                "cached_tokens": 224,
+                "multimodal_tokens": null
+              },
+              "total_tokens": 8098
+            }
+          },
+          "created_at": "2026-10-19T10:21:40.389781+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 17,
+          "kind": "proposals.created",
+          "agent": "dreamer",
+          "data": [
+            {
+              "applied": false,
+              "description": "Clarify whether any Alpthal record singles out a specific teaching subject (e.g., Religion, Writing) with a verbatim citation for precise use.",
+              "id": "7065655b-d3cd-4f36-b653-da7ac992f1db",
+              "kind": "source_review",
+              "rationale": null,
+              "status": "pending_human_review"
+            },
+            {
+              "applied": false,
+              "description": "Define metrics to confirm if teaching subjects are tagged consistently across records and count entries.",
+              "id": "0da3d7ab-65d9-456b-89a5-aa237c9f6266",
+              "kind": "evaluation",
+              "rationale": null,
+              "status": "pending_human_review"
+            }
+          ],
+          "created_at": "2026-10-19T10:21:40.393923+00:00"
+        },
+        {
+          "run_id": "cf8f72fe-327d-4bc5-b75d-0823fa11f367",
+          "sequence": 18,
+          "kind": "run.completed",
+          "agent": "outcome-owner",
+          "data": {
+            "result": {
+              "abstained": true,
+              "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+              "citations": [],
+              "entities": [],
+              "human_review_required": true,
+              "proposals": [
+                {
+                  "applied": false,
+                  "description": "Clarify whether any Alpthal record singles out a specific teaching subject (e.g., Religion, Writing) with a verbatim citation for precise use.",
+                  "id": "7065655b-d3cd-4f36-b653-da7ac992f1db",
+                  "kind": "source_review",
+                  "rationale": null,
+                  "status": "pending_human_review"
+                },
+                {
+                  "applied": false,
+                  "description": "Define metrics to confirm if teaching subjects are tagged consistently across records and count entries.",
+                  "id": "0da3d7ab-65d9-456b-89a5-aa237c9f6266",
+                  "kind": "evaluation",
+                  "rationale": null,
+                  "status": "pending_human_review"
+                }
+              ],
+              "system_validation": {
+                "accepted": false,
+                "reason": "Model response requires answer text",
+                "repair_exhausted": true
+              },
+              "timeline": [],
+              "uncertainty": [
+                "I cannot provide a verified answer from these sources. Please review the original records."
+              ],
+              "verification": {
+                "contradictions": [
+                  "The request asks for one exact original quotation from an Alpthal record teaching subject, but the record does not single out a discrete teaching subject (e.g., arithmetic, religion) with a verbatim citation."
+                ],
+                "findings": [
+                  "The Alpthal record indicates no teaching subject explicitly named with a precise quotation. It mentions reading (lesen gedruckts und geschribnes auch schriben) and writing (schriben) as part of instruction."
+                ],
+                "historical_bias": [
+                  "Sources describe schooling unevenly (poverty, poor attendance), implying bias toward rural locales."
+                ],
+                "human_review_required": true,
+                "independent_pass": true,
+                "same_model": true,
+                "uncertainty": [
+                  "The record does not provide an isolated teaching subject excerpt; reading/writing are mentioned generally among catechism and daily instruction, insufficient for a single exact quotation."
+                ],
+                "verdict": "needs_revision"
+              }
+            },
+            "status": "needs_review"
+          },
+          "created_at": "2026-10-19T10:21:40.397049+00:00"
+        }
+      ],
+      "result": {
+        "abstained": true,
+        "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+        "citations": [],
+        "entities": [],
+        "human_review_required": true,
+        "proposals": [
+          {
+            "applied": false,
+            "description": "Clarify whether any Alpthal record singles out a specific teaching subject (e.g., Religion, Writing) with a verbatim citation for precise use.",
+            "id": "7065655b-d3cd-4f36-b653-da7ac992f1db",
+            "kind": "source_review",
+            "rationale": null,
+            "status": "pending_human_review"
+          },
+          {
+            "applied": false,
+            "description": "Define metrics to confirm if teaching subjects are tagged consistently across records and count entries.",
+            "id": "0da3d7ab-65d9-456b-89a5-aa237c9f6266",
+            "kind": "evaluation",
+            "rationale": null,
+            "status": "pending_human_review"
+          }
+        ],
+        "system_validation": {
+          "accepted": false,
+          "reason": "Model response requires answer text",
+          "repair_exhausted": true
+        },
+        "timeline": [],
+        "uncertainty": [
+          "I cannot provide a verified answer from these sources. Please review the original records."
+        ],
+        "verification": {
+          "contradictions": [
+            "The request asks for one exact original quotation from an Alpthal record teaching subject, but the record does not single out a discrete teaching subject (e.g., arithmetic, religion) with a verbatim citation."
+          ],
+          "findings": [
+            "The Alpthal record indicates no teaching subject explicitly named with a precise quotation. It mentions reading (lesen gedruckts und geschribnes auch schriben) and writing (schriben) as part of instruction."
+          ],
+          "historical_bias": [
+            "Sources describe schooling unevenly (poverty, poor attendance), implying bias toward rural locales."
+          ],
+          "human_review_required": true,
+          "independent_pass": true,
+          "same_model": true,
+          "uncertainty": [
+            "The record does not provide an isolated teaching subject excerpt; reading/writing are mentioned generally among catechism and daily instruction, insufficient for a single exact quotation."
+          ],
+          "verdict": "needs_revision"
+        }
+      }
+    }
+  ]
+}

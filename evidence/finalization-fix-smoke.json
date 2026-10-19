@@ -1,0 +1,268 @@
+{
+  "batch_id": "eval-20261019T101253",
+  "source_sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+  "fixture_sha256": "9a9f33bf0a7d0b6b3359250bcd4ad16de3a01e9848bde6aaff93368f26456d43",
+  "question": "Summarize what the source says about schooling. Use one short exact quotation from source.text and note source bias. Read the supplied source once; do not search other records.",
+  "test_class": "live_workflow_smoke_not_held_out_quality_benchmark",
+  "expected_cases": 2,
+  "completed_cases": 1,
+  "not_run_cases": 0,
+  "failed_cases": 1,
+  "human_gold_documents": 0,
+  "challenge_1000_page_throughput": "NOT_RUN",
+  "challenge_80_percent_usability": "NOT_RUN",
+  "challenge_under_5_percent_structural_errors": "NOT_RUN",
+  "reason": "One public transcribed source record; no frozen human gold, manuscript page ground truth, or declared standard-machine 1000-page corpus",
+  "cases": [
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "failed",
+      "run_id": "f36a8fbc-8c2b-408d-ae9e-4644e7c66515",
+      "duration_seconds": 7.047,
+      "answer": null,
+      "error": "Citation 1 has an unknown source or a quote absent from the source",
+      "abstained": null,
+      "citations_checked": 0,
+      "exact_quotes": 0,
+      "quote_integrity": null,
+      "events": 13,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 6288,
+      "usage": [
+        {
+          "completion_tokens": 195,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1267
+        },
+        {
+          "completion_tokens": 312,
+          "prompt_tokens": 1419,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1731
+        },
+        {
+          "completion_tokens": 313,
+          "prompt_tokens": 1706,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2019
+        },
+        {
+          "completion_tokens": 208,
+          "prompt_tokens": 1465,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1673
+        }
+      ],
+      "verification": null,
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "6b14ca74-0569-46ad-a766-34010fc51f00",
+      "duration_seconds": 35.218,
+      "answer": "The respondent describes schooling in Alpthal as poorly supported: about 40 children could attend, but only around 20 reportedly appeared irregularly over three winters, with no schoolhouse, schoolroom, dedicated teacher, endowment, or communal school tax; clergy were expected to teach for a promised weekly payment of one Batzen per child that was poorly paid, while the respondent reports teaching unpaid for two winters alongside parish duties and proposes reading, writing, and arithmetic for diligent, receptive, obedient pupils, with further intellectual instruction if time permits.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 35008,
+      "usage": [
+        {
+          "completion_tokens": 368,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 199,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 21,
+            "engine_ttft_ms": 354,
+            "engine_ttlt_ms": 7933,
+            "pre_inference_ms": 122,
+            "service_tbt_ms": 21,
+            "service_ttft_ms": 561,
+            "service_ttlt_ms": 8130,
+            "user_visible_ttft_ms": 439
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1357
+        },
+        {
+          "input_tokens": 1283,
+          "input_tokens_details": {
+            "cache_write_tokens": 1280,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1307
+        },
+        {
+          "input_tokens": 2085,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1280
+          },
+          "output_tokens": 290,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2375
+        },
+        {
+          "completion_tokens": 285,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 97,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 19,
+            "engine_ttft_ms": 353,
+            "engine_ttlt_ms": 5885,
+            "pre_inference_ms": 158,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 1218,
+            "service_ttlt_ms": 6755,
+            "user_visible_ttft_ms": 1060
+          },
+          "prompt_tokens": 1407,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1404,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1692
+        },
+        {
+          "completion_tokens": 363,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 160,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 21,
+            "engine_ttft_ms": 477,
+            "engine_ttlt_ms": 8060,
+            "pre_inference_ms": 257,
+            "service_tbt_ms": 21,
+            "service_ttft_ms": 865,
+            "service_ttlt_ms": 8445,
+            "user_visible_ttft_ms": 608
+          },
+          "prompt_tokens": 1568,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1565,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1931
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "The summary accurately reflects reported attendance, missing facilities and funding, clergy teaching duties, poor payment, and proposed instruction.",
+          "The quotation exactly matches source.text: \"kein schuhlhause und keine schuhl Stube und kein schuhlehrer\".",
+          "The citation metadata matches the supplied record, although attendance and teaching outcomes remain uncorroborated."
+        ],
+        "historical_bias": [
+          "The candidate appropriately identifies the respondent’s explicit self-defence as a potential source of bias.",
+          "Criticism of pupils and local literacy reflects the clerical respondent’s perspective, without testimony from children or families.",
+          "The source acknowledges poverty and favours diligent, receptive, obedient pupils, qualifying its account of inadequate participation."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    }
+  ],
+  "analytics": [
+    {
+      "model": "apertus-v1-5-8b",
+      "role": "default_and_primary",
+      "cases": 1,
+      "completed": 0,
+      "failed": 1,
+      "not_run": 0,
+      "provider_calls": 4,
+      "tool_calls": 0,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 6288,
+      "total_reported_tokens": 6690,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 7.047,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    },
+    {
+      "model": "gpt-6-astra",
+      "role": "explicit_backup_comparison",
+      "cases": 1,
+      "completed": 1,
+      "failed": 0,
+      "not_run": 0,
+      "provider_calls": 5,
+      "tool_calls": 1,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 35008,
+      "total_reported_tokens": 8662,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 35.218,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    }
+  ],
+  "implementation_commit": "00f6c924e4485ec81dbfbd4db2492b42d28710d4"
+}

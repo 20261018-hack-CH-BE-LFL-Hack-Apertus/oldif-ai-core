@@ -1,0 +1,62 @@
+{
+  "observed_at": "2026-10-19T10:20:54.137206+00:00",
+  "implementation_commit": "08bf2ae9899fb403ae8cac87d32adf8a4dcc1c92",
+  "rust_tests": {
+    "executed": 14,
+    "passed": 14,
+    "class": "native_unit_and_local_fake_provider_boundary_tests"
+  },
+  "real_access": {
+    "apertus_8b": "HTTP200 via Keera",
+    "apertus_8b_thinking": "HTTP200 tiny prompt; long archival gateway504 observed",
+    "apertus_70b": "HTTP200 via Keera",
+    "apertus_70b_thinking": "HTTP200 via Keera",
+    "reference": "HTTP200 explicit Astra comparison",
+    "voice": "HTTP200 ephemeral Realtime session entitlement; SDP/audio NOT_RUN"
+  },
+  "final_smoke": "final-core-smoke.json",
+  "exploratory_evaluation": "seven-locale-evaluation.json",
+  "exploratory_evaluation_limit": "Ran before final brevity/abstention patches; success is workflow completion, not human-scored history or language quality",
+  "final_comparison": "final-seven-locale-comparison.json",
+  "failure_preservation": [
+    "cscs-catalog.json",
+    "cscs-inference.json",
+    "workflow-failures.json",
+    "evaluation-before-finalization-fix.json",
+    "seven-locale-baseline-interrupted.json",
+    "tool-budget-replay.json",
+    "tool-budget-json-replay.json",
+    "finalization-fix-smoke.json"
+  ],
+  "provider_key_boundary": "Only ai-core service .env and its production secret references. Covenant receives internal service token only. Known-secret-value scan passed before commit.",
+  "limits": [
+    "No human historical gold or language review",
+    "No 1000-page throughput or80percent usability benchmark executed",
+    "No NVIDIA optional model inference configured",
+    "No OpenShell or NemoClaw AppleContainer driver claimed",
+    "No automatic fallback from Apertus to Astra",
+    "No chain-of-thought claimed; trace records real workflow actions, tool evidence, safe plans and provider usage"
+  ],
+  "http_boundary_checks": "boundary-http-validation.json: exact status expectation4of5; unknown proxy route denied502 instead of400, no success response",
+  "frontend_validation": "browser-apertus-8b-validation.json: both8B and70B broader-context initial queries abstained after output validation; not positive answer evidence",
+  "final_comparison_result": {
+    "cases": 14,
+    "completed": 14,
+    "failed": 0,
+    "model_outcomes": [
+      {
+        "model": "apertus-v1-5-8b",
+        "answered": 1,
+        "abstained": 6,
+        "failed": 0
+      },
+      {
+        "model": "gpt-6-astra",
+        "answered": 7,
+        "abstained": 0,
+        "failed": 0
+      }
+    ]
+  },
+  "availability_interpretation": "Direct CSCS credential was rejected; current Apertus requests used authorized Keera gateway. Underlying gateway compute/data-residency implementation was not independently verified."
+}

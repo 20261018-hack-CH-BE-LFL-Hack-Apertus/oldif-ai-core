@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-19T10:23:29.851585+00:00",
+  "class": "live_local_HTTP_boundary_checks",
+  "provider_calls_expected": 0,
+  "cases": [
+    {
+      "case": "core_health_public",
+      "status": 200,
+      "expected_status": 200,
+      "passed": true
+    },
+    {
+      "case": "core_models_require_internal_token",
+      "status": 401,
+      "expected_status": 401,
+      "passed": true
+    },
+    {
+      "case": "covenant_models_require_internal_token",
+      "status": 401,
+      "expected_status": 401,
+      "passed": true
+    },
+    {
+      "case": "core_compat_arbitrary_tools_denied",
+      "status": 400,
+      "expected_status": 400,
+      "passed": true
+    },
+    {
+      "case": "covenant_unknown_route_denied",
+      "status": 502,
+      "expected_status": 400,
+      "passed": false
+    }
+  ],
+  "interpretation": "Health and authentication checks matched exact expected statuses. Unknown covenant route was rejected as502 by the proxy error wrapper rather than expected400; no success response was returned. Unit boundary test separately verifies unapproved paths are denied before network access."
+}
