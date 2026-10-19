@@ -1,0 +1,350 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:58:55.177220+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:55.177804+00:00",
+      "data": {
+        "call_id": "cc815957-014c-4add-b0c4-eb7488d7b1db",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:55.976773+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "cc815957-014c-4add-b0c4-eb7488d7b1db",
+        "duration_ms": 798,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-304d4d32-643a-4945-8a0d-30a4b0ef0623",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 111,
+          "prompt_tokens": 1187,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1298
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:55.977857+00:00",
+      "data": {
+        "evidence_needed": [
+          "Sektionen des Textes, die Lesefähigkeit der Kinder beschreiben",
+          "Konkrete Zahlen oder Prozentsätze für den Anteil der Kinder, die lesen konnten"
+        ],
+        "risks": [
+          "Falsche Interpretation von Angaben, fehlende Daten"
+        ],
+        "steps": [
+          "Quelle prüfen, ob Prozentangabe enthalten ist",
+          "Recherche in Text nach numerischen Angaben zum Lesefähigkeit der Kinder",
+          "Falls keine Prozentangabe vorliegt, keine Antwort geben"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:55.979912+00:00",
+      "data": {
+        "call_id": "ac942ea4-35e6-4377-8c3d-e2ae53546586",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:59.464654+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "ac942ea4-35e6-4377-8c3d-e2ae53546586",
+        "duration_ms": 3484,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-c9ecbaf6-9d40-4d6d-9bc1-4923b8609422",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 482,
+          "prompt_tokens": 2836,
+          "prompt_tokens_details": {
+            "cached_tokens": 352,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3318
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:59.466197+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:59.467333+00:00",
+      "data": {
+        "call_id": "56f18ad8-a094-4ac5-9e5d-b28b3a127126",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:00.396201+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "56f18ad8-a094-4ac5-9e5d-b28b3a127126",
+        "duration_ms": 928,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-ae231c0a-49b6-45e1-8d29-739fa7b5cfa9",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1672,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1805
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:00.397304+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "evidence_only",
+        "reason": "model_interpretation_not_verified",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "needs_revision"
+      },
+      "kind": "verification.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:00.397953+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:00.398940+00:00",
+      "data": {
+        "call_id": "91f25a27-9a24-498c-bf37-8604a03c2fdb",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:03.997483+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "91f25a27-9a24-498c-bf37-8604a03c2fdb",
+        "duration_ms": 3598,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-3e2a5556-eb04-4bc2-93d3-2c43795c9cfd",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 553,
+          "prompt_tokens": 1779,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2332
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 13
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:03.999098+00:00",
+      "data": {
+        "proposals_published": 0,
+        "reason": "invalid_or_truncated_json",
+        "retry": false
+      },
+      "kind": "proposals.unavailable",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:04.000686+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet”",
+          "citations": [
+            {
+              "char_end": 2079,
+              "char_start": 2009,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p039",
+              "quote": "ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_status": "needs_review",
+          "locale": "de",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "evidence_only",
+            "reason": "model_interpretation_not_verified",
+            "same_model": true,
+            "verdict": "needs_revision"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet”",
+    "citations": [
+      {
+        "char_end": 2079,
+        "char_start": 2009,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p039",
+        "quote": "ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_status": "needs_review",
+    "locale": "de",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "evidence_only",
+      "reason": "model_interpretation_not_verified",
+      "same_model": true,
+      "verdict": "needs_revision"
+    }
+  },
+  "run_id": "40226099-dd92-4523-ae54-94f057f421e5",
+  "status": "needs_review"
+}

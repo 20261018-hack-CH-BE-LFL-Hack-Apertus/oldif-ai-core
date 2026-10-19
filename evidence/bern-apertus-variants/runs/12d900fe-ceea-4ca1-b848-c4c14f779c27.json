@@ -1,0 +1,330 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T13:01:11.074160+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:11.075013+00:00",
+      "data": {
+        "call_id": "f0bc3fe6-faf8-4ba9-9dc1-66e0b0339828",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:14.684245+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "f0bc3fe6-faf8-4ba9-9dc1-66e0b0339828",
+        "duration_ms": 3609,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-c23c2767-d995-47d4-b666-3381f8c20f6b",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 222,
+          "prompt_tokens": 1187,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1409
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:14.686436+00:00",
+      "data": {
+        "evidence_needed": [
+          "Direkte Angabe eines Prozentwertes für die Lesefähigkeit der Kinder in der Quelle.",
+          "Exakte Schülerzahl und Lesefähigkeit für diese Schüler aus der Quelle.",
+          "Hinweis der Quelle, dass eine Messung nicht möglich oder nicht vorgenommen wurde."
+        ],
+        "risks": [
+          "Unbelegte Prozentangabe erfinden und verfälschen",
+          "Fehlinterpretation der Schülerzahl (40 potentielle vs. 20 erschienene vs. tatsächlich unterrichtete)"
+        ],
+        "steps": [
+          "Schritt 1: Suche die Quelle nach dem exakten Prozentwert für lesefähige Kinder.",
+          "Schritt 2: Prüfe, ob die Quelle exakt angibt, wie viele der 40 möglichen Schüler nach dem Unterricht lesen konnten.",
+          "Schritt 3: Fall es keinen spezifischen Prozentwert gibt, notiere diesen Umstand.",
+          "Schritt 4: Formuliere das Ergebnis auf Basis der gefundenen oder fehlenden Information ausgeschlossen davon, einen Prozentwert zu erfinden."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:01:14.690298+00:00",
+      "data": {
+        "call_id": "cd6c8711-4d96-42aa-a249-f21764c110ea",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:01:16.413755+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "cd6c8711-4d96-42aa-a249-f21764c110ea",
+        "duration_ms": 1723,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-83e2ba77-6f00-4e00-a99a-cde8b0fcf3ab",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 100,
+          "prompt_tokens": 2950,
+          "prompt_tokens_details": {
+            "cached_tokens": 352,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3050
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:16.414938+00:00",
+      "data": {
+        "citations": 0,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:16.415838+00:00",
+      "data": {
+        "call_id": "a2c00c81-bd12-4e6d-83b0-a56760faecf5",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:17.241096+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "a2c00c81-bd12-4e6d-83b0-a56760faecf5",
+        "duration_ms": 825,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-8a91d85a-01b8-4799-b250-844568b6a9fc",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 52,
+          "prompt_tokens": 475,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 527
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 9
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:17.243242+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "reason": "candidate_abstained"
+      },
+      "kind": "review.output_bounded",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 10
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:17.245335+00:00",
+      "data": {
+        "contradictions": [],
+        "findings": [
+          "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+        ],
+        "historical_bias": [],
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "deterministic_abstention",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "abstain"
+      },
+      "kind": "verification.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:01:17.247145+00:00",
+      "data": {
+        "call_id": "879d1ce9-03d4-4963-b505-4f72098a4c54",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:01:19.936212+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "879d1ce9-03d4-4963-b505-4f72098a4c54",
+        "duration_ms": 2689,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-82a962c6-7062-41ba-b8fa-a5c56350303e",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 178,
+          "prompt_tokens": 547,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 725
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:19.937723+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "candidate_abstained"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:19.938724+00:00",
+      "data": {
+        "result": {
+          "abstained": true,
+          "answer": "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente.",
+          "citations": [],
+          "entities": [],
+          "human_review_required": true,
+          "locale": "de",
+          "model": "apertus-v1-5-70b-thinking",
+          "proposals": [],
+          "system_validation": {
+            "accepted": false,
+            "reason": "model_declared_insufficient_evidence",
+            "repair_exhausted": false
+          },
+          "timeline": [],
+          "uncertainty": [
+            "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+          ],
+          "verification": {
+            "contradictions": [],
+            "findings": [
+              "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+            ],
+            "historical_bias": [],
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "deterministic_abstention",
+            "same_model": true,
+            "separate_pass": true,
+            "verdict": "abstain"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": true,
+    "answer": "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente.",
+    "citations": [],
+    "entities": [],
+    "human_review_required": true,
+    "locale": "de",
+    "model": "apertus-v1-5-70b-thinking",
+    "proposals": [],
+    "system_validation": {
+      "accepted": false,
+      "reason": "model_declared_insufficient_evidence",
+      "repair_exhausted": false
+    },
+    "timeline": [],
+    "uncertainty": [
+      "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+    ],
+    "verification": {
+      "contradictions": [],
+      "findings": [
+        "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente."
+      ],
+      "historical_bias": [],
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "deterministic_abstention",
+      "same_model": true,
+      "separate_pass": true,
+      "verdict": "abstain"
+    }
+  },
+  "run_id": "12d900fe-ceea-4ca1-b848-c4c14f779c27",
+  "status": "needs_review"
+}

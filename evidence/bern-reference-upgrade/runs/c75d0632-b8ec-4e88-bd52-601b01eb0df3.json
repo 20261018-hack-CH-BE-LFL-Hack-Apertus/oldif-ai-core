@@ -1,0 +1,775 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:55:20.178400+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:55:20.179954+00:00",
+      "data": {
+        "call_id": "cb000e8b-fa3b-4a72-a87f-39b8f440c16a",
+        "max_output_tokens": 2048,
+        "model": "gpt-6-astra",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:55:27.013702+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "cb000e8b-fa3b-4a72-a87f-39b8f440c16a",
+        "duration_ms": 6833,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-EahBYm7yl7IAF2WVTvDHb9j2Vfnx3",
+        "requested_model": "gpt-6-astra",
+        "served_model": "gpt-6-astra-2026-09-03",
+        "usage": {
+          "completion_tokens": 155,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 2795,
+            "engine_ttlt_ms": 5989,
+            "pre_inference_ms": 101,
+            "service_tbt_ms": 21,
+            "service_ttft_ms": 2980,
+            "service_ttlt_ms": 6168,
+            "user_visible_ttft_ms": 2878
+          },
+          "prompt_tokens": 359,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 514
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:55:27.017855+00:00",
+      "data": {
+        "evidence_needed": [
+          "Le passage exact indiquant le pourcentage mesuré, la population concernée et le moment de l’observation."
+        ],
+        "risks": [
+          "Le catalogue décrit une source sans établir son contenu.",
+          "Une appréciation historique de la lecture peut être subjective et ne constitue pas une mesure chiffrée.",
+          "L’absence de contexte antérieur laisse incertain le référent de « ces enfants »."
+        ],
+        "steps": [
+          "Prévoir la consultation du texte intégral de « stapfer-2027 » via read_source.",
+          "Vérifier si le texte identifie les enfants concernés et fournit un pourcentage mesuré de lecture après cet enseignement.",
+          "Prévoir l’abstention si aucun pourcentage mesuré n’est fourni par la source."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:27.021102+00:00",
+      "data": {
+        "call_id": "08730437-a3c4-4fbc-9da1-b2a7070a12e7",
+        "max_output_tokens": 2048,
+        "model": "gpt-6-astra",
+        "tools_enabled": true
+      },
+      "kind": "model.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:29.427671+00:00",
+      "data": {
+        "api": "responses",
+        "call_id": "08730437-a3c4-4fbc-9da1-b2a7070a12e7",
+        "duration_ms": 2406,
+        "finish_reason": "completed",
+        "provider_response_id": "resp_052f4889fd1f033d016ad6133f242481939c65822d882b932d",
+        "requested_model": "gpt-6-astra",
+        "served_model": "gpt-6-astra",
+        "usage": {
+          "input_tokens": 710,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 734
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 6
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:29.431675+00:00",
+      "data": {
+        "arguments": {
+          "source_id": "stapfer-2027"
+        },
+        "call_id": "call_NK0NoJvELNhDCdM1i1zSb8g4",
+        "tool": "read_source"
+      },
+      "kind": "tool.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 7
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:29.435447+00:00",
+      "data": {
+        "call_id": "call_NK0NoJvELNhDCdM1i1zSb8g4",
+        "result": {
+          "id": "stapfer-2027",
+          "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "passages": [
+            {
+              "char_end": 104,
+              "char_start": 0,
+              "passage_id": "p001",
+              "text": "Alpthale eine eigene gemeinde ein kleines dörfchen von 10 häüsern im durchmesser eine grosse Stunde lang"
+            },
+            {
+              "char_end": 161,
+              "char_start": 107,
+              "passage_id": "p002",
+              "text": "eine kleine Stunde von dem ort gegen Schweiz 11 häüser"
+            },
+            {
+              "char_end": 172,
+              "char_start": 163,
+              "passage_id": "p003",
+              "text": "in brunni"
+            },
+            {
+              "char_end": 218,
+              "char_start": 174,
+              "passage_id": "p004",
+              "text": "gegen schweiz Einsidlen ein grosse 1/4 stund"
+            },
+            {
+              "char_end": 228,
+              "char_start": 220,
+              "passage_id": "p005",
+              "text": "9 haüser"
+            },
+            {
+              "char_end": 313,
+              "char_start": 230,
+              "passage_id": "p006",
+              "text": "im ganzen 30 haüser im kirchgang schweiz nun aber eigene begräbnis und taufzugehörr"
+            },
+            {
+              "char_end": 345,
+              "char_start": 315,
+              "passage_id": "p007",
+              "text": "eigene Municipalitat und agent"
+            },
+            {
+              "char_end": 388,
+              "char_start": 347,
+              "passage_id": "p008",
+              "text": "im kanton Waldstätten districkt Einsidlen"
+            },
+            {
+              "char_end": 458,
+              "char_start": 390,
+              "passage_id": "p009",
+              "text": "in diese bezirckes schuhle könten bej 40 kinder in die schule kommen"
+            },
+            {
+              "char_end": 552,
+              "char_start": 460,
+              "passage_id": "p010",
+              "text": "aber wegen schlechter ordnung seind 3 winter etwan 20 erschienen und das schlecht und selten"
+            },
+            {
+              "char_end": 593,
+              "char_start": 553,
+              "passage_id": "p011",
+              "text": "die nachste schuhle auf schweiz 3 stunde"
+            },
+            {
+              "char_end": 652,
+              "char_start": 595,
+              "passage_id": "p012",
+              "text": "die andern auf die Trachlauben ein Stunde oder 1/2 stunde"
+            },
+            {
+              "char_end": 737,
+              "char_start": 653,
+              "passage_id": "p013",
+              "text": "über die nächststehenden Fragen antworte ich im ganzen mit einem allgemeinen Bericht"
+            },
+            {
+              "char_end": 856,
+              "char_start": 739,
+              "passage_id": "p014",
+              "text": "||[Seite 2] die suhle Schule mus in diesem ort sehr schlecht gewesen sejn weil ich alda keine einzige persohn antrafe"
+            },
+            {
+              "char_end": 935,
+              "char_start": 858,
+              "passage_id": "p015",
+              "text": "welche recht lesen keine Schrift weder zu machen noch zu läsen im stande ware"
+            },
+            {
+              "char_end": 940,
+              "char_start": 937,
+              "passage_id": "p016",
+              "text": "N B"
+            },
+            {
+              "char_end": 972,
+              "char_start": 942,
+              "passage_id": "p017",
+              "text": "ich müste also fast alles sein"
+            },
+            {
+              "char_end": 1024,
+              "char_start": 974,
+              "passage_id": "p018",
+              "text": "wen das volk in der wirklichen Lage bestehen wolte"
+            },
+            {
+              "char_end": 1074,
+              "char_start": 1026,
+              "passage_id": "p019",
+              "text": "geistlich und weltliches zu besorgen lage mir ob"
+            },
+            {
+              "char_end": 1101,
+              "char_start": 1076,
+              "passage_id": "p020",
+              "text": "ich mache diese anmerkung"
+            },
+            {
+              "char_end": 1160,
+              "char_start": 1103,
+              "passage_id": "p021",
+              "text": "weil sie erlaubt und mir ohne grund Zur last gelegt wurde"
+            },
+            {
+              "char_end": 1228,
+              "char_start": 1162,
+              "passage_id": "p022",
+              "text": "ich frage mich aber vor jeder behörde gewissenhaft zu verantworten"
+            },
+            {
+              "char_end": 1261,
+              "char_start": 1230,
+              "passage_id": "p023",
+              "text": "der sich nicht verantworten kan"
+            },
+            {
+              "char_end": 1306,
+              "char_start": 1263,
+              "passage_id": "p024",
+              "text": "mag leicht angeklagt und beschuldigt werden"
+            },
+            {
+              "char_end": 1351,
+              "char_start": 1308,
+              "passage_id": "p025",
+              "text": "wer aber Man ist der darf wie ein Man reden"
+            },
+            {
+              "char_end": 1435,
+              "char_start": 1352,
+              "passage_id": "p026",
+              "text": "Hier in diesem ort ist kein schuhlhause und keine schuhl Stube und kein schuhlehrer"
+            },
+            {
+              "char_end": 1451,
+              "char_start": 1437,
+              "passage_id": "p027",
+              "text": "keine Stiftung"
+            },
+            {
+              "char_end": 1477,
+              "char_start": 1453,
+              "passage_id": "p028",
+              "text": "und keine gemeinds steür"
+            },
+            {
+              "char_end": 1521,
+              "char_start": 1478,
+              "passage_id": "p029",
+              "text": "Es wurde zwar jedem geistlichen aufgetragen"
+            },
+            {
+              "char_end": 1600,
+              "char_start": 1523,
+              "passage_id": "p030",
+              "text": "die schule zu halten da wurde von jedem kind für die wochen 1 baz versprochen"
+            },
+            {
+              "char_end": 1700,
+              "char_start": 1602,
+              "passage_id": "p031",
+              "text": "aber diese machte nicht lust schule zu halten in demme wenige kinder erscheinen und was erschienen"
+            },
+            {
+              "char_end": 1715,
+              "char_start": 1702,
+              "passage_id": "p032",
+              "text": "noch schlecht"
+            },
+            {
+              "char_end": 1751,
+              "char_start": 1717,
+              "passage_id": "p033",
+              "text": "und die bezahlung eben so schlecht"
+            },
+            {
+              "char_end": 1779,
+              "char_start": 1753,
+              "passage_id": "p034",
+              "text": "und mit zwang Einzutreiben"
+            },
+            {
+              "char_end": 1923,
+              "char_start": 1781,
+              "passage_id": "p035",
+              "text": "wurde nicht thunlich weil die Leüte arm und die kinder alle zusamen genommen zum allgemeinen besten ||[Seite 3] nicht für einen Bazen erlehret"
+            },
+            {
+              "char_end": 1950,
+              "char_start": 1924,
+              "passage_id": "p036",
+              "text": "ich hielte 2 winter schule"
+            },
+            {
+              "char_end": 1967,
+              "char_start": 1952,
+              "passage_id": "p037",
+              "text": "hatte 20 kinder"
+            },
+            {
+              "char_end": 2007,
+              "char_start": 1969,
+              "passage_id": "p038",
+              "text": "aber wie schon gemerket sehr unfleisig"
+            },
+            {
+              "char_end": 2079,
+              "char_start": 2009,
+              "passage_id": "p039",
+              "text": "ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet"
+            },
+            {
+              "char_end": 2138,
+              "char_start": 2081,
+              "passage_id": "p040",
+              "text": "und dieses benimbt den Lust diese bemühung zu unternehmen"
+            },
+            {
+              "char_end": 2190,
+              "char_start": 2140,
+              "passage_id": "p041",
+              "text": "in deme die Pfarrverrrichtungen mit darzu obliegen"
+            },
+            {
+              "char_end": 2235,
+              "char_start": 2192,
+              "passage_id": "p042",
+              "text": "besonders die gewöhnliche fasten kinderlehr"
+            },
+            {
+              "char_end": 2255,
+              "char_start": 2236,
+              "passage_id": "p043",
+              "text": "dieses merke ich an"
+            },
+            {
+              "char_end": 2300,
+              "char_start": 2257,
+              "passage_id": "p044",
+              "text": "nicht das ich diese bemühung aufgeben wolle"
+            },
+            {
+              "char_end": 2342,
+              "char_start": 2302,
+              "passage_id": "p045",
+              "text": "aber weil ich ohnentgeltlich dieses thue"
+            },
+            {
+              "char_end": 2374,
+              "char_start": 2344,
+              "passage_id": "p046",
+              "text": "so nehme ich mir die fleisigen"
+            },
+            {
+              "char_end": 2408,
+              "char_start": 2376,
+              "passage_id": "p047",
+              "text": "und gelährigen und gehorsamen an"
+            },
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "passage_id": "p048",
+              "text": "diese sollen im schreiben läsen und rechnen unterrichtet werden"
+            },
+            {
+              "char_end": 2503,
+              "char_start": 2475,
+              "passage_id": "p049",
+              "text": "gibt es noch dazwischen zeit"
+            },
+            {
+              "char_end": 2590,
+              "char_start": 2505,
+              "passage_id": "p050",
+              "text": "so werde ich trachten ihre vernunft mit wichtigen gegenstanden zu beschäftigen suchen"
+            }
+          ],
+          "record_hash_scope": "canonical-source-row-json",
+          "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+          "text_representation": "exact_passages",
+          "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+          "title": "Alpthal — Fliesstextantwort (Gesamt)",
+          "transcription_method": "published-Bern-datafication",
+          "transcription_review_status": "published_transcription_not_new_QA_gold",
+          "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+        },
+        "tool": "read_source"
+      },
+      "kind": "tool.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 8
+    },
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:55:29.438829+00:00",
+      "data": {
+        "finalization": "json_without_tools",
+        "sources_read": 1
+      },
+      "kind": "tools.evidence_complete",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 9
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:29.440998+00:00",
+      "data": {
+        "call_id": "e613d411-db54-48cc-b582-81170ab88512",
+        "max_output_tokens": 2048,
+        "model": "gpt-6-astra",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 10
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:55:34.642385+00:00",
+      "data": {
+        "api": "responses",
+        "call_id": "e613d411-db54-48cc-b582-81170ab88512",
+        "duration_ms": 5201,
+        "finish_reason": "completed",
+        "provider_response_id": "resp_052f4889fd1f033d016ad6134189888193898941ff6d572bb5",
+        "requested_model": "gpt-6-astra",
+        "served_model": "gpt-6-astra",
+        "usage": {
+          "input_tokens": 2575,
+          "input_tokens_details": {
+            "cache_write_tokens": 2572,
+            "cached_tokens": 0
+          },
+          "output_tokens": 130,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2705
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 11
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:55:34.643372+00:00",
+      "data": {
+        "citations": 0,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 12
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:55:34.644217+00:00",
+      "data": {
+        "call_id": "7605ea75-e318-4d42-8e0f-697409eebba7",
+        "max_output_tokens": 2048,
+        "model": "gpt-6-astra",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 13
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:55:38.040630+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "7605ea75-e318-4d42-8e0f-697409eebba7",
+        "duration_ms": 3396,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-EahBmAtk9oOobbj3haq5lmXt3hRWk",
+        "requested_model": "gpt-6-astra",
+        "served_model": "gpt-6-astra-2026-09-03",
+        "usage": {
+          "completion_tokens": 58,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 1127,
+            "engine_ttlt_ms": 2213,
+            "pre_inference_ms": 102,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 1929,
+            "service_ttlt_ms": 3010,
+            "user_visible_ttft_ms": 1826
+          },
+          "prompt_tokens": 422,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 480
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:55:38.041633+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "reason": "candidate_abstained"
+      },
+      "kind": "review.output_bounded",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 15
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:55:38.042380+00:00",
+      "data": {
+        "contradictions": [],
+        "findings": [
+          "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+        ],
+        "historical_bias": [],
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "deterministic_abstention",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "abstain"
+      },
+      "kind": "verification.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 16
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:55:38.043140+00:00",
+      "data": {
+        "call_id": "6ae7fed3-c90e-42eb-a9ba-7f9216ce66fc",
+        "max_output_tokens": 2048,
+        "model": "gpt-6-astra",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 17
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:55:41.536551+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "6ae7fed3-c90e-42eb-a9ba-7f9216ce66fc",
+        "duration_ms": 3493,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-EahBqctjTCkFyzSEteiSnTJQuZCbL",
+        "requested_model": "gpt-6-astra",
+        "served_model": "gpt-6-astra-2026-09-03",
+        "usage": {
+          "completion_tokens": 127,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 454,
+            "engine_ttlt_ms": 3044,
+            "pre_inference_ms": 93,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 640,
+            "service_ttlt_ms": 3223,
+            "user_visible_ttft_ms": 546
+          },
+          "prompt_tokens": 484,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 611
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 18
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:55:41.540629+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "candidate_abstained"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 19
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:55:41.544196+00:00",
+      "data": {
+        "result": {
+          "abstained": true,
+          "answer": "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux.",
+          "citations": [],
+          "entities": [],
+          "human_review_required": true,
+          "locale": "fr",
+          "model": "gpt-6-astra",
+          "proposals": [],
+          "system_validation": {
+            "accepted": false,
+            "reason": "model_declared_insufficient_evidence",
+            "repair_exhausted": false
+          },
+          "timeline": [],
+          "uncertainty": [
+            "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+          ],
+          "verification": {
+            "contradictions": [],
+            "findings": [
+              "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+            ],
+            "historical_bias": [],
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "deterministic_abstention",
+            "same_model": true,
+            "separate_pass": true,
+            "verdict": "abstain"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+      "sequence": 20
+    }
+  ],
+  "result": {
+    "abstained": true,
+    "answer": "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux.",
+    "citations": [],
+    "entities": [],
+    "human_review_required": true,
+    "locale": "fr",
+    "model": "gpt-6-astra",
+    "proposals": [],
+    "system_validation": {
+      "accepted": false,
+      "reason": "model_declared_insufficient_evidence",
+      "repair_exhausted": false
+    },
+    "timeline": [],
+    "uncertainty": [
+      "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+    ],
+    "verification": {
+      "contradictions": [],
+      "findings": [
+        "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+      ],
+      "historical_bias": [],
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "deterministic_abstention",
+      "same_model": true,
+      "separate_pass": true,
+      "verdict": "abstain"
+    }
+  },
+  "run_id": "c75d0632-b8ec-4e88-bd52-601b01eb0df3",
+  "status": "needs_review"
+}

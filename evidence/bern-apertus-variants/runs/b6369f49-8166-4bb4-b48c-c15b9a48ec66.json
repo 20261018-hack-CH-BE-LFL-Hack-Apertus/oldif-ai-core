@@ -1,0 +1,349 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:58:54.174012+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:54.174546+00:00",
+      "data": {
+        "call_id": "ab3e07f2-34e8-4d8c-ba75-bb9465d31fc5",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:55.080191+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "ab3e07f2-34e8-4d8c-ba75-bb9465d31fc5",
+        "duration_ms": 905,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-f567c8f0-a99c-4478-8df6-46c25bebfa6f",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1204,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1325
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:55.081386+00:00",
+      "data": {
+        "evidence_needed": [
+          "Passage, in der explizit beschrieben wird, was die Kinder lernen sollten"
+        ],
+        "risks": [
+          "Missinterpretation neuer Wortstellungen durch fehlende Kontextverknüpfung aus nicht vorhandenen Zitaten"
+        ],
+        "steps": [
+          "Identifizierung der für die Frage relevanten Passage innerhalb der Quellensammlung",
+          "Isolierung der Zeilen, die die erwarteten Lerninhalte für Kinder beschreiben",
+          "Extraktion der Originalwörter, die explizit die zu vermittelnden Fähigkeiten formulieren"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:55.083112+00:00",
+      "data": {
+        "call_id": "843d7d40-2a03-4c06-af31-dd1fd9dff196",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:56.466495+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "843d7d40-2a03-4c06-af31-dd1fd9dff196",
+        "duration_ms": 1383,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-d8f0a96a-846b-4e41-92f9-e9e16f3109f4",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 168,
+          "prompt_tokens": 2865,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3033
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:56.468514+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:56.469686+00:00",
+      "data": {
+        "call_id": "5314d9fe-b22e-447f-834b-02cd07069784",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:57.484993+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "5314d9fe-b22e-447f-834b-02cd07069784",
+        "duration_ms": 1015,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-119fd9b4-38e2-4122-8895-8e689573676e",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 1763,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1888
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:57.486656+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "evidence_only",
+        "reason": "invalid_verification_verdict",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "needs_revision"
+      },
+      "kind": "verification.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:57.487729+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:58:57.489032+00:00",
+      "data": {
+        "call_id": "27374912-0890-4b5f-a14c-7593c084c816",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:58:58.754378+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "27374912-0890-4b5f-a14c-7593c084c816",
+        "duration_ms": 1265,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-ee3a090f-d9d1-498a-a059-b07a34178ab6",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 174,
+          "prompt_tokens": 1782,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1956
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:58.759221+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:58.762442+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_status": "needs_review",
+          "locale": "de",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "evidence_only",
+            "reason": "model_interpretation_not_verified",
+            "same_model": true,
+            "verdict": "needs_revision"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_status": "needs_review",
+    "locale": "de",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "evidence_only",
+      "reason": "model_interpretation_not_verified",
+      "same_model": true,
+      "verdict": "needs_revision"
+    }
+  },
+  "run_id": "b6369f49-8166-4bb4-b48c-c15b9a48ec66",
+  "status": "needs_review"
+}

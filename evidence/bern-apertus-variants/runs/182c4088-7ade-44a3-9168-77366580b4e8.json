@@ -1,0 +1,364 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T13:00:46.938671+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:00:46.939560+00:00",
+      "data": {
+        "call_id": "d918b16c-9136-417c-8452-7a8874d3aa60",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:00:49.569659+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "d918b16c-9136-417c-8452-7a8874d3aa60",
+        "duration_ms": 2630,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-4909fde1-0d4d-4870-9086-57c97f66ccb4",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 176,
+          "prompt_tokens": 1193,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1369
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:00:49.571078+00:00",
+      "data": {
+        "evidence_needed": [
+          "Direct passage identifying the subjects children were intended to learn.",
+          "Evidence that the text explicitly lists curricular content without interpreting results."
+        ],
+        "risks": [
+          "Misreading 'Pfarrverrichtungen' or 'fasten kinderlehr' as curricular content instead of monitoring children during fasts.",
+          "Inferring learning occurred from 'nicht ohnentgeltlich dieses thue' instead of stating intended objectives.",
+          "Extracting extraneous terms from surrounding prose about school conditions."
+        ],
+        "steps": [
+          "Search source stapfer-2027 for passages discussing curricular objectives or intended learning for children.",
+          "Locate sentence indicating what the school was supposed to teach children.",
+          "Extract the specific words that list the intended learnings.",
+          "Verify no inference of outcomes is included, only the stated curriculum list."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:00:49.573278+00:00",
+      "data": {
+        "call_id": "e20e5ecb-7bca-485c-aec9-aacd92e1bf12",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:00:51.221724+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "e20e5ecb-7bca-485c-aec9-aacd92e1bf12",
+        "duration_ms": 1648,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-fc250590-139e-4331-bd3f-1830e7e238cb",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 2911,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3002
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:00:51.224037+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:00:51.225621+00:00",
+      "data": {
+        "call_id": "47954d16-2f58-4e62-b46e-edd4a512e255",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:00:52.914221+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "47954d16-2f58-4e62-b46e-edd4a512e255",
+        "duration_ms": 1688,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-7584b5bc-ce64-4821-b813-7ebb1e243ab4",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 92,
+          "prompt_tokens": 1677,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1769
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:00:52.915576+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "extractive_pending_human_review",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "supported"
+      },
+      "kind": "verification.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:00:52.916631+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:00:52.918069+00:00",
+      "data": {
+        "call_id": "ed59bce6-faf7-41d3-b1aa-79bbdc2beddb",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:00:55.278932+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "ed59bce6-faf7-41d3-b1aa-79bbdc2beddb",
+        "duration_ms": 2360,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-00bff0ec-230e-45ed-a3f0-7e22e4a796a6",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 149,
+          "prompt_tokens": 1795,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1944
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:00:55.280859+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:00:55.282015+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "The selected source passages are shown for human review; the model interpretation could not be verified.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_draft": {
+            "answer": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+            "entities": [],
+            "human_reviewed": false,
+            "state": "unreviewed",
+            "timeline": []
+          },
+          "interpretation_status": "needs_review",
+          "locale": "en",
+          "model": "apertus-v1-5-70b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "The selected source passages are shown for human review; the model interpretation could not be verified."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "extractive_pending_human_review",
+            "same_model": true,
+            "verdict": "supported"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "The selected source passages are shown for human review; the model interpretation could not be verified.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_draft": {
+      "answer": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+      "entities": [],
+      "human_reviewed": false,
+      "state": "unreviewed",
+      "timeline": []
+    },
+    "interpretation_status": "needs_review",
+    "locale": "en",
+    "model": "apertus-v1-5-70b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "The selected source passages are shown for human review; the model interpretation could not be verified."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "extractive_pending_human_review",
+      "same_model": true,
+      "verdict": "supported"
+    }
+  },
+  "run_id": "182c4088-7ade-44a3-9168-77366580b4e8",
+  "status": "needs_review"
+}

@@ -1,0 +1,324 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:58:46.126860+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:46.127486+00:00",
+      "data": {
+        "call_id": "8522b5d1-f698-4f24-9ab6-bb71a911eb6c",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:46.870926+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "8522b5d1-f698-4f24-9ab6-bb71a911eb6c",
+        "duration_ms": 743,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-b6f47590-387d-4fab-ab64-67b0129a01a3",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 72,
+          "prompt_tokens": 1193,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1265
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:58:46.871682+00:00",
+      "data": {
+        "evidence_needed": [
+          "full text passage from stapfer-2027 describing the intended children's curriculum"
+        ],
+        "risks": [
+          "untrustworthy metadata, need to verify each claim with the original text"
+        ],
+        "steps": [
+          "Locate the passage in stapfer-2027 describing the intended children's curriculum."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:46.873004+00:00",
+      "data": {
+        "call_id": "89cc03d9-d6ac-4df2-94d5-7da3eb6a9fa6",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:58:47.530788+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "89cc03d9-d6ac-4df2-94d5-7da3eb6a9fa6",
+        "duration_ms": 657,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-7da366b1-94cf-4713-b964-c2a2c73c7a99",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 65,
+          "prompt_tokens": 2806,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2871
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:47.531714+00:00",
+      "data": {
+        "citations": 0,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:47.532357+00:00",
+      "data": {
+        "call_id": "c0179b94-5636-4689-8b67-9af7fb62904b",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:48.489576+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "c0179b94-5636-4689-8b67-9af7fb62904b",
+        "duration_ms": 957,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-959c2dff-df98-481e-9a13-c0836f7ec9ea",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 464,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 581
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 9
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:48.490437+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "reason": "candidate_abstained"
+      },
+      "kind": "review.output_bounded",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 10
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:58:48.491105+00:00",
+      "data": {
+        "contradictions": [],
+        "findings": [
+          "I cannot provide a verified answer from these sources. Please review the original records."
+        ],
+        "historical_bias": [],
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "deterministic_abstention",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "abstain"
+      },
+      "kind": "verification.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:58:48.491783+00:00",
+      "data": {
+        "call_id": "70f83c34-0b4c-4678-ba2f-a5c83354f393",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:58:49.401060+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "70f83c34-0b4c-4678-ba2f-a5c83354f393",
+        "duration_ms": 909,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-40ddd993-c7ec-4b5a-a770-255e0b37a9f2",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 528,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 661
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 13
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:58:49.402039+00:00",
+      "data": {
+        "proposals_published": 0,
+        "reason": "invalid_or_truncated_json",
+        "retry": false
+      },
+      "kind": "proposals.unavailable",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:58:49.402727+00:00",
+      "data": {
+        "result": {
+          "abstained": true,
+          "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+          "citations": [],
+          "entities": [],
+          "human_review_required": true,
+          "locale": "en",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "system_validation": {
+            "accepted": false,
+            "reason": "model_declared_insufficient_evidence",
+            "repair_exhausted": false
+          },
+          "timeline": [],
+          "uncertainty": [
+            "I cannot provide a verified answer from these sources. Please review the original records."
+          ],
+          "verification": {
+            "contradictions": [],
+            "findings": [
+              "I cannot provide a verified answer from these sources. Please review the original records."
+            ],
+            "historical_bias": [],
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "deterministic_abstention",
+            "same_model": true,
+            "separate_pass": true,
+            "verdict": "abstain"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": true,
+    "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+    "citations": [],
+    "entities": [],
+    "human_review_required": true,
+    "locale": "en",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "system_validation": {
+      "accepted": false,
+      "reason": "model_declared_insufficient_evidence",
+      "repair_exhausted": false
+    },
+    "timeline": [],
+    "uncertainty": [
+      "I cannot provide a verified answer from these sources. Please review the original records."
+    ],
+    "verification": {
+      "contradictions": [],
+      "findings": [
+        "I cannot provide a verified answer from these sources. Please review the original records."
+      ],
+      "historical_bias": [],
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "deterministic_abstention",
+      "same_model": true,
+      "separate_pass": true,
+      "verdict": "abstain"
+    }
+  },
+  "run_id": "6381c1e6-4989-4b5b-856e-77f822ce16c8",
+  "status": "needs_review"
+}

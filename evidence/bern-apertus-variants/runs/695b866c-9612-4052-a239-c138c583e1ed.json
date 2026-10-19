@@ -1,0 +1,355 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T13:01:59.372642+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:59.373499+00:00",
+      "data": {
+        "call_id": "7e9fd238-c6d6-4792-bc80-6776c0152232",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:02:05.282078+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "7e9fd238-c6d6-4792-bc80-6776c0152232",
+        "duration_ms": 5908,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-4ae1de66-870b-4d1b-9cee-9bfa9b249710",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 373,
+          "prompt_tokens": 1217,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1590
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:02:05.282756+00:00",
+      "data": {
+        "evidence_needed": [
+          "Passascha dal text che descriva explicitamain ils pleds, cudeschs u materia d’emprendissadi prescritta",
+          "Indicaziuns davart il comportament real dals uffants durant las lecziuns sco cudeschs da success u fadads",
+          "Menziun da instruments (libers, cudeschs) u metodas dad instrucziun utilisadas en Alpthale",
+          "Cifras u observaziuns davart quai che è efectivamain vegnì emprendì u che è stà mancanza"
+        ],
+        "risks": [
+          "Deducir mesiras da success u qualitad basadamain sin la frequentaziun bassa",
+          "Interpretar la descripziun \"pleds\" o \"cudeschs\" sco ch’ils èn betg cleramain definids en il text",
+          "Far supposiziuns davart il cuntegn dals materials d’emprendissadi betg explicitamain descrits"
+        ],
+        "steps": [
+          "Buscar indicaziuns directas en il text davart ils pleds u cudeschs d'emprendissadi per ils uffants en Alpthale",
+          "Analisar la part dal text che tracta da l'instrucziun ed il comportament dals uffants durant las lecziuns",
+          "Comparar ils plans u las expectativas d’instrucziun cun il resultad real documentà (preschientscha e qualitad da las lecziuns)",
+          "Documentar cun exactezza quai che vegn menziunà sco cudeschs u quala instrucziun è vegnida dada senza interpretar qualitad ni mesiras"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:02:05.284008+00:00",
+      "data": {
+        "call_id": "6edbe249-4a67-4fbb-92c5-cbc7d9023545",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:02:07.647143+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "6edbe249-4a67-4fbb-92c5-cbc7d9023545",
+        "duration_ms": 2363,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-fddcb259-5fb8-4c0f-b210-6a6fc28b1075",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 143,
+          "prompt_tokens": 3130,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3273
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:02:07.648639+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:02:07.649565+00:00",
+      "data": {
+        "call_id": "42b32930-ed9c-4b13-9a1d-16c47a4b88ef",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:02:10.639920+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "42b32930-ed9c-4b13-9a1d-16c47a4b88ef",
+        "duration_ms": 2990,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-eeafd370-f6f7-4379-bf59-da435562d416",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 189,
+          "prompt_tokens": 1755,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1944
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:02:10.641086+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "evidence_only",
+        "reason": "model_interpretation_not_verified",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "needs_revision"
+      },
+      "kind": "verification.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:02:10.641761+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:02:10.642594+00:00",
+      "data": {
+        "call_id": "c283a663-a2f7-4ab6-89eb-e2aaa9576cfc",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:02:14.257811+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "c283a663-a2f7-4ab6-89eb-e2aaa9576cfc",
+        "duration_ms": 3615,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-457645ad-3089-456c-9051-cf77017f69eb",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 239,
+          "prompt_tokens": 1828,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2067
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:02:14.258742+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:02:14.259474+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_status": "needs_review",
+          "locale": "rm",
+          "model": "apertus-v1-5-70b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "evidence_only",
+            "reason": "model_interpretation_not_verified",
+            "same_model": true,
+            "verdict": "needs_revision"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_status": "needs_review",
+    "locale": "rm",
+    "model": "apertus-v1-5-70b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "evidence_only",
+      "reason": "model_interpretation_not_verified",
+      "same_model": true,
+      "verdict": "needs_revision"
+    }
+  },
+  "run_id": "695b866c-9612-4052-a239-c138c583e1ed",
+  "status": "needs_review"
+}

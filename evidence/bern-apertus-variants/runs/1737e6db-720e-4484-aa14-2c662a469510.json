@@ -1,0 +1,350 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:11.323557+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:11.324267+00:00",
+      "data": {
+        "call_id": "606068c1-2b0f-4826-9625-915b73913430",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:12.591822+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "606068c1-2b0f-4826-9625-915b73913430",
+        "duration_ms": 1267,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-9304856e-f078-4590-8574-c4fc546f36e4",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 175,
+          "prompt_tokens": 1205,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1380
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:12.592632+00:00",
+      "data": {
+        "evidence_needed": [
+          "informaziuns davart il dumber total d’uffants in età da scola",
+          "infurmaziuns davart il dumber real d’uffants frequentants suenter la instrucziun"
+        ],
+        "risks": [
+          "Il text na dat betg ina percentuala fixa, perquai n’è betg pussaivel da furnir la resposta directa senza speculaziuns"
+        ],
+        "steps": [
+          "Analisar il text per localisar quant pli d’uffants ha la scola frequentà suenter l’instrucziun?",
+          "Controllar sche il document cuntegna datas percentualas explicitas",
+          "Determinar sche datas matematicas, sco il dumber d’uffants e la capacited totala, permettan da calcular la percentuala"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:12.593967+00:00",
+      "data": {
+        "call_id": "f6094765-d02a-44f3-be9e-bf96bfae2b12",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:13.757947+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "f6094765-d02a-44f3-be9e-bf96bfae2b12",
+        "duration_ms": 1163,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-8e1aa93b-b9ae-481b-90b3-e3a27c671ad8",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 156,
+          "prompt_tokens": 2919,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3075
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:13.759052+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:13.759923+00:00",
+      "data": {
+        "call_id": "a6d1143f-ca2d-4d7e-a559-5eb2ebf99504",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:16.059883+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "a6d1143f-ca2d-4d7e-a559-5eb2ebf99504",
+        "duration_ms": 2299,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-d9c35d66-ba85-4e5a-b342-4f20c54024d2",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 342,
+          "prompt_tokens": 1752,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2094
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:16.060825+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "evidence_only",
+        "reason": "invalid_verification_verdict",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "needs_revision"
+      },
+      "kind": "verification.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:16.061485+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:16.062325+00:00",
+      "data": {
+        "call_id": "366bc6f9-8ec6-4bf2-896c-06c3f49f75a0",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:17.141627+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "366bc6f9-8ec6-4bf2-896c-06c3f49f75a0",
+        "duration_ms": 1079,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-9cc0e506-dde7-44b6-a0d1-425a84b0b233",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 160,
+          "prompt_tokens": 1815,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1975
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:17.142560+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:17.143208+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_status": "needs_review",
+          "locale": "rm",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "evidence_only",
+            "reason": "model_interpretation_not_verified",
+            "same_model": true,
+            "verdict": "needs_revision"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_status": "needs_review",
+    "locale": "rm",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Las passaschas tschernidas vegnan mussadas per ina controlla umana; l’interpretaziun dal model n’ha betg pudì vegnir verifitgada."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "evidence_only",
+      "reason": "model_interpretation_not_verified",
+      "same_model": true,
+      "verdict": "needs_revision"
+    }
+  },
+  "run_id": "1737e6db-720e-4484-aa14-2c662a469510",
+  "status": "needs_review"
+}

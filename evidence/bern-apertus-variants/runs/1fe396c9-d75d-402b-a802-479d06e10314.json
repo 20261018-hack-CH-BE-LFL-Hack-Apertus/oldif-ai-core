@@ -1,0 +1,330 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T13:01:41.252431+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:41.253076+00:00",
+      "data": {
+        "call_id": "c8208bde-b610-4982-8487-e837ae8bee52",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:44.035038+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "c8208bde-b610-4982-8487-e837ae8bee52",
+        "duration_ms": 2781,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-21a68597-123b-4d9c-8cba-d907442feb11",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 165,
+          "prompt_tokens": 1183,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1348
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T13:01:44.035823+00:00",
+      "data": {
+        "evidence_needed": [
+          "Valeurs numériques ou pourcentages indiquant le taux d'enfants sachant lire",
+          "Déclarations explicites sur les résultats de l'enseignement en lecture",
+          "Comparaisons ou mesures avant/après le cours dispensé"
+        ],
+        "risks": [
+          "Affirmation fausse sur un pourcentage inexistant dans le texte",
+          "Interprétation non permise des données qualitatives comme chiffrées"
+        ],
+        "steps": [
+          "Vérifier si le texte mentionne un pourcentage d'enfants sachant lire après l'enseignement",
+          "Identifier les informations chiffrées concernant les compétences en lecture dans la transcription",
+          "Examiner les passages relatifs au nombre d'enfants présents et à leurs capacités",
+          "Conclure sur l'absence de données chiffrées sur la maîtrise de la lecture"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:01:44.037328+00:00",
+      "data": {
+        "call_id": "9a2acd41-3cb3-4e51-9ceb-a15abaf253ba",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T13:01:46.827581+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "9a2acd41-3cb3-4e51-9ceb-a15abaf253ba",
+        "duration_ms": 2790,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-a694e3a2-44ca-4c10-9d67-4e69dcefaef5",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 175,
+          "prompt_tokens": 2884,
+          "prompt_tokens_details": {
+            "cached_tokens": 352,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3059
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:46.831028+00:00",
+      "data": {
+        "citations": 0,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:46.833667+00:00",
+      "data": {
+        "call_id": "d1339d91-b03d-47d9-97c9-8cf02e89b4c2",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:47.683022+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "d1339d91-b03d-47d9-97c9-8cf02e89b4c2",
+        "duration_ms": 849,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-701806a4-864c-4ad5-8fe5-cfcbcd87c31d",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 50,
+          "prompt_tokens": 475,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 525
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 9
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:47.688587+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "reason": "candidate_abstained"
+      },
+      "kind": "review.output_bounded",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 10
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T13:01:47.691032+00:00",
+      "data": {
+        "contradictions": [],
+        "findings": [
+          "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+        ],
+        "historical_bias": [],
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "deterministic_abstention",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "abstain"
+      },
+      "kind": "verification.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:01:47.693035+00:00",
+      "data": {
+        "call_id": "b2210c50-fb6b-4663-90e6-1126158426f2",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T13:01:50.488197+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "b2210c50-fb6b-4663-90e6-1126158426f2",
+        "duration_ms": 2795,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-a75f3c84-17e0-49c4-90ce-e91cccebf729",
+        "requested_model": "apertus-v1-5-70b-thinking",
+        "served_model": "apertus-v1-5-70b-thinking",
+        "usage": {
+          "completion_tokens": 190,
+          "prompt_tokens": 549,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 739
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:50.490813+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "candidate_abstained"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T13:01:50.492417+00:00",
+      "data": {
+        "result": {
+          "abstained": true,
+          "answer": "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux.",
+          "citations": [],
+          "entities": [],
+          "human_review_required": true,
+          "locale": "fr",
+          "model": "apertus-v1-5-70b-thinking",
+          "proposals": [],
+          "system_validation": {
+            "accepted": false,
+            "reason": "model_declared_insufficient_evidence",
+            "repair_exhausted": false
+          },
+          "timeline": [],
+          "uncertainty": [
+            "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+          ],
+          "verification": {
+            "contradictions": [],
+            "findings": [
+              "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+            ],
+            "historical_bias": [],
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "deterministic_abstention",
+            "same_model": true,
+            "separate_pass": true,
+            "verdict": "abstain"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": true,
+    "answer": "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux.",
+    "citations": [],
+    "entities": [],
+    "human_review_required": true,
+    "locale": "fr",
+    "model": "apertus-v1-5-70b-thinking",
+    "proposals": [],
+    "system_validation": {
+      "accepted": false,
+      "reason": "model_declared_insufficient_evidence",
+      "repair_exhausted": false
+    },
+    "timeline": [],
+    "uncertainty": [
+      "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+    ],
+    "verification": {
+      "contradictions": [],
+      "findings": [
+        "Je ne peux pas fournir de réponse vérifiée à partir de ces sources. Veuillez consulter les documents originaux."
+      ],
+      "historical_bias": [],
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "deterministic_abstention",
+      "same_model": true,
+      "separate_pass": true,
+      "verdict": "abstain"
+    }
+  },
+  "run_id": "1fe396c9-d75d-402b-a802-479d06e10314",
+  "status": "needs_review"
+}

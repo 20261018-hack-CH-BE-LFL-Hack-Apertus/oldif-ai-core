@@ -1,0 +1,80 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:10.283525+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "d535b98c-a972-46a7-98ca-466ddd6dc71b",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:10.284132+00:00",
+      "data": {
+        "call_id": "e34b674c-cc6d-416e-8578-a851c50e7a35",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "d535b98c-a972-46a7-98ca-466ddd6dc71b",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:11.865181+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "e34b674c-cc6d-416e-8578-a851c50e7a35",
+        "duration_ms": 1581,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-31b9e8a6-610e-499d-9ae7-f5240dc94949",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 199,
+          "prompt_tokens": 1217,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1416
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "d535b98c-a972-46a7-98ca-466ddd6dc71b",
+      "sequence": 3
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:11.865954+00:00",
+      "data": {
+        "result": {
+          "error": "Model response did not satisfy the JSON output contract; retry explicitly"
+        },
+        "status": "failed"
+      },
+      "kind": "run.completed",
+      "run_id": "d535b98c-a972-46a7-98ca-466ddd6dc71b",
+      "sequence": 4
+    }
+  ],
+  "result": {
+    "error": "Model response did not satisfy the JSON output contract; retry explicitly"
+  },
+  "run_id": "d535b98c-a972-46a7-98ca-466ddd6dc71b",
+  "status": "failed"
+}

@@ -1,0 +1,372 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:02.260316+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:02.261151+00:00",
+      "data": {
+        "call_id": "bf648ebc-be82-4385-97e3-87ab77c75334",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:03.247743+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "bf648ebc-be82-4385-97e3-87ab77c75334",
+        "duration_ms": 986,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-bc45bb4a-ed26-4191-b591-1de8725a253a",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 137,
+          "prompt_tokens": 1198,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1335
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:03.248905+00:00",
+      "data": {
+        "evidence_needed": [
+          "le passage de stapfer-2027 concernant l'enseignement des enfants"
+        ],
+        "risks": [
+          "risque d'inférer des résultats mesurés à partir du texte si le passage contient des données chiffrées ou des évaluations"
+        ],
+        "steps": [
+          "Examiner le texte de la source stapfer-2027 pour identifier la section décrivant ce que les enfants devaient apprendre.",
+          "Localiser les mots clés dans le passage qui énumère l'enseignement : lecture, écriture, calcul ou autres compétences.",
+          "Extraire uniquement ces mots sans interpréter des résultats ou inférer des données mesurées."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:03.250594+00:00",
+      "data": {
+        "call_id": "4e9fc8a0-500c-4636-b205-202e3985c3f3",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:04.193052+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "4e9fc8a0-500c-4636-b205-202e3985c3f3",
+        "duration_ms": 942,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-c8bf2d04-2569-4a0c-9fdd-1761480de5ba",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 130,
+          "prompt_tokens": 2876,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3006
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:04.196181+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:04.198181+00:00",
+      "data": {
+        "call_id": "536f0d77-77eb-450a-b959-b0022ad049e7",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:04.910792+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "536f0d77-77eb-450a-b959-b0022ad049e7",
+        "duration_ms": 712,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-63227832-8900-4290-bbb1-fea4e683f7e1",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 85,
+          "prompt_tokens": 1706,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1791
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 9
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:04.912201+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "extractive_pending_human_review",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "supported"
+      },
+      "kind": "verification.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 10
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:04.913144+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:04.914397+00:00",
+      "data": {
+        "call_id": "d01f3771-a794-414d-b9cb-dda6c89bfc3f",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:05.966068+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "d01f3771-a794-414d-b9cb-dda6c89bfc3f",
+        "duration_ms": 1051,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-9c8bc046-7220-458d-8790-98fc33fe61d4",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1834,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1975
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:05.966956+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:05.967658+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Les passages sélectionnés sont présentés pour examen humain ; l’interprétation du modèle n’a pas pu être vérifiée.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_draft": {
+            "answer": "écriture, lecture, calcul",
+            "entities": [
+              {
+                "name": "écriture, lecture, calcul",
+                "source_id": "stapfer-2027",
+                "type": "compétences enseignées"
+              }
+            ],
+            "human_reviewed": false,
+            "state": "unreviewed",
+            "timeline": []
+          },
+          "interpretation_status": "needs_review",
+          "locale": "fr",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Les passages sélectionnés sont présentés pour examen humain ; l’interprétation du modèle n’a pas pu être vérifiée."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "extractive_pending_human_review",
+            "same_model": true,
+            "verdict": "supported"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "117f8394-e012-405a-a304-352d307decaa",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Les passages sélectionnés sont présentés pour examen humain ; l’interprétation du modèle n’a pas pu être vérifiée.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_draft": {
+      "answer": "écriture, lecture, calcul",
+      "entities": [
+        {
+          "name": "écriture, lecture, calcul",
+          "source_id": "stapfer-2027",
+          "type": "compétences enseignées"
+        }
+      ],
+      "human_reviewed": false,
+      "state": "unreviewed",
+      "timeline": []
+    },
+    "interpretation_status": "needs_review",
+    "locale": "fr",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Les passages sélectionnés sont présentés pour examen humain ; l’interprétation du modèle n’a pas pu être vérifiée."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "extractive_pending_human_review",
+      "same_model": true,
+      "verdict": "supported"
+    }
+  },
+  "run_id": "117f8394-e012-405a-a304-352d307decaa",
+  "status": "needs_review"
+}

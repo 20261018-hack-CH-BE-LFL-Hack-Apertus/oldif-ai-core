@@ -1,0 +1,806 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:37.470675+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:37.471304+00:00",
+      "data": {
+        "call_id": "c70beab9-4e96-4a81-b351-2c4477a51336",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:40.911098+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "c70beab9-4e96-4a81-b351-2c4477a51336",
+        "duration_ms": 3439,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-1d12de6f-f93c-4526-bf2e-49356582a0bc",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 219,
+          "prompt_tokens": 431,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 650
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:40.911720+00:00",
+      "data": {
+        "evidence_needed": [
+          "Textstellen im Stapfer-2027, die explizit ausweisen, was Kinder lernen sollen",
+          "Vermeidung von Schlussfolgerungen über tatsächliche Lernerträge, falls solche nicht als Direktaussagen vorkommen"
+        ],
+        "risks": [
+          "Ableitung von Lernergebnissen statt reiner Textwiedergabe",
+          "Verwechslung zwischen intendierten Zielen und beobachteten Ergebnissen",
+          "Fehlinterpretation archivalischer Begriffe ohne historische Kontextklärung"
+        ],
+        "steps": [
+          "Lesen des Stapfer-2027-Quelltextes; Suche nach Nennungen spezifischer Lernziele für Kinder",
+          "Isolierung der unmittelbar relevanten Passagen im Text, die benennen, was Kinder lernen sollten",
+          "Prüfung der Passagen auf eindeutige Originalwörter/Begriffe der Quelle",
+          "Bericht der gefundenen Originalwörter als direkte Zitate, ohne Interpretation oder Ableitung von Lernergebnissen"
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:40.912240+00:00",
+      "data": {
+        "call_id": "2c0b98e5-a4d1-47e9-94fd-7732e1d7d9e3",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": true
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:42.104583+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "2c0b98e5-a4d1-47e9-94fd-7732e1d7d9e3",
+        "duration_ms": 1192,
+        "finish_reason": "tool_calls",
+        "provider_response_id": "chatcmpl-9f715324-5f86-4c02-874d-2311887d33c2",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 37,
+          "prompt_tokens": 836,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 873
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 6
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:42.105535+00:00",
+      "data": {
+        "arguments": {
+          "source_id": "stapfer-2027"
+        },
+        "call_id": "chatcmpl-tool-91c9c183582077dc",
+        "tool": "read_source"
+      },
+      "kind": "tool.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 7
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:42.106583+00:00",
+      "data": {
+        "call_id": "chatcmpl-tool-91c9c183582077dc",
+        "result": {
+          "id": "stapfer-2027",
+          "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "passages": [
+            {
+              "char_end": 104,
+              "char_start": 0,
+              "passage_id": "p001",
+              "text": "Alpthale eine eigene gemeinde ein kleines dörfchen von 10 häüsern im durchmesser eine grosse Stunde lang"
+            },
+            {
+              "char_end": 161,
+              "char_start": 107,
+              "passage_id": "p002",
+              "text": "eine kleine Stunde von dem ort gegen Schweiz 11 häüser"
+            },
+            {
+              "char_end": 172,
+              "char_start": 163,
+              "passage_id": "p003",
+              "text": "in brunni"
+            },
+            {
+              "char_end": 218,
+              "char_start": 174,
+              "passage_id": "p004",
+              "text": "gegen schweiz Einsidlen ein grosse 1/4 stund"
+            },
+            {
+              "char_end": 228,
+              "char_start": 220,
+              "passage_id": "p005",
+              "text": "9 haüser"
+            },
+            {
+              "char_end": 313,
+              "char_start": 230,
+              "passage_id": "p006",
+              "text": "im ganzen 30 haüser im kirchgang schweiz nun aber eigene begräbnis und taufzugehörr"
+            },
+            {
+              "char_end": 345,
+              "char_start": 315,
+              "passage_id": "p007",
+              "text": "eigene Municipalitat und agent"
+            },
+            {
+              "char_end": 388,
+              "char_start": 347,
+              "passage_id": "p008",
+              "text": "im kanton Waldstätten districkt Einsidlen"
+            },
+            {
+              "char_end": 458,
+              "char_start": 390,
+              "passage_id": "p009",
+              "text": "in diese bezirckes schuhle könten bej 40 kinder in die schule kommen"
+            },
+            {
+              "char_end": 552,
+              "char_start": 460,
+              "passage_id": "p010",
+              "text": "aber wegen schlechter ordnung seind 3 winter etwan 20 erschienen und das schlecht und selten"
+            },
+            {
+              "char_end": 593,
+              "char_start": 553,
+              "passage_id": "p011",
+              "text": "die nachste schuhle auf schweiz 3 stunde"
+            },
+            {
+              "char_end": 652,
+              "char_start": 595,
+              "passage_id": "p012",
+              "text": "die andern auf die Trachlauben ein Stunde oder 1/2 stunde"
+            },
+            {
+              "char_end": 737,
+              "char_start": 653,
+              "passage_id": "p013",
+              "text": "über die nächststehenden Fragen antworte ich im ganzen mit einem allgemeinen Bericht"
+            },
+            {
+              "char_end": 856,
+              "char_start": 739,
+              "passage_id": "p014",
+              "text": "||[Seite 2] die suhle Schule mus in diesem ort sehr schlecht gewesen sejn weil ich alda keine einzige persohn antrafe"
+            },
+            {
+              "char_end": 935,
+              "char_start": 858,
+              "passage_id": "p015",
+              "text": "welche recht lesen keine Schrift weder zu machen noch zu läsen im stande ware"
+            },
+            {
+              "char_end": 940,
+              "char_start": 937,
+              "passage_id": "p016",
+              "text": "N B"
+            },
+            {
+              "char_end": 972,
+              "char_start": 942,
+              "passage_id": "p017",
+              "text": "ich müste also fast alles sein"
+            },
+            {
+              "char_end": 1024,
+              "char_start": 974,
+              "passage_id": "p018",
+              "text": "wen das volk in der wirklichen Lage bestehen wolte"
+            },
+            {
+              "char_end": 1074,
+              "char_start": 1026,
+              "passage_id": "p019",
+              "text": "geistlich und weltliches zu besorgen lage mir ob"
+            },
+            {
+              "char_end": 1101,
+              "char_start": 1076,
+              "passage_id": "p020",
+              "text": "ich mache diese anmerkung"
+            },
+            {
+              "char_end": 1160,
+              "char_start": 1103,
+              "passage_id": "p021",
+              "text": "weil sie erlaubt und mir ohne grund Zur last gelegt wurde"
+            },
+            {
+              "char_end": 1228,
+              "char_start": 1162,
+              "passage_id": "p022",
+              "text": "ich frage mich aber vor jeder behörde gewissenhaft zu verantworten"
+            },
+            {
+              "char_end": 1261,
+              "char_start": 1230,
+              "passage_id": "p023",
+              "text": "der sich nicht verantworten kan"
+            },
+            {
+              "char_end": 1306,
+              "char_start": 1263,
+              "passage_id": "p024",
+              "text": "mag leicht angeklagt und beschuldigt werden"
+            },
+            {
+              "char_end": 1351,
+              "char_start": 1308,
+              "passage_id": "p025",
+              "text": "wer aber Man ist der darf wie ein Man reden"
+            },
+            {
+              "char_end": 1435,
+              "char_start": 1352,
+              "passage_id": "p026",
+              "text": "Hier in diesem ort ist kein schuhlhause und keine schuhl Stube und kein schuhlehrer"
+            },
+            {
+              "char_end": 1451,
+              "char_start": 1437,
+              "passage_id": "p027",
+              "text": "keine Stiftung"
+            },
+            {
+              "char_end": 1477,
+              "char_start": 1453,
+              "passage_id": "p028",
+              "text": "und keine gemeinds steür"
+            },
+            {
+              "char_end": 1521,
+              "char_start": 1478,
+              "passage_id": "p029",
+              "text": "Es wurde zwar jedem geistlichen aufgetragen"
+            },
+            {
+              "char_end": 1600,
+              "char_start": 1523,
+              "passage_id": "p030",
+              "text": "die schule zu halten da wurde von jedem kind für die wochen 1 baz versprochen"
+            },
+            {
+              "char_end": 1700,
+              "char_start": 1602,
+              "passage_id": "p031",
+              "text": "aber diese machte nicht lust schule zu halten in demme wenige kinder erscheinen und was erschienen"
+            },
+            {
+              "char_end": 1715,
+              "char_start": 1702,
+              "passage_id": "p032",
+              "text": "noch schlecht"
+            },
+            {
+              "char_end": 1751,
+              "char_start": 1717,
+              "passage_id": "p033",
+              "text": "und die bezahlung eben so schlecht"
+            },
+            {
+              "char_end": 1779,
+              "char_start": 1753,
+              "passage_id": "p034",
+              "text": "und mit zwang Einzutreiben"
+            },
+            {
+              "char_end": 1923,
+              "char_start": 1781,
+              "passage_id": "p035",
+              "text": "wurde nicht thunlich weil die Leüte arm und die kinder alle zusamen genommen zum allgemeinen besten ||[Seite 3] nicht für einen Bazen erlehret"
+            },
+            {
+              "char_end": 1950,
+              "char_start": 1924,
+              "passage_id": "p036",
+              "text": "ich hielte 2 winter schule"
+            },
+            {
+              "char_end": 1967,
+              "char_start": 1952,
+              "passage_id": "p037",
+              "text": "hatte 20 kinder"
+            },
+            {
+              "char_end": 2007,
+              "char_start": 1969,
+              "passage_id": "p038",
+              "text": "aber wie schon gemerket sehr unfleisig"
+            },
+            {
+              "char_end": 2079,
+              "char_start": 2009,
+              "passage_id": "p039",
+              "text": "ich dörfte 2 mädchen und ein knab stehlen die einigen Nuzen geschopfet"
+            },
+            {
+              "char_end": 2138,
+              "char_start": 2081,
+              "passage_id": "p040",
+              "text": "und dieses benimbt den Lust diese bemühung zu unternehmen"
+            },
+            {
+              "char_end": 2190,
+              "char_start": 2140,
+              "passage_id": "p041",
+              "text": "in deme die Pfarrverrrichtungen mit darzu obliegen"
+            },
+            {
+              "char_end": 2235,
+              "char_start": 2192,
+              "passage_id": "p042",
+              "text": "besonders die gewöhnliche fasten kinderlehr"
+            },
+            {
+              "char_end": 2255,
+              "char_start": 2236,
+              "passage_id": "p043",
+              "text": "dieses merke ich an"
+            },
+            {
+              "char_end": 2300,
+              "char_start": 2257,
+              "passage_id": "p044",
+              "text": "nicht das ich diese bemühung aufgeben wolle"
+            },
+            {
+              "char_end": 2342,
+              "char_start": 2302,
+              "passage_id": "p045",
+              "text": "aber weil ich ohnentgeltlich dieses thue"
+            },
+            {
+              "char_end": 2374,
+              "char_start": 2344,
+              "passage_id": "p046",
+              "text": "so nehme ich mir die fleisigen"
+            },
+            {
+              "char_end": 2408,
+              "char_start": 2376,
+              "passage_id": "p047",
+              "text": "und gelährigen und gehorsamen an"
+            },
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "passage_id": "p048",
+              "text": "diese sollen im schreiben läsen und rechnen unterrichtet werden"
+            },
+            {
+              "char_end": 2503,
+              "char_start": 2475,
+              "passage_id": "p049",
+              "text": "gibt es noch dazwischen zeit"
+            },
+            {
+              "char_end": 2590,
+              "char_start": 2505,
+              "passage_id": "p050",
+              "text": "so werde ich trachten ihre vernunft mit wichtigen gegenstanden zu beschäftigen suchen"
+            }
+          ],
+          "record_hash_scope": "canonical-source-row-json",
+          "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+          "text_representation": "exact_passages",
+          "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+          "title": "Alpthal — Fliesstextantwort (Gesamt)",
+          "transcription_method": "published-Bern-datafication",
+          "transcription_review_status": "published_transcription_not_new_QA_gold",
+          "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+        },
+        "tool": "read_source"
+      },
+      "kind": "tool.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 8
+    },
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:42.108126+00:00",
+      "data": {
+        "finalization": "json_without_tools",
+        "sources_read": 1
+      },
+      "kind": "tools.evidence_complete",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 9
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:42.109038+00:00",
+      "data": {
+        "call_id": "c38204a8-9ef1-4602-9941-bfbb344dbaa2",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 10
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:44.225158+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "c38204a8-9ef1-4602-9941-bfbb344dbaa2",
+        "duration_ms": 2116,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-813db4c8-51ca-4453-9cb0-ef55cdc44c27",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 104,
+          "prompt_tokens": 3145,
+          "prompt_tokens_details": {
+            "cached_tokens": 320,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 3249
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 11
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:44.227546+00:00",
+      "data": {
+        "candidate": {
+          "answer": "Die Kinder sollen im schreiben läsen und rechnen unterrichtet werden. Zudem sollen sie bei vorhandenem Zeitrahmen mit wichtigen Gegenständen beschäftigt werden, um ihre Vernunft zu bilden.\n\nDiese Angaben finden sich im Originaltext der Passage: p048\n\n{\"entities\":[],\"timeline\":[],\"uncertainty\":\"Der Text nennt Lehrinhalte, setzt deren Erreichen jedoch nicht als gesichertes Ergebnis voraus.\",\"abstained\":false}"
+        },
+        "error": "Model response requires a citations array",
+        "repair_budget": 1
+      },
+      "kind": "validation.failed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 12
+    },
+    {
+      "agent": "researcher-repair",
+      "created_at": "2026-10-19T12:59:44.229442+00:00",
+      "data": {
+        "call_id": "82013ff7-f9ab-4ba5-8e77-ba9d51e81807",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 13
+    },
+    {
+      "agent": "researcher-repair",
+      "created_at": "2026-10-19T12:59:46.497162+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "82013ff7-f9ab-4ba5-8e77-ba9d51e81807",
+        "duration_ms": 2267,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-9524510e-8e7e-416b-9c89-df4185a52466",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 2848,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2973
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:46.500191+00:00",
+      "data": {
+        "citations": 1,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 15
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:46.501539+00:00",
+      "data": {
+        "call_id": "5e8012b5-cd20-4fc3-adc8-4ac3f5ec0a7f",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 16
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:48.568264+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "5e8012b5-cd20-4fc3-adc8-4ac3f5ec0a7f",
+        "duration_ms": 2066,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-dd22adc4-8bc3-455a-a7ad-1c4d34d61739",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1719,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1842
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 17
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:48.569468+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "extractive_pending_human_review",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "supported"
+      },
+      "kind": "verification.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 18
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:48.570566+00:00",
+      "data": {
+        "citations_retained": 1,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "interpretation.withheld",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 19
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:48.571749+00:00",
+      "data": {
+        "call_id": "5509da58-d1c2-42e9-9a2a-bfc2d11bbcbd",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 20
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:53.101949+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "5509da58-d1c2-42e9-9a2a-bfc2d11bbcbd",
+        "duration_ms": 4530,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-a256518e-23aa-493c-8360-cf73e1f2650c",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 217,
+          "prompt_tokens": 1836,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2053
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 21
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:53.103761+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "kind": "proposals.withheld",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 22
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:53.104930+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+          "citations": [
+            {
+              "char_end": 2473,
+              "char_start": 2410,
+              "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "passage_id": "p048",
+              "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+              "record_hash_scope": "canonical-source-row-json",
+              "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+              "source_id": "stapfer-2027",
+              "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+              "title": "Alpthal — Fliesstextantwort (Gesamt)",
+              "transcription_method": "published-Bern-datafication",
+              "transcription_review_status": "published_transcription_not_new_QA_gold",
+              "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_draft": {
+            "answer": "Die Kinder sollen im schreiben läsen und rechnen unterrichtet werden. Zusätzlich sollen sie mit wichtigen Gegenständen beschäftigt werden, um ihre Vernunft zu bilden.",
+            "entities": [],
+            "human_reviewed": false,
+            "state": "unreviewed",
+            "timeline": []
+          },
+          "interpretation_status": "needs_review",
+          "locale": "de",
+          "model": "apertus-v1-5-70b",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "extractive_pending_human_review",
+            "same_model": true,
+            "verdict": "supported"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+      "sequence": 23
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden.\n\n“diese sollen im schreiben läsen und rechnen unterrichtet werden”",
+    "citations": [
+      {
+        "char_end": 2473,
+        "char_start": 2410,
+        "licence": "https://opendata.swiss/de/terms-of-use#terms_open",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "passage_id": "p048",
+        "quote": "diese sollen im schreiben läsen und rechnen unterrichtet werden",
+        "record_hash_scope": "canonical-source-row-json",
+        "sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+        "source_id": "stapfer-2027",
+        "text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+        "title": "Alpthal — Fliesstextantwort (Gesamt)",
+        "transcription_method": "published-Bern-datafication",
+        "transcription_review_status": "published_transcription_not_new_QA_gold",
+        "url": "https://opendata.swiss/de/dataset/stapfer-enquete-schule-in-der-schweiz-17991"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_draft": {
+      "answer": "Die Kinder sollen im schreiben läsen und rechnen unterrichtet werden. Zusätzlich sollen sie mit wichtigen Gegenständen beschäftigt werden, um ihre Vernunft zu bilden.",
+      "entities": [],
+      "human_reviewed": false,
+      "state": "unreviewed",
+      "timeline": []
+    },
+    "interpretation_status": "needs_review",
+    "locale": "de",
+    "model": "apertus-v1-5-70b",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "Die ausgewählten Quellenpassagen werden zur menschlichen Prüfung angezeigt. Die Interpretation des Modells konnte nicht verifiziert werden."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "extractive_pending_human_review",
+      "same_model": true,
+      "verdict": "supported"
+    }
+  },
+  "run_id": "5caa3ffe-a2ba-4ba7-b380-d9866cc50524",
+  "status": "needs_review"
+}

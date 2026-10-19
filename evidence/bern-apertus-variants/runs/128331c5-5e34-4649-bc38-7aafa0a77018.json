@@ -1,0 +1,326 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T12:59:05.254408+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "kind": "run.started",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:05.255252+00:00",
+      "data": {
+        "call_id": "8019d471-00ca-4b47-b80b-0c75d015a1ec",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:06.135856+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "8019d471-00ca-4b47-b80b-0c75d015a1ec",
+        "duration_ms": 880,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-e8bd3412-d83d-46a4-8284-3d668ff56440",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 1200,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1322
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T12:59:06.136501+00:00",
+      "data": {
+        "evidence_needed": [
+          "testo completo di stapfer-2027 dove si descrivono le istruzioni per la scuola"
+        ],
+        "risks": [
+          "Il testo può contenere incoerenze o termini storici non standardizzati che richiedono contestualizzazione."
+        ],
+        "steps": [
+          "Identificare nel testo il passaggio dove si elencano le competenze da insegnare ai bambini.",
+          "Individuare le voci specifiche tra le attività elencate.",
+          "Verificare la corrispondenza con l'uso scolastico nella regione alpina."
+        ]
+      },
+      "kind": "plan.created",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:06.137546+00:00",
+      "data": {
+        "call_id": "91376068-1880-4bb5-b722-0d768eb2e196",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T12:59:06.977742+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "91376068-1880-4bb5-b722-0d768eb2e196",
+        "duration_ms": 840,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-9fb8005c-e2d8-4f19-89ea-ac66fbd9aa41",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 97,
+          "prompt_tokens": 2864,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2961
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 6
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:06.978432+00:00",
+      "data": {
+        "citations": 0,
+        "exact_quotes": true
+      },
+      "kind": "validation.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 7
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:06.978955+00:00",
+      "data": {
+        "call_id": "cd1423f4-8de8-42ee-aa8b-10e24825264f",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 8
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:07.896648+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "cd1423f4-8de8-42ee-aa8b-10e24825264f",
+        "duration_ms": 917,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-c48b1b40-53c3-4856-81e1-fb54917e426b",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 485,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 610
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 9
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:07.897345+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "reason": "candidate_abstained"
+      },
+      "kind": "review.output_bounded",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 10
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T12:59:07.897849+00:00",
+      "data": {
+        "contradictions": [],
+        "findings": [
+          "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+        ],
+        "historical_bias": [],
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "deterministic_abstention",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "abstain"
+      },
+      "kind": "verification.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 11
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:07.898408+00:00",
+      "data": {
+        "call_id": "ff730ed9-23f6-4079-9d0d-06654ef3a29a",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-8b-thinking",
+        "tools_enabled": false
+      },
+      "kind": "model.started",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 12
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:09.397955+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "ff730ed9-23f6-4079-9d0d-06654ef3a29a",
+        "duration_ms": 1499,
+        "finish_reason": "stop",
+        "provider_response_id": "chatcmpl-60e8a7c2-74eb-456e-b290-49fd9ae0fcc9",
+        "requested_model": "apertus-v1-5-8b-thinking",
+        "served_model": "apertus-v1-5-8b-thinking",
+        "usage": {
+          "completion_tokens": 218,
+          "prompt_tokens": 556,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 774
+        }
+      },
+      "kind": "model.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 13
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T12:59:09.398751+00:00",
+      "data": {
+        "proposals_published": 0,
+        "reason": "invalid_or_truncated_json",
+        "retry": false
+      },
+      "kind": "proposals.unavailable",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 14
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T12:59:09.399413+00:00",
+      "data": {
+        "result": {
+          "abstained": true,
+          "answer": "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali.",
+          "citations": [],
+          "entities": [],
+          "human_review_required": true,
+          "locale": "it",
+          "model": "apertus-v1-5-8b-thinking",
+          "proposals": [],
+          "system_validation": {
+            "accepted": false,
+            "reason": "model_declared_insufficient_evidence",
+            "repair_exhausted": false
+          },
+          "timeline": [],
+          "uncertainty": [
+            "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+          ],
+          "verification": {
+            "contradictions": [],
+            "findings": [
+              "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+            ],
+            "historical_bias": [],
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "deterministic_abstention",
+            "same_model": true,
+            "separate_pass": true,
+            "verdict": "abstain"
+          }
+        },
+        "status": "needs_review"
+      },
+      "kind": "run.completed",
+      "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+      "sequence": 15
+    }
+  ],
+  "result": {
+    "abstained": true,
+    "answer": "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali.",
+    "citations": [],
+    "entities": [],
+    "human_review_required": true,
+    "locale": "it",
+    "model": "apertus-v1-5-8b-thinking",
+    "proposals": [],
+    "system_validation": {
+      "accepted": false,
+      "reason": "model_declared_insufficient_evidence",
+      "repair_exhausted": false
+    },
+    "timeline": [],
+    "uncertainty": [
+      "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+    ],
+    "verification": {
+      "contradictions": [],
+      "findings": [
+        "Non posso fornire una risposta verificata sulla base di queste fonti. Consultare i documenti originali."
+      ],
+      "historical_bias": [],
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "deterministic_abstention",
+      "same_model": true,
+      "separate_pass": true,
+      "verdict": "abstain"
+    }
+  },
+  "run_id": "128331c5-5e34-4649-bc38-7aafa0a77018",
+  "status": "needs_review"
+}
