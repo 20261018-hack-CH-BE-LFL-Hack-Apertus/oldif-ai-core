@@ -1,0 +1,1690 @@
+{
+  "batch_id": "eval-20261019T102053",
+  "source_sha256": "390853416efd296bdd4bfb1efec937b0a77669392728fbba2b25b212bee12dbc",
+  "source_hash_scope": "declared_input_provenance_hash",
+  "source_text_sha256": "ffcb8050b1895e5db11892fc46701c3e332f75202ebbd5ecec433758dde5184e",
+  "source_artifact_sha256": "766c58b65f108a31b60caac55d836ba3a1baba74afe89a1d36ed916031056557",
+  "source_record_locator": "export_antworten.xlsx#Worksheet!A2:L2",
+  "fixture_sha256": "9a9f33bf0a7d0b6b3359250bcd4ad16de3a01e9848bde6aaff93368f26456d43",
+  "question": "Summarize what the source says about schooling. Use one short exact quotation from source.text and note source bias. Read the supplied source once; do not search other records.",
+  "test_class": "live_workflow_smoke_not_held_out_quality_benchmark",
+  "expected_cases": 14,
+  "completed_cases": 14,
+  "not_run_cases": 0,
+  "failed_cases": 0,
+  "human_gold_documents": 0,
+  "challenge_1000_page_throughput": "NOT_RUN",
+  "challenge_80_percent_usability": "NOT_RUN",
+  "challenge_under_5_percent_structural_errors": "NOT_RUN",
+  "reason": "One public transcribed source record; no frozen human gold, manuscript page ground truth, or declared standard-machine 1000-page corpus",
+  "cases": [
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "de",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "a988deae-b8ac-4558-b831-c27f71a974c1",
+      "duration_seconds": 13.094,
+      "answer": "Ich kann aus diesen Quellen keine verifizierte Antwort geben. Bitte prüfen Sie die Originaldokumente.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 0,
+      "exact_quotes": 0,
+      "quote_integrity": null,
+      "events": 18,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 13005,
+      "usage": [
+        {
+          "completion_tokens": 220,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1292
+        },
+        {
+          "completion_tokens": 314,
+          "prompt_tokens": 1439,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1753
+        },
+        {
+          "completion_tokens": 992,
+          "prompt_tokens": 1452,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2444
+        },
+        {
+          "completion_tokens": 208,
+          "prompt_tokens": 1245,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1453
+        },
+        {
+          "completion_tokens": 171,
+          "prompt_tokens": 1465,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1636
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Der Text enthält keine strukturierte Aussage über die allgemeine Schulstruktur oder -organisation in der Region.",
+          "Es werden lediglich einzelne Beobachtungen zur lokalen Unterrichtsqualität, zur Schülerzahl und zu persönlichen Bemühungen eines Lehrers beschrieben.",
+          "Es fehlt eine zusammenfassende oder systematische Darstellung des Schulwesens, die auf den gesamten Kanton Waldstätten oder die Distrikte Einsidlen bezogen wäre."
+        ],
+        "historical_bias": [
+          "Die Darstellung des Lehrers ist subjektiv und persönlich, was eine allgemeine Verallgemeinerung verhindert.",
+          "Die Beschwerden über schlechte Organisation und Bezahlung der Schulen spiegeln möglicherweise lokale Probleme wider, sind aber keine objektive Feststellung des gesamten Schulwesens."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "uncertainty": [
+          "Ohne weitere Dokumente des gleichen Typs lässt sich keine verlässliche Aussage über das gesamte Schulwesen aus diesem Text ableiten."
+        ],
+        "verdict": "abstain"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "de-CH",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "adbc9535-e064-4bbe-b5c0-b53cb94f3543",
+      "duration_seconds": 4.029,
+      "answer": "Die Schule in Alpthale war sehr schlecht; weil ich dort keine einzige Person antraf, die recht lesen oder schreiben konnte.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 14,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 3805,
+      "usage": [
+        {
+          "completion_tokens": 190,
+          "prompt_tokens": 1075,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1265
+        },
+        {
+          "completion_tokens": 190,
+          "prompt_tokens": 1413,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1603
+        },
+        {
+          "completion_tokens": 113,
+          "prompt_tokens": 1487,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1600
+        },
+        {
+          "completion_tokens": 111,
+          "prompt_tokens": 1610,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1721
+        }
+      ],
+      "verification": {
+        "contradictions": null,
+        "findings": "Der Pfarrer kennzeichnete die schulische Lage in Alpthale als sehr schlecht, da er keine einzige Person fand, die lesen oder schreiben konnte.",
+        "historical_bias": "Subjektive Einschätzung eines Einzelnen ohne standardisierte Statistiken oder objektive Messgrößen, was eine quantitative Bestätigung der schlechten Qualifikation der Bevölkerung verhindert.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "uncertainty": "Einzeldarstellung und mögliche Übertreibung der negativen Lage.",
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "e4ae7854-e910-4278-91a5-9f0d8f5d6da5",
+      "duration_seconds": 5.036,
+      "answer": "I cannot provide a verified answer from these sources. Please review the original records.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 0,
+      "exact_quotes": 0,
+      "quote_integrity": null,
+      "events": 18,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 4448,
+      "usage": [
+        {
+          "completion_tokens": 89,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 1056,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1161
+        },
+        {
+          "completion_tokens": 219,
+          "prompt_tokens": 1311,
+          "prompt_tokens_details": {
+            "cached_tokens": 320,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1530
+        },
+        {
+          "completion_tokens": 147,
+          "prompt_tokens": 1358,
+          "prompt_tokens_details": {
+            "cached_tokens": 288,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1505
+        },
+        {
+          "completion_tokens": 169,
+          "prompt_tokens": 1219,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1388
+        },
+        {
+          "completion_tokens": 69,
+          "prompt_tokens": 1398,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1467
+        }
+      ],
+      "verification": {
+        "contradictions": [
+          "Sources claim poor conditions but at the same time state that at least some instruction was attempted by the local priest."
+        ],
+        "findings": [
+          "The source describes very poor schooling conditions in Alpthal, with no schoolhouse, no teacher, and low attendance (only about 20 children appearing during winter months).",
+          "School maintenance was obligated to priests but poorly funded, and children were not systematically literate or numerate despite occasional instruction efforts by the parish priest.",
+          "There is a potential bias in parish records praising limited local schooling attempts while emphasizing poverty and low participation rates to justify inaction or modest requests."
+        ],
+        "historical_bias": "Parish records may overstate local resistance and understate existing efforts due to ecclesiastical self-defense and poverty concerns.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "needs_revision"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "es",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "a1c4f3cc-2435-487d-9297-5cca7f662029",
+      "duration_seconds": 7.042,
+      "answer": "No puedo ofrecer una respuesta verificada a partir de estas fuentes. Revise los documentos originales.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 0,
+      "exact_quotes": 0,
+      "quote_integrity": null,
+      "events": 18,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 6397,
+      "usage": [
+        {
+          "completion_tokens": 112,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1184
+        },
+        {
+          "completion_tokens": 272,
+          "prompt_tokens": 1337,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1609
+        },
+        {
+          "completion_tokens": 148,
+          "prompt_tokens": 1428,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1576
+        },
+        {
+          "completion_tokens": 180,
+          "prompt_tokens": 1226,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1406
+        },
+        {
+          "completion_tokens": 137,
+          "prompt_tokens": 1416,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1553
+        }
+      ],
+      "verification": {
+        "contradictions": [
+          "The lack of permanent school infrastructure contrasts with the expectation that clergy could provide schooling."
+        ],
+        "findings": [
+          "The source notes that there is no schoolhouse, no schoolroom, and no schoolteacher in Alpthal, indicating a lack of formal schooling infrastructure.",
+          "It mentions that although clergy are tasked with holding school, the number of appearing children is very low and irregular, and payment is poor.",
+          "The writer ran a temporary effort with 20 children for two winters but found the effort discouraging due to poor discipline and insufficient compensation."
+        ],
+        "historical_bias": [
+          "The tone reflects personal discomfort and frustration, possibly exaggerating the urgency of the situation or focusing on inadequate resources rather than other systemic factors."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "uncertainty": "A direct short quotation required and source bias assessment provided.",
+        "verdict": "needs_revision"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "fr",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "2a905444-ba91-4962-a829-83aba889cb08",
+      "duration_seconds": 5.038,
+      "answer": "La source décrit une école extrêmement déficiente à Alptthal : aucune école, pas de bâtiment scolaire, aucun maître, aucune subvention. Seuls deux hivers d'enseignement ont eu lieu, avec 20 élèves très peu assidus et peu instruits.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 14,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 4333,
+      "usage": [
+        {
+          "completion_tokens": 119,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1191
+        },
+        {
+          "completion_tokens": 278,
+          "prompt_tokens": 1341,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1619
+        },
+        {
+          "completion_tokens": 151,
+          "prompt_tokens": 1552,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1703
+        },
+        {
+          "completion_tokens": 108,
+          "prompt_tokens": 1713,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1821
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "L'enquête décrit l'absence totale d'infrastructure scolaire à Alptthal : aucun bâtiment, aucun maître et aucune subvention.",
+          "Le rédacteur attribue la mauvaise qualité de l'enseignement à la pauvreté locale et à l'absence de ressources, sans apporter de preuve factuelle.",
+          "Deux hivers d'enseignement ont eu lieu avec seulement 20 élèves peu assidus et faiblement instruits."
+        ],
+        "historical_bias": "Le texte reflète une perspective critique et moralisante du rédacteur, suspectant l'absence d'école comme preuve de négligence volontaire, alors que le contexte socio‑économique difficile du village est probablement la cause principale.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "it",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "ea27f811-4ed3-4422-9b10-7f7ecb696bff",
+      "duration_seconds": 5.038,
+      "answer": "Secondo il testo, a Alpthale non esisteva alcuna scuola né un'insegnante: nessuna struttura per l'insegnamento, nessuna dotazione finanziaria comunale e nessun maestro incaricato; i pochi bambini che apparivano erano poco diligenti e mal istruiti.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 14,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 4,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 5006,
+      "usage": [
+        {
+          "completion_tokens": 126,
+          "prompt_tokens": 1072,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1198
+        },
+        {
+          "completion_tokens": 267,
+          "prompt_tokens": 1350,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1617
+        },
+        {
+          "completion_tokens": 186,
+          "prompt_tokens": 1542,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1728
+        },
+        {
+          "completion_tokens": 113,
+          "prompt_tokens": 1738,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1851
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Secondo il testo, ad Alpthale non esisteva alcuna scuola né un'insegnante: nessuna struttura, nessuna dotazione finanziaria comunale e nessun maestro incaricato; i bambini presenti erano poco diligenti e male istruiti.",
+          "Il resoconto contiene una chiara espressione critica sull'efficacia dell'insegnamento e sulla scarsità di risorse finanziarie da parte delle autorità locali.",
+          "Le risorse comunali erano insufficienti per garantire una scuola stabile e un'insegnante legittima per la popolazione."
+        ],
+        "historical_bias": "Il punto di vista è soggettivo e riflette l'opinione dell'autore, che enfatizza i problemi locali senza fornire una panoramica comparativa dei contesti svizzeri dell'epoca.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "apertus-v1-5-8b",
+      "locale": "rm",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "30a07299-ffa9-475a-a010-06d45e5a1cc9",
+      "duration_seconds": 10.073,
+      "answer": "Jau na poss betg dar ina resposta verifitgada a basa da questas funtaunas. Consultai ils documents originals.",
+      "error": null,
+      "abstained": true,
+      "citations_checked": 0,
+      "exact_quotes": 0,
+      "quote_integrity": null,
+      "events": 21,
+      "tool_calls": 0,
+      "served_models": [
+        "apertus-v1-5-8b"
+      ],
+      "provider_calls": 6,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 9731,
+      "usage": [
+        {
+          "completion_tokens": 204,
+          "prompt_tokens": 1081,
+          "prompt_tokens_details": {
+            "cached_tokens": 128,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1285
+        },
+        {
+          "completion_tokens": 324,
+          "prompt_tokens": 1436,
+          "prompt_tokens_details": {
+            "cached_tokens": 224,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1760
+        },
+        {
+          "completion_tokens": 342,
+          "prompt_tokens": 1735,
+          "prompt_tokens_details": {
+            "cached_tokens": 256,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2077
+        },
+        {
+          "completion_tokens": 181,
+          "prompt_tokens": 1507,
+          "prompt_tokens_details": {
+            "cached_tokens": 192,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1688
+        },
+        {
+          "completion_tokens": 127,
+          "prompt_tokens": 1254,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1381
+        },
+        {
+          "completion_tokens": 173,
+          "prompt_tokens": 1392,
+          "prompt_tokens_details": {
+            "cached_tokens": 160,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1565
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "The source reports a very poor state of schooling, noting that children could not read or write and that school attendance was often irregular due to poverty and lack of infrastructure, such as schoolhouses or teachers.",
+          "No exact quotation of schooling practices is identified in the supplied text passage",
+          "Historical bias: first-hand account reflects author's subjective perception of diligence rather than factual measurement of education quality."
+        ],
+        "historical_bias": "Personal bias evident in the author's judgment of the community's diligence, without systematic indicator of literacy standards.",
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "abstain"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "de",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "4c60968d-b1e0-4942-a97e-fc6acd875625",
+      "duration_seconds": 33.219,
+      "answer": "Der Bericht schildert eine mangelhaft ausgestattete und unregelmäßig besuchte Schule in Alpthal. Von etwa 40 möglichen Schulkindern seien während dreier Winter ungefähr 20 selten erschienen. Schulhaus, Schulstube, eigener Schullehrer, Stiftung und Gemeindesteuer hätten gefehlt. Geistliche sollten unterrichten; der versprochene Wochenbeitrag von einem Batzen pro Kind sei schlecht bezahlt worden, wobei der Bericht die Armut der Bevölkerung nennt. Der Verfasser habe selbst zwei Winter unentgeltlich etwa 20 Kinder unterrichtet und nur bei drei Kindern Nutzen gesehen. Künftig wolle er vor allem die von ihm als fleißig, gelehrig und gehorsam eingeschätzten Kinder im Schreiben, Lesen und Rechnen unterrichten.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 32816,
+      "usage": [
+        {
+          "completion_tokens": 264,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 63,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 19,
+            "engine_ttft_ms": 421,
+            "engine_ttlt_ms": 5410,
+            "pre_inference_ms": 248,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 816,
+            "service_ttlt_ms": 5799,
+            "user_visible_ttft_ms": 568
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1253
+        },
+        {
+          "input_tokens": 1317,
+          "input_tokens_details": {
+            "cache_write_tokens": 1314,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1341
+        },
+        {
+          "input_tokens": 2119,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1314
+          },
+          "output_tokens": 374,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2493
+        },
+        {
+          "completion_tokens": 309,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 118,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 853,
+            "engine_ttlt_ms": 7103,
+            "pre_inference_ms": 100,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 1623,
+            "service_ttlt_ms": 7789,
+            "user_visible_ttft_ms": 1523
+          },
+          "prompt_tokens": 1491,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1488,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1800
+        },
+        {
+          "completion_tokens": 302,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 68,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 575,
+            "engine_ttlt_ms": 6669,
+            "pre_inference_ms": 93,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 779,
+            "service_ttlt_ms": 6857,
+            "user_visible_ttft_ms": 686
+          },
+          "prompt_tokens": 1657,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1654,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1959
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Die Angaben zu Schulbesuch, fehlender Ausstattung, Finanzierung und Unterricht entsprechen dem bereitgestellten Quellentext.",
+          "Das kurze Zitat ist wortgetreu; Quellenkennung und Fundstellenmetadaten stimmen mit der gelieferten Quelle überein.",
+          "Die Auswahl künftig unterrichteter Kinder und der behauptete Lernerfolg werden zutreffend als Perspektive des Verfassers wiedergegeben."
+        ],
+        "historical_bias": [
+          "Die mögliche Selbstrechtfertigung des Verfassers durch Hinweise auf unbezahlte Arbeit und pfarramtliche Belastungen wird angemessen benannt.",
+          "Abwertende Urteile über Kinder und Schulbesuch sind nicht unabhängig bestätigt und werden zutreffend als perspektivisch eingeordnet."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "de-CH",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "4280db74-c12c-4486-9c8a-59bf29175258",
+      "duration_seconds": 33.164,
+      "answer": "Der Verfasser berichtet, dass in Alpthal von etwa 40 möglichen Schulkindern während dreier Winter nur ungefähr 20 unregelmässig erschienen. Es fehlten ein Schulhaus, eine Schulstube, ein Schullehrer, eine Stiftung und eine Gemeindesteuer für die Schule. Den Geistlichen war der Unterricht aufgetragen; der versprochene Wochenbeitrag von einem Batzen je Kind wurde laut Bericht schlecht bezahlt, wobei der Verfasser auf die Armut der Bevölkerung verweist. Er selbst habe zwei Winter mit 20 Kindern unterrichtet und nur bei zwei Mädchen und einem Knaben einen Nutzen gesehen. Trotz seiner Pfarrpflichten wolle er unentgeltlich jene Kinder weiter unterrichten, die er als fleissig, gelehrig und gehorsam beurteile: in Schreiben, Lesen und Rechnen sowie bei verfügbarer Zeit anhand weiterer wichtiger Gegenstände.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 32497,
+      "usage": [
+        {
+          "completion_tokens": 371,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 169,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 21,
+            "engine_ttft_ms": 403,
+            "engine_ttlt_ms": 8102,
+            "pre_inference_ms": 66,
+            "service_tbt_ms": 21,
+            "service_ttft_ms": 559,
+            "service_ttlt_ms": 8282,
+            "user_visible_ttft_ms": 492
+          },
+          "prompt_tokens": 993,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1364
+        },
+        {
+          "input_tokens": 1320,
+          "input_tokens_details": {
+            "cache_write_tokens": 1317,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1344
+        },
+        {
+          "input_tokens": 2122,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1317
+          },
+          "output_tokens": 372,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2494
+        },
+        {
+          "completion_tokens": 268,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 60,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 330,
+            "engine_ttlt_ms": 5092,
+            "pre_inference_ms": 95,
+            "service_tbt_ms": 18,
+            "service_ttft_ms": 1104,
+            "service_ttlt_ms": 5866,
+            "user_visible_ttft_ms": 1009
+          },
+          "prompt_tokens": 1493,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1490,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1761
+        },
+        {
+          "completion_tokens": 316,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 127,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 483,
+            "engine_ttlt_ms": 6735,
+            "pre_inference_ms": 130,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 711,
+            "service_ttlt_ms": 6953,
+            "user_visible_ttft_ms": 581
+          },
+          "prompt_tokens": 1674,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1671,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1990
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Die Zusammenfassung gibt Schulbesuch, fehlende Infrastruktur und Finanzierung sowie Unterrichtstätigkeit und Unterrichtsabsichten des Verfassers quellengetreu wieder.",
+          "Das Kurzzitat «Hier in diesem ort ist kein schuhlhause» stimmt exakt mit dem gelieferten Quellentext überein.",
+          "Quellenkennung, Titel und Fundstellenangaben entsprechen den bereitgestellten Metadaten."
+        ],
+        "historical_bias": [
+          "Die geistliche und selbstrechtfertigende Perspektive des Verfassers wird im Kandidaten ausdrücklich als mögliche Verzerrung benannt.",
+          "Urteile über Fleiss, Fähigkeiten und Lernerfolg werden zutreffend als nicht unabhängig bestätigte Wertungen eingeordnet.",
+          "Die Perspektiven der Kinder und ihrer Familien fehlen in der einzigen bereitgestellten Quelle."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "en",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "c04b68b5-a811-4b5a-ab52-108262f2d25e",
+      "duration_seconds": 30.196,
+      "answer": "The author reports that roughly 40 children could attend schooling in Alpthal, but only about 20 appeared irregularly over three winters. There was no schoolhouse, schoolroom, schoolteacher, endowment or communal school tax. Clergy were assigned teaching, with one batzen promised per child weekly, but payments were unreliable and families described as poor. The author says he taught 20 children for two winters without remuneration alongside parish duties, and intended to teach writing, reading and arithmetic to those he considered diligent, receptive and obedient.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 29289,
+      "usage": [
+        {
+          "completion_tokens": 312,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 157,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 23,
+            "engine_ttft_ms": 444,
+            "engine_ttlt_ms": 7521,
+            "pre_inference_ms": 95,
+            "service_tbt_ms": 23,
+            "service_ttft_ms": 620,
+            "service_ttlt_ms": 7689,
+            "user_visible_ttft_ms": 525
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1301
+        },
+        {
+          "input_tokens": 1271,
+          "input_tokens_details": {
+            "cache_write_tokens": 1268,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1295
+        },
+        {
+          "input_tokens": 2073,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1268
+          },
+          "output_tokens": 281,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2354
+        },
+        {
+          "completion_tokens": 268,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 74,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 21,
+            "engine_ttft_ms": 341,
+            "engine_ttlt_ms": 5923,
+            "pre_inference_ms": 125,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 1132,
+            "service_ttlt_ms": 6233,
+            "user_visible_ttft_ms": 1007
+          },
+          "prompt_tokens": 1396,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1393,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1664
+        },
+        {
+          "completion_tokens": 229,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 80,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 398,
+            "engine_ttlt_ms": 5059,
+            "pre_inference_ms": 99,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 589,
+            "service_ttlt_ms": 5240,
+            "user_visible_ttft_ms": 490
+          },
+          "prompt_tokens": 1565,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1562,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1794
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "The source supports approximately 40 potential pupils, about 20 attending irregularly over three winters, and the author's two winters teaching 20 children without payment.",
+          "The reported lack of facilities, teacher, endowment and communal school tax, unreliable promised payments, and selective instruction in writing, reading and arithmetic match the source.",
+          "The quotation \"kein schuhlhause\" is exact, and the citation metadata matches the supplied record."
+        ],
+        "historical_bias": [
+          "The candidate appropriately treats attendance figures and the author's sweeping literacy and educational-outcome judgments as reported assessments rather than independently verified facts.",
+          "The candidate identifies the author's self-defensive account of clerical burdens and selective teaching, while noting the absence of pupils' and families' perspectives."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "es",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "bd4431db-0da6-4196-843b-927979fda3d8",
+      "duration_seconds": 31.182,
+      "answer": "Según el informante, de unos 40 niños que podían acudir a la escuela de Alpthal, unos 20 asistieron irregularmente durante tres inviernos; faltaban edificio, aula, maestro y financiación estable, y el clérigo, que afirma haber enseñado gratuitamente durante dos inviernos, proyectaba instruir en lectura, escritura y cálculo a quienes consideraba aplicados, capaces y obedientes.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 30879,
+      "usage": [
+        {
+          "completion_tokens": 302,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 145,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 22,
+            "engine_ttft_ms": 338,
+            "engine_ttlt_ms": 6969,
+            "pre_inference_ms": 104,
+            "service_tbt_ms": 22,
+            "service_ttft_ms": 532,
+            "service_ttlt_ms": 7155,
+            "user_visible_ttft_ms": 427
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1291
+        },
+        {
+          "input_tokens": 1277,
+          "input_tokens_details": {
+            "cache_write_tokens": 1274,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1301
+        },
+        {
+          "input_tokens": 2079,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1274
+          },
+          "output_tokens": 273,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2352
+        },
+        {
+          "completion_tokens": 284,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 76,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 551,
+            "engine_ttlt_ms": 5745,
+            "pre_inference_ms": 123,
+            "service_tbt_ms": 18,
+            "service_ttft_ms": 1343,
+            "service_ttlt_ms": 6533,
+            "user_visible_ttft_ms": 1221
+          },
+          "prompt_tokens": 1388,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1385,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1672
+        },
+        {
+          "completion_tokens": 352,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 157,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 363,
+            "engine_ttlt_ms": 6702,
+            "pre_inference_ms": 158,
+            "service_tbt_ms": 18,
+            "service_ttft_ms": 624,
+            "service_ttlt_ms": 6957,
+            "user_visible_ttft_ms": 467
+          },
+          "prompt_tokens": 1569,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1566,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1921
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "El texto respalda las cifras aproximadas de alumnado, la asistencia irregular durante tres inviernos y la falta de instalaciones, maestro y financiación estable.",
+          "La cita coincide exactamente con la fuente suministrada: «Hier in diesem ort ist kein schuhlhause».",
+          "El informante declara haber enseñado dos inviernos y hacerlo gratuitamente; la enseñanza selectiva de lectura, escritura y cálculo se presenta correctamente como propósito."
+        ],
+        "historical_bias": [
+          "El candidato reconoce adecuadamente que la defensa de la propia labor clerical puede sesgar los juicios sobre alumnado y comunidad.",
+          "Las categorías de aplicación, capacidad y obediencia reflejan criterios del informante, no una evaluación independiente.",
+          "No se aportan testimonios de las familias ni corroboración independiente de las condiciones descritas."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "fr",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "86064e1e-b3ec-4ad6-bf57-8e073427a7b1",
+      "duration_seconds": 32.205,
+      "answer": "À Alpthal, selon le rédacteur, environ 40 enfants pourraient fréquenter l’école, mais une vingtaine seulement seraient venus durant trois hivers, de manière irrégulière. Il signale l’absence de bâtiment scolaire, de salle de classe, de maître d’école, de fondation et de contribution communale. L’enseignement incombe aux ecclésiastiques, auxquels un batz par enfant et par semaine était promis, mais les paiements sont difficiles dans cette population pauvre. Le témoin affirme avoir enseigné gratuitement pendant deux hivers à vingt enfants, tout en assumant ses fonctions paroissiales ; à ses yeux, seules deux filles et un garçon en auraient tiré quelque profit. Il entend privilégier les enfants assidus, réceptifs et obéissants pour leur apprendre à écrire, lire et compter, puis, si le temps le permet, exercer leur raison.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 31865,
+      "usage": [
+        {
+          "completion_tokens": 251,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 68,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 407,
+            "engine_ttlt_ms": 5516,
+            "pre_inference_ms": 89,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 579,
+            "service_ttlt_ms": 5683,
+            "user_visible_ttft_ms": 490
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1240
+        },
+        {
+          "input_tokens": 1299,
+          "input_tokens_details": {
+            "cache_write_tokens": 1296,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1323
+        },
+        {
+          "input_tokens": 2101,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1296
+          },
+          "output_tokens": 366,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2467
+        },
+        {
+          "completion_tokens": 267,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 79,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 530,
+            "engine_ttlt_ms": 5366,
+            "pre_inference_ms": 115,
+            "service_tbt_ms": 18,
+            "service_ttft_ms": 1293,
+            "service_ttlt_ms": 6125,
+            "user_visible_ttft_ms": 1178
+          },
+          "prompt_tokens": 1483,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1480,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1750
+        },
+        {
+          "completion_tokens": 383,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 198,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 19,
+            "engine_ttft_ms": 439,
+            "engine_ttlt_ms": 7784,
+            "pre_inference_ms": 85,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 615,
+            "service_ttlt_ms": 7947,
+            "user_visible_ttft_ms": 530
+          },
+          "prompt_tokens": 1646,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1643,
+            "cached_tokens": 0
+          },
+          "total_tokens": 2029
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Le résumé concorde avec le texte fourni concernant les effectifs, l’irrégularité de la fréquentation, l’absence de moyens scolaires et l’enseignement assuré gratuitement par le rédacteur.",
+          "La citation « schreiben läsen und rechnen » est exacte et provient bien de la source indiquée.",
+          "Les résultats scolaires et les intentions pédagogiques sont correctement présentés comme les appréciations et les projets du témoin."
+        ],
+        "historical_bias": [
+          "Le rédacteur défend explicitement son action et déprécie les capacités des habitants ainsi que l’assiduité des élèves.",
+          "Le candidat signale correctement que ces constats reposent sur un témoignage unique, sans corroboration indépendante."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "it",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "b42f27ff-d459-44c1-bc29-5a41a80e358e",
+      "duration_seconds": 36.219,
+      "answer": "Secondo l’autore, ad Alpthal circa 40 bambini avrebbero potuto frequentare la scuola, ma nei tre inverni ricordati ne comparvero circa 20, saltuariamente; egli dichiara di aver insegnato personalmente per due inverni. Segnala l’assenza di edificio scolastico, aula e maestro, nonché di fondazioni e imposte comunali destinate alla scuola. L’insegnamento era affidato agli ecclesiastici, con un compenso promesso di un batzen settimanale per bambino, ma i pagamenti erano irregolari e la povertà rendeva impraticabile riscuoterli forzatamente. L’autore giudica scarse le competenze della popolazione e ritiene che soltanto due bambine e un bambino abbiano tratto beneficio dalle lezioni. Dichiarando di operare gratuitamente e di essere gravato dagli obblighi parrocchiali, intende privilegiare gli alunni diligenti, ricettivi e obbedienti, insegnando scrittura, lettura e calcolo e, se possibile, esercitando il ragionamento.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 35311,
+      "usage": [
+        {
+          "completion_tokens": 350,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 147,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 19,
+            "engine_ttft_ms": 547,
+            "engine_ttlt_ms": 7300,
+            "pre_inference_ms": 74,
+            "service_tbt_ms": 19,
+            "service_ttft_ms": 710,
+            "service_ttlt_ms": 7428,
+            "user_visible_ttft_ms": 636
+          },
+          "prompt_tokens": 989,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1339
+        },
+        {
+          "input_tokens": 1318,
+          "input_tokens_details": {
+            "cache_write_tokens": 1315,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1342
+        },
+        {
+          "input_tokens": 2120,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1315
+          },
+          "output_tokens": 430,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2550
+        },
+        {
+          "completion_tokens": 325,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 65,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 18,
+            "engine_ttft_ms": 344,
+            "engine_ttlt_ms": 6302,
+            "pre_inference_ms": 102,
+            "service_tbt_ms": 18,
+            "service_ttft_ms": 1108,
+            "service_ttlt_ms": 7028,
+            "user_visible_ttft_ms": 1006
+          },
+          "prompt_tokens": 1547,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1544,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1872
+        },
+        {
+          "completion_tokens": 409,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 170,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 20,
+            "engine_ttft_ms": 340,
+            "engine_ttlt_ms": 8438,
+            "pre_inference_ms": 141,
+            "service_tbt_ms": 20,
+            "service_ttft_ms": 651,
+            "service_ttlt_ms": 8742,
+            "user_visible_ttft_ms": 510
+          },
+          "prompt_tokens": 1780,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1777,
+            "cached_tokens": 0
+          },
+          "total_tokens": 2189
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Il testo conferma circa 40 potenziali alunni, circa 20 presenze saltuarie nei tre inverni ricordati e due inverni d’insegnamento personale.",
+          "La citazione «kein schuhlhause und keine schuhl Stube und kein schuhlehrer» è esatta e proviene dalla fonte indicata.",
+          "Compenso promesso, pagamenti irregolari, povertà, gratuità dichiarata e programma riservato agli alunni selezionati sono riscontrabili nel testo."
+        ],
+        "historical_bias": [
+          "L’autore difende esplicitamente il proprio operato, rendendo plausibile l’intento autoassolutorio segnalato.",
+          "I giudizi sulle capacità della popolazione e sui risultati degli alunni riflettono la prospettiva dell’ecclesiastico, senza riscontri indipendenti.",
+          "La preferenza per alunni diligenti, ricettivi e obbedienti esprime criteri educativi selettivi dell’autore."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    },
+    {
+      "model": "gpt-6-astra",
+      "locale": "rm",
+      "source_ids": [
+        "stapfer-2027"
+      ],
+      "status": "needs_review",
+      "run_id": "59397a64-e7cf-47cd-b5dd-e1199362d30e",
+      "duration_seconds": 44.231,
+      "answer": "Tenor l’autur frequentavan circa 20 da potenzialmain 40 uffants la scola ad Alpthal, e quai mo irregularmain durant trais envierns. I mancavan ina chasa e stanza da scola, in magister, ina fundaziun ed ina contribuziun communala. Ils spirituals duevan instruir per in baz per uffant ed emna, ma ils pajaments eran manglus e la populaziun povra. L’autur rapporta d’avair instruì durant dus envierns e d’avair constatà in tschert niz mo tar duas mattas ed in mattatsch. El vuleva cuntinuar gratuitamain cun uffants diligents, capabels d’emprender ed obedaivels, instruind els en scriver, leger e far quints.",
+      "error": null,
+      "abstained": false,
+      "citations_checked": 1,
+      "exact_quotes": 1,
+      "quote_integrity": 1.0,
+      "events": 18,
+      "tool_calls": 1,
+      "served_models": [
+        "gpt-6-astra",
+        "gpt-6-astra-2026-09-03"
+      ],
+      "provider_calls": 5,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 43590,
+      "usage": [
+        {
+          "completion_tokens": 336,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 140,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 25,
+            "engine_ttft_ms": 717,
+            "engine_ttlt_ms": 9298,
+            "pre_inference_ms": 93,
+            "service_tbt_ms": 26,
+            "service_ttft_ms": 900,
+            "service_ttlt_ms": 9475,
+            "user_visible_ttft_ms": 807
+          },
+          "prompt_tokens": 995,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1331
+        },
+        {
+          "input_tokens": 1318,
+          "input_tokens_details": {
+            "cache_write_tokens": 1315,
+            "cached_tokens": 0
+          },
+          "output_tokens": 24,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1342
+        },
+        {
+          "input_tokens": 2120,
+          "input_tokens_details": {
+            "cache_write_tokens": 802,
+            "cached_tokens": 1315
+          },
+          "output_tokens": 395,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2515
+        },
+        {
+          "completion_tokens": 295,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 53,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 22,
+            "engine_ttft_ms": 1090,
+            "engine_ttlt_ms": 7719,
+            "pre_inference_ms": 74,
+            "service_tbt_ms": 22,
+            "service_ttft_ms": 1830,
+            "service_ttlt_ms": 8454,
+            "user_visible_ttft_ms": 1755
+          },
+          "prompt_tokens": 1516,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1513,
+            "cached_tokens": 0
+          },
+          "total_tokens": 1811
+        },
+        {
+          "completion_tokens": 355,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 144,
+            "rejected_prediction_tokens": 0
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 24,
+            "engine_ttft_ms": 347,
+            "engine_ttlt_ms": 8860,
+            "pre_inference_ms": 127,
+            "service_tbt_ms": 24,
+            "service_ttft_ms": 563,
+            "service_ttlt_ms": 9071,
+            "user_visible_ttft_ms": 436
+          },
+          "prompt_tokens": 1733,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 1730,
+            "cached_tokens": 0
+          },
+          "total_tokens": 2088
+        }
+      ],
+      "verification": {
+        "contradictions": [],
+        "findings": [
+          "Il resum correspunda al text furnì davart la frequentaziun irregulara, las mancanzas materialas e finanzialas e l’instrucziun tras spirituals.",
+          "Las indicaziuns davart dus envierns d’instrucziun, trais uffants cun in tschert niz e la cuntinuaziun gratuita per uffants tschernids èn sustegnidas dal rapport.",
+          "La citaziun exacta «im schreiben läsen und rechnen» figurescha en la funtauna inditgada; questa verificaziun sa basa mo sin il text furnì."
+        ],
+        "historical_bias": [
+          "Il candidat renda explicit che las valitaziuns negativas dals uffants e da la populaziun reflectan la perspectiva e pussibels pregiudizis da l’autur.",
+          "El menziunescha adequatamain la defensiun da sasez da l’autur e la mancanza d’ina conferma independenta da ses rapports."
+        ],
+        "human_review_required": true,
+        "independent_pass": true,
+        "same_model": true,
+        "verdict": "supported"
+      },
+      "human_language_review": "NOT_RUN",
+      "human_historical_accuracy": "NOT_RUN"
+    }
+  ],
+  "analytics": [
+    {
+      "model": "apertus-v1-5-8b",
+      "role": "default_and_primary",
+      "cases": 7,
+      "completed": 7,
+      "answered": 1,
+      "abstained": 6,
+      "failed": 0,
+      "not_run": 0,
+      "provider_calls": 33,
+      "tool_calls": 0,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 46725,
+      "total_reported_tokens": 51630,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 49.35,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    },
+    {
+      "model": "gpt-6-astra",
+      "role": "explicit_backup_comparison",
+      "cases": 7,
+      "completed": 7,
+      "answered": 7,
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "provider_calls": 35,
+      "tool_calls": 7,
+      "failed_provider_calls": 0,
+      "provider_duration_ms": 236247,
+      "total_reported_tokens": 61932,
+      "token_total_excludes_unreported_failed_calls": true,
+      "billing_cost_verified": false,
+      "sum_case_seconds_including_queue": 240.416,
+      "quality": "NOT_RUN_human_gold_unavailable"
+    }
+  ],
+  "implementation_commit": "08bf2ae9899fb403ae8cac87d32adf8a4dcc1c92",
+  "comparison_scope": "Primary default Apertus8B and explicitly selected Astra reference; same one-record fixture and seven locales. Other variants separately recorded in exploratory batch and direct access probes."
+}
