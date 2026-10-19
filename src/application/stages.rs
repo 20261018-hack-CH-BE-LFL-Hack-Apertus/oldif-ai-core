@@ -243,7 +243,14 @@ pub async fn reflect(
         e.store.emit(run,"proposals.withheld","outcome-owner",json!({"reason":reason,"free_form_output_published":false,"model_pass_executed":true})).await?;
         return Ok(json!([]));
     }
-    let v = validation::parse_json(content(&msg)?)?;
+    let v = match content(&msg).and_then(validation::parse_json) {
+        Ok(value) => value,
+        Err(CoreError::Invalid(_)) => {
+            e.store.emit(run,"proposals.unavailable","dreamer",json!({"reason":"invalid_or_truncated_json","proposals_published":0,"retry":false})).await?;
+            return Ok(json!([]));
+        }
+        Err(error) => return Err(error),
+    };
     let proposals:Vec<Value>=v["proposals"].as_array().into_iter().flatten().take(2).map(|p|json!({"id":uuid::Uuid::new_v4().to_string(),"kind":p["kind"],"description":p["description"],"rationale":p["rationale"],"status":"pending_human_review","applied":false})).collect();
     e.store
         .emit(run, "proposals.created", "dreamer", json!(proposals))

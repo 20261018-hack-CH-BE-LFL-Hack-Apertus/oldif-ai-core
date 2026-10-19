@@ -8,3 +8,5 @@ pub mod workflow;
 
 #[cfg(test)]
 mod budget_tests;
+#[cfg(test)]
+mod optional_proposals_tests;
