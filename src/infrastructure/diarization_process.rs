@@ -108,7 +108,7 @@ pub async fn execute(config: &DiarizationConfig, scratch: &Scratch) -> Result<Ve
         .map_err(|_| unavailable())?;
     tokio::time::timeout(Duration::from_secs(TIMEOUT_SECONDS), collect(&mut child))
         .await
-        .map_err(|_| CoreError::Unavailable("Diarization exceeded its 90 second deadline".into()))?
+        .map_err(|_| CoreError::Timeout)?
 }
 fn unavailable() -> CoreError {
     CoreError::Unavailable("Pinned local diarization runtime or model is unavailable".into())

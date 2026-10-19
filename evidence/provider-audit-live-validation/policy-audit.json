@@ -1,0 +1,72 @@
+{
+  "captured_at": "2026-10-19T15:04:35.488576+00:00",
+  "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+  "run_sha256": "e2a578dd2c3ab7104c6292155e74549a21ecad235f0d83b3931e6ae7ac58c7d1",
+  "additional_inference_calls": 0,
+  "observed_provider_completions": 5,
+  "checks": [
+    {
+      "name": "submission model catalog disables all proprietary routes",
+      "pass": true
+    },
+    {
+      "name": "policy rejects gpt-6-astra",
+      "pass": true
+    },
+    {
+      "name": "policy rejects gpt-realtime-2.1",
+      "pass": true
+    },
+    {
+      "name": "real workflow has provider completions",
+      "pass": true
+    },
+    {
+      "name": "persisted receipt matches event 3",
+      "pass": true
+    },
+    {
+      "name": "submission Apertus outcome/configuration 3",
+      "pass": true
+    },
+    {
+      "name": "persisted receipt matches event 6",
+      "pass": true
+    },
+    {
+      "name": "submission Apertus outcome/configuration 6",
+      "pass": true
+    },
+    {
+      "name": "persisted receipt matches event 13",
+      "pass": true
+    },
+    {
+      "name": "submission Apertus outcome/configuration 13",
+      "pass": true
+    },
+    {
+      "name": "persisted receipt matches event 16",
+      "pass": true
+    },
+    {
+      "name": "submission Apertus outcome/configuration 16",
+      "pass": true
+    },
+    {
+      "name": "persisted receipt matches event 20",
+      "pass": true
+    },
+    {
+      "name": "submission Apertus outcome/configuration 20",
+      "pass": true
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "limits": [
+    "No provider weight revision is invented when the gateway does not expose it.",
+    "Raw response hashes establish byte identity, not historical truth.",
+    "Realtime SDP/session hashes do not represent received speech or listening verification."
+  ]
+}

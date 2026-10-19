@@ -40,6 +40,9 @@ impl Provider {
                     )
                 });
         }
+        if self.config.execution_profile == "submission" {
+            return Err(CoreError::Policy("Submission profile permits Apertus only; comparison and proprietary voice are disabled".into()));
+        }
         if model == self.config.reference_model
             || model == self.config.realtime_model
             || model == self.config.transcription_model
@@ -124,18 +127,23 @@ impl Provider {
             .json(&body)
             .send()
             .await
-            .map_err(|_| CoreError::Transport)?;
+            .map_err(CoreError::from)?;
         let status = response.status();
         self.record_access(model, status.as_u16(), "inference");
+        let raw = response.bytes().await.map_err(CoreError::from)?;
+        let audit = self
+            .audit(model, "chat/completions", &body, status.as_u16(), &raw)
+            .await?;
         if !status.is_success() {
             return Err(CoreError::Provider(status.as_u16()));
         }
-        let body: Value = response.json().await.map_err(|_| CoreError::Transport)?;
+        let mut body: Value = serde_json::from_slice(&raw).map_err(|_| CoreError::Transport)?;
         if body.pointer("/choices/0/message").is_none() {
             return Err(CoreError::Unavailable(
                 "Provider returned no completion message".into(),
             ));
         }
+        body["_oldif_receipt"] = audit;
         Ok(body)
     }
 }

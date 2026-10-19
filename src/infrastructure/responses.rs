@@ -31,12 +31,17 @@ pub async fn complete(
         .json(&body)
         .send()
         .await
-        .map_err(|_| CoreError::Transport)?;
-    p.record_access(model, response.status().as_u16(), "inference");
-    if !response.status().is_success() {
-        return Err(CoreError::Provider(response.status().as_u16()));
+        .map_err(CoreError::from)?;
+    let status = response.status();
+    p.record_access(model, status.as_u16(), "inference");
+    let raw = response.bytes().await.map_err(CoreError::from)?;
+    let audit = p
+        .audit(model, "responses", &body, status.as_u16(), &raw)
+        .await?;
+    if !status.is_success() {
+        return Err(CoreError::Provider(status.as_u16()));
     }
-    let value: Value = response.json().await.map_err(|_| CoreError::Transport)?;
+    let value: Value = serde_json::from_slice(&raw).map_err(|_| CoreError::Transport)?;
     let output = value["output"].as_array().ok_or(CoreError::Transport)?;
     let text = output
         .iter()
@@ -49,7 +54,7 @@ pub async fn complete(
     let message =
         json!({"role":"assistant","content":text,"tool_calls":calls,"_responses_output":output});
     Ok(
-        json!({"id":value["id"],"model":value["model"],"usage":value["usage"],"api":"responses","choices":[{"message":message,"finish_reason":value["status"]}]}),
+        json!({"id":value["id"],"model":value["model"],"usage":value["usage"],"api":"responses","_oldif_receipt":audit,"choices":[{"message":message,"finish_reason":value["status"]}]}),
     )
 }
 fn input_items(messages: Vec<Value>) -> Vec<Value> {

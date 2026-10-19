@@ -1,0 +1,840 @@
+{
+  "events": [
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T15:02:57.441820+00:00",
+      "data": {
+        "agents": [
+          "planner",
+          "researcher",
+          "verifier",
+          "dreamer"
+        ],
+        "tools": [
+          "search_sources",
+          "read_source"
+        ],
+        "workflow": "archival-evidence-v1"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:1",
+      "kind": "run.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 1
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T15:02:57.442176+00:00",
+      "data": {
+        "call_id": "9bd469b8-688c-4301-861a-43ea4771aa1d",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:2",
+      "kind": "model.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 2
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T15:02:59.838200+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "9bd469b8-688c-4301-861a-43ea4771aa1d",
+        "duration_ms": 2396,
+        "finish_reason": "stop",
+        "provider_receipt": {
+          "api": "chat/completions",
+          "configuration": {
+            "max_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false
+          },
+          "credentials_retained": false,
+          "execution_profile": "submission",
+          "http_status": 200,
+          "provider": "keera",
+          "provider_revision": null,
+          "raw_content_retained": false,
+          "raw_response_bytes": 1435,
+          "raw_response_sha256": "79d54dee1e0c31e636277bfb0abc78f43e66933f262cb0333e5f2f544d56108a",
+          "receipt_id": "dba2dffb-9827-4da0-9715-b89cf8ca78bd",
+          "recorded_at": "2026-10-19T15:02:59.837256+00:00",
+          "request_sha256": "3e323ea189c25b265bf9c620fadfa52bb759ffdee29c3c381584a4f55292be92",
+          "request_timeout_seconds": 120,
+          "requested_model": "apertus-v1-5-70b",
+          "revision_status": "not_exposed_by_provider",
+          "schema_version": "1.0",
+          "served_model": "apertus-v1-5-70b",
+          "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-tp4-1381023c",
+          "tools_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "provider_response_id": "chatcmpl-f5127f39-d68d-4469-bcff-8863f4a0be13",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 154,
+          "prompt_tokens": 483,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 637
+        }
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:3",
+      "kind": "model.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 3
+    },
+    {
+      "agent": "planner",
+      "created_at": "2026-10-19T15:02:59.838942+00:00",
+      "data": {
+        "evidence_needed": [
+          "Exact year string returned by source synthetic-a",
+          "Exact year string returned by source synthetic-b",
+          "Both source_id and passage_id for each"
+        ],
+        "risks": [
+          "Sources may provide conflicting years",
+          "Metadata fields 'date' or 'event_date' may be absent",
+          "Passage_id not available if extraction only provides plain text"
+        ],
+        "steps": [
+          "Open source synthetic-a and read its date field",
+          "Open source synthetic-b and read its date field",
+          "Extract exact year and associated identifiers for each source",
+          "Formulate two separate date assertions with source_id and passage_id (using synthetic IDs)"
+        ]
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:4",
+      "kind": "plan.created",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 4
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:02:59.840127+00:00",
+      "data": {
+        "call_id": "4cef1327-a7ea-41c2-979a-e23513afdcbd",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": true
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:5",
+      "kind": "model.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 5
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.883762+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "4cef1327-a7ea-41c2-979a-e23513afdcbd",
+        "duration_ms": 1043,
+        "finish_reason": "tool_calls",
+        "provider_receipt": {
+          "api": "chat/completions",
+          "configuration": {
+            "max_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "stream": false,
+            "tool_choice": "required"
+          },
+          "credentials_retained": false,
+          "execution_profile": "submission",
+          "http_status": 200,
+          "provider": "keera",
+          "provider_revision": null,
+          "raw_content_retained": false,
+          "raw_response_bytes": 1018,
+          "raw_response_sha256": "e1c9087c72940972435a2fe93839ad13a1ad165be51683836c6b9c166450495d",
+          "receipt_id": "9f55f547-5006-4568-9781-aa7560c3bcca",
+          "recorded_at": "2026-10-19T15:03:00.882835+00:00",
+          "request_sha256": "67e3784855423f6d6d0d7ac4fa71d7a347c3455526633aeb9ff8ac621153f5a4",
+          "request_timeout_seconds": 120,
+          "requested_model": "apertus-v1-5-70b",
+          "revision_status": "not_exposed_by_provider",
+          "schema_version": "1.0",
+          "served_model": "apertus-v1-5-70b",
+          "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-tp4-1381023c",
+          "tools_sha256": "5c8d06c31fb34be1c6a0e9b30e49ce0a97d4ef2ebf411267bda4899e8511e460"
+        },
+        "provider_response_id": "chatcmpl-2f1e1fce-f5a2-455f-9356-4f146e45c0e4",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 61,
+          "prompt_tokens": 950,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1011
+        }
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:6",
+      "kind": "model.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 6
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.885841+00:00",
+      "data": {
+        "arguments": {
+          "source_id": "synthetic-a"
+        },
+        "call_id": "chatcmpl-tool-b8451b4d509aa94c",
+        "tool": "read_source"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:7",
+      "kind": "tool.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 7
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.886719+00:00",
+      "data": {
+        "call_id": "chatcmpl-tool-b8451b4d509aa94c",
+        "result": {
+          "id": "synthetic-a",
+          "licence": "synthetic-test-only",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "passages": [
+            {
+              "char_end": 20,
+              "char_start": 0,
+              "passage_id": "p001",
+              "text": "École opened in 1799"
+            }
+          ],
+          "sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+          "text_representation": "exact_passages",
+          "text_sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+          "title": "Synthetic contradictory fixture",
+          "url": "https://example.org/synthetic-a"
+        },
+        "tool": "read_source"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:8",
+      "kind": "tool.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 8
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.887396+00:00",
+      "data": {
+        "arguments": {
+          "source_id": "synthetic-b"
+        },
+        "call_id": "chatcmpl-tool-88dc8766e12549fa",
+        "tool": "read_source"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:9",
+      "kind": "tool.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 9
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.888533+00:00",
+      "data": {
+        "call_id": "chatcmpl-tool-88dc8766e12549fa",
+        "result": {
+          "id": "synthetic-b",
+          "licence": "synthetic-test-only",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "passages": [
+            {
+              "char_end": 20,
+              "char_start": 0,
+              "passage_id": "p001",
+              "text": "École opened in 1800"
+            }
+          ],
+          "sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+          "text_representation": "exact_passages",
+          "text_sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+          "title": "Synthetic contradictory fixture",
+          "url": "https://example.org/synthetic-b"
+        },
+        "tool": "read_source"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:10",
+      "kind": "tool.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 10
+    },
+    {
+      "agent": "manager",
+      "created_at": "2026-10-19T15:03:00.889413+00:00",
+      "data": {
+        "finalization": "json_without_tools",
+        "sources_read": 2
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:11",
+      "kind": "tools.evidence_complete",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 11
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:00.890621+00:00",
+      "data": {
+        "call_id": "4d387c70-d24e-41ad-b227-88c4aa4c11e8",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:12",
+      "kind": "model.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 12
+    },
+    {
+      "agent": "researcher",
+      "created_at": "2026-10-19T15:03:04.895278+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "4d387c70-d24e-41ad-b227-88c4aa4c11e8",
+        "duration_ms": 4004,
+        "finish_reason": "stop",
+        "provider_receipt": {
+          "api": "chat/completions",
+          "configuration": {
+            "max_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false
+          },
+          "credentials_retained": false,
+          "execution_profile": "submission",
+          "http_status": 200,
+          "provider": "keera",
+          "provider_revision": null,
+          "raw_content_retained": false,
+          "raw_response_bytes": 1601,
+          "raw_response_sha256": "fa994cb66e43232a641e3a33855c8a5e56a34d40db7c034e0fa5704f5eda951f",
+          "receipt_id": "43502faf-2a81-4a9f-a07e-1e8d37f0064b",
+          "recorded_at": "2026-10-19T15:03:04.893946+00:00",
+          "request_sha256": "fdd3726076884edbec0eee419582a2a2e83cdd5633c14e400221d1d134fb0cc6",
+          "request_timeout_seconds": 120,
+          "requested_model": "apertus-v1-5-70b",
+          "revision_status": "not_exposed_by_provider",
+          "schema_version": "1.0",
+          "served_model": "apertus-v1-5-70b",
+          "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-tp4-1381023c",
+          "tools_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "provider_response_id": "chatcmpl-dd724156-f8fe-4c6e-817b-d8a7dc54d7cb",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 262,
+          "prompt_tokens": 1386,
+          "prompt_tokens_details": {
+            "cached_tokens": 480,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 1648
+        }
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:13",
+      "kind": "model.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 13
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T15:03:04.896488+00:00",
+      "data": {
+        "citations": 2,
+        "exact_quotes": true
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:14",
+      "kind": "validation.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 14
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T15:03:04.897315+00:00",
+      "data": {
+        "call_id": "e655d329-6296-493a-b363-a1c36feaa8ac",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:15",
+      "kind": "model.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 15
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T15:03:07.361824+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "e655d329-6296-493a-b363-a1c36feaa8ac",
+        "duration_ms": 2464,
+        "finish_reason": "stop",
+        "provider_receipt": {
+          "api": "chat/completions",
+          "configuration": {
+            "max_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false
+          },
+          "credentials_retained": false,
+          "execution_profile": "submission",
+          "http_status": 200,
+          "provider": "keera",
+          "provider_revision": null,
+          "raw_content_retained": false,
+          "raw_response_bytes": 1183,
+          "raw_response_sha256": "a5ee8743d8f539c855561787f87656dca1dc076c6411c7bbff9a22f6673bdd8c",
+          "receipt_id": "9e6fd398-1678-45ca-aaf8-807ec52b31b3",
+          "recorded_at": "2026-10-19T15:03:07.358350+00:00",
+          "request_sha256": "71623a5d0d90e9e12de591a541e22811c34c03e1ae13050906eaa708713a0db0",
+          "request_timeout_seconds": 120,
+          "requested_model": "apertus-v1-5-70b",
+          "revision_status": "not_exposed_by_provider",
+          "schema_version": "1.0",
+          "served_model": "apertus-v1-5-70b",
+          "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-tp4-1381023c",
+          "tools_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "provider_response_id": "chatcmpl-79250c95-38b9-4312-96d4-2be39b6b8866",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 149,
+          "prompt_tokens": 2256,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2405
+        }
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:16",
+      "kind": "model.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 16
+    },
+    {
+      "agent": "verifier",
+      "created_at": "2026-10-19T15:03:07.363643+00:00",
+      "data": {
+        "authority": "advisory_model",
+        "human_review_required": true,
+        "independent_pass": false,
+        "output_policy": "evidence_only",
+        "reason": "model_interpretation_not_verified",
+        "same_model": true,
+        "separate_pass": true,
+        "verdict": "needs_revision"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:17",
+      "kind": "verification.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 17
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T15:03:07.365662+00:00",
+      "data": {
+        "citations_retained": 2,
+        "reason": "interpretation_unverified"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:18",
+      "kind": "interpretation.withheld",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 18
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T15:03:07.368418+00:00",
+      "data": {
+        "call_id": "9676a9e8-323d-40ed-96be-20046aef8095",
+        "max_output_tokens": 2048,
+        "model": "apertus-v1-5-70b",
+        "tools_enabled": false
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:19",
+      "kind": "model.started",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 19
+    },
+    {
+      "agent": "dreamer",
+      "created_at": "2026-10-19T15:03:09.988599+00:00",
+      "data": {
+        "api": "chat/completions",
+        "call_id": "9676a9e8-323d-40ed-96be-20046aef8095",
+        "duration_ms": 2620,
+        "finish_reason": "stop",
+        "provider_receipt": {
+          "api": "chat/completions",
+          "configuration": {
+            "max_tokens": 2048,
+            "model": "apertus-v1-5-70b",
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false
+          },
+          "credentials_retained": false,
+          "execution_profile": "submission",
+          "http_status": 200,
+          "provider": "keera",
+          "provider_revision": null,
+          "raw_content_retained": false,
+          "raw_response_bytes": 1527,
+          "raw_response_sha256": "b14e504a377a91e556f9c6e168f1ec77ea9db580cdd3cfe5bc7b6cc2914ac097",
+          "receipt_id": "78d54040-9eee-4423-9599-2aae69cf7cb1",
+          "recorded_at": "2026-10-19T15:03:09.987340+00:00",
+          "request_sha256": "3a0aa008784ab2780cd414ca20abb5ca3643a870d39ed1b450cc2ba33accd73c",
+          "request_timeout_seconds": 120,
+          "requested_model": "apertus-v1-5-70b",
+          "revision_status": "not_exposed_by_provider",
+          "schema_version": "1.0",
+          "served_model": "apertus-v1-5-70b",
+          "system_fingerprint": "vllm-0.23.1rc1.dev1029+ga601a9d99-tp4-1381023c",
+          "tools_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        "provider_response_id": "chatcmpl-617a555e-1496-456d-9033-a49b9fd923cd",
+        "requested_model": "apertus-v1-5-70b",
+        "served_model": "apertus-v1-5-70b",
+        "usage": {
+          "completion_tokens": 160,
+          "prompt_tokens": 2319,
+          "prompt_tokens_details": {
+            "cached_tokens": 64,
+            "multimodal_tokens": null
+          },
+          "total_tokens": 2479
+        }
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:20",
+      "kind": "model.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 20
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T15:03:09.989578+00:00",
+      "data": {
+        "free_form_output_published": false,
+        "model_pass_executed": true,
+        "reason": "interpretation_unverified"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:21",
+      "kind": "proposals.withheld",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 21
+    },
+    {
+      "agent": "outcome-owner",
+      "created_at": "2026-10-19T15:03:09.990617+00:00",
+      "data": {
+        "result": {
+          "abstained": false,
+          "answer": "The selected source passages are shown for human review; the model interpretation could not be verified.\n\n“École opened in 1799”\n\n“École opened in 1800”",
+          "assertion_validation": {
+            "accepted": 2,
+            "policy": "exact_span_proposals_not_historical_truth",
+            "reasons": [],
+            "rejected": 0
+          },
+          "assertions": [
+            {
+              "assertion_id": "136098708224d8b2ccc0c867ca5929cb71a33e44153504836d19b222485ab083",
+              "conflict_group": "7fc19cfa1ad1ed6bc3f0d7af2fdddb12ea6af4568e9e9704f99138896dde7bb3",
+              "evidence": {
+                "char_end": 20,
+                "char_start": 16,
+                "file_page_index": null,
+                "licence": "synthetic-test-only",
+                "offset_unit": "unicode_scalar_value",
+                "page": null,
+                "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+                "passage_id": "p001",
+                "printed_page_label": null,
+                "printed_page_label_missing_reason": "not_assessed",
+                "quote": "1799",
+                "record_hash_scope": "unspecified_input_provenance",
+                "sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+                "source_id": "synthetic-a",
+                "text_sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+                "title": "Synthetic contradictory fixture",
+                "url": "https://example.org/synthetic-a"
+              },
+              "human_reviewed": false,
+              "kind": "date",
+              "potential_conflict": true,
+              "predicate": "event_date",
+              "source_id": "synthetic-a",
+              "state": "proposed",
+              "subject": "École",
+              "value": "1799"
+            },
+            {
+              "assertion_id": "8d12217b5b898069802c131e1dc03479e8b2ecb8df769cdeed7cde71cf3f3053",
+              "conflict_group": "7fc19cfa1ad1ed6bc3f0d7af2fdddb12ea6af4568e9e9704f99138896dde7bb3",
+              "evidence": {
+                "char_end": 20,
+                "char_start": 16,
+                "file_page_index": null,
+                "licence": "synthetic-test-only",
+                "offset_unit": "unicode_scalar_value",
+                "page": null,
+                "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+                "passage_id": "p001",
+                "printed_page_label": null,
+                "printed_page_label_missing_reason": "not_assessed",
+                "quote": "1800",
+                "record_hash_scope": "unspecified_input_provenance",
+                "sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+                "source_id": "synthetic-b",
+                "text_sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+                "title": "Synthetic contradictory fixture",
+                "url": "https://example.org/synthetic-b"
+              },
+              "human_reviewed": false,
+              "kind": "date",
+              "potential_conflict": true,
+              "predicate": "event_date",
+              "source_id": "synthetic-b",
+              "state": "proposed",
+              "subject": "École",
+              "value": "1800"
+            }
+          ],
+          "citations": [
+            {
+              "char_end": 20,
+              "char_start": 0,
+              "file_page_index": null,
+              "licence": "synthetic-test-only",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+              "passage_id": "p001",
+              "printed_page_label": null,
+              "printed_page_label_missing_reason": "not_assessed",
+              "quote": "École opened in 1799",
+              "record_hash_scope": "unspecified_input_provenance",
+              "sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+              "source_id": "synthetic-a",
+              "text_sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+              "title": "Synthetic contradictory fixture",
+              "url": "https://example.org/synthetic-a"
+            },
+            {
+              "char_end": 20,
+              "char_start": 0,
+              "file_page_index": null,
+              "licence": "synthetic-test-only",
+              "locator_kind": "record",
+              "offset_unit": "unicode_scalar_value",
+              "page": null,
+              "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+              "passage_id": "p001",
+              "printed_page_label": null,
+              "printed_page_label_missing_reason": "not_assessed",
+              "quote": "École opened in 1800",
+              "record_hash_scope": "unspecified_input_provenance",
+              "sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+              "source_id": "synthetic-b",
+              "text_sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+              "title": "Synthetic contradictory fixture",
+              "url": "https://example.org/synthetic-b"
+            }
+          ],
+          "entities": [],
+          "evidence_only": true,
+          "human_review_required": true,
+          "interpretation_status": "needs_review",
+          "locale": "en",
+          "model": "apertus-v1-5-70b",
+          "proposals": [],
+          "source_fidelity": "exact_quotes_checked_human_review_required",
+          "timeline": [],
+          "uncertainty": [
+            "The selected source passages are shown for human review; the model interpretation could not be verified."
+          ],
+          "verification": {
+            "authority": "advisory_model",
+            "human_review_required": true,
+            "independent_pass": false,
+            "output_policy": "evidence_only",
+            "reason": "model_interpretation_not_verified",
+            "same_model": true,
+            "verdict": "needs_revision"
+          }
+        },
+        "status": "needs_review"
+      },
+      "event_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9:22",
+      "kind": "run.completed",
+      "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+      "sequence": 22
+    }
+  ],
+  "result": {
+    "abstained": false,
+    "answer": "The selected source passages are shown for human review; the model interpretation could not be verified.\n\n“École opened in 1799”\n\n“École opened in 1800”",
+    "assertion_validation": {
+      "accepted": 2,
+      "policy": "exact_span_proposals_not_historical_truth",
+      "reasons": [],
+      "rejected": 0
+    },
+    "assertions": [
+      {
+        "assertion_id": "136098708224d8b2ccc0c867ca5929cb71a33e44153504836d19b222485ab083",
+        "conflict_group": "7fc19cfa1ad1ed6bc3f0d7af2fdddb12ea6af4568e9e9704f99138896dde7bb3",
+        "evidence": {
+          "char_end": 20,
+          "char_start": 16,
+          "file_page_index": null,
+          "licence": "synthetic-test-only",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+          "passage_id": "p001",
+          "printed_page_label": null,
+          "printed_page_label_missing_reason": "not_assessed",
+          "quote": "1799",
+          "record_hash_scope": "unspecified_input_provenance",
+          "sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+          "source_id": "synthetic-a",
+          "text_sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+          "title": "Synthetic contradictory fixture",
+          "url": "https://example.org/synthetic-a"
+        },
+        "human_reviewed": false,
+        "kind": "date",
+        "potential_conflict": true,
+        "predicate": "event_date",
+        "source_id": "synthetic-a",
+        "state": "proposed",
+        "subject": "École",
+        "value": "1799"
+      },
+      {
+        "assertion_id": "8d12217b5b898069802c131e1dc03479e8b2ecb8df769cdeed7cde71cf3f3053",
+        "conflict_group": "7fc19cfa1ad1ed6bc3f0d7af2fdddb12ea6af4568e9e9704f99138896dde7bb3",
+        "evidence": {
+          "char_end": 20,
+          "char_start": 16,
+          "file_page_index": null,
+          "licence": "synthetic-test-only",
+          "offset_unit": "unicode_scalar_value",
+          "page": null,
+          "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+          "passage_id": "p001",
+          "printed_page_label": null,
+          "printed_page_label_missing_reason": "not_assessed",
+          "quote": "1800",
+          "record_hash_scope": "unspecified_input_provenance",
+          "sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+          "source_id": "synthetic-b",
+          "text_sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+          "title": "Synthetic contradictory fixture",
+          "url": "https://example.org/synthetic-b"
+        },
+        "human_reviewed": false,
+        "kind": "date",
+        "potential_conflict": true,
+        "predicate": "event_date",
+        "source_id": "synthetic-b",
+        "state": "proposed",
+        "subject": "École",
+        "value": "1800"
+      }
+    ],
+    "citations": [
+      {
+        "char_end": 20,
+        "char_start": 0,
+        "file_page_index": null,
+        "licence": "synthetic-test-only",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+        "passage_id": "p001",
+        "printed_page_label": null,
+        "printed_page_label_missing_reason": "not_assessed",
+        "quote": "École opened in 1799",
+        "record_hash_scope": "unspecified_input_provenance",
+        "sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+        "source_id": "synthetic-a",
+        "text_sha256": "328e82e68967e0b83587b4224a97fdbed1b7bcaf6a9b53736c6c0f2d58cfdea2",
+        "title": "Synthetic contradictory fixture",
+        "url": "https://example.org/synthetic-a"
+      },
+      {
+        "char_end": 20,
+        "char_start": 0,
+        "file_page_index": null,
+        "licence": "synthetic-test-only",
+        "locator_kind": "record",
+        "offset_unit": "unicode_scalar_value",
+        "page": null,
+        "page_missing_reason": "physical_page_not_supplied; record_level_evidence",
+        "passage_id": "p001",
+        "printed_page_label": null,
+        "printed_page_label_missing_reason": "not_assessed",
+        "quote": "École opened in 1800",
+        "record_hash_scope": "unspecified_input_provenance",
+        "sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+        "source_id": "synthetic-b",
+        "text_sha256": "396f360f4f920ef4ccd5d20d6934a9805da0db22fc71e67d4fbccd7969cdb6ea",
+        "title": "Synthetic contradictory fixture",
+        "url": "https://example.org/synthetic-b"
+      }
+    ],
+    "entities": [],
+    "evidence_only": true,
+    "human_review_required": true,
+    "interpretation_status": "needs_review",
+    "locale": "en",
+    "model": "apertus-v1-5-70b",
+    "proposals": [],
+    "source_fidelity": "exact_quotes_checked_human_review_required",
+    "timeline": [],
+    "uncertainty": [
+      "The selected source passages are shown for human review; the model interpretation could not be verified."
+    ],
+    "verification": {
+      "authority": "advisory_model",
+      "human_review_required": true,
+      "independent_pass": false,
+      "output_policy": "evidence_only",
+      "reason": "model_interpretation_not_verified",
+      "same_model": true,
+      "verdict": "needs_revision"
+    }
+  },
+  "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+  "status": "needs_review"
+}

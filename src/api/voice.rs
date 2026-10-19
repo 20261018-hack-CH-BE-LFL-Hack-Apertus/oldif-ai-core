@@ -47,19 +47,27 @@ pub async fn session(
         .json(&json!({"session":config}))
         .send()
         .await
-        .map_err(|_| CoreError::Transport)?;
-    if !secret_response.status().is_success() {
+        .map_err(CoreError::from)?;
+    let secret_status = secret_response.status();
+    let secret_bytes = secret_response.bytes().await.map_err(CoreError::from)?;
+    e.provider
+        .audit(
+            &e.config.realtime_model,
+            "realtime/client_secrets",
+            &json!({"session":config}),
+            secret_status.as_u16(),
+            &secret_bytes,
+        )
+        .await?;
+    if !secret_status.is_success() {
         e.provider.record_access(
             &e.config.realtime_model,
-            secret_response.status().as_u16(),
+            secret_status.as_u16(),
             "realtime_session",
         );
-        return Err(CoreError::Provider(secret_response.status().as_u16()));
+        return Err(CoreError::Provider(secret_status.as_u16()));
     }
-    let secret: Value = secret_response
-        .json()
-        .await
-        .map_err(|_| CoreError::Transport)?;
+    let secret: Value = serde_json::from_slice(&secret_bytes).map_err(|_| CoreError::Transport)?;
     let token = secret["value"]
         .as_str()
         .filter(|value| !value.is_empty())
@@ -76,16 +84,27 @@ pub async fn session(
         .body(sdp.to_owned())
         .send()
         .await
-        .map_err(|_| CoreError::Transport)?;
+        .map_err(CoreError::from)?;
+    let status = response.status();
     e.provider.record_access(
         &e.config.realtime_model,
-        response.status().as_u16(),
+        status.as_u16(),
         "realtime_session",
     );
-    if !response.status().is_success() {
-        return Err(CoreError::Provider(response.status().as_u16()));
+    let bytes = response.bytes().await.map_err(CoreError::from)?;
+    e.provider
+        .audit(
+            &e.config.realtime_model,
+            "realtime/calls",
+            &json!({"model":e.config.realtime_model,"sdp":sdp}),
+            status.as_u16(),
+            &bytes,
+        )
+        .await?;
+    if !status.is_success() {
+        return Err(CoreError::Provider(status.as_u16()));
     }
-    let answer = response.text().await.map_err(|_| CoreError::Transport)?;
+    let answer = String::from_utf8(bytes.to_vec()).map_err(|_| CoreError::Transport)?;
     if !answer.starts_with("v=0") {
         return Err(CoreError::Unavailable(
             "Provider did not return an SDP answer".into(),

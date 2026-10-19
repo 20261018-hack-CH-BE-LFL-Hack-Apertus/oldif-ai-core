@@ -13,7 +13,6 @@ use axum::{
 };
 use serde_json::{Value, json};
 use std::{convert::Infallible, sync::atomic::Ordering, time::Duration};
-use subtle::ConstantTimeEq;
 pub fn router(engine: Engine) -> Router {
     let protected = Router::new()
         .route("/v1/models", get(models))
@@ -42,21 +41,21 @@ pub fn router(engine: Engine) -> Router {
         ))
         .with_state(engine)
 }
-pub fn authorized(headers: &HeaderMap, token: &str) -> bool {
-    headers
-        .get("authorization")
-        .and_then(|h| h.to_str().ok())
-        .and_then(|h| h.strip_prefix("Bearer "))
-        .is_some_and(|v| bool::from(v.as_bytes().ct_eq(token.as_bytes())))
-}
 async fn authenticate(
     State(e): State<Engine>,
     req: Request,
     next: Next,
 ) -> Result<Response, CoreError> {
-    if !authorized(req.headers(), &e.config.internal_token) {
-        return Err(CoreError::Unauthorized);
-    }
+    super::auth::authorize_http(
+        req.headers()
+            .get("authorization")
+            .and_then(|value| value.to_str().ok()),
+        req.method(),
+        req.uri().path(),
+        req.uri().query(),
+        &e.config.internal_token,
+        e.config.covenant_token.as_deref(),
+    )?;
     Ok(next.run(req).await)
 }
 async fn models(State(e): State<Engine>) -> Json<Value> {

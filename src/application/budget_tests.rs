@@ -45,6 +45,7 @@ async fn finalization_scenario(budget: usize) {
         bind: String::new(),
         grpc_bind: String::new(),
         internal_token: String::new(),
+        covenant_token: None,
         cscs_base: format!("http://{address}"),
         cscs_key: Some("fixture-not-a-credential".into()),
         openai_base: String::new(),
@@ -63,6 +64,7 @@ async fn finalization_scenario(budget: usize) {
         max_concurrency: 1,
         max_runs: 10,
         voice_enabled: false,
+        execution_profile: "research".into(),
     };
     let store = Store::open(dir.clone()).await.unwrap();
     let engine = Engine {

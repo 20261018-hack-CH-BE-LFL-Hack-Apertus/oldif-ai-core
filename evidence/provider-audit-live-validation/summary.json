@@ -1,0 +1,50 @@
+{
+  "captured_at": "2026-10-19T15:03:10.536044+00:00",
+  "model": "apertus-v1-5-70b",
+  "provider_calls": 5,
+  "run_id": "4827f5f5-d19c-4edd-9dcb-be4f2e5abdc9",
+  "elapsed_seconds": 13.095,
+  "checks": [
+    {
+      "name": "unknown request key rejected",
+      "pass": true,
+      "http_status": 422
+    },
+    {
+      "name": "identical request reuses run",
+      "pass": true
+    },
+    {
+      "name": "run completed",
+      "pass": true
+    },
+    {
+      "name": "both attributed dates retained",
+      "pass": true
+    },
+    {
+      "name": "potential conflict retains shared group",
+      "pass": true
+    },
+    {
+      "name": "no automatic historical approval",
+      "pass": true
+    },
+    {
+      "name": "stable event identities",
+      "pass": true
+    },
+    {
+      "name": "exact span synthetic-a",
+      "pass": true
+    },
+    {
+      "name": "exact span synthetic-b",
+      "pass": true
+    }
+  ],
+  "passed": 9,
+  "failed": 0,
+  "run_sha256": "e2a578dd2c3ab7104c6292155e74549a21ecad235f0d83b3931e6ae7ac58c7d1",
+  "scope": "Real Apertus provider, synthetic contradictory input, local native core. Not human historical gold or production load."
+}

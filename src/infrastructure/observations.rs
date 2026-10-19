@@ -31,12 +31,14 @@ impl Provider {
             .ok()
             .and_then(|m| m.get(model).cloned())
             .unwrap_or(json!({"access":"not_probed"}));
+        let profile_permitted = self.config.execution_profile != "submission" || challenge;
         let available = configured
+            && profile_permitted
             && !matches!(
                 observation["access"].as_str(),
                 Some("access_denied" | "provider_error")
             );
-        json!({"id":model,"name":model,"provider":provider,"tools":crate::domain::supports_tools(model),"modality":modality,"configured":configured,"available":available,"access":observation["access"],"observation":observation,"challenge_model":challenge,"unavailable_reason":if !configured{"Provider credentials or modality are not configured"}else if !available{"Provider rejected the configured access; no replacement model is used"}else{""}})
+        json!({"id":model,"name":model,"provider":provider,"tools":crate::domain::supports_tools(model),"modality":modality,"configured":configured,"available":available,"access":observation["access"],"observation":observation,"challenge_model":challenge,"unavailable_reason":if !profile_permitted{"Disabled by the Apertus-only submission profile"}else if !configured{"Provider credentials or modality are not configured"}else if !available{"Provider rejected the configured access; no replacement model is used"}else{""}})
     }
     pub async fn probe_catalogs(&self) {
         let routes = [

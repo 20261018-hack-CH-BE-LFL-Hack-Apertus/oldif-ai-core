@@ -33,7 +33,7 @@ impl Engine {
         validation::request(&request, &self.config)?;
         self.provider.route(&request.model)?;
         if self.store.runs.lock().await.len() >= self.config.max_runs {
-            return Err(CoreError::Unavailable(
+            return Err(CoreError::Backpressure(
                 "Run storage limit reached; archive completed runs before retrying".into(),
             ));
         }
@@ -60,7 +60,11 @@ impl Engine {
             };
             if self
                 .store
-                .finish(&run, status, json!({"error":error.to_string()}))
+                .finish(
+                    &run,
+                    status,
+                    json!({"error":error.to_string(),"code":error.code()}),
+                )
                 .await
                 .is_err()
             {
@@ -69,11 +73,11 @@ impl Engine {
         }
     }
     async fn execute_inner(&self, run: &Run) -> Result<(), CoreError> {
-        let _permit = self
-            .permits
-            .acquire()
-            .await
-            .map_err(|_| CoreError::Cancelled)?;
+        let _permit = tokio::select! {
+            permit = tokio::time::timeout(std::time::Duration::from_secs(self.config.timeout_secs), self.permits.acquire()) =>
+                permit.map_err(|_| CoreError::Timeout)?.map_err(|_| CoreError::Cancelled)?,
+            _ = cancelled(run) => return Err(CoreError::Cancelled),
+        };
         Self::check_cancel(run)?;
         {
             run.snapshot.lock().await.status = "running".into();
@@ -168,12 +172,12 @@ impl Engine {
         let response = match result {
             Ok(value) => value,
             Err(error) => {
-                self.store.emit(run,"model.failed",agent,json!({"call_id":call_id,"model":model,"error":error.to_string(),"duration_ms":started.elapsed().as_millis()})).await?;
+                self.store.emit(run,"model.failed",agent,json!({"call_id":call_id,"model":model,"error":error.to_string(),"code":error.code(),"duration_ms":started.elapsed().as_millis()})).await?;
                 return Err(error);
             }
         };
         Self::check_cancel(run)?;
-        self.store.emit(run,"model.completed",agent,json!({"call_id":call_id,"requested_model":model,"served_model":response["model"],"provider_response_id":response["id"],"api":response.get("api").cloned().unwrap_or(json!("chat/completions")),"usage":response["usage"],"finish_reason":response["choices"][0]["finish_reason"],"duration_ms":started.elapsed().as_millis()})).await?;
+        self.store.emit(run,"model.completed",agent,json!({"call_id":call_id,"requested_model":model,"served_model":response["model"],"provider_response_id":response["id"],"api":response.get("api").cloned().unwrap_or(json!("chat/completions")),"usage":response["usage"],"finish_reason":response["choices"][0]["finish_reason"],"provider_receipt":response["_oldif_receipt"],"duration_ms":started.elapsed().as_millis()})).await?;
         Ok(response["choices"][0]["message"].clone())
     }
 }

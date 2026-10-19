@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-10-19T15:05:01.089262+00:00",
+  "validation_class": "Native Rust tests, including actual loopback TCP HTTP/gRPC and fake-provider requests",
+  "commands": [
+    {
+      "command": "cargo test --locked --quiet",
+      "exit_code": 0,
+      "passed": 56,
+      "failed": 0,
+      "ignored": 0
+    },
+    {
+      "command": "cargo build --locked --quiet",
+      "exit_code": 0
+    }
+  ],
+  "external_provider_calls_in_native_tests": 0,
+  "actual_scoped_auth_http_checks": 10,
+  "actual_scoped_auth_grpc_checks": 4,
+  "scope": [
+    "Distinct covenant credential cannot create/control runs or use voice/diarization/gRPC.",
+    "Submission profile rejects proprietary routes before network.",
+    "Success, error and malformed provider responses retain raw-byte hashes; timeout is typed.",
+    "Request configuration excludes prompt contents and credentials."
+  ],
+  "sources": [
+    {
+      "path": "src/api/auth.rs",
+      "sha256": "2d91bc768793b6c085de018ec05ab0ae5263b551a014a425868238ac8828833c"
+    },
+    {
+      "path": "src/api/auth_tests.rs",
+      "sha256": "bf4cbc5993ef350422d5cca7d3c60e9706ad25f258c93e4f76fa5e7434401caa"
+    },
+    {
+      "path": "src/config.rs",
+      "sha256": "80389efcda20273a157327023c9cade28ae3316e6ed22adf95bc9307e50f1503"
+    },
+    {
+      "path": "src/error.rs",
+      "sha256": "7aca3307769384f2fd686b4025bf1b97aa82be4ebb66f2c848ad19d4b6d32ff2"
+    },
+    {
+      "path": "src/infrastructure/provider.rs",
+      "sha256": "6ddb17187439d37b403521eeceac7c4cb5892f19d22fbf81672ab35859a4b99c"
+    },
+    {
+      "path": "src/infrastructure/provider_audit.rs",
+      "sha256": "53c43453933f4ac41aa0db8f0c96c1223f0abaeffcf5b2e546b6511fa414e3cb"
+    },
+    {
+      "path": "src/infrastructure/provider_tests.rs",
+      "sha256": "1ecf22e9e6e34efa8180bdd6dfbd9c9b4cb8f1813ad82c5a6aa8c1384533c92b"
+    },
+    {
+      "path": "src/infrastructure/responses.rs",
+      "sha256": "ee41280cb65234cb6994f4d591d0122c2df809ee3851f907ace6f4f743e42820"
+    },
+    {
+      "path": "src/api/voice.rs",
+      "sha256": "70809e014e1a68453bec24b049078cb755f09968ff90b0a476b99bcc67783880"
+    },
+    {
+      "path": "src/application/workflow.rs",
+      "sha256": "52494ed5e0e899e457fb6c2d45339883ac461905e66938b911383f3bc998d49c"
+    }
+  ]
+}
