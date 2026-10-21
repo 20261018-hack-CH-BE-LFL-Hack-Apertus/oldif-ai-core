@@ -6,6 +6,7 @@ pub struct Provider {
     pub client: reqwest::Client,
     pub config: Config,
     pub observations: std::sync::Arc<std::sync::RwLock<std::collections::HashMap<String, Value>>>,
+    pub(super) catalog_refresh: std::sync::Arc<tokio::sync::Mutex<Option<std::time::Instant>>>,
 }
 impl Provider {
     pub fn new(config: Config) -> Result<Self, CoreError> {
@@ -18,6 +19,7 @@ impl Provider {
             client,
             config,
             observations: Default::default(),
+            catalog_refresh: Default::default(),
         })
     }
     pub fn route(&self, model: &str) -> Result<(&str, &str), CoreError> {

@@ -26,6 +26,7 @@ fn config(base: String, directory: PathBuf) -> Config {
         voice: "fixture".into(),
         run_dir: directory,
         timeout_secs: 1,
+        catalog_refresh_secs: 1,
         output_tokens: 128,
         max_sources: 2,
         max_input_bytes: 12000,

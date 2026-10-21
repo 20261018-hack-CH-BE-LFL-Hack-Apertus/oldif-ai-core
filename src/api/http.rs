@@ -59,6 +59,7 @@ async fn authenticate(
     Ok(next.run(req).await)
 }
 async fn models(State(e): State<Engine>) -> Json<Value> {
+    e.provider.refresh_catalogs().await;
     Json(e.provider.models())
 }
 async fn start(

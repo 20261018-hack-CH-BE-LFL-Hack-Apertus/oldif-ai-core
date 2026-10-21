@@ -21,7 +21,7 @@ pub struct Engine {
 impl Engine {
     pub async fn new(config: Config) -> Result<Self, CoreError> {
         let provider = Provider::new(config.clone())?;
-        provider.probe_catalogs().await;
+        provider.refresh_catalogs().await;
         Ok(Self {
             provider,
             store: Store::open(config.run_dir.clone()).await?,

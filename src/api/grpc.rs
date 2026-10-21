@@ -32,6 +32,7 @@ impl Service {
 impl Core for Service {
     async fn get_models(&self, r: Request<Empty>) -> Result<Response<JsonPayload>, Status> {
         self.auth(&r)?;
+        self.engine.provider.refresh_catalogs().await;
         Ok(Response::new(JsonPayload {
             json: self.engine.provider.models().to_string(),
         }))

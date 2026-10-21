@@ -8,3 +8,5 @@ pub mod voice;
 
 #[cfg(test)]
 mod auth_tests;
+#[cfg(test)]
+mod catalog_refresh_tests;

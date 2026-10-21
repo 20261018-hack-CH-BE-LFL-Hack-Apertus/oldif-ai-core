@@ -8,7 +8,7 @@ use std::sync::Arc;
 use tokio::sync::Semaphore;
 const BACK: &str = "fixture-backend-distinct-token-123456";
 const COV: &str = "fixture-covenant-distinct-token-12345";
-fn config(directory: std::path::PathBuf) -> Config {
+pub(super) fn config(directory: std::path::PathBuf) -> Config {
     Config {
         bind: String::new(),
         grpc_bind: String::new(),
@@ -25,6 +25,7 @@ fn config(directory: std::path::PathBuf) -> Config {
         voice: "fixture".into(),
         run_dir: directory,
         timeout_secs: 1,
+        catalog_refresh_secs: 1,
         output_tokens: 32,
         max_sources: 30,
         max_input_bytes: 120000,

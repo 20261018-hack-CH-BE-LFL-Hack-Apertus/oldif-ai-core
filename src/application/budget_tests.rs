@@ -57,6 +57,7 @@ async fn finalization_scenario(budget: usize) {
         voice: String::new(),
         run_dir: dir.clone(),
         timeout_secs: 5,
+        catalog_refresh_secs: 1,
         output_tokens: 128,
         max_sources: 30,
         max_input_bytes: 120000,

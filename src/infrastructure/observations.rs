@@ -2,6 +2,17 @@ use super::provider::Provider;
 use serde_json::{Value, json};
 use std::collections::HashSet;
 impl Provider {
+    pub async fn refresh_catalogs(&self) {
+        let mut last_attempt = self.catalog_refresh.lock().await;
+        let interval = std::time::Duration::from_secs(self.config.catalog_refresh_secs);
+        if last_attempt.is_some_and(|started| started.elapsed() < interval) {
+            return;
+        }
+        *last_attempt = Some(std::time::Instant::now());
+        self.probe_catalogs().await;
+        // Waiting callers reuse even a probe that took longer than the interval.
+        *last_attempt = Some(std::time::Instant::now());
+    }
     pub fn record_access(&self, model: &str, status: u16, operation: &str) {
         let access = if status == 200 {
             if operation == "inference" {
