@@ -58,8 +58,14 @@ async fn authenticate(
     )?;
     Ok(next.run(req).await)
 }
-async fn models(State(e): State<Engine>) -> Json<Value> {
-    e.provider.refresh_catalogs().await;
+async fn models(State(e): State<Engine>, headers: HeaderMap) -> Json<Value> {
+    let authorization = headers
+        .get("authorization")
+        .and_then(|value| value.to_str().ok());
+    // Covenant readiness reads must not keep a scale-to-zero model service awake.
+    if super::auth::backend_authorized(authorization, &e.config.internal_token) {
+        e.provider.refresh_catalogs().await;
+    }
     Json(e.provider.models())
 }
 async fn start(

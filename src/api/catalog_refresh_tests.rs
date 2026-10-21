@@ -18,6 +18,7 @@ struct Fixture {
     http: String,
     grpc: String,
     token: String,
+    covenant_token: String,
     directory: PathBuf,
     servers: [JoinHandle<()>; 3],
 }
@@ -91,6 +92,7 @@ impl Fixture {
         let engine = configured_engine(url).await;
         let directory = engine.config.run_dir.clone();
         let token = engine.config.internal_token.clone();
+        let covenant_token = engine.config.covenant_token.clone().unwrap();
         let (http, http_server) = http_server(engine.clone()).await;
         let (grpc, grpc_server) = grpc_server(engine).await;
         Self {
@@ -99,6 +101,7 @@ impl Fixture {
             http,
             grpc,
             token,
+            covenant_token,
             directory,
             servers: [provider, http_server, grpc_server],
         }
@@ -106,15 +109,7 @@ impl Fixture {
 
     async fn models(&self, use_http: bool) -> Value {
         if use_http {
-            return reqwest::Client::new()
-                .get(format!("{}/v1/models", self.http))
-                .bearer_auth(&self.token)
-                .send()
-                .await
-                .unwrap()
-                .json()
-                .await
-                .unwrap();
+            return self.http_models(&self.token).await;
         }
         let mut client = grpc::proto::core_client::CoreClient::connect(self.grpc.clone())
             .await
@@ -125,6 +120,20 @@ impl Fixture {
             format!("Bearer {}", self.token).parse().unwrap(),
         );
         serde_json::from_str(&client.get_models(request).await.unwrap().into_inner().json).unwrap()
+    }
+
+    async fn http_models(&self, token: &str) -> Value {
+        reqwest::Client::new()
+            .get(format!("{}/v1/models", self.http))
+            .bearer_auth(token)
+            .send()
+            .await
+            .unwrap()
+            .error_for_status()
+            .unwrap()
+            .json()
+            .await
+            .unwrap()
     }
 
     fn count(&self) -> usize {
@@ -238,4 +247,40 @@ async fn concurrent_model_reloads_share_refresh_and_preserve_access_denial() {
         "waiting reloads must not each issue a probe"
     );
     assert_access_denial_refresh(&fixture).await;
+}
+
+async fn assert_covenant_reads_cached(fixture: &Fixture, expected: &Value) {
+    let before = fixture.count();
+    for _ in 0..3 {
+        let catalog = fixture.http_models(&fixture.covenant_token).await;
+        assert_eq!(
+            fixture.count(),
+            before,
+            "health reads must not contact the provider"
+        );
+        assert_eq!(&catalog, expected);
+    }
+}
+
+#[tokio::test]
+async fn covenant_health_catalog_reads_neither_wake_nor_postpone_provider_refresh() {
+    let fixture = Fixture::new().await;
+    let initial = fixture.models(true).await;
+    fixture.status.store(200, Ordering::SeqCst);
+    tokio::time::sleep(Duration::from_millis(1050)).await;
+    assert_covenant_reads_cached(&fixture, &initial).await;
+    assert_unauthorized_does_not_refresh(&fixture).await;
+    let refreshed = fixture.models(true).await;
+    assert_recovered(&refreshed);
+    assert_eq!(fixture.count(), 2);
+    fixture.status.store(401, Ordering::SeqCst);
+    tokio::time::sleep(Duration::from_millis(1050)).await;
+    assert_covenant_reads_cached(&fixture, &refreshed).await;
+    let denied = fixture.models(false).await;
+    assert_eq!(model(&denied, "apertus-v1-5-8b")["access"], "access_denied");
+    assert_eq!(
+        fixture.count(),
+        3,
+        "backend gRPC must still perform its due refresh"
+    );
 }
