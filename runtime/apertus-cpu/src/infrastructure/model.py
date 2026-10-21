@@ -2,6 +2,7 @@
 import copy
 import logging
 from ..domain.errors import ServiceError
+from ..domain.outputs import PREFIX
 
 LOG = logging.getLogger(__name__)
 
@@ -48,8 +49,12 @@ class ApertusModel:
 
     def generate_checked(self, request):
         messages, tools = prepare_prompt(request)
+        prefix = generation_prefix(request)
+        if prefix:
+            messages.append({"role": "assistant", "content": prefix})
         inputs = self.processor.apply_chat_template(
-            messages, tools=tools, enable_thinking=False, add_generation_prompt=True,
+            messages, tools=tools, enable_thinking=False, add_generation_prompt=not bool(prefix),
+            continue_final_message=bool(prefix),
             tokenize=True, return_dict=True, return_tensors="pt").to(self.model.device)
         prompt_tokens = inputs["input_ids"].shape[-1]
         if prompt_tokens + request.max_tokens > self.config.context_tokens:
@@ -61,9 +66,18 @@ class ApertusModel:
         with self.torch.inference_mode():
             output = self.model.generate(**inputs, **options)
         tokens = output[0, prompt_tokens:]
-        text = self.processor.decode(tokens, skip_special_tokens=False)
+        text = prefix + self.processor.decode(tokens, skip_special_tokens=False)
         return {"text": text, "prompt_tokens": prompt_tokens, "completion_tokens": len(tokens),
                 "truncated": reached_limit(tokens, self.model.generation_config.eos_token_id, request.max_tokens)}
+
+
+def generation_prefix(request):
+    # Adjacent assistant messages merge in the publisher template; preserve existing histories.
+    if request.messages[-1]["role"] == "assistant":
+        return ""
+    if request.tool_choice == "required":
+        return PREFIX
+    return "{" if request.json_mode else ""
 
 
 def reached_limit(tokens, eos_ids, maximum):
