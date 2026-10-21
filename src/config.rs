@@ -29,6 +29,10 @@ pub struct Config {
     pub execution_profile: String,
 }
 impl Config {
+    pub fn compact_stage_outputs(&self) -> bool {
+        self.output_tokens <= 256
+    }
+
     pub fn from_env() -> Result<Self, CoreError> {
         let _ = dotenvy::from_filename(".env");
         let token = required("INTERNAL_SERVICE_TOKEN")?;

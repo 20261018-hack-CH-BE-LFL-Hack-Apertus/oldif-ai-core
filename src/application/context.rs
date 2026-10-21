@@ -1,8 +1,20 @@
-use crate::api::dto::Source;
+use crate::api::dto::{Event, Source};
 use serde_json::{Value, json};
 use std::collections::HashSet;
 
-pub const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"entities":[],"timeline":[],"assertions":[{"kind":"title"|"date"|"entity"|"relation","subject":string,"predicate":string,"value":string,"source_id":string,"passage_id":string}],"uncertainty":[string],"abstained":boolean}. Assertions are optional, at most 30, and only when requested. Copy value and subject exactly from the same passage (subject may instead be its source_id). Allowed kind/predicate pairs: title/document_title; date/date_mentioned or event_date (value must be YYYY or YYYY-MM-DD); entity/person, place, organization or concept; relation/related_to, located_in, part_of or reported_by. Preserve differing attributed values from separate sources; never merge them into a consensus. Keep assertions empty for unsupported readings. Do not add human approval or evidence fields; the application validates and supplies them"#;
+const ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"entities":[],"timeline":[],"assertions":[{"kind":"title"|"date"|"entity"|"relation","subject":string,"predicate":string,"value":string,"source_id":string,"passage_id":string}],"uncertainty":[string],"abstained":boolean}"#;
+const COMPACT_ANSWER_SCHEMA: &str = r#"{"answer":string,"citations":[{"source_id":string,"passage_id":string}],"abstained":boolean}"#;
+const ASSERTION_SCHEMA: &str = r#"[{"kind":"title"|"date"|"entity"|"relation","subject":string,"predicate":string,"value":string,"source_id":string,"passage_id":string}]"#;
+const ASSERTION_RULES: &str = r#"Assertions are optional, at most 30, and only when requested. Copy value and subject exactly from the same passage (subject may instead be its source_id). Allowed kind/predicate pairs: title/document_title; date/date_mentioned or event_date (value must be YYYY or YYYY-MM-DD); entity/person, place, organization or concept; relation/related_to, located_in, part_of or reported_by. Preserve differing attributed values from separate sources; never merge them into a consensus. Keep assertions empty for unsupported readings. Do not add human approval or evidence fields; the application validates and supplies them"#;
+
+pub fn answer_schema(compact: bool) -> String {
+    if compact {
+        return format!(
+            "{COMPACT_ANSWER_SCHEMA}. Optional assertions shape: {ASSERTION_SCHEMA}. {ASSERTION_RULES}"
+        );
+    }
+    format!("{ANSWER_SCHEMA}. {ASSERTION_RULES}")
+}
 
 pub fn catalog(mut context: Value, sources: &[Source]) -> Value {
     context["sources"] = json!(sources.iter().map(|source|json!({"id":source.id,"title":source.title,"url":source.url,"page":source.page,"licence":source.licence,"sha256":source.sha256})).collect::<Vec<_>>());
@@ -27,6 +39,31 @@ pub fn reviewed(mut context: Value, sources: &[Source], candidate: &Value) -> Va
     // The candidate already carries the conversational intent. Previous answers are not evidence.
     context["prior_conversation_data"] = json!([]);
     context["candidate_abstained"] = json!(abstained);
+    context
+}
+
+pub fn for_repair(
+    mut context: Value,
+    sources: &[Source],
+    events: &[Event],
+    candidate: Value,
+    error: &str,
+) -> Value {
+    let read_ids: Vec<&str> = events
+        .iter()
+        .filter(|event| event.kind == "tool.completed" && event.data["tool"] == "read_source")
+        .filter_map(|event| event.data["result"]["id"].as_str())
+        .collect();
+    context["sources"] = json!(
+        sources
+            .iter()
+            .filter(|source| read_ids.is_empty() || read_ids.contains(&source.id.as_str()))
+            .map(super::passages::source_view)
+            .collect::<Vec<_>>()
+    );
+    context["prior_conversation_data"] = json!([]);
+    context["rejected_candidate"] = candidate;
+    context["validation_error"] = json!(error);
     context
 }
 
