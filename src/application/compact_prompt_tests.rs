@@ -74,18 +74,17 @@ fn assert_compact_requests(requests: &[Value], budget: u32) {
     assert_eq!(requests[1]["tool_choice"], "required");
     assert!(requests[2].get("tools").is_none());
     assert_compact_source_request(&requests[2]);
-    assert!(!instruction(&requests[requests.len() - 2]).contains("\"findings\""));
-    assert!(instruction(requests.last().unwrap()).contains("\"proposals\":[]"));
+    assert!(!instruction(requests.last().unwrap()).contains("\"findings\""));
 }
 
 #[tokio::test]
-async fn compact_workflow_retains_all_calls_exact_evidence_and_requested_assertions() {
+async fn compact_workflow_retains_required_calls_exact_evidence_and_requested_assertions() {
     for budget in [128, 256] {
         let fixture = Fixture::new(budget, Candidate::Valid).await;
         let snapshot = fixture.run().await;
         assert_evidence(&snapshot);
         let requests = fixture.requests().await;
-        assert_eq!(requests.len(), 5);
+        assert_eq!(requests.len(), 4);
         assert_compact_requests(&requests, budget);
         let agents: Vec<_> = snapshot["events"]
             .as_array()
@@ -96,7 +95,7 @@ async fn compact_workflow_retains_all_calls_exact_evidence_and_requested_asserti
             .collect();
         assert_eq!(
             agents,
-            ["planner", "researcher", "researcher", "verifier", "dreamer"]
+            ["planner", "researcher", "researcher", "verifier"]
         );
     }
 }
@@ -108,7 +107,7 @@ async fn compact_repairs_keep_small_contract_without_weakening_passage_validatio
         let snapshot = fixture.run().await;
         assert_evidence(&snapshot);
         let requests = fixture.requests().await;
-        assert_eq!(requests.len(), 6);
+        assert_eq!(requests.len(), 5);
         assert_compact_requests(&requests, 256);
         assert_compact_source_request(&requests[3]);
         let repair = requests[3]["messages"].to_string();
@@ -142,7 +141,7 @@ async fn compact_research_without_tools_keeps_projected_evidence() {
         "School in 1799"
     );
     let requests = fixture.requests().await;
-    assert_eq!(requests.len(), 4);
+    assert_eq!(requests.len(), 3);
     assert!(
         requests
             .iter()
@@ -166,6 +165,6 @@ async fn larger_output_budgets_preserve_existing_stage_instructions() {
         assert!(instruction(&requests[0]).contains("Plan at most four"));
         assert!(instruction(&requests[2]).contains("\"entities\":[]"));
         assert!(instruction(&requests[3]).contains("\"findings\""));
-        assert!(instruction(&requests[4]).contains("Propose at most two"));
+        assert_eq!(requests.len(), 4);
     }
 }

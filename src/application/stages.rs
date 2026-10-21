@@ -1,8 +1,9 @@
+pub use super::proposals::reflect;
 use super::{context, interpretation, prompts, tools, validation, workflow::Engine};
 use crate::{api::dto::RunRequest, domain, error::CoreError, infrastructure::store::Run};
 use serde_json::{Value, json};
 use std::collections::HashSet;
-fn content(message: &Value) -> Result<&str, CoreError> {
+pub(super) fn content(message: &Value) -> Result<&str, CoreError> {
     message["content"]
         .as_str()
         .ok_or_else(|| CoreError::Invalid("Model did not return textual JSON".into()))
@@ -227,48 +228,6 @@ pub async fn verify(
         .emit(run, "verification.completed", "verifier", review.clone())
         .await?;
     Ok(review)
-}
-pub async fn reflect(
-    e: &Engine,
-    run: &Run,
-    r: &RunRequest,
-    result: &Value,
-) -> Result<Value, CoreError> {
-    let msg = e
-        .call(
-            run,
-            "dreamer",
-            &r.model,
-            prompts::messages(&e.config, &prompts::reflect(&e.config), {
-                let mut context = context::reviewed(e.context(run, r).await?, &r.sources, result);
-                context["result"] = result.clone();
-                context
-            }),
-            None,
-        )
-        .await?;
-    let v = match content(&msg).and_then(validation::parse_json) {
-        Ok(value) => value,
-        Err(CoreError::Invalid(_)) => {
-            e.store.emit(run,"proposals.unavailable","dreamer",json!({"reason":"invalid_or_truncated_json","proposals_published":0,"retry":false})).await?;
-            return Ok(json!([]));
-        }
-        Err(error) => return Err(error),
-    };
-    if result["abstained"] == true || result["evidence_only"] == true {
-        let reason = if result["abstained"] == true {
-            "candidate_abstained"
-        } else {
-            "interpretation_unverified"
-        };
-        e.store.emit(run,"proposals.withheld","outcome-owner",json!({"reason":reason,"free_form_output_published":false,"model_pass_executed":true})).await?;
-        return Ok(json!([]));
-    }
-    let proposals:Vec<Value>=v["proposals"].as_array().into_iter().flatten().take(2).map(|p|json!({"id":uuid::Uuid::new_v4().to_string(),"kind":p["kind"],"description":p["description"],"rationale":p["rationale"],"status":"pending_human_review","applied":false})).collect();
-    e.store
-        .emit(run, "proposals.created", "dreamer", json!(proposals))
-        .await?;
-    Ok(json!(proposals))
 }
 pub async fn repair(
     e: &Engine,

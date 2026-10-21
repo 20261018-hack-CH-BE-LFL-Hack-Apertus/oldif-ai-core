@@ -133,7 +133,7 @@ async fn finalization_scenario(budget: usize) {
         3_usize.saturating_sub(budget)
     );
     let received = requests.lock().await;
-    assert_eq!(received.len(), 5);
+    assert_eq!(received.len(), 4);
     assert_eq!(received[0]["tool_choice"], "required");
     assert_eq!(received[0]["tools"][0]["function"]["name"], "read_source");
     assert_eq!(

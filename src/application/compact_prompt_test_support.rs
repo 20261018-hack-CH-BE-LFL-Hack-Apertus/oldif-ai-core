@@ -59,7 +59,6 @@ fn responses(candidate: Candidate) -> VecDeque<Value> {
     responses.extend([
         message(answer()),
         message(json!({"verdict":"supported"})),
-        message(json!({"proposals":[]})),
     ]);
     responses
 }

@@ -4,6 +4,7 @@ pub mod interpretation;
 pub mod page_locator;
 pub mod passages;
 pub mod prompts;
+mod proposals;
 pub mod stages;
 pub mod tools;
 pub mod validation;
@@ -19,5 +20,7 @@ mod compact_prompt_test_support;
 mod compact_prompt_tests;
 #[cfg(test)]
 mod context_projection_tests;
+#[cfg(test)]
+mod optional_proposals_test_support;
 #[cfg(test)]
 mod optional_proposals_tests;
