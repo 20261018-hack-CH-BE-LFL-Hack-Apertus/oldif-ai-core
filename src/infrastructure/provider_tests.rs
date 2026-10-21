@@ -1,6 +1,10 @@
 use super::provider::Provider;
 use crate::{config::Config, error::CoreError};
-use axum::{Router, http::StatusCode, routing::post};
+use axum::{
+    Router,
+    http::StatusCode,
+    routing::{get, post},
+};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use std::{path::PathBuf, time::Duration};
@@ -130,4 +134,119 @@ async fn raw_response_receipts_survive_success_error_and_malformed_json() {
     assert_eq!(count, 3);
     server.abort();
     tokio::fs::remove_dir_all(directory).await.unwrap();
+}
+
+async fn catalog_provider(
+    body: &'static str,
+    status: StatusCode,
+) -> (Provider, tokio::task::JoinHandle<()>) {
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let address = listener.local_addr().unwrap();
+    let router = Router::new()
+        .route(
+            "/apertus/models",
+            get(move || async move { (status, body) }),
+        )
+        .route("/openai/models", get(|| async { StatusCode::OK }));
+    let server = tokio::spawn(async move { axum::serve(listener, router).await.unwrap() });
+    let mut settings = config(format!("http://{address}/apertus"), PathBuf::new());
+    settings.openai_base = format!("http://{address}/openai");
+    settings.execution_profile = "research".into();
+    (Provider::new(settings).unwrap(), server)
+}
+
+fn metadata(provider: &Provider, id: &str) -> Value {
+    provider.models()["data"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|model| model["id"] == id)
+        .unwrap()
+        .clone()
+}
+
+fn assert_apertus_unavailable(provider: &Provider, access: &str, status: u16) {
+    for model in provider.models()["data"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter(|model| model["challenge_model"] == true)
+    {
+        assert_eq!(model["available"], false);
+        assert_eq!(model["access"], access);
+        assert_eq!(model["observation"]["http_status"], status);
+        assert!(!model["unavailable_reason"].as_str().unwrap().is_empty());
+    }
+}
+
+#[tokio::test]
+async fn apertus_catalog_enables_only_listed_models_without_claiming_inference() {
+    let (provider, server) =
+        catalog_provider(r#"{"data":[{"id":"apertus-v1-5-8b"}]}"#, StatusCode::OK).await;
+    provider.probe_catalogs().await;
+    let listed = metadata(&provider, "apertus-v1-5-8b");
+    assert_eq!(listed["available"], true);
+    assert_eq!(listed["access"], "catalog_reachable");
+    for id in [
+        "apertus-v1-5-8b-thinking",
+        "apertus-v1-5-70b",
+        "apertus-v1-5-70b-thinking",
+    ] {
+        let absent = metadata(&provider, id);
+        assert_eq!(absent["available"], false, "{id}");
+        assert_eq!(absent["access"], "model_not_listed");
+        assert_eq!(absent["observation"]["http_status"], 200);
+    }
+    provider.record_access("apertus-v1-5-8b", 200, "inference");
+    assert_eq!(
+        metadata(&provider, "apertus-v1-5-8b")["access"],
+        "verified_inference"
+    );
+    server.abort();
+}
+
+#[tokio::test]
+async fn apertus_catalog_malformed_success_never_proves_availability() {
+    for body in [
+        "truncated{",
+        "{}",
+        r#"{"data":{}}"#,
+        r#"{"data":[{}]}"#,
+        r#"{"data":[{"id":42}]}"#,
+        r#"{"data":[{"id":" "}]}"#,
+        r#"{"data":[{"id":"apertus-v1-5-8b"},{}]}"#,
+    ] {
+        let (provider, server) = catalog_provider(body, StatusCode::OK).await;
+        provider.probe_catalogs().await;
+        assert_apertus_unavailable(&provider, "invalid_catalog", 200);
+        // Azure/OpenAI catalogs retain their existing HTTP-status contract.
+        assert_eq!(metadata(&provider, "reference")["available"], true);
+        assert_eq!(
+            metadata(&provider, "reference")["access"],
+            "catalog_reachable"
+        );
+        server.abort();
+    }
+}
+
+#[tokio::test]
+async fn apertus_catalog_empty_list_marks_every_variant_absent() {
+    let (provider, server) = catalog_provider(r#"{"data":[]}"#, StatusCode::OK).await;
+    provider.probe_catalogs().await;
+    assert_apertus_unavailable(&provider, "model_not_listed", 200);
+    server.abort();
+}
+
+#[tokio::test]
+async fn apertus_catalog_preserves_access_denial_and_provider_errors() {
+    for (status, access) in [
+        (StatusCode::UNAUTHORIZED, "access_denied"),
+        (StatusCode::FORBIDDEN, "access_denied"),
+        (StatusCode::SERVICE_UNAVAILABLE, "provider_error"),
+    ] {
+        let (provider, server) = catalog_provider("unavailable", status).await;
+        provider.probe_catalogs().await;
+        assert_apertus_unavailable(&provider, access, status.as_u16());
+        server.abort();
+    }
 }
