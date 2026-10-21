@@ -32,7 +32,9 @@ class ApertusModel:
                    "cache_dir": self.config.cache_dir, "trust_remote_code": False}
         self.processor = AutoProcessor.from_pretrained(self.config.model_id, **options)
         self.model = AutoModelForMultimodalLM.from_pretrained(
-            self.config.model_id, dtype=self.config.dtype, device_map="cpu", **options).eval()
+            self.config.model_id, dtype=self.config.dtype, **options).eval()
+        if self.model.device.type != "cpu":
+            raise ValueError("The reviewed runtime requires CPU model placement.")
         self.torch = torch
 
     def generate(self, request):

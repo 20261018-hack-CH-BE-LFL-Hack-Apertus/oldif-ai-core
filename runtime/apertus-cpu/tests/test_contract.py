@@ -94,13 +94,24 @@ class GenerationTests(unittest.TestCase):
     def test_loader_uses_float32_without_changing_pinned_source(self):
         config = Config(secrets.token_urlsafe(32), "fixture-token")
         publisher = SimpleNamespace(AutoProcessor=Mock(), AutoModelForMultimodalLM=Mock())
+        publisher.AutoModelForMultimodalLM.from_pretrained.return_value.eval.return_value.device.type = "cpu"
         modules = {"torch": Mock(), "transformers": publisher,
                    "transformers.utils": SimpleNamespace(logging=Mock())}
         with patch.dict("sys.modules", modules):
             ApertusModel(config).load_publisher_model()
         publisher.AutoModelForMultimodalLM.from_pretrained.assert_called_once_with(
-            config.model_id, dtype="float32", device_map="cpu", revision=config.revision,
+            config.model_id, dtype="float32", revision=config.revision,
             token=config.hf_token, cache_dir=config.cache_dir, trust_remote_code=False)
+
+    def test_loader_rejects_non_cpu_result(self):
+        config = Config(secrets.token_urlsafe(32), "fixture-token")
+        publisher = SimpleNamespace(AutoProcessor=Mock(), AutoModelForMultimodalLM=Mock())
+        modules = {"torch": Mock(), "transformers": publisher,
+                   "transformers.utils": SimpleNamespace(logging=Mock())}
+        for device in ("cuda", "meta"):
+            publisher.AutoModelForMultimodalLM.from_pretrained.return_value.eval.return_value.device.type = device
+            with self.subTest(device=device), patch.dict("sys.modules", modules), self.assertRaises(ValueError):
+                ApertusModel(config).load_publisher_model()
 
     def test_real_native_tool_shape_is_preserved(self):
         output = '<|tools_prefix|>[{"read_source":{"source_id":"fixture-1"}}]<|tools_suffix|>'
