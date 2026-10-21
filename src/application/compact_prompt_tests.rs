@@ -5,6 +5,36 @@ fn instruction(request: &Value) -> &str {
     request["messages"][0]["content"].as_str().unwrap()
 }
 
+fn assert_model_source(source: &Value) {
+    assert_eq!(source.as_object().unwrap().len(), 3);
+    assert_eq!(source["id"], "s1");
+    assert_eq!(
+        source["passages"],
+        json!([{"passage_id":"p001","text":"School in 1799"}])
+    );
+}
+
+fn assert_compact_source_request(request: &Value) {
+    let mut checked = 0;
+    for message in request["messages"].as_array().unwrap() {
+        let Ok(content) = serde_json::from_str::<Value>(message["content"].as_str().unwrap_or(""))
+        else {
+            continue;
+        };
+        if content["passages"].is_array() {
+            assert_model_source(&content);
+            checked += 1;
+        }
+        for source in content["sources"].as_array().into_iter().flatten() {
+            if source["passages"].is_array() {
+                assert_model_source(source);
+                checked += 1;
+            }
+        }
+    }
+    assert!(checked > 0);
+}
+
 fn assert_evidence(snapshot: &Value) {
     assert_eq!(snapshot["status"], "needs_review", "{snapshot}");
     let result = &snapshot["result"];
@@ -19,6 +49,16 @@ fn assert_evidence(snapshot: &Value) {
     assert_eq!(result["evidence_only"], true);
     assert_eq!(result["human_review_required"], true);
     assert_eq!(result["proposals"], json!([]));
+    let event = snapshot["events"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|event| event["kind"] == "tool.completed")
+        .unwrap();
+    let original = &event["data"]["result"];
+    assert_eq!(original["sha256"], "a".repeat(64));
+    assert_eq!(original["passages"][0]["char_start"], 0);
+    assert_eq!(original["passages"][0]["char_end"], 14);
 }
 
 fn assert_compact_requests(requests: &[Value], budget: u32) {
@@ -33,6 +73,7 @@ fn assert_compact_requests(requests: &[Value], budget: u32) {
     assert!(instruction(&requests[1]).contains("without any prefacing text"));
     assert_eq!(requests[1]["tool_choice"], "required");
     assert!(requests[2].get("tools").is_none());
+    assert_compact_source_request(&requests[2]);
     assert!(!instruction(&requests[requests.len() - 2]).contains("\"findings\""));
     assert!(instruction(requests.last().unwrap()).contains("\"proposals\":[]"));
 }
@@ -69,6 +110,7 @@ async fn compact_repairs_keep_small_contract_without_weakening_passage_validatio
         let requests = fixture.requests().await;
         assert_eq!(requests.len(), 6);
         assert_compact_requests(&requests, 256);
+        assert_compact_source_request(&requests[3]);
         let repair = requests[3]["messages"].to_string();
         assert!(!repair.contains("Keep every required key"));
         assert!(repair.contains("Omit optional empty collections"));
@@ -85,6 +127,28 @@ async fn compact_repairs_keep_small_contract_without_weakening_passage_validatio
                 .any(|item| item["kind"] == event)
         );
     }
+}
+
+#[tokio::test]
+async fn compact_research_without_tools_keeps_projected_evidence() {
+    let fixture = Fixture::new(256, Candidate::Valid)
+        .await
+        .without_tools()
+        .await;
+    let snapshot = fixture.run().await;
+    assert_eq!(snapshot["status"], "needs_review");
+    assert_eq!(
+        snapshot["result"]["citations"][0]["quote"],
+        "School in 1799"
+    );
+    let requests = fixture.requests().await;
+    assert_eq!(requests.len(), 4);
+    assert!(
+        requests
+            .iter()
+            .all(|request| request.get("tools").is_none())
+    );
+    assert_compact_source_request(&requests[1]);
 }
 
 #[tokio::test]

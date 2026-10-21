@@ -142,6 +142,12 @@ async fn finalization_scenario(budget: usize) {
     );
     assert!(received[1].get("tools").is_none());
     assert!(received[2].get("tools").is_none());
+    let resumed: Value =
+        serde_json::from_str(received[2]["messages"][1]["content"].as_str().unwrap()).unwrap();
+    assert_eq!(
+        resumed["previously_read_sources"],
+        json!([{"id":"s1","title":"Source","passages":[{"passage_id":"p001","text":"school source"}]}])
+    );
     drop(snapshot);
     server.abort();
     std::fs::remove_dir_all(dir).unwrap();

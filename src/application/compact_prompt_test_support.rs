@@ -110,6 +110,12 @@ pub struct Fixture {
 }
 
 impl Fixture {
+    pub async fn without_tools(mut self) -> Self {
+        self.engine.config.max_tool_calls = 0;
+        self.mock.responses.lock().await.remove(1).unwrap();
+        self
+    }
+
     pub async fn new(output_tokens: u32, candidate: Candidate) -> Self {
         let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
         let address = listener.local_addr().unwrap();

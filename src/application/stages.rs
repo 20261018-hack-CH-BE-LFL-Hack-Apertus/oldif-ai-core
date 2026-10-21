@@ -1,4 +1,4 @@
-use super::{context, interpretation, passages, prompts, tools, validation, workflow::Engine};
+use super::{context, interpretation, prompts, tools, validation, workflow::Engine};
 use crate::{api::dto::RunRequest, domain, error::CoreError, infrastructure::store::Run};
 use serde_json::{Value, json};
 use std::collections::HashSet;
@@ -36,6 +36,7 @@ pub async fn research(
     plan: &Value,
 ) -> Result<Value, CoreError> {
     let mut context = e.context(run, r).await?;
+    let compact = e.config.compact_stage_outputs();
     context["plan"] = plan.clone();
     let events = run.snapshot.lock().await.events.clone();
     // A steering revision shares the same budget and already-read evidence.
@@ -54,14 +55,14 @@ pub async fn research(
             r.sources
                 .iter()
                 .filter(|source| read_ids.contains(&source.id))
-                .map(passages::source_view)
+                .map(|source| context::model_source(source, compact))
                 .collect::<Vec<_>>()
         );
     } else {
         context["sources"] = json!(
             r.sources
                 .iter()
-                .map(passages::source_view)
+                .map(|source| context::model_source(source, compact))
                 .collect::<Vec<_>>()
         );
     }
@@ -157,6 +158,7 @@ pub async fn research(
                     json!({"tool":name,"call_id":call["id"],"result":result}),
                 )
                 .await?;
+            let result = context::model_view(&result, compact);
             conversation.push(
                 json!({"role":"tool","tool_call_id":call["id"],"content":result.to_string()}),
             );
@@ -268,7 +270,6 @@ pub async fn reflect(
         .await?;
     Ok(json!(proposals))
 }
-
 pub async fn repair(
     e: &Engine,
     run: &Run,
@@ -282,6 +283,7 @@ pub async fn repair(
         &run.snapshot.lock().await.events.clone(),
         candidate,
         error,
+        e.config.compact_stage_outputs(),
     );
     let instruction = prompts::repair(&e.config);
     let message = e

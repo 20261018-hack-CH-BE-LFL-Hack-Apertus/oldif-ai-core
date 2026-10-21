@@ -18,4 +18,6 @@ mod compact_prompt_test_support;
 #[cfg(test)]
 mod compact_prompt_tests;
 #[cfg(test)]
+mod context_projection_tests;
+#[cfg(test)]
 mod optional_proposals_tests;

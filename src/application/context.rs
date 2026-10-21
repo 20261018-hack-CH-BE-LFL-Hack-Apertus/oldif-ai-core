@@ -22,6 +22,23 @@ pub fn catalog(mut context: Value, sources: &[Source]) -> Value {
     context
 }
 
+pub fn model_view(view: &Value, compact: bool) -> Value {
+    if !compact {
+        return view.clone();
+    }
+    let Some(passages) = view["passages"].as_array() else {
+        return view.clone();
+    };
+    // The original source and stored tool result retain offsets and provenance.
+    json!({"id":view["id"],"title":view["title"],"passages":passages.iter()
+        .map(|passage|json!({"passage_id":passage["passage_id"],"text":passage["text"]}))
+        .collect::<Vec<_>>()})
+}
+
+pub fn model_source(source: &Source, compact: bool) -> Value {
+    model_view(&super::passages::source_view(source), compact)
+}
+
 pub fn reviewed(mut context: Value, sources: &[Source], candidate: &Value) -> Value {
     let ids: HashSet<&str> = candidate["citations"]
         .as_array()
@@ -48,6 +65,7 @@ pub fn for_repair(
     events: &[Event],
     candidate: Value,
     error: &str,
+    compact: bool,
 ) -> Value {
     let read_ids: Vec<&str> = events
         .iter()
@@ -58,7 +76,7 @@ pub fn for_repair(
         sources
             .iter()
             .filter(|source| read_ids.is_empty() || read_ids.contains(&source.id.as_str()))
-            .map(super::passages::source_view)
+            .map(|source| model_source(source, compact))
             .collect::<Vec<_>>()
     );
     context["prior_conversation_data"] = json!([]);
