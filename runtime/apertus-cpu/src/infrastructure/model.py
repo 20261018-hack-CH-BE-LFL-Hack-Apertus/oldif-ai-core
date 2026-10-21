@@ -1,6 +1,7 @@
 """Publisher-pinned Transformers adapter; model weights and generated text stay real."""
 import copy
 import logging
+import time
 from ..domain.errors import ServiceError
 from ..domain.outputs import PREFIX
 
@@ -39,8 +40,11 @@ class ApertusModel:
         self.torch = torch
 
     def generate(self, request):
+        started = time.perf_counter()
         try:
-            return self.generate_checked(request)
+            generated = self.generate_checked(request)
+            log_completion(started, generated)
+            return generated
         except ServiceError:
             raise
         except Exception as error:
@@ -69,6 +73,13 @@ class ApertusModel:
         text = prefix + self.processor.decode(tokens, skip_special_tokens=False)
         return {"text": text, "prompt_tokens": prompt_tokens, "completion_tokens": len(tokens),
                 "truncated": reached_limit(tokens, self.model.generation_config.eos_token_id, request.max_tokens)}
+
+
+def log_completion(started, generated):
+    LOG.info({"event": "model_generation_completed", "elapsed_seconds": round(time.perf_counter() - started, 3),
+              "prompt_tokens": generated["prompt_tokens"], "completion_tokens": generated["completion_tokens"],
+              "truncated": generated["truncated"],
+              "finish_state": "token_limit" if generated["truncated"] else "stopped"})
 
 
 def generation_prefix(request):
