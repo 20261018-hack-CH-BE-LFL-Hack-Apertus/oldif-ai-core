@@ -3,10 +3,14 @@ USER root
 WORKDIR /opt/apertus-cpu
 COPY src ./src
 COPY runtime-lock.json ./runtime-lock.json
-RUN python3 -c "from transformers import AutoModelForMultimodalLM, AutoProcessor; import torch; assert torch.__version__.startswith('2.11.')" && \
+RUN groupadd --gid 10001 apertus && \
+    useradd --uid 10001 --gid 10001 --system --no-create-home \
+        --home-dir /models/huggingface --shell /usr/sbin/nologin apertus && \
     mkdir -p /models/huggingface/hub && chown -R 10001:10001 /models /opt/apertus-cpu
-ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 \
+    HOME=/models/huggingface USER=apertus LOGNAME=apertus
 USER 10001:10001
+RUN python3 -c "import os, pwd, getpass; assert os.getuid() == 10001 and os.getgid() == 10001; account = pwd.getpwuid(os.getuid()); assert account.pw_name == getpass.getuser() == 'apertus'; assert account.pw_dir == os.environ['HOME']; from transformers import AutoModelForMultimodalLM, AutoProcessor; import torch; assert torch.__version__.startswith('2.11.')"
 EXPOSE 8000
 ENTRYPOINT ["python3", "-m", "src.api.main"]
 CMD []
