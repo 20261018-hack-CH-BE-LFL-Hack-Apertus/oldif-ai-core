@@ -7,7 +7,7 @@
   "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
   "additional_dependencies": [],
   "device": "cpu",
-  "dtype": "auto",
+  "dtype": "float32",
   "quantization": null,
   "thinking": false,
   "tool_protocol_source": "https://raw.githubusercontent.com/swiss-ai/vllm/a601a9d998ddeb488f0c17e8512874b116aa7658/vllm/tool_parsers/apertus_tool_parser.py",

@@ -15,6 +15,7 @@ class Config:
     model_id: str = MODEL_ID
     revision: str = MODEL_REVISION
     served_model: str = SERVED_MODEL
+    dtype: str = "float32"
     host: str = "0.0.0.0"
     port: int = 8000
     threads: int = 14
@@ -47,6 +48,8 @@ class Config:
             raise ValueError("Configured runtime credentials are required.")
         if (self.model_id, self.revision, self.served_model) != (MODEL_ID, MODEL_REVISION, SERVED_MODEL):
             raise ValueError("Only the reviewed Apertus model and immutable revision are supported.")
+        if self.dtype != "float32":
+            raise ValueError("The reviewed CPU profile requires float32 model loading.")
         if not re.fullmatch(r"[a-f0-9]{40}", self.revision):
             raise ValueError("An immutable model revision is required.")
         if not (1 <= self.port <= 65535 and 1 <= self.threads <= 64):

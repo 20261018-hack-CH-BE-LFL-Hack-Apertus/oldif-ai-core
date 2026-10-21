@@ -1,7 +1,8 @@
 import logging
 import secrets
 import unittest
-from unittest.mock import Mock
+from types import SimpleNamespace
+from unittest.mock import Mock, patch
 from src.config import Config, SERVED_MODEL
 from src.domain.errors import ServiceError
 from src.domain.json_data import strict_json
@@ -83,6 +84,24 @@ class RequestTests(unittest.TestCase):
 
 
 class GenerationTests(unittest.TestCase):
+    def test_cpu_profile_requires_float32(self):
+        config = Config(secrets.token_urlsafe(32), "fixture-token")
+        self.assertEqual(config.dtype, "float32")
+        for dtype in ("auto", "bfloat16", "float16"):
+            with self.subTest(dtype=dtype), self.assertRaises(ValueError):
+                Config(config.api_key, config.hf_token, dtype=dtype).validate()
+
+    def test_loader_uses_float32_without_changing_pinned_source(self):
+        config = Config(secrets.token_urlsafe(32), "fixture-token")
+        publisher = SimpleNamespace(AutoProcessor=Mock(), AutoModelForMultimodalLM=Mock())
+        modules = {"torch": Mock(), "transformers": publisher,
+                   "transformers.utils": SimpleNamespace(logging=Mock())}
+        with patch.dict("sys.modules", modules):
+            ApertusModel(config).load_publisher_model()
+        publisher.AutoModelForMultimodalLM.from_pretrained.assert_called_once_with(
+            config.model_id, dtype="float32", device_map="cpu", revision=config.revision,
+            token=config.hf_token, cache_dir=config.cache_dir, trust_remote_code=False)
+
     def test_real_native_tool_shape_is_preserved(self):
         output = '<|tools_prefix|>[{"read_source":{"source_id":"fixture-1"}}]<|tools_suffix|>'
         message, reason = parse_generated(output, request(tools=TOOLS, tool_choice="required"))

@@ -32,7 +32,7 @@ class ApertusModel:
                    "cache_dir": self.config.cache_dir, "trust_remote_code": False}
         self.processor = AutoProcessor.from_pretrained(self.config.model_id, **options)
         self.model = AutoModelForMultimodalLM.from_pretrained(
-            self.config.model_id, dtype="auto", device_map="cpu", **options).eval()
+            self.config.model_id, dtype=self.config.dtype, device_map="cpu", **options).eval()
         self.torch = torch
 
     def generate(self, request):
