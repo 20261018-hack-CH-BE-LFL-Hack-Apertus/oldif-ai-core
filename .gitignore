@@ -24,3 +24,6 @@ id_ed25519
 *.seed
 wallet.json
 keystore/
+
+# Local macOS metadata
+.DS_Store
